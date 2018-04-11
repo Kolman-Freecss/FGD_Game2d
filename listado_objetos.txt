@@ -1,4 +1,5 @@
 -JUEGO
+
 -Jugador principal
     nivel
     daño
@@ -15,11 +16,21 @@
     % de loot
     
 -armas
+    nivel
+    
     -espada
+        daño
+        distancia
     -arco
-    -escudo
+        daño
+        distancia
+    -escudo????
+        % esquivar daño o defensa(vida escudo)????
     
 -mapas
+    posicion obstaculos
+    -enemigos
+        cantidad y posicion enemigos
 
 -inventario
     numero maximo objetos
@@ -30,12 +41,18 @@
     numero de usos
 
     -tema vida
-
+        restaurar vida
+        augmentar vida total
     -tema daño
+        augmentar daño
+    -tema defensa
+        augmentar % defensa
     -tema escudo
+        restaurar escudo
+        augmentar vida escudo
     -tema inventario
-  
+        augmentar tamaño inventario
   
 -dinero
-    cantidad catual dinero
+    cantidad atual dinero
     limite dinero?
