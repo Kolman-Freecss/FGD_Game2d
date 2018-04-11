@@ -1,0 +1,41 @@
+-JUEGO
+-Jugador principal
+    nivel
+    daño
+    vida
+    escudo?
+    inventario
+
+-Enemigos
+    nivel
+    daño
+    vida
+    escudo?
+    loot
+    % de loot
+    
+-armas
+    -espada
+    -arco
+    -escudo
+    
+-mapas
+
+-inventario
+    numero maximo objetos
+    lista de objetos(armas,pociones,dinero)
+    
+-pociones
+    nivel
+    numero de usos
+
+    -tema vida
+
+    -tema daño
+    -tema escudo
+    -tema inventario
+  
+  
+-dinero
+    cantidad catual dinero
+    limite dinero?
