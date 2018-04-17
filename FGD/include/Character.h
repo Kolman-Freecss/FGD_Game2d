@@ -7,8 +7,13 @@ class Character
     public:
         Character();
         virtual ~Character();
+        //Hola
 
     protected:
+        int level;
+        int damage;
+        int life;
+        int shield;
 
     private:
 };
