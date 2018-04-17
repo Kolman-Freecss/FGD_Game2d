@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1523908947 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\test\main.cpp
+	<allegro.h>
+	<iostream>
+	<istream>
+	<vector>
+
