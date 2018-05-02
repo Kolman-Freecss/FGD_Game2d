@@ -1,8 +1,5 @@
 #ifndef Object_h
 #define Object_h
-
-#include "int.h"
-
 class Enemy;
 class Inventory;
 

@@ -2,7 +2,6 @@
 #define Potion_h
 
 #include "Object.h"
-#include "int.h"
 
 
 class Potion : public Object {

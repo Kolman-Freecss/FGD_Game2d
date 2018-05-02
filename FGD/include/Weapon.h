@@ -2,7 +2,6 @@
 #define Weapon_h
 
 #include "Object.h"
-#include "int.h"
 
 
 class Weapon : public Object {

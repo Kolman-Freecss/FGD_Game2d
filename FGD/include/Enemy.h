@@ -6,11 +6,8 @@
 #include "Character.h"
 #include "Object.h"
 #include "String.h"
-#include "int.h"
 
 class Object;
-class ;
-class String;
 
 class Enemy : public Character {
 

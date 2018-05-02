@@ -1,7 +1,6 @@
 #ifndef Character_h
 #define Character_h
 
-#include "int.h"
 
 
 class Character {

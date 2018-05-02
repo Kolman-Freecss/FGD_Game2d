@@ -2,7 +2,6 @@
 #define Shield_h
 
 #include "Weapon.h"
-#include "int.h"
 
 
 class Shield : public Weapon {

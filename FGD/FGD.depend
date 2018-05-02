@@ -5,3 +5,64 @@
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
 	<iostream>
 
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+	"Character.h"
+
+1524590994 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\object.cpp
+	"Object.h"
+
+1524591007 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\object.h
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\inventory.cpp
+	"Inventory.h"
+
+1524591018 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\inventory.h
+	<vector>
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\player.cpp
+	"Player.h"
+
+1524591023 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
+	"Character.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\enemy.cpp
+	"Enemy.h"
+
+1524591038 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\enemy.h
+	<vector>
+	"Character.h"
+	"Object.h"
+	"String.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\potion.cpp
+	"Potion.h"
+
+1524591044 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\potion.h
+	"Object.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\weapon.cpp
+	"Weapon.h"
+
+1524591048 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\weapon.h
+	"Object.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\shield.cpp
+	"Shield.h"
+
+1524591054 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\shield.h
+	"Weapon.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\sword.cpp
+	"Sword.h"
+
+1524591058 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
+	"Weapon.h"
+
+1524763436 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+	<allegro.h>
+	<iostream>
+	<istream>
+	<vector>
+

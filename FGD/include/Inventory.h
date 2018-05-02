@@ -3,8 +3,6 @@
 
 #include <vector>
 
-#include "int.h"
-
 class Object;
 
 class Inventory {
