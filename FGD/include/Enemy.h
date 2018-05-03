@@ -12,7 +12,8 @@ class Object;
 class Enemy : public Character {
 
  public:
-
+    Enemy();
+    virtual ~Enemy();
     virtual int newOperation();
 
  private:

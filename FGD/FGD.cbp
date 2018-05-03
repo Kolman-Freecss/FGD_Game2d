@@ -34,7 +34,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/BaseGame.h" />
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/Drawable.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Inventory.h" />
 		<Unit filename="include/Object.h" />
@@ -43,7 +45,9 @@
 		<Unit filename="include/Shield.h" />
 		<Unit filename="include/Sword.h" />
 		<Unit filename="include/Weapon.h" />
+		<Unit filename="src/BaseGame.cpp" />
 		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Drawable.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/Main/Main.cpp" />

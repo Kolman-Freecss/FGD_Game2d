@@ -1,9 +1,12 @@
 #ifndef Object_h
 #define Object_h
+
+#include "Drawable.h"
+
 class Enemy;
 class Inventory;
 
-class Object {
+class Object : public Drawable{
 
  public:
     int newAttr;

@@ -5,15 +5,17 @@
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
 	<iostream>
 
-1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+1525366849 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
 	"Character.h"
 
-1524590994 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+1525366956 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+	"Drawable.h"
 
 1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\object.cpp
 	"Object.h"
 
-1524591007 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\object.h
+1525364664 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\object.h
+	"Drawable.h"
 
 1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\inventory.cpp
 	"Inventory.h"
@@ -21,16 +23,17 @@
 1524591018 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\inventory.h
 	<vector>
 
-1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\player.cpp
+1525375812 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\player.cpp
 	"Player.h"
+	<allegro.h>
 
-1524591023 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
+1525366956 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
 	"Character.h"
 
 1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\enemy.cpp
 	"Enemy.h"
 
-1524591038 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\enemy.h
+1525366072 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\enemy.h
 	<vector>
 	"Character.h"
 	"Object.h"
@@ -60,9 +63,20 @@
 1524591058 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1524763436 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1525376198 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<iostream>
 	<istream>
 	<vector>
+	<Player.h>
+
+1525291132 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+	<BaseGame.h>
+
+1525376620 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+
+1525375357 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
+	"Drawable.h"
+
+1525366956 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\drawable.h
 

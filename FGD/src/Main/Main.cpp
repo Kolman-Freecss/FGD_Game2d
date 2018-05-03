@@ -3,6 +3,7 @@
 #include <istream>
 #include <vector>
 using std::cout;
+#include <Player.h>
 
 int main()
 {
@@ -45,23 +46,32 @@ set_color_depth(24);
 //stretch_blit(fondo, buffer, 0, 0, fondo->w, fondo->h, 0, 0, SIZE_WINDOW_X, SIZE_WINDOW_Y);
 
 int animacion = 0;
+
+
+Player player;
+
+
  while ( !salir )
  {
             stretch_blit(fondo, buffer, 0, 0, fondo->w, fondo->h, 0, 0, SIZE_WINDOW_X, SIZE_WINDOW_Y);
           //clear_to_color(buffer, 0xaaaaaa);
           masked_blit(fondo, buffer, 0,0, 50, 50, SIZE_WINDOW_X,SIZE_WINDOW_Y);
-          masked_blit(prota, buffer, 0,0, x, y, 32,32);
+          masked_blit(prota, buffer, 0,0, player.getX(), player.getY(), 32,32);
+
+          player.keyboard();
+          //Devuelve bien
+          //cout << posicion.getX();
 
           // teclas control usuario
-          if ( key[KEY_UP] )
+          /*if ( key[KEY_UP] )
           {
-              /*if(animacion < 3){
+              if(animacion < 3){
                 masked_blit(prota[animacion], buffer, 0,0, x, y, 32,32);
                 animacion+=1;
               }else{
                 animacion = 0;
                 masked_blit(prota[0], buffer, 0,0, x, y, 32,32);
-              }*/
+              }
                y--;
           }
           if ( key[KEY_DOWN] )
@@ -84,7 +94,7 @@ int animacion = 0;
           if ( x < 0 ) x = 0;
           if ( x > 800 ) x = 800;
           if ( y < 0 ) y = 0;
-          if ( y > 600 ) y = 600;
+          if ( y > 600 ) y = 600;*/
 
 
        blit(buffer, screen, 0, 0, 0, 0, 800, 600);

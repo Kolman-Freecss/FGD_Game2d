@@ -1,24 +1,22 @@
 #ifndef Character_h
 #define Character_h
 
+#include "Drawable.h"
 
-
-class Character {
-
-
- protected:
-
-    virtual int getX();
-
-    virtual int getY();
+class Character : public Drawable{
 
 
  protected:
-    int x;
-    int y;
+    int speed;
     int damage;
     int health;
     int shield;
+
+ public:
+    Character();
+    //virtual ~Character();
+    int getSpeed();
+
 };
 
 #endif // Character_h

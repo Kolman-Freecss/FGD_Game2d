@@ -7,7 +7,9 @@
 class Player : public Character {
 
  public:
-    int newAttr;
+    Player();
+    //virtual ~Player();
+    void keyboard();
 
  private:
     int level;
