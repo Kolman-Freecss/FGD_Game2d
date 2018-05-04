@@ -1,24 +1,19 @@
 #ifndef Map_h
 #define Map_h
 #include <allegro.h>
+using namespace std;
 
 class Map{
 
  private:
-    BITMAP images[5];
+     vector<Enemy> enemys;
 
  protected:
-    int speed;
-    int damage;
-    int health;
-    int shield;
 
  public:
-    Character();
-    //virtual ~Character();
-    int getSpeed();
-    BITMAP[] getImages();
+    Map();
+    //virtual ~Map();
 
 };
 
-#endif // Character_h
+#endif // Map_h
