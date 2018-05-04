@@ -13,11 +13,11 @@ class Enemy : public Character {
 
  public:
     Enemy();
-    virtual ~Enemy();
-    virtual int newOperation();
+    Enemy(vector<BITMAP> animations, int health);
+    //virtual ~Enemy();
 
  private:
-
+    int const DAMAGE = 10;
     /**
      * @element-type Object
      */

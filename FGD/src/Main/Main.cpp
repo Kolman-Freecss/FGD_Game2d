@@ -18,19 +18,11 @@ int main()
 
  // si no encuentrusing std::cout;a la imagen peta del todo XD
  BITMAP *buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
- //una imagen de 24 biiiitss
  //BITMAP *prota[] = {load_bmp("Sprite_1_1.bmp",NULL), load_bmp("Sprite_1_2.bmp", NULL), load_bmp("Sprite_1_3.bmp", NULL)};
- BITMAP *prota  = load_bmp("src\\Resources\\Sprite1.bmp",NULL);
- /*BITMAP *protas2 = load_bmp("Sprite_1_2.bmp", NULL);
- BITMAP *protas3 = load_bmp("Sprite_1_3.bmp", NULL);*/
+ BITMAP *prota  = load_bmp("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
  //To do .. Comprovar si esta bien la ruta
  BITMAP *fondo  = load_bmp("src\\Resources\\grass.bmp",NULL);
  //stretch_blit(fondo, buffer, 0, 0, fondo->w, fondo->h, 0, 0, buffer->w, buffer->h);
-
-
- /*if(&prota == 0){
-    cout << "null";
- }*/
 
  bool salir;
  int x,y;
@@ -50,13 +42,14 @@ int animacion = 0;
 
 Player player;
 
-
  while ( !salir )
  {
-            stretch_blit(fondo, buffer, 0, 0, fondo->w, fondo->h, 0, 0, SIZE_WINDOW_X, SIZE_WINDOW_Y);
+          stretch_blit(fondo, buffer, 0, 0, fondo->w, fondo->h, 0, 0, SIZE_WINDOW_X, SIZE_WINDOW_Y);
           //clear_to_color(buffer, 0xaaaaaa);
-          masked_blit(fondo, buffer, 0,0, 50, 50, SIZE_WINDOW_X,SIZE_WINDOW_Y);
-          masked_blit(prota, buffer, 0,0, player.getX(), player.getY(), 32,32);
+          //masked_blit(fondo, buffer, 0,0, 50, 50, SIZE_WINDOW_X,SIZE_WINDOW_Y);
+
+          player.printSprite(prota, buffer, 0,0, player.getX(), player.getY(), 33,65);
+
 
           player.keyboard();
           //Devuelve bien
@@ -92,13 +85,13 @@ Player player;
 
           // limites
           if ( x < 0 ) x = 0;
-          if ( x > 800 ) x = 800;
+          if ( x > 800 ) x = 800;#include <allegro.h>
           if ( y < 0 ) y = 0;
           if ( y > 600 ) y = 600;*/
 
 
        blit(buffer, screen, 0, 0, 0, 0, 800, 600);
-        //cout << "hola";
+
        rest(10);
 
        // tecla de salida

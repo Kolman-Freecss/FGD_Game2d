@@ -39,6 +39,7 @@
 		<Unit filename="include/Drawable.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Inventory.h" />
+		<Unit filename="include/Map.h" />
 		<Unit filename="include/Object.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Potion.h" />
@@ -51,6 +52,7 @@
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/Main/Main.cpp" />
+		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/Object.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Potion.cpp" />

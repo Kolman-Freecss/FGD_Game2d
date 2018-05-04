@@ -1,5 +1,6 @@
 #ifndef Drawable_h
 #define Drawable_h
+#include <allegro.h>
 
 
 
@@ -20,6 +21,7 @@ class Drawable{
     int getY();
     int getHeight();
     int getWidth();
+    void printSprite(BITMAP *image, BITMAP *background, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
 
 
 

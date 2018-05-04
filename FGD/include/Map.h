@@ -1,15 +1,13 @@
-#ifndef Character_h
-#define Character_h
-
-#include "Drawable.h"
+#ifndef Map_h
+#define Map_h
 #include <allegro.h>
 
-class Character : public Drawable{
+class Map{
 
  private:
+    BITMAP images[5];
 
- protected
-    vector<BITMAP> animations;
+ protected:
     int speed;
     int damage;
     int health;
@@ -17,9 +15,9 @@ class Character : public Drawable{
 
  public:
     Character();
-    Character(vector<BITMAP> animations, int health);
     //virtual ~Character();
     int getSpeed();
+    BITMAP[] getImages();
 
 };
 
