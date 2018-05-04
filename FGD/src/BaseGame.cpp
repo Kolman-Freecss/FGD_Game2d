@@ -1,5 +1,6 @@
 #include <BaseGame.h>
-
+#include <vector>
+using namespace std;
 
 void BaseGame::chargeGame()
 {
@@ -21,7 +22,8 @@ void BaseGame::printGame()
 
 void BaseGame::chargeEnemys()
 {
-
+    vector<BITMAP> animations;
+    animations.push_back()
 
 
 }
