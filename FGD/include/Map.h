@@ -1,12 +1,15 @@
 #ifndef Map_h
 #define Map_h
 #include <allegro.h>
+#include "Enemy.h"
+#include <vector>
+
 using namespace std;
 
 class Map{
 
  private:
-     vector<Enemy> enemys;
+     vector<Enemy> enemies;
 
  protected:
 
