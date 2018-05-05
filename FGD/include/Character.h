@@ -3,12 +3,15 @@
 
 #include "Drawable.h"
 #include <allegro.h>
+#include <vector>
+
+using namespace std;
 
 class Character : public Drawable{
 
  private:
 
- protected
+protected:
     vector<BITMAP> animations;
     int speed;
     int damage;

@@ -8,9 +8,9 @@ Drawable::Drawable()
 }
 
 void Drawable::printSprite
-(BITMAP *image, BITMAP *background, int source_x, int source_y, int dest_x, int dest_y, int width, int height)
+(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height)
 {
-        masked_blit(image, background, source_x, source_y, dest_x, dest_y, width, height);
+        masked_blit(image, buffer, source_x, source_y, dest_x, dest_y, width, height);
 }
 
 int Drawable::getX()

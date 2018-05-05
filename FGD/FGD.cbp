@@ -36,6 +36,8 @@
 		</Compiler>
 		<Unit filename="include/BaseGame.h" />
 		<Unit filename="include/Character.h" />
+		<Unit filename="include/DAOManager.h" />
+		<Unit filename="include/DAOMap.h" />
 		<Unit filename="include/Drawable.h" />
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/Inventory.h" />
@@ -48,6 +50,8 @@
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="src/BaseGame.cpp" />
 		<Unit filename="src/Character.cpp" />
+		<Unit filename="src/Dao/DAOManager.cpp" />
+		<Unit filename="src/Dao/DAOMap.cpp" />
 		<Unit filename="src/Drawable.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/Inventory.cpp" />

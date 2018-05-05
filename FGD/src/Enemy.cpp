@@ -2,7 +2,7 @@
 
 
 
-Enemy::Enemy(vector<BITMAP> animations, int health)
+Enemy::Enemy(vector<BITMAP> animations, int health):Character(animations, health)
 {
-    Character::Character(animations, health);
+
 }
