@@ -1,0 +1,35 @@
+Sobre la CLASS MAP:
+
+  Moya:
+    Clase mapa puede tener una funcion que randomize la posicion del enemigo y
+    luego compruebe que no esta dentro de otro objeto como "ESTATICO"(casas,arboles,ambiente)
+  
+    yo la clase mapa la veo util: razon
+
+    mapa contiene:
+    una lista que contenga los objetos ambiente(casas,arboles,...)
+    una lista de enemigos
+
+    funcion de generar las posiciones de objetos ambiente
+    funcion de generar objetos ENEMYS
+    
+  Sergio: 
+    Clase mapa que contenga una matriz dinamica (que contenga los BITMAP de todo) que se crea en el constructor
+    que segun el nivel que tenga el mapa un integer que le pasariamos
+    llamaria a cierta funcion del mapa tambien para rellenar los huecos de la matriz que necesitamos
+    para dicho nivel.
+    
+    Entonces mi idea de matriz seria: por cada fila pongamos los datos de cada tipo objeto
+    y en la columna y = 0, toda la primera columna seria un nombre para ese tipo de objeto para 
+    saber en que fila cargar los datos.
+    
+    Despues de tener esta matriz cargada la recorreriamos con el Print que tendriamos en la class Drawable.
+    
+    Mi duda existencial que me jode toda la idea es una tonteria es solo probar pero como hay que probar demasiadas
+    cosas pues me ta jodiendo...
+    Mi duda: La matriz seria una definicion del palo:     Matriz matriz[][] (Que hay formas de hacer las columnas y filas dinamicas)
+                                                                    o 
+                                                         vector<BITMAP> matriz (y en este vector cada posicion
+                                                                                colocar otro vector mas que contendria
+                                                                                todo lo anterior)
+    
