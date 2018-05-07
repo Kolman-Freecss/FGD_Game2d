@@ -7,11 +7,12 @@
 class Drawable{
 
  protected:
-
+    //TODO cambiar por matriz
     int x;
     int y;
     int height;
     int width;
+
 
 
  public:
@@ -21,10 +22,9 @@ class Drawable{
     int getY();
     int getHeight();
     int getWidth();
-    void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
-
-
-
+    void draw(BITMAP *image, BITMAP *buffer);
+    bool CheckCollision(Drawable drawable);
+    int distance(Drawable drawable);
 
 
 };
