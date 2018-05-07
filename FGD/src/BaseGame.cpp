@@ -23,7 +23,7 @@ void BaseGame::printGame()
 void BaseGame::chargeEnemys()
 {
     vector<BITMAP> animations;
-    animations.push_back()
+    //animations.push_back();
 
 
 }

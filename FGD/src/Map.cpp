@@ -1,16 +1,7 @@
-#include "Character.h"
+#include "Map.h"
 
-Character::Character()
+Map::Map()
 {
 }
 
-int Character::getSpeed()
-{
-    return 0;
-}
-
-BITMAP[] Character::getImages()
-{
-    return images;
-}
 
