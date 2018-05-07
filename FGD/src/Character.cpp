@@ -4,7 +4,7 @@ Character::Character()
 {
 }
 
-Character::Character(vector<BITMAP> animations, int health)
+Character::Character(BITMAP **animations, int health)
 {
     this->animations = animations;
     this->health = health;

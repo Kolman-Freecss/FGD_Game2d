@@ -1,20 +1,36 @@
 #include "DAOMap.h"
 #include "Map.h"
 #include <vector>
+#include "allegro.h"
+#include "Enemy.h"
 
 using namespace std;
 
 vector<Map> mapList;
 
-DAOMap::DAOMap() {}
+DAOMap::DAOMap()
+{
+    //mapList.push_back();
+    Drawable **firstMapAmbient;
+    vector<Enemy> firtMapEnemies;
 
-vector<Map> DAOMap::getMapList() {
+    firtMapEnemies.push_back(Enemy());
+
+    mapList.push_back(Map(firtMapEnemies, firstMapAmbient));
 
 
-    return vector<Map>();
+
 }
 
-Map DAOMap::getMap(int id) {
-
-    return Map();
+vector<Map> DAOMap::getMapList()
+{
+    return mapList;
 }
+
+Map DAOMap::getMap(int id)
+{
+    return mapList.at(id);
+}
+
+
+

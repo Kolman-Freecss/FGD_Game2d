@@ -1,8 +1,8 @@
 #include "Enemy.h"
 
+Enemy::Enemy(){}
 
-
-Enemy::Enemy(vector<BITMAP> animations, int health):Character(animations, health)
+Enemy::Enemy(BITMAP **animations, int health):Character(animations, health)
 {
 
 }

@@ -7,11 +7,49 @@ Drawable::Drawable()
     y = 10;
 }
 
-void Drawable::printSprite
-(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height)
-{
-        masked_blit(image, buffer, source_x, source_y, dest_x, dest_y, width, height);
+void Drawable::draw(BITMAP *image, BITMAP *buffer){
+        masked_blit(image, buffer, 0, 0, x, y, width, height);
 }
+
+bool Drawable::checkCollision(Drawable drawable){
+    //comprobar tipo colision (cuadrada o circular)
+    /*switch (){
+        case :
+            break;
+        case :
+            break;
+        default:
+    }*/
+    return true;
+}
+
+int Drawable::distance(Drawable drawable){
+    //calculo colision
+}
+
+
+
+
+void Drawable::setHeight(int height)
+{
+    this->height = height;
+}
+
+void Drawable::setWidth(int width)
+{
+    this->width = width;
+}
+
+void Drawable::setX(int x)
+{
+    this->x = x;
+}
+
+void Drawable::setY(int y)
+{
+    this->y = y;
+}
+
 
 int Drawable::getX()
 {

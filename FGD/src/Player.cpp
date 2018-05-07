@@ -5,6 +5,8 @@ Player::Player()
 {
 }
 
+
+
 void Player::keyboard()
 {
     if ( key[KEY_UP] )

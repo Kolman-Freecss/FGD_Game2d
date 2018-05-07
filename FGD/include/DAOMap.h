@@ -8,10 +8,9 @@ using namespace std;
 
 class DAOMap {
     public:
-    DAOMap();
-
-    vector<Map> getMapList();
-    Map getMap(int id);
+        DAOMap();
+        vector<Map> getMapList();
+        Map getMap(int id);
 
 };
 

@@ -34,13 +34,13 @@ int main()
 
 clear_to_color(buffer, 0xaaaaaa);
 set_color_depth(24);
-//Resize image
-//stretch_blit(fondo, buffer, 0, 0, fondo->w, fondo->h, 0, 0, SIZE_WINDOW_X, SIZE_WINDOW_Y);
 
 int animacion = 0;
 
 
 Player player;
+player.setWidth(33);
+player.setHeight(66);
 
  while ( !salir )
  {
@@ -48,7 +48,7 @@ Player player;
           //clear_to_color(buffer, 0xaaaaaa);
           //masked_blit(fondo, buffer, 0,0, 50, 50, SIZE_WINDOW_X,SIZE_WINDOW_Y);
 
-          player.printSprite(prota, buffer, 0,0, player.getX(), player.getY(), 33,65);
+          player.draw(prota, buffer);
 
 
           player.keyboard();

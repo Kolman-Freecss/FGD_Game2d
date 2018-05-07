@@ -12,7 +12,7 @@ class Character : public Drawable{
  private:
 
 protected:
-    vector<BITMAP> animations;
+    BITMAP **animations;
     int speed;
     int damage;
     int health;
@@ -20,7 +20,7 @@ protected:
 
  public:
     Character();
-    Character(vector<BITMAP> animations, int health);
+    Character(BITMAP **animations, int health);
     //virtual ~Character();
     int getSpeed();
 

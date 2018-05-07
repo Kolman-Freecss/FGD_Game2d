@@ -7,17 +7,16 @@
 #include "Object.h"
 #include "String.h"
 
-class Object;
 
 class Enemy : public Character {
 
  public:
     Enemy();
-    Enemy(vector<BITMAP> animations, int health);
+    Enemy(BITMAP **animations, int health);
     //virtual ~Enemy();
 
  private:
-    int const DAMAGE = 10;
+    //int const DAMAGE = 10;
     /**
      * @element-type Object
      */

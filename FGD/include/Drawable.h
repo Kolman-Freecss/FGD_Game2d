@@ -21,8 +21,14 @@ class Drawable{
     int getY();
     int getHeight();
     int getWidth();
-    void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
-
+    void setHeight(int height);
+    void setWidth(int widht);
+    void setX(int x);
+    void setY(int y);
+    //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
+    void draw(BITMAP *image, BITMAP *buffer);
+    bool checkCollision(Drawable drawable);
+    int distance(Drawable drawable);
 
 
 
