@@ -16,8 +16,19 @@ Drawable::Drawable(BITMAP **animations, int x, int y, int height, int width)
     this->width = width;
 }
 
+Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
+{
+    this->bitmapAmbient = bitmapAmbient;
+    this->x = x;
+    this->y = y;
+    this->height = height;
+    this->width = width;
+}
+
 void Drawable::draw(BITMAP *buffer){
-        masked_blit(this->animations[this->activeBitmap[0]][this->activeBitmap[1]], buffer, 0, 0, x, y, width, height);
+        BITMAP bitmapAnimation = this->animations[this->activeBitmap[0]][this->activeBitmap[1]];
+        BITMAP *bitmapPointer = &bitmapAnimation;
+        masked_blit(bitmapPointer, buffer, 0, 0, x, y, width, height);
 }
 
 bool Drawable::checkCollision(Drawable drawable){
@@ -34,6 +45,7 @@ bool Drawable::checkCollision(Drawable drawable){
 
 int Drawable::distance(Drawable drawable){
     //calculo colision
+    return 0;
 }
 
 
@@ -78,6 +90,11 @@ int Drawable::getHeight()
 int Drawable::getWidth()
 {
     return 0;
+}
+
+BITMAP* Drawable::getBitmapAmbient()
+{
+    return this->bitmapAmbient;
 }
 
 

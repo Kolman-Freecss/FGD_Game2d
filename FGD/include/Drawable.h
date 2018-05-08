@@ -8,6 +8,7 @@ class Drawable{
 
  protected:
     BITMAP **animations;
+    BITMAP *bitmapAmbient;
     int x;
     int y;
     int height;
@@ -17,6 +18,7 @@ class Drawable{
  public:
     Drawable();
     Drawable(BITMAP **animations, int x, int y, int height, int width);
+    Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width);
     //virtual ~Drawable();
     int getX();
     int getY();
@@ -30,6 +32,7 @@ class Drawable{
     void draw(BITMAP *buffer);
     bool checkCollision(Drawable drawable);
     int distance(Drawable drawable);
+    BITMAP* getBitmapAmbient();
 
 
 

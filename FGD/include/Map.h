@@ -12,14 +12,16 @@ class Map{
  private:
 
     vector<Enemy> enemies;
-    BITMAP **staticMatriz;
+    Drawable **ambientMatrix;
 
  protected:
 
  public:
     Map();
-    Map(vector<Enemy> enemies, Drawable **mapMatriz);
-    void setStaticMatriz();
+    Map(vector<Enemy> enemies, Drawable **mapMatrix);
+    void setAmbientMatrix(Drawable **ambientMatrix);
+    vector<Enemy> getVectorEnemies();
+    Drawable **getAmbientMatrix();
     //virtual ~Map();
 
 
