@@ -1,7 +1,6 @@
-#include <allegro.h>
+
 #include <iostream>
 #include <istream>
-#include <vector>
 #include <stdlib.h>
 #include <conio.h>
 using namespace std;
@@ -12,12 +11,18 @@ int main()
     int numIncremental = 1;
     int *vectorDinamico = new int[numIncremental];
 
-    for(int i = 0; i < 5; i++){
+    for(int i = 0; i < 10; i++){
 
         vectorDinamico[i] = i;
-        numIncremental++;
+        //numIncremental++;
 
-        cout << vectorDinamico[i];
+
+    }
+
+    for (int j = 0 ; j < 10 ; j++){
+        cout << "Valor: " << vectorDinamico[j];
+        cout << "Direccion: " << &vectorDinamico[j] << "\n";
+
 
     }
 
