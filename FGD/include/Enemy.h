@@ -12,7 +12,7 @@ class Enemy : public Character {
 
  public:
     Enemy();
-    Enemy(BITMAP **animations, int health);
+    Enemy(BITMAP **animations, int health, int damage, int speed, int shield);
     //virtual ~Enemy();
 
  private:

@@ -12,15 +12,16 @@ class Character : public Drawable{
  private:
 
 protected:
-    BITMAP **animations;
     int speed;
     int damage;
     int health;
     int shield;
 
+
  public:
     Character();
     Character(BITMAP **animations, int health);
+    Character(BITMAP **animations, int health, int damage, int speed, int shield);
     //virtual ~Character();
     int getSpeed();
 

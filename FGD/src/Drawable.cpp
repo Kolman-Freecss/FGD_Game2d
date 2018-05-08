@@ -7,8 +7,17 @@ Drawable::Drawable()
     y = 10;
 }
 
-void Drawable::draw(BITMAP *image, BITMAP *buffer){
-        masked_blit(image, buffer, 0, 0, x, y, width, height);
+Drawable::Drawable(BITMAP **animations, int x, int y, int height, int width)
+{
+    this->animations = animations;
+    this->x = x;
+    this->y = y;
+    this->height = height;
+    this->width = width;
+}
+
+void Drawable::draw(BITMAP *buffer){
+        masked_blit(this->animations[this->activeBitmap[0]][this->activeBitmap[1]], buffer, 0, 0, x, y, width, height);
 }
 
 bool Drawable::checkCollision(Drawable drawable){

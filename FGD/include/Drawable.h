@@ -7,15 +7,16 @@
 class Drawable{
 
  protected:
-
+    BITMAP **animations;
     int x;
     int y;
     int height;
     int width;
-
+    int activeBitmap[2];
 
  public:
     Drawable();
+    Drawable(BITMAP **animations, int x, int y, int height, int width);
     //virtual ~Drawable();
     int getX();
     int getY();
@@ -26,7 +27,7 @@ class Drawable{
     void setX(int x);
     void setY(int y);
     //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
-    void draw(BITMAP *image, BITMAP *buffer);
+    void draw(BITMAP *buffer);
     bool checkCollision(Drawable drawable);
     int distance(Drawable drawable);
 
