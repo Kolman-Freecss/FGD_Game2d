@@ -10,3 +10,6 @@ antes de cambiar la asignacion borrar el actual (garbage colector) para que no o
 
 -vectores
 http://www.cplusplus.com/reference/vector/vector/
+
+-petadas por no inicializar el allegro
+https://www.allegro.cc/forums/thread/609076
