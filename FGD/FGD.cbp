@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Animation.h" />
 		<Unit filename="include/BaseGame.h" />
 		<Unit filename="include/Character.h" />
 		<Unit filename="include/DAOManager.h" />
@@ -48,6 +49,7 @@
 		<Unit filename="include/Shield.h" />
 		<Unit filename="include/Sword.h" />
 		<Unit filename="include/Weapon.h" />
+		<Unit filename="src/Animation.cpp" />
 		<Unit filename="src/BaseGame.cpp" />
 		<Unit filename="src/Character.cpp" />
 		<Unit filename="src/Dao/DAOManager.cpp" />
