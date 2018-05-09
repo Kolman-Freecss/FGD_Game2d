@@ -8,23 +8,19 @@ using namespace std;
 class Animation{
 
  private:
-    vector<BITMAP*> UP;
-    vector<BITMAP*> RIGHT;
-    vector<BITMAP*> DOWN;
-    vector<BITMAP*> LEFT;
+    vector<BITMAP*> up;
+    vector<BITMAP*> right;
+    vector<BITMAP*> down;
+    vector<BITMAP*> left;
 
  public:
     Animation();
-    Animation(vector<BITMAP*> UP, vector<BITMAP*> RIGHT, vector<BITMAP*> DOWN, vector<BITMAP*> LEFT);
+    Animation(vector<BITMAP*> up, vector<BITMAP*> right, vector<BITMAP*> down, vector<BITMAP*> left);
     //virtual ~Drawable();
-    BITMAP* getUp();
-    BITMAP* getRight();
-    BITMAP* getDown();
-    BITMAP* getLeft();
-    s
-
-
-
+    BITMAP* getUp(int pos);
+    BITMAP* getRight(int pos);
+    BITMAP* getDown(int pos);
+    BITMAP* getLeft(int pos);
 };
 
 #endif // Animation_h
