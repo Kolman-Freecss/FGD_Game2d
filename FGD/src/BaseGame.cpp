@@ -68,8 +68,6 @@ void BaseGame::printGame()
                                                                 // o
                                                                 // Estamos usando el get de Drawable
                                                                 //o
-
-                                                                //ok ok ok ok ok es lo de abajo definitivo
                                                                 // es una matrix de drawables lo rellenamos como drwables
                                                                 //y intentamos devolver un bitmap
                                                                 // el matrix es de drawables y intentamos recojer un bitmap

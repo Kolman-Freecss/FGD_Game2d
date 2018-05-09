@@ -32,7 +32,7 @@ class Drawable{
     void draw(BITMAP *buffer);
     bool checkCollision(Drawable drawable);
     int distance(Drawable drawable);
-    BITMAP* getBitmapAmbient();
+    BITMAP *getBitmapAmbient();
 
 
 

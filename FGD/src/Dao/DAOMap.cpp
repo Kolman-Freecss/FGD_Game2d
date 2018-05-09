@@ -76,7 +76,6 @@ Charge the matrix of the ambient map
 */
 void DAOMap::chargeMatrixAmbient(Drawable **matrix, int numMap, int lenght)
 {
-chargeMatrixAmbient
     switch(numMap){
 
         case 1: matrix = new Drawable*[lenght];

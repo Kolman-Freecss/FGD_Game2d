@@ -92,7 +92,7 @@ int Drawable::getWidth()
     return 0;
 }
 
-BITMAP* Drawable::getBitmapAmbient()
+BITMAP *Drawable::getBitmapAmbient()
 {
     return this->bitmapAmbient;
 }
