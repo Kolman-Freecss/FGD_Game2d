@@ -61,7 +61,11 @@ void BaseGame::printGame()
 
     for(int i = 0; i < lengthMatrix; i++){
         for(int j = 0; j < lengthMatrix; j++){
-            BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient(); //PETA AQUIIIIIIIII vale estamos cojiendo mal las cosas
+            //Drawable drawaojd = matrix[0][0];
+            //BITMAP bitmapAmbient2 = *matrix[i][j].getBitmapAmbient();
+
+
+            //BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient(); //PETA AQUIIIIIIIII vale estamos cojiendo mal las cosas
                                                                 // hay que cojer el vector que hemos rellenado de maps
                                                                 // o
                                                                 // instanciar el baseGame para que el activegame sea ese map
@@ -73,10 +77,10 @@ void BaseGame::printGame()
                                                                 // el matrix es de drawables y intentamos recojer un bitmap
             //BITMAP *bitmapPointer = &bitmapAmbient;
             if(i == 0 && j == 0){
-                stretch_blit(bitmapAmbient, this->buffer, 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, this->SIZE_WINDOW_X, this->SIZE_WINDOW_Y);
+                //stretch_blit(bitmapAmbient, this->buffer, 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, this->SIZE_WINDOW_X, this->SIZE_WINDOW_Y);
             }
             else{
-                matrix[i][j].draw(this->buffer);
+                //matrix[i][j].draw(this->buffer);
             }
         }
     }

@@ -82,7 +82,8 @@ void DAOMap::chargeMatrixAmbient(Drawable **matrix, int numMap, int lenght)
                 for(int i = 0; i < lenght; i++){
                     matrix[i] = new Drawable[lenght];
                 }
-                matrix[0][0] = Drawable(load_bitmap("src\\Resources\\grass.bmp",NULL), 0, 0 , 0, 0);
+                BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
+                matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
                 break;
 
