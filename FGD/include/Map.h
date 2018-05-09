@@ -13,15 +13,17 @@ class Map{
 
     vector<Enemy> enemies;
     Drawable **ambientMatrix;
+    int sizeOfMatrix;
 
  protected:
 
  public:
     Map();
-    Map(vector<Enemy> enemies, Drawable **mapMatrix);
+    Map(vector<Enemy> enemies, Drawable **mapMatrix, int sizeOfMatrix);
     void setAmbientMatrix(Drawable **ambientMatrix);
     vector<Enemy> getVectorEnemies();
     Drawable **getAmbientMatrix();
+    int getSizeOfMatrix();
     //virtual ~Map();
 
 

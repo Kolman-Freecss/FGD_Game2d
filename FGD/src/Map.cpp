@@ -6,10 +6,11 @@ Map::Map()
 {
 }
 
-Map::Map(vector<Enemy> enemies, Drawable **ambientMatrix)
+Map::Map(vector<Enemy> enemies, Drawable **ambientMatrix, int sizeOfMatrix)
 {
     this->enemies = enemies;
     this->ambientMatrix = ambientMatrix;
+    this->sizeOfMatrix = sizeOfMatrix;
 
 
 }
@@ -27,4 +28,9 @@ vector<Enemy> Map::getVectorEnemies()
 Drawable** Map::getAmbientMatrix()
 {
     return this->ambientMatrix;
+}
+
+int Map::getSizeOfMatrix()
+{
+    return this->sizeOfMatrix;
 }

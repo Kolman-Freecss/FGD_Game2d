@@ -22,17 +22,17 @@ DAOMap::DAOMap()
 
     firtMapEnemies.push_back(Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 50, 50, 33, 66));
 
-    this->mapList.push_back(Map(firtMapEnemies, mapAmbient));
+    this->mapList.push_back(Map(firtMapEnemies, mapAmbient, 1));
     /**
     Free allocated values and memory of matrix
     */
-    for(int i = 0; i < 1; i++){
+    /*for(int i = 0; i < 1; i++){
         delete[] matrixAnimationsEnemy[i];
-    }
+    }*/
     delete[] matrixAnimationsEnemy;
-    for(int i = 0; i < 1; i++){
-        delete[] mapAmbient[i];
-    }
+    /*for(int i = 0; i < 1; i++){
+        delete[] mapAmbient[i]; //PETA AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+    }*/
     delete[] mapAmbient;
 
 
@@ -76,7 +76,7 @@ Charge the matrix of the ambient map
 */
 void DAOMap::chargeMatrixAmbient(Drawable **matrix, int numMap, int lenght)
 {
-
+chargeMatrixAmbient
     switch(numMap){
 
         case 1: matrix = new Drawable*[lenght];

@@ -66,7 +66,7 @@
 1524591058 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1525806762 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1525827166 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<iostream>
 	<istream>
@@ -74,11 +74,13 @@
 	<Player.h>
 	<BaseGame.h>
 
-1525711913 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1525827155 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
+	<DAOMap.h>
+	<allegro.h>
 
-1525805393 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+1525883837 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
@@ -102,18 +104,18 @@
 	<vector>
 	"Map.h"
 
-1525802499 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
+1525826165 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
 	<allegro.h>
 	"Enemy.h"
 	"Drawable.h"
 	<vector>
 
-1525802507 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+1525826156 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
 	"Map.h"
 	"allegro.h"
 	"Enemy.h"
 
-1525809351 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
+1525851004 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
 	"DAOMap.h"
 	"Map.h"
 	<vector>

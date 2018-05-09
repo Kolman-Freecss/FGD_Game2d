@@ -10,15 +10,34 @@ int main()
 {
  bool salir;
 
- // inicializar vbles
  salir = false;
 
-BaseGame myGame = BaseGame();
+ const int SIZE_WINDOW_X = 800;
+    const int SIZE_WINDOW_Y = 600;
+     allegro_init();
+     install_keyboard();
+
+
+    set_color_depth(24);
+
+     //set_color_depth(32);
+     set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
+
+     // si no encuentrusing std::cout;a la imagen peta del todo XD
+     BITMAP *buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
+
+     clear_to_color(buffer, 0xaaaaaa);
+
+
+
+BaseGame *myGame = new BaseGame();
+
+myGame->chargeGame();
 
  while ( !salir )
  {
 
-          myGame.update();
+          myGame->update();
 
 
           //player.keyboard();
