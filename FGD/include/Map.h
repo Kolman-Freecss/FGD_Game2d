@@ -14,6 +14,10 @@ class Map{
     vector<Enemy*> enemies;
     Drawable **ambientMatrix;
     int sizeOfMatrix;
+    /**
+    Cantidad de enemigos que habra que estara asociado al nivel del juego que sea actualmente
+    */
+    int quantEnemies = 2;
 
  protected:
 

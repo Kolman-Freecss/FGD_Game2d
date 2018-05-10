@@ -20,7 +20,8 @@ class Enemy : public Character {
     void update();
 
  private:
-     int direccion;
+     int direction;
+     int timeNextRandomize;
 
     //int const DAMAGE = 10;
     /**
