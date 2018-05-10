@@ -1,5 +1,9 @@
 #include <allegro.h>
 #include "Drawable.h"
+#include <cmath>
+#include "math.h"
+#include "Weapon.h"
+
 
 Drawable::Drawable()
 {
@@ -35,21 +39,35 @@ void Drawable::draw(BITMAP *buffer){
         masked_blit(bitmapAnimation, buffer, 0, 0, x, y, width, height);
 }
 
-bool Drawable::checkCollision(Drawable drawable){
-    //comprobar tipo colision (cuadrada o circular)
-    /*switch (){
-        case :
+//TODO cambiar a character
+bool Drawable::atackCollision(Drawable drawable,Weapon weapon){
+    if ( distance(drawable) < ( weapon.getAttackDistance() + drawable.collisionRadius ) ) {
+            //cout
+            return true;
+    }
+    return false;
+
+}
+bool Drawable::collision(Drawable drawable){
+    switch(this->collisionType){
+        case 1:
+            if (distance(drawable)< this->collisionRadius + drawable.collisionRadius){
+                return true;
+            }
             break;
-        case :
+        case 2:
             break;
-        default:
-    }*/
-    return true;
+
+        default:;
+    }
+    return false;
+
 }
 
 int Drawable::distance(Drawable drawable){
-    //calculo colision
-    return 0;
+
+    return sqrt((drawable.walkCollision[0]-this->walkCollision[0]) * (drawable.walkCollision[0]-this->walkCollision[0]) +
+                     (drawable.walkCollision[1]-this->walkCollision[1]) * (drawable.walkCollision[1]-this->walkCollision[1]));
 }
 
 
