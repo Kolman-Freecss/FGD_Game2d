@@ -1,9 +1,10 @@
 #include <allegro.h>
 #include "Drawable.h"
 #include <cmath>
-#include "math.h"
+#include <iostream>
 #include "Weapon.h"
 
+using namespace std;
 
 Drawable::Drawable()
 {
@@ -18,6 +19,11 @@ Drawable::Drawable(BITMAP ***animations, int x, int y, int height, int width)
     this->y = y;
     this->height = height;
     this->width = width;
+
+    genWalkCollision();
+    this->collisionRadius = (width/3)*2;
+
+    this->collisionType = 1;
 }
 
 /**
@@ -31,7 +37,8 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
     this->height = height;
     this->width = width;
     genWalkCollision();
-    this->collisionRadius = (x/3)*2;
+    this->collisionRadius = (width/3)*2;
+
 }
 
 void Drawable::draw(BITMAP *buffer){
@@ -42,18 +49,23 @@ void Drawable::draw(BITMAP *buffer){
 }
 
 //TODO cambiar a character
-bool Drawable::atackCollision(Drawable drawable, Weapon *weapon){
-    if ( distance(drawable) < ( weapon->getAttackDistance() + drawable.collisionRadius ) ) {
-            //cout
+bool Drawable::atackCollision(Drawable *drawable, Weapon *weapon){
+    if ( distance(drawable) < ( weapon->getAttackDistance() + drawable->collisionRadius ) ) {
+
             return true;
     }
     return false;
 
 }
 bool Drawable::collision(Drawable *drawable){
-    switch(this->collisionType){
+    switch(this->collisionType) {
         case 1:
-            if (distance(drawable)< this->collisionRadius + drawable.collisionRadius){
+            cout << "DRAWABLE circular" << endl;
+            cout << distance(drawable) << " " << this->collisionRadius + drawable->collisionRadius << endl;
+            cout << "DRAWABLE circular" << endl;
+            cout << "DRAWABLE circular" << endl;
+
+            if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
             }
             break;
@@ -66,16 +78,31 @@ bool Drawable::collision(Drawable *drawable){
 
 }
 
-int Drawable::distance(Drawable drawable){
+int Drawable::distance(Drawable *drawable){
 
-    return sqrt((drawable.walkCollision[0]-this->walkCollision[0]) * (drawable.walkCollision[0]-this->walkCollision[0]) +
-                     (drawable.walkCollision[1]-this->walkCollision[1]) * (drawable.walkCollision[1]-this->walkCollision[1]));
+    return sqrt(
+            /*(drawable->x- this->x)
+            *
+            (drawable->x- this->x)
+            +
+            (drawable->y- this->y)
+            *
+            (drawable->y- this->y));*/
+
+                (drawable->x + drawable->walkCollision[0] - this->x + this->walkCollision[0])
+                *
+                (drawable->x + drawable->walkCollision[0] - this->x + this->walkCollision[0])
+                +
+                (drawable->y + drawable->walkCollision[1] - this->y + this->walkCollision[1])
+                *
+                (drawable->y + drawable->walkCollision[1] - this->y + this->walkCollision[1]));
+
 }
 
 
 void Drawable::genWalkCollision(){
-    this->walkCollision[0] = this->x += this->x/2;
-    this->walkCollision[1] = this->y += (this->y/6)*5;
+    this->walkCollision[0] = this->width/2;
+    this->walkCollision[1] = (this->height/6)*5;
 }
 
 
@@ -119,6 +146,10 @@ int Drawable::getHeight()
 int Drawable::getWidth()
 {
     return 0;
+}
+
+void Drawable::genAtackCollision() {
+
 }
 
 BITMAP *Drawable::getBitmapAmbient()

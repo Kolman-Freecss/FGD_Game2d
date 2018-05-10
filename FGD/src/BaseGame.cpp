@@ -2,6 +2,8 @@
 #include <vector>
 #include <DAOMap.h>
 #include <allegro.h>
+#include <iostream>
+
 using namespace std;
 
 /**
@@ -37,7 +39,7 @@ void BaseGame::chargeGame()
     BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
     matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 5, 20, 50, 50, 50, 33);
 
 
 }
@@ -51,6 +53,20 @@ void BaseGame::update()
     */
     this->player.keyboard();
 
+    /**
+     * check colisiones
+     */
+     //colision con enemigos
+    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+        if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
+            cout << "BASEGAME col detect" << i  ;
+        }
+        cout << "BASEGAME no detect" << i  << endl;
+    }
+
+    /**
+     * mostrar en pantalla
+     */
     this->printGame();
 
 
