@@ -7,8 +7,12 @@
 class Weapon : public Object {
 
 
- protected:
-    int attackDistance;
+    protected:
+        int attackDistance;
+    public:
+        Weapon();
+        int getAttackDistance();
+
 };
 
 #endif // Weapon_h
