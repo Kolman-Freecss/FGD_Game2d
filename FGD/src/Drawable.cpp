@@ -50,7 +50,7 @@ bool Drawable::atackCollision(Drawable drawable, Weapon *weapon){
     return false;
 
 }
-bool Drawable::collision(Drawable drawable){
+bool Drawable::collision(Drawable *drawable){
     switch(this->collisionType){
         case 1:
             if (distance(drawable)< this->collisionRadius + drawable.collisionRadius){
