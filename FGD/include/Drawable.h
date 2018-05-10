@@ -7,7 +7,7 @@
 class Drawable{
 
  protected:
-    BITMAP **animations;
+    BITMAP ***animations;
     BITMAP *bitmapAmbient;
     int x;
     int y;
@@ -17,7 +17,7 @@ class Drawable{
 
  public:
     Drawable();
-    Drawable(BITMAP **animations, int x, int y, int height, int width);
+    Drawable(BITMAP ***animations, int x, int y, int height, int width);
     Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width);
     //virtual ~Drawable();
     int getX();

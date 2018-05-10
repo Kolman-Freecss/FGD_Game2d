@@ -13,8 +13,8 @@ class DAOMap {
         Map getMap(int id);
     private:
         vector<Map> mapList;
-        void chargeMatrixAnimations(BITMAP **matrix, int numMap, int lenght);
-        void chargeMatrixAmbient(Drawable **matrix, int numMap, int lenght);
+        void chargeMatrixAnimations(BITMAP ****matrix, int numMap, int lenght);
+        void chargeMatrixAmbient(Drawable ***matrix, int numMap, int lenght);
 
 };
 

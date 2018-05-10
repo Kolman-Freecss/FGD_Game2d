@@ -7,20 +7,37 @@
 using namespace std;
 
 
-
+/**
+Rellena todas las matrices de un mapa en concreto que contendra lo siguiente:
+Vector de enemigos, matriz de Ambiente, la longitud de la matriz
+*/
 DAOMap::DAOMap()
 {
     //mapList.push_back();
     Drawable **mapAmbient;
-    vector<Enemy> firtMapEnemies;
+    vector<Enemy*> firtMapEnemies; //= new vector<Enemy>(1);
     /**
     Fill the matrix of animations enemy
     */
-    BITMAP **matrixAnimationsEnemy;
-    this->chargeMatrixAnimations(matrixAnimationsEnemy, 1, 1);
-    this->chargeMatrixAmbient(mapAmbient, 1, 1);
+    BITMAP ***matrixAnimationsEnemy;
 
-    firtMapEnemies.push_back(Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 50, 50, 33, 66));
+
+    int lenght = 1;
+    mapAmbient = new Drawable*[lenght];
+    for(int i = 0; i < lenght; i++){
+         mapAmbient[i] = new Drawable[lenght];
+    }
+
+    matrixAnimationsEnemy = new BITMAP**[lenght];
+    for(int i = 0; i < lenght; i++){
+        matrixAnimationsEnemy[i] = new BITMAP*[lenght];
+    }
+
+
+    this->chargeMatrixAnimations(&matrixAnimationsEnemy, 1, 1);
+    this->chargeMatrixAmbient(&mapAmbient, 1, 1);
+
+    firtMapEnemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 50, 50, 33, 66));
 
     this->mapList.push_back(Map(firtMapEnemies, mapAmbient, 1));
     /**
@@ -29,11 +46,11 @@ DAOMap::DAOMap()
     /*for(int i = 0; i < 1; i++){
         delete[] matrixAnimationsEnemy[i];
     }*/
-    delete[] matrixAnimationsEnemy;
+    //delete[] matrixAnimationsEnemy;
     /*for(int i = 0; i < 1; i++){
         delete[] mapAmbient[i]; //PETA AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
     }*/
-    delete[] mapAmbient;
+    //delete[] mapAmbient;
 
 
 }
@@ -51,17 +68,18 @@ Map DAOMap::getMap(int id)
 /**
 Charge the matrix of the animations enemy
 */
-void DAOMap::chargeMatrixAnimations(BITMAP **matrix, int numMap, int lenght)
+void DAOMap::chargeMatrixAnimations(BITMAP ****matrix, int numMap, int lenght)
 {
-    matrix = new BITMAP*[lenght];
+    /*matrix = new BITMAP*[lenght];
     for(int i = 0; i < lenght; i++){
         matrix[i] = new BITMAP[lenght];
-    }
+    }*/
 
     switch(numMap){
 
         case 1: BITMAP *bitmap = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
-                matrix[0][0] = *bitmap;
+                //BITMAP *pointerOfBitmap = &bitmap;
+                *matrix[0][0] = bitmap; //////////
                 break;
 
 
@@ -74,16 +92,19 @@ void DAOMap::chargeMatrixAnimations(BITMAP **matrix, int numMap, int lenght)
 /**
 Charge the matrix of the ambient map
 */
-void DAOMap::chargeMatrixAmbient(Drawable **matrix, int numMap, int lenght)
+void DAOMap::chargeMatrixAmbient(Drawable ***matrix, int numMap, int lenght)
 {
     switch(numMap){
 
-        case 1: matrix = new Drawable*[lenght];
-                for(int i = 0; i < lenght; i++){
-                    matrix[i] = new Drawable[lenght];
-                }
+        case 1:
+                //matrix = new Drawable*[lenght];
+                //for(int i = 0; i < lenght; i++){
+                  //  matrix[i] = new Drawable[lenght];
+                //}
                 BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
-                matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
+                Drawable *drawable = new Drawable(bitmapTest, 0, 0 , 0, 0);
+                //Drawable *pointerOf = &drawable;
+                matrix[0][0] = drawable;
 
                 break;
 

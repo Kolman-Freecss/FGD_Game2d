@@ -18,7 +18,7 @@ int main()
      install_keyboard();
 
 
-    set_color_depth(24);
+    /*set_color_depth(24);
 
      //set_color_depth(32);
      set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
@@ -26,7 +26,7 @@ int main()
      // si no encuentrusing std::cout;a la imagen peta del todo XD
      BITMAP *buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
 
-     clear_to_color(buffer, 0xaaaaaa);
+     clear_to_color(buffer, 0xaaaaaa);*/
 
 
 
