@@ -37,7 +37,8 @@ DAOMap::DAOMap()
     this->chargeMatrixAnimations(&matrixAnimationsEnemy, 1, 1);
     this->chargeMatrixAmbient(&mapAmbient, 1, 1);
 
-    firtMapEnemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 100, 100, 33, 66));
+    firtMapEnemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 100, 100, 50, 33));
+    firtMapEnemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 200, 200, 50, 33));
 
     this->mapList.push_back(Map(firtMapEnemies, mapAmbient, 1));
     /**

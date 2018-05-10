@@ -32,16 +32,16 @@ int main()
 
 BaseGame *myGame = new BaseGame();
 
+/**
+Datos que se cargaran antes de empezar el juego ya que seran siempre igual independientemente de
+el nivel/mapa en el que te encuentres
+*/
 myGame->chargeGame();
 
  while ( !salir )
  {
 
-          myGame->update();
-
-
-          //player.keyboard();
-
+        myGame->update();
 
 
        rest(10);

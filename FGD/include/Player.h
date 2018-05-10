@@ -8,7 +8,7 @@ class Player : public Character {
 
  public:
     Player();
-    Player(BITMAP ***animations, int health, int damage, int speed, int shield, int x, int y, int height, int width);
+    Player(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width);
     //virtual ~Player();
     void keyboard();
 
