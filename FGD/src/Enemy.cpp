@@ -23,7 +23,9 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
     2 = derecha
     3 = arriba
     */
-    this->direccion = rand()%4;
+    if(this->timeNextRandomize % 200 == 0){
+        this->direction = rand()%4;
+    }
 
     /**
     Posiciones anteriores por tema colisiones
@@ -31,26 +33,28 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
     int ax = this->x;
     int ay = this->y;
 
-    if(direccion == 0)
+    if(this->direction == 0)
     {
         y++;
     }
-    if(direccion == 1)
+    if(this->direction == 1)
     {
         x--;
     }
-    if(direccion == 2)
+    if(this->direction == 2)
     {
         x++;
     }
-    if(direccion == 3)
+    if(this->direction == 3)
     {
         y--;
     }
 
     if ( this->x < 0 ) this->x = ax;
-    if ( this->x > 800 ) this->x = ax;
+    if ( this->x+this->width > 800 ) this->x = ax;
     if ( this->y < 0 ) this->y = ay;
-    if ( this->y > 600 ) this->y = ay;
+    if ( this->y+this->height > 600 ) this->y = ay;
+
+    this->timeNextRandomize++;
 
 }

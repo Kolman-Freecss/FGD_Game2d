@@ -8,53 +8,41 @@ using std::cout;
 
 int main()
 {
- bool salir;
+    bool salir;
 
- salir = false;
+    salir = false;
 
- const int SIZE_WINDOW_X = 800;
-    const int SIZE_WINDOW_Y = 600;
-     allegro_init();
-     install_keyboard();
+    /**
+    Inicializamos el allegro
+    */
+    allegro_init();
+    install_keyboard();
 
+    BaseGame *myGame = new BaseGame();
 
-    /*set_color_depth(24);
+    /**
+    Datos que se cargaran antes de empezar el juego ya que seran siempre igual independientemente de
+    el nivel/mapa en el que te encuentres
+    */
+    myGame->chargeGame();
 
-     //set_color_depth(32);
-     set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
-
-     // si no encuentrusing std::cout;a la imagen peta del todo XD
-     BITMAP *buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
-
-     clear_to_color(buffer, 0xaaaaaa);*/
-
-
-
-BaseGame *myGame = new BaseGame();
-
-/**
-Datos que se cargaran antes de empezar el juego ya que seran siempre igual independientemente de
-el nivel/mapa en el que te encuentres
-*/
-myGame->chargeGame();
-
- while ( !salir )
- {
+     while ( !salir )
+    {
 
         myGame->update();
 
 
-       rest(10);
+        rest(10);
 
-       // tecla de salida
-       if ( key[KEY_ESC] ) salir = true;
+        // tecla de salida
+        if ( key[KEY_ESC] ) salir = true;
 
     }
 
- //destroy_bitmap(prota);
- //destroy_bitmap(fondo);
-// destroy_bitmap(buffer);
+    //destroy_bitmap(prota);
+    //destroy_bitmap(fondo);
+    // destroy_bitmap(buffer);
 
- return 0;
+    return 0;
 }
 END_OF_MAIN();

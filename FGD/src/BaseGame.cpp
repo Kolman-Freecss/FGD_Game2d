@@ -10,16 +10,10 @@ y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se
 */
 BaseGame::BaseGame()
 {
-
-    const int SIZE_WINDOW_X = 800;
-    const int SIZE_WINDOW_Y = 600;
-    set_color_depth(24);
-
-     set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
-
-     this->buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
-
-     clear_to_color(buffer, 0xaaaaaa);
+    /**
+    Crea la pantalla y buffer donde printaremos el contenido
+    */
+    this->createBuffer();
 
     DAOMap managerMaps = DAOMap();
     this->activeMap = managerMaps.getMap(0);
@@ -102,4 +96,15 @@ void BaseGame::printGame()
 
 
 
+}
+
+void BaseGame::createBuffer()
+{
+    set_color_depth(24);
+
+    set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
+
+    this->buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
+
+    clear_to_color(buffer, 0xaaaaaa);
 }

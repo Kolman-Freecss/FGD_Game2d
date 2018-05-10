@@ -11,8 +11,8 @@ using namespace std;
 class BaseGame {
 
  public:
-    const int SIZE_WINDOW_X = 800;
-    const int SIZE_WINDOW_Y = 600;
+    const static int SIZE_WINDOW_X = 800;
+    const static int SIZE_WINDOW_Y = 600;
     Map activeMap;
     Player player;
     BaseGame();
@@ -25,6 +25,7 @@ class BaseGame {
 
  private:
     BITMAP *buffer;
+    void createBuffer();
 
 
 
