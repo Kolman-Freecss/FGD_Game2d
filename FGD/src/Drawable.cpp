@@ -30,6 +30,8 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
     this->y = y;
     this->height = height;
     this->width = width;
+    genWalkCollision();
+    this->collisionRadius = (x/3)*2;
 }
 
 void Drawable::draw(BITMAP *buffer){
@@ -40,8 +42,8 @@ void Drawable::draw(BITMAP *buffer){
 }
 
 //TODO cambiar a character
-bool Drawable::atackCollision(Drawable drawable,Weapon weapon){
-    if ( distance(drawable) < ( weapon.getAttackDistance() + drawable.collisionRadius ) ) {
+bool Drawable::atackCollision(Drawable drawable, Weapon *weapon){
+    if ( distance(drawable) < ( weapon->getAttackDistance() + drawable.collisionRadius ) ) {
             //cout
             return true;
     }
@@ -70,6 +72,11 @@ int Drawable::distance(Drawable drawable){
                      (drawable.walkCollision[1]-this->walkCollision[1]) * (drawable.walkCollision[1]-this->walkCollision[1]));
 }
 
+
+void Drawable::genWalkCollision(){
+    this->walkCollision[0] = this->x += this->x/2;
+    this->walkCollision[1] = this->y += (this->y/6)*5;
+}
 
 
 
