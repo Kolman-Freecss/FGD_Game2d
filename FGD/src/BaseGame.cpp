@@ -93,9 +93,13 @@ void BaseGame::printGame()
         }
     }
 
-    for(Enemy *enemy : this->activeMap.getVectorEnemies()){
+    /*for(Enemy *enemy : this->activeMap.getVectorEnemies()){
         enemy->draw(this->buffer);
-    }
+    }*/
+
+    vector<Enemy*> vectorE = this->activeMap.getVectorEnemies();
+    vectorE.at(0)->draw(this->buffer);
+
 
     this->player.draw(this->buffer);
 
