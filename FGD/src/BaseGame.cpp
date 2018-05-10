@@ -32,11 +32,9 @@ void BaseGame::chargeGame()
      install_keyboard();*/
 
 
-
-
-
-
-
+    /**
+    Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
+    */
     BITMAP*** matrixAnimationsPlayer;
     matrixAnimationsPlayer = new BITMAP**[1];
     for(int i = 0; i < 1; i++){
@@ -45,45 +43,39 @@ void BaseGame::chargeGame()
     BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
     matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 1, 20, 50, 50, 33, 66);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
 
-    this->player.keyboard();
+
 }
 
 void BaseGame::update()
 {
     //this->chargeGame();
 //if el mapa es 1
+    /**
+    Movimiento player
+    */
+    this->player.keyboard();
+
     this->printGame();
 
 
 }
 
+/**
+Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
+*/
 void BaseGame::printGame()
 {
     Drawable **matrix = this->activeMap.getAmbientMatrix();
     int lengthMatrix = this->activeMap.getSizeOfMatrix();
 
-    //int lengthVectorPointers = sizeof(matrix)/sizeof(*matrix);
-    //int *lengthVectorRef = &lengthVectorPointers;
 
     for(int i = 0; i < lengthMatrix; i++){
         for(int j = 0; j < lengthMatrix; j++){
-            //Drawable drawaojd = matrix[0][0];
-            //BITMAP bitmapAmbient2 = *matrix[i][j].getBitmapAmbient();
 
+            BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient();
 
-            BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient(); //PETA AQUIIIIIIIII vale estamos cojiendo mal las cosas
-                                                                // hay que cojer el vector que hemos rellenado de maps
-                                                                // o
-                                                                // instanciar el baseGame para que el activegame sea ese map
-                                                                // o
-                                                                // Estamos usando el get de Drawable
-                                                                //o
-                                                                // es una matrix de drawables lo rellenamos como drwables
-                                                                //y intentamos devolver un bitmap
-                                                                // el matrix es de drawables y intentamos recojer un bitmap
-            //BITMAP *bitmapPointer = &bitmapAmbient;
             if(i == 0 && j == 0){
                 stretch_blit(bitmapAmbient, this->buffer, 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, this->SIZE_WINDOW_X, this->SIZE_WINDOW_Y);
             }
@@ -93,12 +85,15 @@ void BaseGame::printGame()
         }
     }
 
-    /*for(Enemy *enemy : this->activeMap.getVectorEnemies()){
-        enemy->draw(this->buffer);
-    }*/
-
+    /**
+    Printa todo el vector de Enemigos en pantalla
+    */
     vector<Enemy*> vectorE = this->activeMap.getVectorEnemies();
-    vectorE.at(0)->draw(this->buffer);
+    for (int i = 0; i < vectorE.size(); i++){
+            //Update de enemigo para luego printarlo
+        vectorE.at(i)->update();
+        vectorE.at(i)->draw(this->buffer);
+    }
 
 
     this->player.draw(this->buffer);
