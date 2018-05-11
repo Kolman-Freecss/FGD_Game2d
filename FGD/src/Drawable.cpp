@@ -46,8 +46,6 @@ void Drawable::draw(BITMAP *buffer){
         BITMAP* bitmapAnimation = this->animations[0][0];
         //BITMAP *bitmapPointer = &bitmapAnimation;
         masked_blit(bitmapAnimation, buffer, 0, 0, x, y, width, height);
-        masked_blit(bitmapAnimation, buffer, 0, 0, x+this->walkCollision[0], y+this->walkCollision[1], width, height);
-
 }
 
 //TODO cambiar a character
@@ -62,11 +60,6 @@ bool Drawable::atackCollision(Drawable *drawable, Weapon *weapon){
 bool Drawable::collision(Drawable *drawable){
     switch(this->collisionType) {
         case 1:
-            cout << "DRAWABLE circular" << endl;
-            cout << distance(drawable) << " " << this->collisionRadius + drawable->collisionRadius << endl;
-            cout << "DRAWABLE circular" << endl;
-
-
             if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
             }
@@ -81,7 +74,6 @@ bool Drawable::collision(Drawable *drawable){
 }
 
 int Drawable::distance(Drawable *drawable){
-
     return sqrt(
                 ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
                 *
@@ -150,5 +142,6 @@ BITMAP *Drawable::getBitmapAmbient()
 {
     return this->bitmapAmbient;
 }
+
 
 
