@@ -18,10 +18,10 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
 
     /**
     Randomiza una direccion del 0 al 3
-    0 = abajo
-    1 = izquierda
-    2 = derecha
-    3 = arriba
+    0 = UP
+    1 = RIGHT
+    2 = DOWN
+    3 = LEFT
     */
     if(this->timeNextRandomize % 200 == 0){
         this->direction = rand()%4;
@@ -35,19 +35,19 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
 
     if(this->direction == 0)
     {
-        y++;
+        this->walkUP();
     }
     if(this->direction == 1)
     {
-        x--;
+        this->walkRIGHT();
     }
     if(this->direction == 2)
     {
-        x++;
+        this->walkDOWN();
     }
     if(this->direction == 3)
     {
-        y--;
+        this->walkLEFT();
     }
 
     if ( this->x < 0 ) this->x = ax;

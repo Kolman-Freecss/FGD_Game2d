@@ -16,6 +16,8 @@ protected:
     int damage;
     int health;
     int shield;
+    int ax;
+    int ay;
 
 
  public:
@@ -24,6 +26,18 @@ protected:
     Character(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width);
     //virtual ~Character();
     int getSpeed();
+    int getAX();
+    int getAY();
+    void walkUP();
+    void walkDOWN();
+    void walkRIGHT();
+    void walkLEFT();
+    void walkUPanim();
+    void walkDOWNanim();
+    void walkRIGHTanim();
+    void walkLEFTanim();
+
+
 
 };
 

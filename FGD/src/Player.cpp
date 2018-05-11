@@ -18,19 +18,19 @@ void Player::keyboard()
 {
     if ( key[KEY_UP] )
     {
-        this->y-= this->speed;
+        walkUP();
     }
     if ( key[KEY_DOWN] )
     {
-        this->y+= this->speed;
+        walkDOWN();
     }
     if ( key[KEY_LEFT] )
     {
-        this->x-= this->speed;
+        walkLEFT();
     }
     if ( key[KEY_RIGHT] )
     {
-        this->x+= this->speed;
+        walkRIGHT();
     }
 
     // limites

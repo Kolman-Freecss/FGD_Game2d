@@ -59,9 +59,26 @@ void BaseGame::update()
      //colision con enemigos
     for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
         if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
-            cout << "BASEGAME col detect" << i  ;
+            this->player.setX(this->player.getAX()) ;
+            this->player.setY(this->player.getAY()) ;
         }
     }
+    //colision enemigos con enemigos
+    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+        for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
+            if (i!=j){
+                if (this->activeMap.getVectorEnemies().at(i)->collision(this->activeMap.getVectorEnemies().at(j))){
+                    cout << "ENEMY col detect" << i;
+                    this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
+                    this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+
+
+                }
+            }
+        }
+    }
+
+
 
     /**
      * mostrar en pantalla

@@ -128,16 +128,16 @@
 1525722892 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\skelleton.h
 	<Enemy.h>
 
-1525981410 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
+1526061122 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1525981410 c:\users\alumne\documents\projecto\project\fgd\include\character.h
+1526060607 c:\users\alumne\documents\projecto\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>
 
-1526049266 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
+1526060150 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
 	<allegro.h>
 	<Weapon.h>
 	<cmath>
@@ -172,14 +172,14 @@
 	"Object.h"
 	"String.h"
 
-1525981410 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomap.cpp
+1526061183 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomap.cpp
 	"DAOMap.h"
 	"Map.h"
 	<vector>
 	"allegro.h"
 	"Enemy.h"
 
-1525981410 source:c:\users\alumne\documents\projecto\project\fgd\src\enemy.cpp
+1526061380 source:c:\users\alumne\documents\projecto\project\fgd\src\enemy.cpp
 	"Enemy.h"
 
 1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\inventory.cpp
@@ -234,18 +234,18 @@
 1526049652 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
 	"Weapon.h"
 
-1526049682 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+1526058855 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
 	<allegro.h>
 	<iostream>
 
-1525982397 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
+1526061122 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
 	"Player.h"
 	<allegro.h>
 
-1526050065 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+1526050795 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
