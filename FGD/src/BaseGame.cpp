@@ -61,7 +61,6 @@ void BaseGame::update()
         if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
             cout << "BASEGAME col detect" << i  ;
         }
-        cout << "BASEGAME no detect" << i  << endl;
     }
 
     /**

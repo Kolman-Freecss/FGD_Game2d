@@ -46,6 +46,8 @@ void Drawable::draw(BITMAP *buffer){
         BITMAP* bitmapAnimation = this->animations[0][0];
         //BITMAP *bitmapPointer = &bitmapAnimation;
         masked_blit(bitmapAnimation, buffer, 0, 0, x, y, width, height);
+        masked_blit(bitmapAnimation, buffer, 0, 0, x+this->walkCollision[0], y+this->walkCollision[1], width, height);
+
 }
 
 //TODO cambiar a character
@@ -63,7 +65,7 @@ bool Drawable::collision(Drawable *drawable){
             cout << "DRAWABLE circular" << endl;
             cout << distance(drawable) << " " << this->collisionRadius + drawable->collisionRadius << endl;
             cout << "DRAWABLE circular" << endl;
-            cout << "DRAWABLE circular" << endl;
+
 
             if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
@@ -81,21 +83,13 @@ bool Drawable::collision(Drawable *drawable){
 int Drawable::distance(Drawable *drawable){
 
     return sqrt(
-            /*(drawable->x- this->x)
-            *
-            (drawable->x- this->x)
-            +
-            (drawable->y- this->y)
-            *
-            (drawable->y- this->y));*/
-
-                (drawable->x + drawable->walkCollision[0] - this->x + this->walkCollision[0])
+                ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
                 *
-                (drawable->x + drawable->walkCollision[0] - this->x + this->walkCollision[0])
+                ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
                 +
-                (drawable->y + drawable->walkCollision[1] - this->y + this->walkCollision[1])
+                ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1]))
                 *
-                (drawable->y + drawable->walkCollision[1] - this->y + this->walkCollision[1]));
+                ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1])));
 
 }
 
