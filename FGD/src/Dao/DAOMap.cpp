@@ -11,49 +11,31 @@ using namespace std;
 Rellena todas las matrices de un mapa en concreto que contendra lo siguiente:
 Vector de enemigos, matriz de Ambiente, la longitud de la matriz
 */
-DAOMap::DAOMap()
+DAOMap::DAOMap(int difficult)
 {
-    //mapList.push_back();
-    Drawable **mapAmbient;
-    vector<Enemy*> firtMapEnemies; //= new vector<Enemy>(1);
+    /*Drawable **mapAmbient;
+    vector<Enemy*> firtMapEnemies;
     /**
     Fill the matrix of animations enemy
     */
-    BITMAP ***matrixAnimationsEnemy;
+    //BITMAP ***matrixAnimationsEnemy;
+
+    switch(difficult){
+
+        /**
+        Case 1 = Dificultad Facil
+        */
+        case 1: this->quantEnemies = 6;
+                this->quantElementsAmbient = 1;
+                for(int i = 0; i < 1; i++){
+                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->numMap++;
+                }
+                break;
 
 
-    int lenght = 1;
-    mapAmbient = new Drawable*[lenght];
-    for(int i = 0; i < lenght; i++){
-         mapAmbient[i] = new Drawable[lenght];
+        default: ;
     }
-
-    matrixAnimationsEnemy = new BITMAP**[lenght];
-    for(int i = 0; i < lenght; i++){
-        matrixAnimationsEnemy[i] = new BITMAP*[lenght];
-    }
-
-
-    this->chargeMatrixAnimations(&matrixAnimationsEnemy, 1, 1);
-    this->chargeMatrixAmbient(&mapAmbient, 1, 1);
-
-    firtMapEnemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 100, 100, 50, 33));
-    firtMapEnemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 200, 200, 50, 33));
-
-    this->mapList.push_back(Map(firtMapEnemies, mapAmbient, 1));
-    /**
-    Free allocated values and memory of matrix
-    */
-    /*for(int i = 0; i < 1; i++){
-        delete[] matrixAnimationsEnemy[i];
-    }*/
-    //delete[] matrixAnimationsEnemy;
-    /*for(int i = 0; i < 1; i++){
-        delete[] mapAmbient[i]; //PETA AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-    }*/
-    //delete[] mapAmbient;
-
-
 }
 
 vector<Map> DAOMap::getMapList()
@@ -65,22 +47,24 @@ Map DAOMap::getMap(int id)
 {
     return mapList.at(id);
 }
+/*
 
-/**
 Charge the matrix of the animations enemy
-*/
-void DAOMap::chargeMatrixAnimations(BITMAP ****matrix, int numMap, int lenght)
+
+void DAOMap::chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap, int lenght)
 {
-    /*matrix = new BITMAP*[lenght];
+
+    Reservamos memoria para la matriz
+
+    *matrix = new BITMAP**[lenght];
     for(int i = 0; i < lenght; i++){
-        matrix[i] = new BITMAP[lenght];
-    }*/
+        *matrix[i] = new BITMAP*[lenght];
+    }
 
     switch(numMap){
 
         case 1: BITMAP *bitmap = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
-                //BITMAP *pointerOfBitmap = &bitmap;
-                *matrix[0][0] = bitmap; //////////
+                *matrix[0][0] = bitmap;
                 break;
 
 
@@ -90,21 +74,23 @@ void DAOMap::chargeMatrixAnimations(BITMAP ****matrix, int numMap, int lenght)
 }
 
 
-/**
+
 Charge the matrix of the ambient map
-*/
+
 void DAOMap::chargeMatrixAmbient(Drawable ***matrix, int numMap, int lenght)
 {
+    Reservamos memoria para la matriz
+
+    *matrix = new Drawable*[lenght];
+    for(int i = 0; i < lenght; i++){
+         *matrix[i] = new Drawable[lenght];
+    }
+
     switch(numMap){
 
         case 1:
-                //matrix = new Drawable*[lenght];
-                //for(int i = 0; i < lenght; i++){
-                  //  matrix[i] = new Drawable[lenght];
-                //}
                 BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
                 Drawable *drawable = new Drawable(bitmapTest, 0, 0 , 0, 0);
-                //Drawable *pointerOf = &drawable;
                 matrix[0][0] = drawable;
 
                 break;
@@ -113,6 +99,18 @@ void DAOMap::chargeMatrixAmbient(Drawable ***matrix, int numMap, int lenght)
     }
 
 
+}*/
+
+
+///////////////////          GETTERS & SETTERS            ////////////////////////////
+
+int DAOMap::getDifficultGame()
+{
+    return this->difficultGame;
 }
 
+void DAOMap::setDifficultGame(int difficult)
+{
+    this->difficultGame = difficult;
+}
 

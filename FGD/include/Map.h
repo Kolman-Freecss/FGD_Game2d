@@ -9,26 +9,32 @@ using namespace std;
 
 class Map{
 
+ public:
+    Map();
+    Map(int quantEnemies, int quantElementsOfAmbient, int numMap);
+    void setAmbientMatrix(Drawable **ambientMatrix);
+    vector<Enemy*> getVectorEnemies();
+    Drawable **getAmbientMatrix();
+    int getQuantElementsOfAmbient();
+    //virtual ~Map();
+
  private:
 
     vector<Enemy*> enemies;
     Drawable **ambientMatrix;
     int sizeOfMatrix;
+
     /**
     Cantidad de enemigos que habra que estara asociado al nivel del juego que sea actualmente
     */
-    int quantEnemies = 2;
+    int quantEnemies;
+    int quantElementsOfAmbient;
+
+    void chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap);
+    void chargeMatrixAmbient(Drawable ***matrix, int numMap);
 
  protected:
 
- public:
-    Map();
-    Map(vector<Enemy*> enemies, Drawable **mapMatrix, int sizeOfMatrix);
-    void setAmbientMatrix(Drawable **ambientMatrix);
-    vector<Enemy*> getVectorEnemies();
-    Drawable **getAmbientMatrix();
-    int getSizeOfMatrix();
-    //virtual ~Map();
 
 
 

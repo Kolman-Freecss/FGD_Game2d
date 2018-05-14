@@ -15,7 +15,7 @@ class BaseGame {
     const static int SIZE_WINDOW_Y = 600;
     Map activeMap;
     Player player;
-    BaseGame();
+    BaseGame(int difficult);
 
     //Charge images, sprites, the necessary to start the game
     void chargeGame();
@@ -25,6 +25,13 @@ class BaseGame {
 
  private:
     BITMAP *buffer;
+    /**
+    La dificultad que ha elegido el usuario en el Login lo recibe aqui (El constructor lo recibe)
+    - 1 = Facil
+    - 2 = Medio
+    - 3 = Dificil
+    */
+    int difficultGame;
     void createBuffer();
 
 

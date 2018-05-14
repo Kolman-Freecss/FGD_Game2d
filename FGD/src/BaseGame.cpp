@@ -8,24 +8,19 @@ using namespace std;
 Carga el buffer sobre el que se printara todas las imagenes
 y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se printaran
 */
-BaseGame::BaseGame()
+BaseGame::BaseGame(int difficult)
 {
     /**
     Crea la pantalla y buffer donde printaremos el contenido
     */
     this->createBuffer();
 
-    DAOMap managerMaps = DAOMap();
+    DAOMap managerMaps = DAOMap(difficult);
     this->activeMap = managerMaps.getMap(0);
 }
 
 void BaseGame::chargeGame()
 {
-
-     /*allegro_init();
-     install_keyboard();*/
-
-
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
     */
@@ -37,7 +32,7 @@ void BaseGame::chargeGame()
     BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
     matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 4, 20, 50, 50, 50, 33);
 
 
 }
@@ -62,7 +57,7 @@ Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
 void BaseGame::printGame()
 {
     Drawable **matrix = this->activeMap.getAmbientMatrix();
-    int lengthMatrix = this->activeMap.getSizeOfMatrix();
+    int lengthMatrix = this->activeMap.getQuantElementsOfAmbient();
 
 
     for(int i = 0; i < lengthMatrix; i++){

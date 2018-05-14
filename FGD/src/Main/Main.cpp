@@ -18,7 +18,9 @@ int main()
     allegro_init();
     install_keyboard();
 
-    BaseGame *myGame = new BaseGame();
+
+    int difficultGame = 1;
+    BaseGame *myGame = new BaseGame(difficultGame);
 
     /**
     Datos que se cargaran antes de empezar el juego ya que seran siempre igual independientemente de
