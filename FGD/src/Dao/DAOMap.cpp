@@ -47,59 +47,6 @@ Map DAOMap::getMap(int id)
 {
     return mapList.at(id);
 }
-/*
-
-Charge the matrix of the animations enemy
-
-void DAOMap::chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap, int lenght)
-{
-
-    Reservamos memoria para la matriz
-
-    *matrix = new BITMAP**[lenght];
-    for(int i = 0; i < lenght; i++){
-        *matrix[i] = new BITMAP*[lenght];
-    }
-
-    switch(numMap){
-
-        case 1: BITMAP *bitmap = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
-                *matrix[0][0] = bitmap;
-                break;
-
-
-    }
-
-
-}
-
-
-
-Charge the matrix of the ambient map
-
-void DAOMap::chargeMatrixAmbient(Drawable ***matrix, int numMap, int lenght)
-{
-    Reservamos memoria para la matriz
-
-    *matrix = new Drawable*[lenght];
-    for(int i = 0; i < lenght; i++){
-         *matrix[i] = new Drawable[lenght];
-    }
-
-    switch(numMap){
-
-        case 1:
-                BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
-                Drawable *drawable = new Drawable(bitmapTest, 0, 0 , 0, 0);
-                matrix[0][0] = drawable;
-
-                break;
-
-
-    }
-
-
-}*/
 
 
 ///////////////////          GETTERS & SETTERS            ////////////////////////////
