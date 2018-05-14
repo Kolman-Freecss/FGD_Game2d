@@ -1,7 +1,10 @@
 #ifndef Drawable_h
 #define Drawable_h
 #include <allegro.h>
-
+#include <Weapon.h>
+#include <cmath>
+#include "math.h"
+#include "Weapon.h"
 
 
 class Drawable{
@@ -9,6 +12,13 @@ class Drawable{
  protected:
     BITMAP ***animations;
     BITMAP *bitmapAmbient;
+
+    //Tipo colision 1=circular 2=cuadrada
+    int collisionType;
+    int walkCollision[2];
+    int weaponCollision[2];
+    int collisionRadius;
+
     int x;
     int y;
     int height;
@@ -30,11 +40,13 @@ class Drawable{
     void setY(int y);
     //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
     void draw(BITMAP *buffer);
-    bool checkCollision(Drawable drawable);
+    bool atackCollision(Drawable drawable,Weapon *weapon);
+    bool collision(Drawable drawable);
     int distance(Drawable drawable);
     BITMAP *getBitmapAmbient();
 
-
+    void genWalkCollision();
+    void genAtackCollision();
 
 
 };
