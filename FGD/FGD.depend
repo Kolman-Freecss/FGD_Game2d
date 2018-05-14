@@ -128,3 +128,127 @@
 1525722892 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\skelleton.h
 	<Enemy.h>
 
+1526061122 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
+	"Character.h"
+	"Drawable.h"
+
+1526060607 c:\users\alumne\documents\projecto\project\fgd\include\character.h
+	"Drawable.h"
+	<allegro.h>
+	<vector>
+
+1526060150 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
+	<allegro.h>
+	<Weapon.h>
+	<cmath>
+	"math.h"
+	"Weapon.h"
+
+1525981583 c:\users\alumne\documents\projecto\project\fgd\include\weapon.h
+	"Object.h"
+
+1525981583 c:\users\alumne\documents\projecto\project\fgd\include\object.h
+
+1525980860 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomanager.cpp
+	"DAOManager.h"
+	"DAOMap.h"
+
+1525980860 c:\users\alumne\documents\projecto\project\fgd\include\daomanager.h
+	"DAOMap.h"
+
+1525980860 c:\users\alumne\documents\projecto\project\fgd\include\daomap.h
+	<vector>
+	"Map.h"
+
+1525981410 c:\users\alumne\documents\projecto\project\fgd\include\map.h
+	<allegro.h>
+	"Enemy.h"
+	"Drawable.h"
+	<vector>
+
+1525981410 c:\users\alumne\documents\projecto\project\fgd\include\enemy.h
+	<vector>
+	"Character.h"
+	"Object.h"
+	"String.h"
+
+1526061183 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomap.cpp
+	"DAOMap.h"
+	"Map.h"
+	<vector>
+	"allegro.h"
+	"Enemy.h"
+
+1526061380 source:c:\users\alumne\documents\projecto\project\fgd\src\enemy.cpp
+	"Enemy.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\inventory.cpp
+	"Inventory.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\inventory.h
+	<vector>
+
+1525981410 source:c:\users\alumne\documents\projecto\project\fgd\src\main\main.cpp
+	<allegro.h>
+	<iostream>
+	<istream>
+	<vector>
+	<Player.h>
+	<BaseGame.h>
+
+1525981410 c:\users\alumne\documents\projecto\project\fgd\include\player.h
+	"Character.h"
+
+1526315313 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
+	<Map.h>
+	<vector>
+	<Enemy.h>
+	<Player.h>
+
+1525980860 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
+	"Map.h"
+	"allegro.h"
+	"Enemy.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\object.cpp
+	"Object.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\potion.cpp
+	"Potion.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\potion.h
+	"Object.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\shield.cpp
+	"Shield.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\shield.h
+	"Weapon.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\sword.cpp
+	"Sword.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\sword.h
+	"Weapon.h"
+
+1526049652 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
+	"Weapon.h"
+
+1526058855 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+	<BaseGame.h>
+	<vector>
+	<DAOMap.h>
+	<allegro.h>
+	<iostream>
+
+1526061122 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
+	"Player.h"
+	<allegro.h>
+
+1526050795 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+	<allegro.h>
+	"Drawable.h"
+	<cmath>
+	<iostream>
+	"Weapon.h"
+
