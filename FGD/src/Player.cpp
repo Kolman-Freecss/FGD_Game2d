@@ -10,7 +10,6 @@ Player::Player(BITMAP ***animations, int health, int damage, double speed, int s
 {
 
 
-
 }
 
 

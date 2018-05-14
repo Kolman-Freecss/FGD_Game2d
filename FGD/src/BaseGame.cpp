@@ -76,6 +76,13 @@ void BaseGame::update()
                 }
             }
         }
+        if (this->activeMap.getVectorEnemies().at(i)->collision(&this->player)){
+            cout << "ENEMY col detect" << i;
+            this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
+            this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+
+
+        }
     }
 
 
