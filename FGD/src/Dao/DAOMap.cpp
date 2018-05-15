@@ -25,7 +25,7 @@ DAOMap::DAOMap(int difficult)
         /**
         Case 1 = Dificultad Facil
         */
-        case 1: this->quantEnemies = 6;
+        case 1: this->quantEnemies = 5;
                 this->quantElementsAmbient = 1;
                 for(int i = 0; i < 1; i++){
                     this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
