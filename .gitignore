@@ -1,2 +1,8 @@
 
-FGD/
+FGD/\.idea/
+
+
+
+FGD/cmake-build-debug/
+
+FGD/bin/Debug/

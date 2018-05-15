@@ -65,3 +65,55 @@ void Character::walkRIGHTanim(){
 void Character::walkLEFTanim(){
 
 }
+
+void Character::attackUPanim() {
+    //TODO
+        //averiguar como saver cuantas animaciones  hay en la posicion
+        if (activeBitmap[1]) {
+            activeBitmap[1] = activeBitmap[1]++;
+
+        }else{
+            activeBitmap[1] = 0;
+            isAttacking = false;
+        }
+
+
+
+}
+
+void Character::attackDOWNanim() {
+
+}
+
+void Character::attackRIGHTanim() {
+
+}
+
+void Character::attackLEFTanim() {
+
+}
+
+bool Character::getIsAttacking() {
+    return isAttacking;
+}
+
+void Character::setIsAttacking(bool op) {
+    this->isAttacking = op;
+}
+
+void Character::attack() {
+    this->isAttacking = true;
+
+    switch (activeBitmap[0]) {
+        case 1: attackUPanim();
+            break;
+        case 2: attackRIGHTanim();
+            break;
+        case 3: attackDOWNanim();
+            break;
+        case 4: attackLEFTanim();
+            break;
+            default:;
+    }
+
+}

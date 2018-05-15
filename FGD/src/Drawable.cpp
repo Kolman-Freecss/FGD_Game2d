@@ -49,12 +49,54 @@ void Drawable::draw(BITMAP *buffer){
 }
 
 //TODO cambiar a character
-bool Drawable::atackCollision(Drawable *drawable, Weapon *weapon){
-    if ( distance(drawable) < ( weapon->getAttackDistance() + drawable->collisionRadius ) ) {
+bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
 
-            return true;
+
+    float polarradius = distance(drawable);
+
+    float angle = atan2(this->y - drawable->y, this->x - drawable->x);
+    float percent = 90;
+    float endAngle;
+    float startAngle = 0;
+    //switch (this->activeBitmap[0]) {
+
+    switch (1) {
+        case 0:
+            startAngle = 315;
+            break;
+        case 1:
+            startAngle = 45;
+            break;
+        case 2:
+            startAngle = 135;
+            break;
+        case 3:
+            startAngle = 225;
+            break;
+        default:;
     }
-    return false;
+    endAngle = 360/percent + startAngle;
+    //if (angle >= startAngle && angle <= endAngle && polarradius < weapon->getAttackDistance()) {
+
+    cout << polarradius << " polarradius\n";
+    cout << angle << " angle\n";
+    cout << percent<< " percent\n";
+    cout << endAngle<< " endAngle\n";
+    cout << startAngle<< " startAngle\n";
+    cout << endAngle<< " endAngle\n";
+    cout << (angle >= startAngle) << " angle >= startAngle\n";
+    cout << (angle <= endAngle) << " angle <= endAngle\n";
+    cout << (polarradius) << " polarradius\n";
+
+
+    if (angle >= startAngle && angle <= endAngle && polarradius < 100) {
+        cout << "HIT\n";
+        return true;
+    }else{
+        return false;
+    }
+
+
 
 }
 bool Drawable::collision(Drawable *drawable){
@@ -75,13 +117,13 @@ bool Drawable::collision(Drawable *drawable){
 
 int Drawable::distance(Drawable *drawable){
     return sqrt(
-                ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
-                *
-                ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
-                +
-                ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1]))
-                *
-                ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1])));
+            ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
+            *
+            ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
+            +
+            ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1]))
+            *
+            ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1])));
 
 }
 

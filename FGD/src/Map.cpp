@@ -1,3 +1,4 @@
+#include <House.h>
 #include "Map.h"
 #include "allegro.h"
 #include "Enemy.h"
@@ -18,6 +19,11 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     Fill the matrix of animations enemy
     */
     BITMAP ***matrixAnimationsEnemy;
+
+    this->ambientMatrix = new Drawable*[1];
+    for(int i = 0; i < 1; i++){
+        this->ambientMatrix[i] = new Drawable[1];
+    }
 
     this->chargeMatrixAnimationsOfEnemy(&matrixAnimationsEnemy, 1);
     this->chargeMatrixAmbient(&this->ambientMatrix, 1);
@@ -86,10 +92,7 @@ void Map::chargeMatrixAmbient(Drawable ***matrix, int numMap)
     /**
     Reservamos memoria para la matriz
     */
-    *matrix = new Drawable*[1];
-    for(int i = 0; i < 1; i++){
-         *matrix[i] = new Drawable[1];
-    }
+
 
     switch(numMap){
 
@@ -97,6 +100,9 @@ void Map::chargeMatrixAmbient(Drawable ***matrix, int numMap)
                 BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
                 Drawable *drawable = new Drawable(bitmapTest, 0, 0 , 0, 0);
                 matrix[0][0] = drawable;
+                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
+                Drawable *drawable2 = new House(bitmapTest2, 0, 0 , 0, 0);
+                matrix[0][1] = drawable2;
 
                 break;
 

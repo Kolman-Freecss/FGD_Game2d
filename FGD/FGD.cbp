@@ -40,6 +40,7 @@
 		<Unit filename="include/DAOMap.h" />
 		<Unit filename="include/Drawable.h" />
 		<Unit filename="include/Enemy.h" />
+		<Unit filename="include/House.h" />
 		<Unit filename="include/Inventory.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="include/Object.h" />
@@ -54,6 +55,7 @@
 		<Unit filename="src/Dao/DAOMap.cpp" />
 		<Unit filename="src/Drawable.cpp" />
 		<Unit filename="src/Enemy.cpp" />
+		<Unit filename="src/House.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/Main/Main.cpp" />
 		<Unit filename="src/Map.cpp" />

@@ -38,9 +38,10 @@ class Drawable{
     void setWidth(int widht);
     void setX(int x);
     void setY(int y);
-    //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
+
+    virtual //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
     void draw(BITMAP *buffer);
-    bool atackCollision(Drawable *drawable,Weapon *weapon);
+    bool attackCollision(Drawable *drawable, Weapon *weapon);
     bool collision(Drawable *drawable);
     int distance(Drawable *drawable);
     BITMAP *getBitmapAmbient();
