@@ -65,12 +65,8 @@
 1524591058 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526412388 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1526413414 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
-	<iostream>
-	<istream>
-	<vector>
-	<Player.h>
 	<BaseGame.h>
 	<GameStateManager.h>
 
@@ -261,8 +257,7 @@
 	<iostream>
 	"Weapon.h"
 
-1526413936 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
-	<GameStateManager.h>
+1526414252 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 
 1526412769 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
@@ -270,10 +265,10 @@
 	<GameState.h>
 	<BaseGame.h>
 
-1526414055 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
+1526414062 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
 	<vector>
-	<allegro.h>
 	<GameState.h>
+	<allegro.h>
 
 1526398145 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestate.cpp
 	<GameState.h>
