@@ -20,7 +20,7 @@ int main()
 
 
     int difficultGame = 1;
-    BaseGame *myGame = new BaseGame(difficultGame);
+    GameState *myGame = new BaseGame(difficultGame);
 
     /**
     Datos que se cargaran antes de empezar el juego ya que seran siempre igual independientemente de
@@ -44,7 +44,7 @@ int main()
     //destroy_bitmap(prota);
     //destroy_bitmap(fondo);
     // destroy_bitmap(buffer);
-
+    delete myGame;
     return 0;
 }
 END_OF_MAIN();
