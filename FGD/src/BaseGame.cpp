@@ -100,7 +100,7 @@ void BaseGame::printGame()
 
 
     for(int i = 0; i < lengthMatrix; i++){
-        for(int j = 0; j < lengthMatrix; j++){
+        for(int j = 0; j < 2; j++){
 
             BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient();
 
@@ -108,7 +108,7 @@ void BaseGame::printGame()
                 stretch_blit(bitmapAmbient, this->buffer, 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, this->SIZE_WINDOW_X, this->SIZE_WINDOW_Y);
             }
             else{
-                matrix[i][j].draw(this->buffer);
+                matrix[i][j].drawAmbient(this->buffer);
             }
         }
     }
