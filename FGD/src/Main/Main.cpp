@@ -1,50 +1,20 @@
 #include <allegro.h>
-#include <iostream>
-#include <istream>
-#include <vector>
-using std::cout;
-#include <Player.h>
 #include <BaseGame.h>
+#include <GameStateManager.h>
 
 int main()
 {
-    bool salir;
 
-    salir = false;
-
-    /**
-    Inicializamos el allegro
-    */
     allegro_init();
     install_keyboard();
 
+    GameStateManager game;
 
-    int difficultGame = 1;
-    GameState *myGame = new BaseGame(difficultGame);
+    game.pushState(new BaseGame(1));
 
-    /**
-    Datos que se cargaran antes de empezar el juego ya que seran siempre igual independientemente de
-    el nivel/mapa en el que te encuentres
-    */
-    myGame->chargeGame();
-
-     while ( !salir )
-    {
-
-        myGame->update();
+    game.gameLoop();
 
 
-        rest(10);
-
-        // tecla de salida
-        if ( key[KEY_ESC] ) salir = true;
-
-    }
-
-    //destroy_bitmap(prota);
-    //destroy_bitmap(fondo);
-    // destroy_bitmap(buffer);
-    delete myGame;
     return 0;
 }
 END_OF_MAIN();
