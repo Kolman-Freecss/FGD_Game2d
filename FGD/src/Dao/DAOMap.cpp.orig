@@ -1,0 +1,116 @@
+#include "DAOMap.h"
+#include "Map.h"
+#include <vector>
+#include "allegro.h"
+#include "Enemy.h"
+
+using namespace std;
+
+
+/**
+Rellena todas las matrices de un mapa en concreto que contendra lo siguiente:
+Vector de enemigos, matriz de Ambiente, la longitud de la matriz
+*/
+DAOMap::DAOMap(int difficult)
+{
+    /*Drawable **mapAmbient;
+    vector<Enemy*> firtMapEnemies;
+    /**
+    Fill the matrix of animations enemy
+    */
+    //BITMAP ***matrixAnimationsEnemy;
+
+    switch(difficult){
+
+        /**
+        Case 1 = Dificultad Facil
+        */
+        case 1: this->quantEnemies = 6;
+                this->quantElementsAmbient = 1;
+                for(int i = 0; i < 1; i++){
+                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->numMap++;
+                }
+                break;
+
+
+        default: ;
+    }
+}
+
+vector<Map> DAOMap::getMapList()
+{
+    return mapList;
+}
+
+Map DAOMap::getMap(int id)
+{
+    return mapList.at(id);
+}
+/*
+
+Charge the matrix of the animations enemy
+
+void DAOMap::chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap, int lenght)
+{
+
+    Reservamos memoria para la matriz
+
+    *matrix = new BITMAP**[lenght];
+    for(int i = 0; i < lenght; i++){
+        *matrix[i] = new BITMAP*[lenght];
+    }
+
+    switch(numMap){
+
+        case 1: BITMAP *bitmap = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
+                *matrix[0][0] = bitmap;
+                break;
+
+
+    }
+
+
+}
+
+
+
+Charge the matrix of the ambient map
+
+void DAOMap::chargeMatrixAmbient(Drawable ***matrix, int numMap, int lenght)
+{
+    Reservamos memoria para la matriz
+
+    *matrix = new Drawable*[lenght];
+    for(int i = 0; i < lenght; i++){
+         *matrix[i] = new Drawable[lenght];
+    }
+
+    switch(numMap){
+
+        case 1:
+                BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
+                Drawable *drawable = new Drawable(bitmapTest, 0, 0 , 0, 0);
+                matrix[0][0] = drawable;
+
+                break;
+
+
+    }
+
+
+}*/
+
+
+///////////////////          GETTERS & SETTERS            ////////////////////////////
+
+int DAOMap::getDifficultGame()
+{
+    return this->difficultGame;
+}
+
+void DAOMap::setDifficultGame(int difficult)
+{
+    this->difficultGame = difficult;
+}
+

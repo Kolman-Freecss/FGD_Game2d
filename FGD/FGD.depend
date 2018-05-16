@@ -65,13 +65,13 @@
 1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526488780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1526491655 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<BaseGame.h>
 	<GameStateManager.h>
 	<GameState.h>
 
-1526491308 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526491655 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
