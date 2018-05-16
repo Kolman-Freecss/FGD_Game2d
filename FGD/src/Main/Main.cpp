@@ -2,6 +2,7 @@
 #include <BaseGame.h>
 #include <GameStateManager.h>
 #include <GameState.h>
+#include <MenuInitialState.h>
 
 int main()
 {
@@ -15,8 +16,8 @@ int main()
     /**
     Load intro
     */
-    game.pushState(new BaseGame(1, &game));
-
+    //game.pushState(new BaseGame(1, &game));
+game.pushState(new MenuInitialState(&game));
     /**
     Game loop
     */
