@@ -5,23 +5,31 @@
 #include <vector>
 #include <Enemy.h>
 #include <Player.h>
+#include <GameState.h>
 
 using namespace std;
 
-class BaseGame {
+class BaseGame : public GameState{
 
  public:
-    const static int SIZE_WINDOW_X = 800;
-    const static int SIZE_WINDOW_Y = 600;
+
+    /**
+    Initial method
+    */
+    void init();
+
+    void cleanUp(){};
+
+    void pause(){};
+    void resume(){};
+
+    void getEvents();
+    void update();
+    void draw();
+
     Map activeMap;
     Player player;
-    BaseGame(int difficult);
-
-    //Charge images, sprites, the necessary to start the game
-    void chargeGame();
-    void update();
-    //Print everything on the buffer
-    void printGame();
+    BaseGame(int difficult, GameStateManager *game);
 
  private:
     BITMAP *buffer;
@@ -32,10 +40,6 @@ class BaseGame {
     - 3 = Dificil
     */
     int difficultGame;
-    void createBuffer();
-
-
-
 
 
 };

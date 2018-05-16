@@ -40,13 +40,19 @@
 		<Unit filename="include/DAOMap.h" />
 		<Unit filename="include/Drawable.h" />
 		<Unit filename="include/Enemy.h" />
+<<<<<<< HEAD
 		<Unit filename="include/House.h" />
+=======
+		<Unit filename="include/GameState.h" />
+		<Unit filename="include/GameStateManager.h" />
+>>>>>>> Develop
 		<Unit filename="include/Inventory.h" />
 		<Unit filename="include/Map.h" />
 		<Unit filename="include/Object.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Potion.h" />
 		<Unit filename="include/Shield.h" />
+		<Unit filename="include/Skelleton.h" />
 		<Unit filename="include/Sword.h" />
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="src/BaseGame.cpp" />
@@ -55,7 +61,12 @@
 		<Unit filename="src/Dao/DAOMap.cpp" />
 		<Unit filename="src/Drawable.cpp" />
 		<Unit filename="src/Enemy.cpp" />
+<<<<<<< HEAD
 		<Unit filename="src/House.cpp" />
+=======
+		<Unit filename="src/GameState.cpp" />
+		<Unit filename="src/GameStateManager.cpp" />
+>>>>>>> Develop
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/Main/Main.cpp" />
 		<Unit filename="src/Map.cpp" />
@@ -65,6 +76,7 @@
 		<Unit filename="src/Resources/Sprite1.bmp" />
 		<Unit filename="src/Resources/grass.bmp" />
 		<Unit filename="src/Shield.cpp" />
+		<Unit filename="src/Skelleton.cpp" />
 		<Unit filename="src/Sword.cpp" />
 		<Unit filename="src/Weapon.cpp" />
 		<Extensions>

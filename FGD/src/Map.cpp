@@ -18,15 +18,27 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     /**
     Fill the matrix of animations enemy
     */
-    BITMAP ***matrixAnimationsEnemy;
 
+
+
+    /**
+    Reservamos memoria para la matriz
+    */
     this->ambientMatrix = new Drawable*[1];
     for(int i = 0; i < 1; i++){
-        this->ambientMatrix[i] = new Drawable[1];
+         this->ambientMatrix[i] = new Drawable[2];
     }
 
-    this->chargeMatrixAnimationsOfEnemy(&matrixAnimationsEnemy, 1);
-    this->chargeMatrixAmbient(&this->ambientMatrix, 1);
+    /**
+    Reservamos memoria para la matriz
+    */
+    BITMAP ***matrixAnimationsEnemy = new BITMAP**[1];
+    for(int i = 0; i < 1; i++){
+        matrixAnimationsEnemy[i] = new BITMAP*[2];
+    }
+
+    this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
+    this->chargeMatrixAmbient(this->ambientMatrix, 1);
 
     srand(time(NULL));
     for(int i = 0; i < this->quantEnemies; i++){
@@ -36,17 +48,21 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         this->enemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 50, 33));
     }
 
+    /*
     /**
     Free allocated values and memory of matrix
-    */
-    /*for(int i = 0; i < 1; i++){
-    delete[] matrixAnimationsEnemy[i];
-    }*/
+
+    for(int i = 0; i < 1; i++){
+            for(int j = 0; j < 2; j++){
+                delete[] matrixAnimationsEnemy[i][j];
+            }
+    }
+    delete[] matrixAnimationsEnemy;
     //delete[] matrixAnimationsEnemy;
-    /*for(int i = 0; i < 1; i++){
-    delete[] mapAmbient[i]; //PETA AQUIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-    }*/
-    //delete[] mapAmbient;
+    for(int i = 0; i < 1; i++){
+                delete[] this->ambientMatrix[i];
+    }
+    delete[] this->ambientMatrix;*/
 
 
 }
@@ -56,24 +72,19 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
 Charge the matrix of the animations enemy
 Esto no deberia recibir la cantidad de enemigos sino que enemigos hay y en base a ello cargar las animaciones
 */
-void Map::chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap)
+void Map::chargeMatrixAnimationsOfEnemy(BITMAP ***matrix, int numMap)
 {
-    /**
-    Reservamos memoria para la matriz
-    */
-    *matrix = new BITMAP**[1];/////////////////////////////
-    for(int i = 0; i < 1; i++){
-        *matrix[i] = new BITMAP*[1];
-    }
 
     switch(numMap){
 
         case 1: BITMAP *bitmap = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
                 for(int b = 0 ; b < 1; b++){
                     for (int j = 0; j < 1; j++){
-                        *matrix[b][j] = bitmap;
+                        matrix[b][j] = bitmap;
                     }
                 }
+                BITMAP *bitmap2 = load_bitmap("src\\Resources\\Player_W_Trans.bmp",NULL);
+                matrix[0][1] = bitmap2;
 
                 break;
 
@@ -87,25 +98,20 @@ void Map::chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap)
 /**
 Charge the matrix of the ambient map
 */
-void Map::chargeMatrixAmbient(Drawable ***matrix, int numMap)
+void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
 {
-    /**
-    Reservamos memoria para la matriz
-    */
 
 
     switch(numMap){
 
         case 1:
                 BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
-                Drawable *drawable = new Drawable(bitmapTest, 0, 0 , 0, 0);
-                matrix[0][0] = drawable;
-                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
-                Drawable *drawable2 = new House(bitmapTest2, 0, 0 , 0, 0);
-                matrix[0][1] = drawable2;
+                matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
+
+                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house.bmp",NULL);
+                matrix[0][1] = Drawable(bitmapTest2, 150, 150, 300, 300);
 
                 break;
-
 
     }
 

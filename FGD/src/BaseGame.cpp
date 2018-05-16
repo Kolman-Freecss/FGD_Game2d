@@ -3,6 +3,8 @@
 #include <DAOMap.h>
 #include <allegro.h>
 #include <iostream>
+#include <GameState.h>
+#include <GameStateManager.h>
 
 using namespace std;
 
@@ -10,19 +12,21 @@ using namespace std;
 Carga el buffer sobre el que se printara todas las imagenes
 y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se printaran
 */
-BaseGame::BaseGame(int difficult)
+BaseGame::BaseGame(int difficult, GameStateManager *game)
 {
-    /**
-    Crea la pantalla y buffer donde printaremos el contenido
-    */
-    this->createBuffer();
+    this->game = game;
+    this->difficultGame = difficult;
 
-    DAOMap managerMaps = DAOMap(difficult);
-    this->activeMap = managerMaps.getMap(0);
+    this->init();
+
 }
 
-void BaseGame::chargeGame()
+void BaseGame::init()
 {
+
+    DAOMap managerMaps = DAOMap(this->difficultGame);
+    this->activeMap = managerMaps.getMap(0);
+
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
     */
@@ -37,12 +41,11 @@ void BaseGame::chargeGame()
     this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
 
 
+
 }
 
 void BaseGame::update()
 {
-    //this->chargeGame();
-//if el mapa es 1
     /**
     Movimiento player
     */
@@ -99,34 +102,26 @@ void BaseGame::update()
     }
 
 
-
-    /**
-     * mostrar en pantalla
-     */
-    this->printGame();
-
-
 }
 
 /**
 Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
 */
-void BaseGame::printGame()
+void BaseGame::draw()
 {
     Drawable **matrix = this->activeMap.getAmbientMatrix();
     int lengthMatrix = this->activeMap.getQuantElementsOfAmbient();
 
-
     for(int i = 0; i < lengthMatrix; i++){
-        for(int j = 0; j < lengthMatrix; j++){
+        for(int j = 0; j < 2; j++){
 
             BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient();
 
             if(i == 0 && j == 0){
-                stretch_blit(bitmapAmbient, this->buffer, 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, this->SIZE_WINDOW_X, this->SIZE_WINDOW_Y);
+                stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
             }
             else{
-                matrix[i][j].draw(this->buffer);
+                matrix[i][j].drawAmbient(this->game->getBuffer());
             }
         }
     }
@@ -138,25 +133,20 @@ void BaseGame::printGame()
     for (int i = 0; i < vectorE.size(); i++){
             //Update de enemigo para luego printarlo
         vectorE.at(i)->update();
-        vectorE.at(i)->draw(this->buffer);
+        vectorE.at(i)->draw(this->game->getBuffer());
     }
 
 
-    this->player.draw(this->buffer);
+    this->player.draw(this->game->getBuffer());
 
-    blit(this->buffer, screen, 0, 0, 0, 0, 800, 600);
+    blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 
 
 }
 
-void BaseGame::createBuffer()
+
+void BaseGame::getEvents()
 {
-    set_color_depth(24);
 
-    set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
-
-    this->buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
-
-    clear_to_color(buffer, 0xaaaaaa);
 }

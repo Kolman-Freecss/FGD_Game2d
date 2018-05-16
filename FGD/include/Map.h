@@ -30,8 +30,8 @@ class Map{
     int quantEnemies;
     int quantElementsOfAmbient;
 
-    void chargeMatrixAnimationsOfEnemy(BITMAP ****matrix, int numMap);
-    void chargeMatrixAmbient(Drawable ***matrix, int numMap);
+    void chargeMatrixAnimationsOfEnemy(BITMAP ***matrix, int numMap);
+    void chargeMatrixAmbient(Drawable **matrix, int numMap);
 
  protected:
 
