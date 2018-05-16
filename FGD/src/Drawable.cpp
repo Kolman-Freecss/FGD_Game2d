@@ -14,6 +14,7 @@ Drawable::Drawable()
 
 Drawable::Drawable(BITMAP ***animations, int x, int y, int height, int width)
 {
+
     this->animations = animations;
     this->x = x;
     this->y = y;
@@ -54,31 +55,29 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
 
     float polarradius = distance(drawable);
 
-    float angle = atan2(this->y - drawable->y, this->x - drawable->x);
+    float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14 ;
     float percent = 90;
     float endAngle;
     float startAngle = 0;
     //switch (this->activeBitmap[0]) {
 
-    switch (1) {
+    switch (2) {
         case 0:
-            startAngle = 315;
-            break;
-        case 1:
             startAngle = 45;
             break;
-        case 2:
+        case 1:
             startAngle = 135;
             break;
+        case 2:
+            startAngle = -135;
+            break;
         case 3:
-            startAngle = 225;
+            startAngle = -45;
             break;
         default:;
     }
-    endAngle = 360/percent + startAngle;
+    endAngle = percent + startAngle;
     //if (angle >= startAngle && angle <= endAngle && polarradius < weapon->getAttackDistance()) {
-
-    cout << polarradius << " polarradius\n";
     cout << angle << " angle\n";
     cout << percent<< " percent\n";
     cout << endAngle<< " endAngle\n";
@@ -91,6 +90,9 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
 
     if (angle >= startAngle && angle <= endAngle && polarradius < 100) {
         cout << "HIT\n";
+        cout << "HIT\n";
+        cout << "HIT\n";
+
         return true;
     }else{
         return false;
