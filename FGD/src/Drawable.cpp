@@ -14,6 +14,7 @@ Drawable::Drawable()
 
 Drawable::Drawable(BITMAP ***animations, int x, int y, int height, int width)
 {
+
     this->animations = animations;
     this->x = x;
     this->y = y;
@@ -55,18 +56,49 @@ void Drawable::drawAmbient(BITMAP *buffer){
         masked_blit(this->bitmapAmbient, buffer, 0, 0, x, y, width, height);
 }
 
-//TODO cambiar a character
-bool Drawable::atackCollision(Drawable *drawable, Weapon *weapon){
-    if ( distance(drawable) < ( weapon->getAttackDistance() + drawable->collisionRadius ) ) {
+bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
 
-            return true;
+    //cambiar 100 por weapon->getAttackDistance()
+    if (distance(drawable)< 100){
+
+    float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14 ;
+    float percent = 90;
+    float endAngle;
+    float startAngle = 0;
+    //switch (this->activeBitmap[0]) {
+        //activeBitmap[0]=1;
+    switch (activeBitmap[0]) {
+        case 0:
+            startAngle = 90-percent/2;
+            break;
+        case 1:
+            startAngle = 180-percent/2;
+            break;
+        case 2:
+            startAngle = -90-percent/2;
+            break;
+        case 3:
+            startAngle = 0-percent/2;
+            break;
+        default:;
     }
-    return false;
+    endAngle = percent + startAngle;
+
+    if (angle >= startAngle && angle <= endAngle) {
+        return true;
+    }else if ((angle >= startAngle || angle <= startAngle*-1) && activeBitmap[0]==1) {
+        cout << "HIT HIT \n";
+        return true;
+    }else {
+        return false;
+    }
+
+    }
 
 }
 bool Drawable::collision(Drawable *drawable){
     switch(this->collisionType) {
-        case 1:
+        case 1://circular
             if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
             }
@@ -82,13 +114,13 @@ bool Drawable::collision(Drawable *drawable){
 
 int Drawable::distance(Drawable *drawable){
     return sqrt(
-                ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
-                *
-                ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
-                +
-                ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1]))
-                *
-                ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1])));
+            ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
+            *
+            ((drawable->x + drawable->walkCollision[0]) - (this->x + this->walkCollision[0]))
+            +
+            ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1]))
+            *
+            ((drawable->y + drawable->walkCollision[1]) - (this->y + this->walkCollision[1])));
 
 }
 

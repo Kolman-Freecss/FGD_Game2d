@@ -1,3 +1,4 @@
+#include <House.h>
 #include "Map.h"
 #include "allegro.h"
 #include "Enemy.h"
@@ -99,6 +100,7 @@ Charge the matrix of the ambient map
 */
 void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
 {
+
 
     switch(numMap){
 

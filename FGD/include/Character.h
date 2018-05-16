@@ -18,6 +18,7 @@ protected:
     int shield;
     int ax;
     int ay;
+    bool isAttacking;
 
 
  public:
@@ -28,15 +29,25 @@ protected:
     int getSpeed();
     int getAX();
     int getAY();
+
     void walkUP();
     void walkDOWN();
     void walkRIGHT();
     void walkLEFT();
+
     void walkUPanim();
     void walkDOWNanim();
     void walkRIGHTanim();
     void walkLEFTanim();
 
+    void attack();
+    bool getIsAttacking();
+    void setIsAttacking(bool op);
+
+    void attackUPanim();
+    void attackDOWNanim();
+    void attackRIGHTanim();
+    void attackLEFTanim();
 
 
 };

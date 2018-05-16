@@ -31,6 +31,9 @@ void Player::keyboard()
     {
         walkRIGHT();
     }
+    if(key[KEY_SPACE]){
+        attack();
+    }
 
     // limites
     if ( this->x < 0 ) this->x = 0;

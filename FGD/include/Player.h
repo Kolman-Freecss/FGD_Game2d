@@ -13,6 +13,7 @@ class Player : public Character {
     void keyboard();
 
  private:
+    int experiencia;
     int level;
     int shield;
 };

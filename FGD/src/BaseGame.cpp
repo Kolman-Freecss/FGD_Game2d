@@ -54,7 +54,10 @@ void BaseGame::update()
     /**
      * check colisiones
      */
+
+
      //colision con enemigos
+     /*
     for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
         if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
             this->player.setX(this->player.getAX()) ;
@@ -66,7 +69,6 @@ void BaseGame::update()
         for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
             if (i!=j){
                 if (this->activeMap.getVectorEnemies().at(i)->collision(this->activeMap.getVectorEnemies().at(j))){
-                    cout << "ENEMY col detect" << i;
                     this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
                     this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
 
@@ -75,12 +77,28 @@ void BaseGame::update()
             }
         }
         if (this->activeMap.getVectorEnemies().at(i)->collision(&this->player)){
-            cout << "ENEMY col detect" << i;
             this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
             this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
 
 
         }
+    }
+*/
+
+    // character attacking
+    if (player.getIsAttacking()){
+        for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+            if (player.attackCollision(this->activeMap.getVectorEnemies().at(i), 0)){
+                //HIT A ENEMIGO
+                cout << "HIT\n";
+                //TODO CONTROL DAÑO A ENEMIGO
+
+            } else{
+                cout << "NOHIT\n";
+
+            }
+        }
+        this->player.setIsAttacking(false);
     }
 
 
