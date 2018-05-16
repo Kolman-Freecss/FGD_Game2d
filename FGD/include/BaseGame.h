@@ -13,22 +13,23 @@ class BaseGame : public GameState{
 
  public:
 
-    void init(){};
+    /**
+    Initial method
+    */
+    void init();
+
     void cleanUp(){};
+
     void pause(){};
     void resume(){};
-    void getEvents(){};
-    void draw(){};
+
+    void getEvents();
+    void update();
+    void draw();
 
     Map activeMap;
     Player player;
     BaseGame(int difficult, GameStateManager *game);
-
-    //Charge images, sprites, the necessary to start the game
-    void chargeGame();
-    void update();
-    //Print everything on the buffer
-    void printGame();
 
  private:
     BITMAP *buffer;

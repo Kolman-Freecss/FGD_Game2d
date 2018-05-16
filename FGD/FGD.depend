@@ -65,13 +65,13 @@
 1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526485811 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1526488780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<BaseGame.h>
 	<GameStateManager.h>
 	<GameState.h>
 
-1526487771 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526488883 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -80,7 +80,7 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526487769 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+1526491292 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
@@ -260,16 +260,16 @@
 	<iostream>
 	"Weapon.h"
 
-1526486922 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
+1526490370 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
-1526485190 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1526491145 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
 	<BaseGame.h>
 
-1526425930 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
+1526488808 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
 	<vector>
 	<allegro.h>
 

@@ -6,13 +6,20 @@
 int main()
 {
 
-   /* allegro_init();
-    install_keyboard();*/
 
+    /**
+    Initialize the window and allegro
+    */
     GameStateManager game;
 
+    /**
+    Load intro
+    */
     game.pushState(new BaseGame(1, &game));
 
+    /**
+    Game loop
+    */
     game.gameLoop();
 
 

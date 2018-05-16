@@ -15,18 +15,18 @@ y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se
 BaseGame::BaseGame(int difficult, GameStateManager *game)
 {
     this->game = game;
+    this->difficultGame = difficult;
 
-    /**
-    Crea la pantalla y buffer donde printaremos el contenido
-    */
-    //this->createBuffer();
+    this->init();
 
-    DAOMap managerMaps = DAOMap(difficult);
-    this->activeMap = managerMaps.getMap(0);
 }
 
-void BaseGame::chargeGame()
+void BaseGame::init()
 {
+
+    DAOMap managerMaps = DAOMap(this->difficultGame);
+    this->activeMap = managerMaps.getMap(0);
+
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
     */
@@ -41,12 +41,11 @@ void BaseGame::chargeGame()
     this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
 
 
+
 }
 
 void BaseGame::update()
 {
-    //this->chargeGame();
-//if el mapa es 1
     /**
     Movimiento player
     */
@@ -85,19 +84,12 @@ void BaseGame::update()
     }
 
 
-
-    /**
-     * mostrar en pantalla
-     */
-    this->printGame();
-
-
 }
 
 /**
 Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
 */
-void BaseGame::printGame()
+void BaseGame::draw()
 {
     Drawable **matrix = this->activeMap.getAmbientMatrix();
     int lengthMatrix = this->activeMap.getQuantElementsOfAmbient();
@@ -132,5 +124,11 @@ void BaseGame::printGame()
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 
+
+}
+
+
+void BaseGame::getEvents()
+{
 
 }
