@@ -136,16 +136,16 @@
 1525722892 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\skelleton.h
 	<Enemy.h>
 
-1526413115 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
+1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1526413115 c:\users\alumne\documents\projecto\project\fgd\include\character.h
+1526493726 c:\users\alumne\documents\projecto\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>
 
-1526413271 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
+1526493726 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
 	<allegro.h>
 	<Weapon.h>
 	<cmath>
@@ -168,7 +168,7 @@
 	<vector>
 	"Map.h"
 
-1526319116 c:\users\alumne\documents\projecto\project\fgd\include\map.h
+1526492636 c:\users\alumne\documents\projecto\project\fgd\include\map.h
 	<allegro.h>
 	"Enemy.h"
 	"Drawable.h"
@@ -180,7 +180,7 @@
 	"Object.h"
 	"String.h"
 
-1526394460 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomap.cpp
+1526492636 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomap.cpp
 	"DAOMap.h"
 	"Map.h"
 	<vector>
@@ -196,24 +196,23 @@
 1525377352 c:\users\alumne\documents\projecto\project\fgd\include\inventory.h
 	<vector>
 
-1526319116 source:c:\users\alumne\documents\projecto\project\fgd\src\main\main.cpp
+1526492636 source:c:\users\alumne\documents\projecto\project\fgd\src\main\main.cpp
 	<allegro.h>
-	<iostream>
-	<istream>
-	<vector>
-	<Player.h>
 	<BaseGame.h>
+	<GameStateManager.h>
+	<GameState.h>
 
-1526407105 c:\users\alumne\documents\projecto\project\fgd\include\player.h
+1526493726 c:\users\alumne\documents\projecto\project\fgd\include\player.h
 	"Character.h"
 
-1526319116 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
+1526492636 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
 	<Player.h>
+	<GameState.h>
 
-1526396074 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
+1526495880 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
 	<House.h>
 	"Map.h"
 	"allegro.h"
@@ -243,34 +242,38 @@
 1526319108 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
 	"Weapon.h"
 
-1526490350 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+1526495879 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
 	<allegro.h>
 	<iostream>
+	<GameState.h>
+	<GameStateManager.h>
 
-1526409118 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
+1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
 	"Player.h"
 	<allegro.h>
 
-1526491357 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
 	<iostream>
 	"Weapon.h"
 
-<<<<<<< HEAD
-1526395492 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
+1526491357 D
+
+1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
 	"House.h"
 	<allegro.h>
 
-1526325033 c:\users\alumne\documents\projecto\project\fgd\include\house.h
+1526493726 c:\users\alumne\documents\projecto\project\fgd\include\house.h
 	"Drawable.h"
 	<allegro.h>
 
-=======
+1526325033 >
+
 1526490370 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
@@ -328,4 +331,24 @@
 1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\sword.cpp
 	"Sword.h"
 
->>>>>>> Develop
+1524504601 elop
+
+1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestate.h
+	<GameStateManager.h>
+
+1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestatemanager.h
+	<vector>
+	<allegro.h>
+
+1526493737 source:c:\users\alumne\documents\projecto\project\fgd\src\gamestatemanager.cpp
+	<GameStateManager.h>
+	<allegro.h>
+	<GameState.h>
+	<BaseGame.h>
+
+1526493737 source:c:\users\alumne\documents\projecto\project\fgd\src\skelleton.cpp
+	"Skelleton.h"
+
+1526493737 c:\users\alumne\documents\projecto\project\fgd\include\skelleton.h
+	<Enemy.h>
+
