@@ -80,7 +80,7 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526491292 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+1526491655 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
@@ -263,7 +263,7 @@
 1526490370 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
-1526491145 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1526491445 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
