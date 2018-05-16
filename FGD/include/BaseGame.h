@@ -13,18 +13,16 @@ class BaseGame : public GameState{
 
  public:
 
-     void init(){};
-      void cleanUp(){};
-      void pause(){};
-      void resume(){};
-      void getEvents(){};
-      void draw(){};
+    void init(){};
+    void cleanUp(){};
+    void pause(){};
+    void resume(){};
+    void getEvents(){};
+    void draw(){};
 
-    const static int SIZE_WINDOW_X = 800;
-    const static int SIZE_WINDOW_Y = 600;
     Map activeMap;
     Player player;
-    BaseGame(int difficult);
+    BaseGame(int difficult, GameStateManager *game);
 
     //Charge images, sprites, the necessary to start the game
     void chargeGame();
@@ -41,10 +39,6 @@ class BaseGame : public GameState{
     - 3 = Dificil
     */
     int difficultGame;
-    void createBuffer();
-
-
-
 
 
 };

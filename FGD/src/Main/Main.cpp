@@ -1,16 +1,17 @@
 #include <allegro.h>
 #include <BaseGame.h>
 #include <GameStateManager.h>
+#include <GameState.h>
 
 int main()
 {
 
-    allegro_init();
-    install_keyboard();
+   /* allegro_init();
+    install_keyboard();*/
 
     GameStateManager game;
 
-    game.pushState(new BaseGame(1));
+    game.pushState(new BaseGame(1, &game));
 
     game.gameLoop();
 

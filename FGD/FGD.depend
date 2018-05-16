@@ -65,19 +65,22 @@
 1524591058 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526419820 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1526484855 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<BaseGame.h>
 	<GameStateManager.h>
+	<GameState.h>
 
-1526419816 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526485672 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
 	<allegro.h>
 	<iostream>
+	<GameState.h>
+	<GameStateManager.h>
 
-1526419808 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+1526485304 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
@@ -257,16 +260,16 @@
 	<iostream>
 	"Weapon.h"
 
-1526419617 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
+1526485281 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
-1526419103 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1526485190 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
 	<BaseGame.h>
 
-1526419448 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
+1526425930 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
 	<vector>
 	<allegro.h>
 
