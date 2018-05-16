@@ -49,61 +49,50 @@ void Drawable::draw(BITMAP *buffer){
         masked_blit(bitmapAnimation, buffer, 0, 0, x, y, width, height);
 }
 
-//TODO cambiar a character
+
 bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
 
-
-    float polarradius = distance(drawable);
+    //cambiar 100 por weapon->getAttackDistance()
+    if (distance(drawable)< 100){
 
     float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14 ;
     float percent = 90;
     float endAngle;
     float startAngle = 0;
     //switch (this->activeBitmap[0]) {
-
-    switch (2) {
+        //activeBitmap[0]=1;
+    switch (activeBitmap[0]) {
         case 0:
-            startAngle = 45;
+            startAngle = 90-percent/2;
             break;
         case 1:
-            startAngle = 135;
+            startAngle = 180-percent/2;
             break;
         case 2:
-            startAngle = -135;
+            startAngle = -90-percent/2;
             break;
         case 3:
-            startAngle = -45;
+            startAngle = 0-percent/2;
             break;
         default:;
     }
     endAngle = percent + startAngle;
-    //if (angle >= startAngle && angle <= endAngle && polarradius < weapon->getAttackDistance()) {
-    cout << angle << " angle\n";
-    cout << percent<< " percent\n";
-    cout << endAngle<< " endAngle\n";
-    cout << startAngle<< " startAngle\n";
-    cout << endAngle<< " endAngle\n";
-    cout << (angle >= startAngle) << " angle >= startAngle\n";
-    cout << (angle <= endAngle) << " angle <= endAngle\n";
-    cout << (polarradius) << " polarradius\n";
 
-
-    if (angle >= startAngle && angle <= endAngle && polarradius < 100) {
-        cout << "HIT\n";
-        cout << "HIT\n";
-        cout << "HIT\n";
-
+    if (angle >= startAngle && angle <= endAngle) {
         return true;
-    }else{
+    }else if ((angle >= startAngle || angle <= startAngle*-1) && activeBitmap[0]==1) {
+        cout << "HIT HIT \n";
+        return true;
+    }else {
         return false;
     }
 
-
+    }
 
 }
 bool Drawable::collision(Drawable *drawable){
     switch(this->collisionType) {
-        case 1:
+        case 1://circular
             if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
             }

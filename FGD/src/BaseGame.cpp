@@ -84,17 +84,18 @@ void BaseGame::update()
 
     // character attacking
     if (player.getIsAttacking()){
-        //for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-            if (player.attackCollision(this->activeMap.getVectorEnemies().at(1), 0)){
+        for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+            if (player.attackCollision(this->activeMap.getVectorEnemies().at(i), 0)){
                 //HIT A ENEMIGO
-                cout << "hit";
+                cout << "HIT\n";
                 //TODO CONTROL DAÑO A ENEMIGO
 
             } else{
-                cout << "NOHIT";
-                this->player.setIsAttacking(false);
+                cout << "NOHIT\n";
+
             }
-        //}
+        }
+        this->player.setIsAttacking(false);
     }
 
 

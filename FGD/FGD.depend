@@ -242,7 +242,7 @@
 1526319108 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
 	"Weapon.h"
 
-1526486330 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+1526490350 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -253,7 +253,7 @@
 	"Player.h"
 	<allegro.h>
 
-1526487274 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+1526491357 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>

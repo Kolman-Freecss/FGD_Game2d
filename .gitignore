@@ -6,3 +6,5 @@ FGD/\.idea/
 FGD/cmake-build-debug/
 
 FGD/bin/Debug/
+
+FGD/obj/
