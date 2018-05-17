@@ -5,11 +5,11 @@
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
 	<iostream>
 
-1526495359 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1526495359 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>
@@ -25,11 +25,11 @@
 1526487769 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\inventory.h
 	<vector>
 
-1526495359 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\player.cpp
+1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\player.cpp
 	"Player.h"
 	<allegro.h>
 
-1526495359 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
 	"Character.h"
 
 1526487771 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\enemy.cpp
@@ -65,14 +65,14 @@
 1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526515667 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1526579659 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<BaseGame.h>
 	<GameStateManager.h>
 	<GameState.h>
 	<MenuInitialState.h>
 
-1526495359 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -88,14 +88,14 @@
 	<Player.h>
 	<GameState.h>
 
-1526519537 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
+1526579659 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
 	<iostream>
 	"Weapon.h"
 
-1526495359 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\drawable.h
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\drawable.h
 	<allegro.h>
 	<Weapon.h>
 	<cmath>
@@ -119,7 +119,8 @@
 	"Drawable.h"
 	<vector>
 
-1526495359 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+	<House.h>
 	"Map.h"
 	"allegro.h"
 	"Enemy.h"
@@ -263,8 +264,7 @@
 	<iostream>
 	"Weapon.h"
 
-<<<<<<< HEAD
-1526491357 D
+1524504601 D
 
 1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
 	"House.h"
@@ -276,19 +276,18 @@
 
 1526325033 >
 
-1526490370 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
-=======
 1526497191 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
->>>>>>> feature/MenuInicial
+
+1526579004 ture/MenuInicial
 	<GameStateManager.h>
 
-1526576564 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1526579659 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
 	<BaseGame.h>
 
-1526576526 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
+1526579659 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
 	<vector>
 	<allegro.h>
 
@@ -336,7 +335,6 @@
 1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\sword.cpp
 	"Sword.h"
 
-<<<<<<< HEAD
 1524504601 elop
 
 1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestate.h
@@ -358,16 +356,24 @@
 1526493737 c:\users\alumne\documents\projecto\project\fgd\include\skelleton.h
 	<Enemy.h>
 
-=======
-1526578488 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinitialstate.h
+1526493737 
+
+1526579593 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinitialstate.h
 	<GameState.h>
 	<GameStateManager.h>
 
-1526579004 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
+1526579593 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
 	<MenuInitialState.h>
 	<allegro.h>
 	<GameState.h>
 	<GameStateManager.h>
 	<BaseGame.h>
 
->>>>>>> feature/MenuInicial
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\house.h
+	"Drawable.h"
+	<allegro.h>
+
+1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\house.cpp
+	"House.h"
+	<allegro.h>
+
