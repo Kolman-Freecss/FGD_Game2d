@@ -3,6 +3,7 @@
 #include <cmath>
 #include <iostream>
 #include "Weapon.h"
+#include <algorithm>
 
 using namespace std;
 
@@ -61,7 +62,7 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
     //cambiar 100 por weapon->getAttackDistance()
     if (distance(drawable)< 100){
 
-    float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14 ;
+    float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14;
     float percent = 90;
     float endAngle;
     float startAngle = 0;
@@ -97,16 +98,22 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
 
 }
 bool Drawable::collision(Drawable *drawable){
-    switch(this->collisionType) {
+    switch(drawable->collisionType) {
         case 1://circular
             if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
             }
             break;
-        case 2:
+        case 2: //cuadrada
+            //int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width));
+
+            int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width-(drawable->width/10)));
+            int DeltaY = this->y + this->walkCollision[1] - max(drawable->y, min(this->y + this->walkCollision[1], drawable->y + drawable->height));
+            if ((DeltaX * DeltaX + DeltaY * DeltaY) < (this->collisionRadius * this->collisionRadius)){
+                return true;
+            }
             break;
 
-        default:;
     }
     return false;
 

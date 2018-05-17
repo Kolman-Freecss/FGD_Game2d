@@ -136,16 +136,16 @@
 1525722892 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\skelleton.h
 	<Enemy.h>
 
-1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
+1526499101 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1526493726 c:\users\alumne\documents\projecto\project\fgd\include\character.h
+1526499099 c:\users\alumne\documents\projecto\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>
 
-1526493726 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
+1526499099 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
 	<allegro.h>
 	<Weapon.h>
 	<cmath>
@@ -202,17 +202,17 @@
 	<GameStateManager.h>
 	<GameState.h>
 
-1526493726 c:\users\alumne\documents\projecto\project\fgd\include\player.h
+1526499099 c:\users\alumne\documents\projecto\project\fgd\include\player.h
 	"Character.h"
 
-1526492636 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
+1526574020 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
 	<Player.h>
 	<GameState.h>
 
-1526495880 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
+1526577048 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
 	<House.h>
 	"Map.h"
 	"allegro.h"
@@ -242,7 +242,7 @@
 1526319108 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
 	"Weapon.h"
 
-1526495879 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+1526580159 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -251,24 +251,25 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
+1526499101 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
 	"Player.h"
 	<allegro.h>
 
-1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+1526578261 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
 	<iostream>
 	"Weapon.h"
+	<algorithm>
 
 1526491357 D
 
-1526493726 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
+1526568461 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
 	"House.h"
 	<allegro.h>
 
-1526493726 c:\users\alumne\documents\projecto\project\fgd\include\house.h
+1526568336 c:\users\alumne\documents\projecto\project\fgd\include\house.h
 	"Drawable.h"
 	<allegro.h>
 

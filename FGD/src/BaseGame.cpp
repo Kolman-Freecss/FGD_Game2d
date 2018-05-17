@@ -15,7 +15,7 @@ y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se
 BaseGame::BaseGame(int difficult, GameStateManager *game)
 {
     this->game = game;
-    this->difficultGame = difficult;
+    this->gameDificulty = difficult;
 
     this->init();
 
@@ -24,7 +24,7 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
 void BaseGame::init()
 {
 
-    DAOMap managerMaps = DAOMap(this->difficultGame);
+    DAOMap managerMaps = DAOMap(this->gameDificulty);
     this->activeMap = managerMaps.getMap(0);
 
     /**
@@ -54,36 +54,7 @@ void BaseGame::update()
     /**
      * check colisiones
      */
-
-
-     //colision con enemigos
-     /*
-    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-        if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
-            this->player.setX(this->player.getAX()) ;
-            this->player.setY(this->player.getAY()) ;
-        }
-    }
-    //colision enemigos con enemigos
-    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-        for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
-            if (i!=j){
-                if (this->activeMap.getVectorEnemies().at(i)->collision(this->activeMap.getVectorEnemies().at(j))){
-                    this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
-                    this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
-
-
-                }
-            }
-        }
-        if (this->activeMap.getVectorEnemies().at(i)->collision(&this->player)){
-            this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
-            this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
-
-
-        }
-    }
-*/
+    this->collisionCheck();
 
     // character attacking
     if (player.getIsAttacking()){
@@ -92,10 +63,8 @@ void BaseGame::update()
                 //HIT A ENEMIGO
                 cout << "HIT\n";
                 //TODO CONTROL DAÑO A ENEMIGO
-
             } else{
                 cout << "NOHIT\n";
-
             }
         }
         this->player.setIsAttacking(false);
@@ -149,4 +118,78 @@ void BaseGame::draw()
 void BaseGame::getEvents()
 {
 
+}
+
+void BaseGame::collisionCheck() {
+    colPlayerWithEnemies();
+    colPlayerWithAmbient();
+    colEnemies();
+    colEnemiesWithAmbient();
+}
+
+void BaseGame::colPlayerWithEnemies() {
+    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+        if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
+            this->player.setX(this->player.getAX()) ;
+            this->player.setY(this->player.getAY()) ;
+        }
+    }
+}
+
+void BaseGame::colPlayerWithAmbient(){
+    //TODO CAMBIAR MAS ADELANTE
+    for (int i=0;i<1;i++){
+        for (int j=0;j<2;j++) {
+            if (i!=0 || j!=0) {
+                if (player.collision(&this->activeMap.getAmbientMatrix()[i][j])){
+                    cout << "col house\n";
+                    this->player.setX(this->player.getAX()) ;
+                    this->player.setY(this->player.getAY()) ;
+                }else{
+                    cout << "col no house\n";
+
+                }
+            }
+
+        }
+    }
+}
+
+
+void BaseGame::colEnemies(){
+    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+        for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
+            if (i!=j){
+                if (this->activeMap.getVectorEnemies().at(i)->collision(this->activeMap.getVectorEnemies().at(j))){
+                    this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
+                    this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+                }
+            }
+        }
+        //col enemy with player
+        if (this->activeMap.getVectorEnemies().at(i)->collision(&this->player)){
+            this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
+            this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+        }
+    }
+
+}
+void BaseGame::colEnemiesWithAmbient(){
+    for (int p = 0; p < this->activeMap.getVectorEnemies().size(); ++p) {
+        for (int i = 0; i < 1; i++) {
+            for (int j = 0; j < 2; j++) {
+                if (i != 0 || j != 0) {
+                    if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                        cout << "E col house\n";
+                        this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                        this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                    } else {
+                        cout << "E col no house\n";
+
+                    }
+                }
+
+            }
+        }
+    }
 }

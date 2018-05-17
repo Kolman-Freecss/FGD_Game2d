@@ -39,7 +39,15 @@ class BaseGame : public GameState{
     - 2 = Medio
     - 3 = Dificil
     */
-    int difficultGame;
+    int gameDificulty;
+
+
+    void collisionCheck();
+
+    void colPlayerWithEnemies();
+    void colPlayerWithAmbient();
+    void colEnemies();
+    void colEnemiesWithAmbient();
 
 
 };
