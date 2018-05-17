@@ -49,11 +49,13 @@
 		<Unit filename="include/House.h" />
 		<Unit filename="include/Inventory.h" />
 		<Unit filename="include/Map.h" />
+		<Unit filename="include/MenuInitialState.h" />
 		<Unit filename="include/Object.h" />
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/Potion.h" />
 		<Unit filename="include/Shield.h" />
 		<Unit filename="include/Skelleton.h" />
+		<Unit filename="include/State.h" />
 		<Unit filename="include/Sword.h" />
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="src/BaseGame.cpp" />
@@ -63,20 +65,30 @@
 		<Unit filename="src/Drawable.cpp" />
 		<Unit filename="src/Enemy.cpp" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<Unit filename="src/House.cpp" />
 =======
 		<Unit filename="src/GameState.cpp" />
+=======
+>>>>>>> feature/MenuInicial
 		<Unit filename="src/GameStateManager.cpp" />
 >>>>>>> Develop
 		<Unit filename="src/House.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/Main/Main.cpp" />
 		<Unit filename="src/Map.cpp" />
+		<Unit filename="src/MenuInitialState.cpp" />
 		<Unit filename="src/Object.cpp" />
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/Potion.cpp" />
+		<Unit filename="src/Resources/Player_Front_With_Sword.bmp" />
+		<Unit filename="src/Resources/Player_W_Trans.bmp" />
 		<Unit filename="src/Resources/Sprite1.bmp" />
+		<Unit filename="src/Resources/background_menuinitial.bmp" />
 		<Unit filename="src/Resources/grass.bmp" />
+		<Unit filename="src/Resources/house.bmp" />
+		<Unit filename="src/Resources/new_game.bmp" />
+		<Unit filename="src/Resources/new_game_pressed.bmp" />
 		<Unit filename="src/Shield.cpp" />
 		<Unit filename="src/Skelleton.cpp" />
 		<Unit filename="src/Sword.cpp" />
