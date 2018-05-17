@@ -62,7 +62,7 @@ void GameStateManager::gameLoop()
 
         this->getCurrentState()->update();
 
-        clear_bitmap(this->buffer);
+        //clear_bitmap(this->buffer);
 
         this->getCurrentState()->draw();
 
@@ -83,6 +83,7 @@ void GameStateManager::createBuffer()
     */
     allegro_init();
     install_keyboard();
+
 
     /**
     Config pantalla
@@ -110,3 +111,7 @@ BITMAP* GameStateManager::getBuffer()
     return this->buffer;
 }
 
+void GameStateManager::setRunning(bool runLoop)
+{
+    this->runLoop = runLoop;
+}

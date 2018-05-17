@@ -42,6 +42,7 @@ class GameStateManager {
     */
     void gameLoop();
     bool isRunning();
+    void setRunning(bool runLoop);
 
     //void clearUp();
     BITMAP* getBuffer();
