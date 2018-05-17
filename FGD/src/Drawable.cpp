@@ -42,16 +42,11 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
 }
 
 void Drawable::draw(BITMAP *buffer){
-        //BITMAP bitmapAnimation = this->animations[this->activeBitmap[0]][this->activeBitmap[1]];
         BITMAP* bitmapAnimation = this->animations[0][0];
-        //BITMAP *bitmapPointer = &bitmapAnimation;
         masked_blit(bitmapAnimation, buffer, 0, 0, x, y, width, height);
 }
 
 void Drawable::drawAmbient(BITMAP *buffer){
-        //BITMAP bitmapAnimation = this->animations[this->activeBitmap[0]][this->activeBitmap[1]];
-        //BITMAP* bitmapAnimation = this->animations[0][0];
-        //BITMAP *bitmapPointer = &bitmapAnimation;
         masked_blit(this->bitmapAmbient, buffer, 0, 0, x, y, width, height);
 }
 

@@ -17,7 +17,7 @@ int main()
     Load intro
     */
     //game.pushState(new BaseGame(1, &game));
-game.pushState(new MenuInitialState(&game));
+    game.pushState(new MenuInitialState(&game));
     /**
     Game loop
     */

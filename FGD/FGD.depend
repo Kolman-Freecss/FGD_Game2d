@@ -65,7 +65,7 @@
 1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526499246 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+1526515667 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<BaseGame.h>
 	<GameStateManager.h>
@@ -88,7 +88,7 @@
 	<Player.h>
 	<GameState.h>
 
-1526495359 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
+1526519537 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
@@ -264,13 +264,13 @@
 1526497191 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
-1526497191 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1526576564 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
 	<BaseGame.h>
 
-1526497191 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
+1526576526 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
 	<vector>
 	<allegro.h>
 
@@ -318,12 +318,14 @@
 1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\sword.cpp
 	"Sword.h"
 
-1526497841 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinitialstate.h
+1526578488 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinitialstate.h
 	<GameState.h>
+	<GameStateManager.h>
 
-1526499664 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
+1526579004 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
 	<MenuInitialState.h>
 	<allegro.h>
 	<GameState.h>
 	<GameStateManager.h>
+	<BaseGame.h>
 
