@@ -18,12 +18,12 @@ class MenuEscState : public GameState{
     BITMAP *new_game_pressed;
     BITMAP *options;
     BITMAP *options_pressed;
-    BITMAP *leave;
-    BITMAP *leave_pressed;
+    BITMAP *menu_initial;
+    BITMAP *menu_initial_pressed;
 
     void newGamePressed();
     void optionsPressed();
-    void leavePressed();
+    void menuPressed();
 
     /**
     Initial method

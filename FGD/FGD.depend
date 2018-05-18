@@ -72,7 +72,7 @@
 	<GameState.h>
 	<MenuInitialState.h>
 
-1526585835 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526654116 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -284,7 +284,7 @@
 1526579004 ture/MenuInicial
 	<GameStateManager.h>
 
-1526586450 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1526654116 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
@@ -380,7 +380,7 @@
 	"House.h"
 	<allegro.h>
 
-1526585661 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuescstate.h
+1526654564 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuescstate.h
 	<GameState.h>
 	<GameStateManager.h>
 

@@ -3,6 +3,7 @@
 #include <GameState.h>
 #include <GameStateManager.h>
 #include <BaseGame.h>
+#include <MenuInitialState.h>
 
 using namespace std;
 
@@ -22,8 +23,8 @@ void MenuEscState::init()
     this->new_game_pressed = load_bitmap("src\\Resources\\new_game_pressed.bmp",NULL);
     this->options = load_bitmap("src\\Resources\\options.bmp",NULL);
     this->options_pressed = load_bitmap("src\\Resources\\options_pressed.bmp",NULL);
-    this->leave = load_bitmap("src\\Resources\\leave.bmp",NULL);
-    this->leave_pressed = load_bitmap("src\\Resources\\leave_pressed.bmp",NULL);
+    this->menu_initial = load_bitmap("src\\Resources\\menu_initial.bmp",NULL);
+    this->menu_initial_pressed = load_bitmap("src\\Resources\\menu_initial_pressed.bmp",NULL);
 
     install_mouse();
 
@@ -35,7 +36,6 @@ void MenuEscState::getEvents()
 {
 
 
-    //if ( key[KEY_ESC] )
 
 }
 
@@ -53,7 +53,7 @@ void MenuEscState::draw()
 
     newGamePressed();
     optionsPressed();
-    leavePressed();
+    menuPressed();
 
 
 
@@ -100,22 +100,22 @@ void MenuEscState::optionsPressed()
 
 }
 
-void MenuEscState::leavePressed()
+void MenuEscState::menuPressed()
 {
 
     if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
        mouse_y >= (MIDDLE_SCREEN_Y + 130) && mouse_y <= (MIDDLE_SCREEN_Y + 196))
     {
-        masked_blit(this->leave_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
+        masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->setRunning(false);
+            this->game->pushState(new MenuInitialState(this->game));
         }
 
     }
     else
     {
-        masked_blit(this->leave, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
+        masked_blit(this->menu_initial, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
     }
 
 }
