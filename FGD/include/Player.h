@@ -2,6 +2,7 @@
 #define Player_h
 
 #include "Character.h"
+#include "Inventory.h"
 
 
 class Player : public Character {
@@ -16,6 +17,7 @@ class Player : public Character {
     int experiencia;
     int level;
     int shield;
+    Inventory inventory;
 };
 
 #endif // Player_h

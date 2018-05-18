@@ -2,25 +2,41 @@
 #define Inventory_h
 
 #include <vector>
+#include "Object.h"
 
-class Object;
+using namespace std;
 
 class Inventory {
 
-
- private:
+private:
     int maxObjects;
     int maxCurrentObjects;
     int maxMoney;
     int currentMoney;
-
-
- private:
-
-    /**
-     * @element-type Object
-     */
     std::vector< Object* > objectList;
+
+public:
+    int getMaxObjects();
+
+    void setMaxObjects(int maxObjects);
+
+    int getMaxCurrentObjects();
+
+    void setMaxCurrentObjects(int maxCurrentObjects);
+
+    int getMaxMoney();
+
+    void setMaxMoney(int maxMoney);
+
+    int getCurrentMoney();
+
+    vector<Object *> getObjectList();
+
+    void setCurrentMoney(int currentMoney);
+
+    void setObjectList(const std::vector<Object *> &objectList);
+
+
 };
 
 #endif // Inventory_h
