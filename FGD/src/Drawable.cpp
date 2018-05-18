@@ -7,6 +7,7 @@
 
 using namespace std;
 
+
 Drawable::Drawable()
 {
     x = 10;
@@ -52,42 +53,41 @@ void Drawable::drawAmbient(BITMAP *buffer){
         masked_blit(this->bitmapAmbient, buffer, 0, 0, x, y, width, height);
 }
 
-bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon) {
+bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction) {
 
     //cambiar 100 por weapon->getAttackDistance()
     if (distance(drawable)< 100){
 
-    float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14;
-    float percent = 90;
-    float endAngle;
-    float startAngle = 0;
-    //switch (this->activeBitmap[0]) {
-        //activeBitmap[0]=1;
-    switch (activeBitmap[0]) {
-        case 0:
-            startAngle = 90-percent/2;
-            break;
-        case 1:
-            startAngle = 180-percent/2;
-            break;
-        case 2:
-            startAngle = -90-percent/2;
-            break;
-        case 3:
-            startAngle = 0-percent/2;
-            break;
-        default:;
-    }
-    endAngle = percent + startAngle;
+        float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14;
+        float percent = 90;
+        float endAngle;
+        float startAngle = 0;
+        //switch (this->activeBitmap[0]) {
+            //activeBitmap[0]=1;
+        switch (direction) {
+            case UP:
+                startAngle = 90-percent/2;
+                break;
+            case RIGHT:
+                startAngle = 180-percent/2;
+                break;
+            case DOWN:
+                startAngle = -90-percent/2;
+                break;
+            case LEFT:
+                startAngle = 0-percent/2;
+                break;
+            default:;
+        }
+        endAngle = percent + startAngle;
 
-    if (angle >= startAngle && angle <= endAngle) {
-        return true;
-    }else if ((angle >= startAngle || angle <= startAngle*-1) && activeBitmap[0]==1) {
-        cout << "HIT HIT \n";
-        return true;
-    }else {
-        return false;
-    }
+        if (angle >= startAngle && angle <= endAngle) {
+            return true;
+        }else if ((angle >= startAngle || angle <= startAngle*-1) && activeBitmap[0]==1) {
+            return true;
+        }else {
+            return false;
+        }
 
     }
 

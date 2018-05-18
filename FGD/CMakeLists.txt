@@ -12,33 +12,50 @@ add_executable(FGD
         include/DAOMap.h
         include/Drawable.h
         include/Enemy.h
+        include/GameState.h
+        include/GameStateManager.h
         include/House.h
         include/Inventory.h
         include/Map.h
+        include/MenuInitialState.h
         include/Object.h
         include/Player.h
         include/Potion.h
         include/Shield.h
+        include/Skelleton.h
+        include/State.h
         include/Sword.h
         include/Weapon.h
         src/Dao/DAOManager.cpp
         src/Dao/DAOMap.cpp
         src/Main/Main.cpp
+        src/Resources/background_menuinitial.bmp
         src/Resources/grass.bmp
+        src/Resources/house.bmp
         src/Resources/house1.bmp
+        src/Resources/leave.bmp
+        src/Resources/leave_pressed.bmp
+        src/Resources/Mouse.bmp
+        src/Resources/new_game.bmp
+        src/Resources/new_game_pressed.bmp
+        src/Resources/options.bmp
+        src/Resources/options_pressed.bmp
         src/Resources/Player_Front_With_Sword.bmp
-        src/Resources/Sprite1.bmp
+        src/Resources/Player_W_Trans.bmp
+        src/Resources/shield_logo_all.bmp
         src/BaseGame.cpp
         src/Character.cpp
         src/Drawable.cpp
         src/Enemy.cpp
+        src/GameStateManager.cpp
         src/House.cpp
         src/Inventory.cpp
         src/Map.cpp
+        src/MenuInitialState.cpp
         src/Object.cpp
         src/Player.cpp
         src/Potion.cpp
         src/Shield.cpp
+        src/Skelleton.cpp
         src/Sword.cpp
-        src/Weapon.cpp
-        main.cpp)
+        src/Weapon.cpp)

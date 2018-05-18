@@ -26,6 +26,14 @@ class Drawable{
     int activeBitmap[2];
 
  public:
+    /**
+     * CONSTS TO INDICATE DIRECTIONS
+     */
+    const static int UP = 0;
+    const static int RIGHT = 1;
+    const static int DOWN = 2;
+    const static int LEFT = 3;
+
     Drawable();
     Drawable(BITMAP ***animations, int x, int y, int height, int width);
     Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width);
@@ -41,7 +49,7 @@ class Drawable{
 
     virtual //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
     void draw(BITMAP *buffer);
-    bool attackCollision(Drawable *drawable, Weapon *weapon);
+    bool attackCollision(Drawable *drawable, Weapon *weapon, int direction);
     void drawAmbient(BITMAP *buffer);
     bool collision(Drawable *drawable);
     int distance(Drawable *drawable);

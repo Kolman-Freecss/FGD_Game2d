@@ -1,0 +1,3 @@
+C:/Users/alumne/Documents/Projecto/Project/FGD/cmake-build-debug/CMakeFiles/FGD.dir
+C:/Users/alumne/Documents/Projecto/Project/FGD/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/alumne/Documents/Projecto/Project/FGD/cmake-build-debug/CMakeFiles/rebuild_cache.dir

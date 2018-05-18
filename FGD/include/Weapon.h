@@ -9,9 +9,19 @@ class Weapon : public Object {
 
     protected:
         int attackDistance;
+        int damage;
     public:
         Weapon();
-        int getAttackDistance();
+
+    Weapon(int attackDistance, int damage);
+
+    void setAttackDistance(int attackDistance);
+
+    int getDamage();
+
+    void setDamage(int damage);
+
+    int getAttackDistance();
 
 };
 

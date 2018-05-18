@@ -9,8 +9,6 @@ using namespace std;
 
 class Character : public Drawable{
 
- private:
-
 protected:
     int speed;
     int damage;
@@ -19,6 +17,17 @@ protected:
     int ax;
     int ay;
     bool isAttacking;
+    Weapon *selectedWeapon;
+    bool isAlive;
+
+
+    /**
+     * 0 UP
+     * 1 RIGHT
+     * 2 DOWN
+     * 3 LEFT
+     */
+    int direction;
 
 
  public:
@@ -44,10 +53,37 @@ protected:
     bool getIsAttacking();
     void setIsAttacking(bool op);
 
+
+    void wounded(Character *attackingCharacter);
+
     void attackUPanim();
     void attackDOWNanim();
     void attackRIGHTanim();
     void attackLEFTanim();
+
+    bool isIsAlive();
+
+    void setIsAlive(bool isAlive);
+
+    int getDamage();
+
+    void setDamage(int damage);
+
+    int getHealth();
+
+    void setHealth(int health);
+
+    int getShield();
+
+    void setShield(int shield);
+
+    int getDirection();
+
+    void setDirection(int direction);
+
+    Weapon *getSelectedWeapon() const;
+
+    void setSelectedWeapon(Weapon *selectedWeapon);
 
 
 };

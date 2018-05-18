@@ -21,6 +21,7 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
 
 }
 
+
 void BaseGame::init()
 {
 
@@ -39,7 +40,8 @@ void BaseGame::init()
     matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
     this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
-
+    //TODO PONER ARMA
+    this->player.setSelectedWeapon(new Weapon(100,10));
 
 
 }
@@ -56,19 +58,25 @@ void BaseGame::update()
      */
     this->collisionCheck();
 
+
+    //TODO CAMBIAR A FUNCION
     // character attacking
     if (player.getIsAttacking()){
         for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-            if (player.attackCollision(this->activeMap.getVectorEnemies().at(i), 0)){
+            if (player.attackCollision(this->activeMap.getVectorEnemies().at(i), 0,player.getDirection())){
                 //HIT A ENEMIGO
-                cout << "HIT\n";
                 //TODO CONTROL DAÑO A ENEMIGO
+                this->activeMap.getVectorEnemies().at(i)->wounded(&this->player);
+                cout << this->activeMap.getVectorEnemies().at(i)->getHealth() <<endl;
+                cout << this->activeMap.getVectorEnemies().at(i)->getShield() <<endl;
+                cout << this->activeMap.getVectorEnemies().at(i)->isIsAlive() <<endl;
             } else{
-                cout << "NOHIT\n";
+
             }
         }
         this->player.setIsAttacking(false);
     }
+    //FIN character attacking
 
 
 }
@@ -130,8 +138,9 @@ void BaseGame::collisionCheck() {
 void BaseGame::colPlayerWithEnemies() {
     for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
         if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
-            this->player.setX(this->player.getAX()) ;
-            this->player.setY(this->player.getAY()) ;
+            //TODO
+            //this->player.setX(this->player.getAX()) ;
+            //this->player.setY(this->player.getAY()) ;
         }
     }
 }
@@ -142,15 +151,11 @@ void BaseGame::colPlayerWithAmbient(){
         for (int j=0;j<2;j++) {
             if (i!=0 || j!=0) {
                 if (player.collision(&this->activeMap.getAmbientMatrix()[i][j])){
-                    cout << "col house\n";
-                    this->player.setX(this->player.getAX()) ;
-                    this->player.setY(this->player.getAY()) ;
-                }else{
-                    cout << "col no house\n";
-
+                    //TODO
+                    //this->player.setX(this->player.getAX());
+                    //this->player.setY(this->player.getAY());
                 }
             }
-
         }
     }
 }
@@ -161,15 +166,17 @@ void BaseGame::colEnemies(){
         for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
             if (i!=j){
                 if (this->activeMap.getVectorEnemies().at(i)->collision(this->activeMap.getVectorEnemies().at(j))){
-                    this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
-                    this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+                    //TODO
+                    //this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
+                    //this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
                 }
             }
         }
         //col enemy with player
         if (this->activeMap.getVectorEnemies().at(i)->collision(&this->player)){
-            this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
-            this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+            //TODO
+           //this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
+            //this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
         }
     }
 
@@ -180,11 +187,10 @@ void BaseGame::colEnemiesWithAmbient(){
             for (int j = 0; j < 2; j++) {
                 if (i != 0 || j != 0) {
                     if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
-                        cout << "E col house\n";
-                        this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
-                        this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                        //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                        //this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                        //this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
                     } else {
-                        cout << "E col no house\n";
 
                     }
                 }

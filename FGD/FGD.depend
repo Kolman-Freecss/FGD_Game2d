@@ -138,23 +138,23 @@
 1526497191 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\skelleton.h
 	<Enemy.h>
 
-1526499101 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
+1526664566 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1526499099 c:\users\alumne\documents\projecto\project\fgd\include\character.h
+1526665384 c:\users\alumne\documents\projecto\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>
 
-1526499099 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
+1526661865 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
 	<allegro.h>
 	<Weapon.h>
 	<cmath>
 	"math.h"
 	"Weapon.h"
 
-1526319108 c:\users\alumne\documents\projecto\project\fgd\include\weapon.h
+1526660552 c:\users\alumne\documents\projecto\project\fgd\include\weapon.h
 	"Object.h"
 
 1526319108 c:\users\alumne\documents\projecto\project\fgd\include\object.h
@@ -170,7 +170,7 @@
 	<vector>
 	"Map.h"
 
-1526492636 c:\users\alumne\documents\projecto\project\fgd\include\map.h
+1526584438 c:\users\alumne\documents\projecto\project\fgd\include\map.h
 	<allegro.h>
 	"Enemy.h"
 	"Drawable.h"
@@ -192,29 +192,33 @@
 1526394460 source:c:\users\alumne\documents\projecto\project\fgd\src\enemy.cpp
 	"Enemy.h"
 
-1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\inventory.cpp
+1526587021 source:c:\users\alumne\documents\projecto\project\fgd\src\inventory.cpp
 	"Inventory.h"
+	"vector"
 
-1525377352 c:\users\alumne\documents\projecto\project\fgd\include\inventory.h
+1526587021 c:\users\alumne\documents\projecto\project\fgd\include\inventory.h
 	<vector>
+	"Object.h"
 
-1526492636 source:c:\users\alumne\documents\projecto\project\fgd\src\main\main.cpp
+1526584448 source:c:\users\alumne\documents\projecto\project\fgd\src\main\main.cpp
 	<allegro.h>
 	<BaseGame.h>
 	<GameStateManager.h>
 	<GameState.h>
+	<MenuInitialState.h>
 
-1526499099 c:\users\alumne\documents\projecto\project\fgd\include\player.h
+1526585878 c:\users\alumne\documents\projecto\project\fgd\include\player.h
 	"Character.h"
+	"Inventory.h"
 
-1526574020 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
+1526584500 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
 	<Player.h>
 	<GameState.h>
 
-1526577048 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
+1526584500 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
 	<House.h>
 	"Map.h"
 	"allegro.h"
@@ -241,10 +245,10 @@
 1525377352 c:\users\alumne\documents\projecto\project\fgd\include\sword.h
 	"Weapon.h"
 
-1526319108 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
+1526660552 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
 	"Weapon.h"
 
-1526580159 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+1526664757 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -257,7 +261,7 @@
 	"Player.h"
 	<allegro.h>
 
-1526578261 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+1526664196 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
@@ -267,11 +271,11 @@
 
 1524504601 D
 
-1526568461 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
+1526584500 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
 	"House.h"
 	<allegro.h>
 
-1526568336 c:\users\alumne\documents\projecto\project\fgd\include\house.h
+1526584438 c:\users\alumne\documents\projecto\project\fgd\include\house.h
 	"Drawable.h"
 	<allegro.h>
 
@@ -341,11 +345,11 @@
 1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
-1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestatemanager.h
+1526654751 c:\users\alumne\documents\projecto\project\fgd\include\gamestatemanager.h
 	<vector>
 	<allegro.h>
 
-1526493737 source:c:\users\alumne\documents\projecto\project\fgd\src\gamestatemanager.cpp
+1526584448 source:c:\users\alumne\documents\projecto\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
@@ -377,4 +381,15 @@
 1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\house.cpp
 	"House.h"
 	<allegro.h>
+
+1526584448 c:\users\alumne\documents\projecto\project\fgd\include\menuinitialstate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526584448 source:c:\users\alumne\documents\projecto\project\fgd\src\menuinitialstate.cpp
+	<MenuInitialState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
 
