@@ -30,8 +30,8 @@ void GameStateManager::pushState(GameState* state)
 
 void GameStateManager::popState()
 {
-    states.back(); //sure?
-    delete states.back();
+    //states.back(); //sure?
+    //delete states.back();
     states.pop_back();
 
 }
@@ -69,7 +69,7 @@ void GameStateManager::gameLoop()
         rest(10);
 
         // tecla de salida
-        if ( key[KEY_ESC] ) this->runLoop = false;
+        //if ( key[KEY_ESC] ) this->runLoop = false;
 
     }
 
