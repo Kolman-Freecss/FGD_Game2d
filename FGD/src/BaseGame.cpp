@@ -53,6 +53,8 @@ void BaseGame::update()
     */
     this->player.keyboard();
 
+    //this->artificialIntelligence();
+
     /**
      * check colisiones
      */
@@ -116,6 +118,17 @@ void BaseGame::draw()
 
 }
 
+void BaseGame::artificialIntelligence()
+{
+
+    vector<Enemy*> vectorE = this->activeMap.getVectorEnemies();
+    for (int i = 0; i < vectorE.size(); i++){
+            //Update de enemigo para luego printarlo
+        vectorE.at(i)->update();
+        vectorE.at(i)->draw(this->game->getBuffer());
+    }
+
+}
 
 void BaseGame::getEvents()
 {

@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include <Drawable.h>
 
 Enemy::Enemy(){}
 
@@ -6,7 +7,7 @@ Enemy::Enemy(BITMAP ***animations, int health, int damage, double speed, int shi
             Character(animations, health, damage, speed, shield, x, y, height, width)
 {
 
-
+    this->detectionRadius = 150;
 
 }
 
@@ -26,6 +27,7 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
     if(this->timeNextRandomize % 200 == 0){
         this->direction = rand()%4;
     }
+
 
     /**
     Posiciones anteriores por tema colisiones
@@ -58,3 +60,12 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
     this->timeNextRandomize++;
 
 }
+
+/*void Enemy::detectionRadiusEnemy(Drawable *drawable)
+{
+    //Si es menor esta dentro del radio
+    if (distance(drawable) < (this->detectionRadius) {
+        return true;
+    }
+    return false;
+}*/

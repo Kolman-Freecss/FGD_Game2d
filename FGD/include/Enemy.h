@@ -6,6 +6,7 @@
 #include "Character.h"
 #include "Object.h"
 #include "String.h"
+#include <Drawable.h>
 
 
 class Enemy : public Character {
@@ -18,10 +19,15 @@ class Enemy : public Character {
     Actualiza tanto la posicion de enemigo(Movimiento) como otros valores
     */
     void update();
+    //bool detectionRadiusEnemy(Drawable *drawable);
 
  private:
      int direction;
      int timeNextRandomize;
+     /**
+     Simulación inteligencia artificial
+     */
+     int detectionRadius;
 
     //int const DAMAGE = 10;
     /**

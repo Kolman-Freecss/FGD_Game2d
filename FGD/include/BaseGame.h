@@ -41,6 +41,7 @@ class BaseGame : public GameState{
     */
     int gameDificulty;
 
+    void artificialIntelligence();
 
     void collisionCheck();
 
