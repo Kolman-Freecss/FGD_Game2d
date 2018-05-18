@@ -72,7 +72,7 @@
 	<GameState.h>
 	<MenuInitialState.h>
 
-1526662446 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526664554 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -408,7 +408,7 @@
 	<BaseGame.h>
 	<MenuInitialState.h>
 
-1526661663 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinventariostate.cpp
+1526664554 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinventariostate.cpp
 	<MenuInventarioState.h>
 	<allegro.h>
 	<GameState.h>
@@ -416,7 +416,7 @@
 	<BaseGame.h>
 	<MenuInitialState.h>
 
-1526663618 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinventariostate.h
+1526664554 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinventariostate.h
 	<GameState.h>
 	<GameStateManager.h>
 
