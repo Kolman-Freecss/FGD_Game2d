@@ -1,24 +1,24 @@
-#include <MenuInitialState.h>
+#include <MenuOptionsState.h>
 #include <allegro.h>
 #include <GameState.h>
 #include <GameStateManager.h>
 #include <BaseGame.h>
-#include <MenuOptionsState.h>
+#include <MenuInitialState.h>
 
 using namespace std;
 
-MenuInitialState::MenuInitialState(GameStateManager *game)
+MenuOptionsState::MenuOptionsState(GameStateManager *game, int fullScreen)
 {
     this->game = game;
 
+    this->fullScreen = fullScreen;
     this->init();
 
 }
 
-void MenuInitialState::init()
+void MenuOptionsState::init()
 {
 
-    this->logo = load_bitmap("src\\Resources\\shield_logo_all.bmp",NULL);
     this->background_image = load_bitmap("src\\Resources\\background_menuinitial.bmp",NULL);
     this->new_game = load_bitmap("src\\Resources\\new_game.bmp",NULL);
     this->new_game_pressed = load_bitmap("src\\Resources\\new_game_pressed.bmp",NULL);
@@ -29,32 +29,33 @@ void MenuInitialState::init()
 
     install_mouse();
 
-    //set_mouse_sprite(mouse);
     show_mouse(screen);
 
 }
 
-void MenuInitialState::getEvents()
+void MenuOptionsState::getEvents()
 {
 
 
 
 }
 
-void MenuInitialState::update()
+void MenuOptionsState::update()
 {
 
 
 
 }
 
-void MenuInitialState::draw()
+void MenuOptionsState::draw()
 {
 
-    stretch_blit(this->background_image, this->game->getBuffer(), 0, 0, background_image->w, background_image->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+    if(this->fullScreen == 1){
+        stretch_blit(this->background_image, this->game->getBuffer(), 0, 0, background_image->w, background_image->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+    }else if ( this-> fullScreen == 2){
+        masked_blit(this->background_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 200, MIDDLE_SCREEN_Y - 200, 400, 400);
+    }
 
-
-    masked_blit(this->logo, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 100, MIDDLE_SCREEN_Y - 250, 200, 200);
     newGamePressed();
     optionsPressed();
     leavePressed();
@@ -66,7 +67,7 @@ void MenuInitialState::draw()
 }
 
 
-void MenuInitialState::newGamePressed()
+void MenuOptionsState::newGamePressed()
 {
 
     if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
@@ -85,7 +86,7 @@ void MenuInitialState::newGamePressed()
 
 }
 
-void MenuInitialState::optionsPressed()
+void MenuOptionsState::optionsPressed()
 {
 
     if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
@@ -94,7 +95,7 @@ void MenuInitialState::optionsPressed()
         masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->pushState(new MenuOptionsState(this->game, 1));
+            this->game->popState();
         }
     }
     else
@@ -104,7 +105,7 @@ void MenuInitialState::optionsPressed()
 
 }
 
-void MenuInitialState::leavePressed()
+void MenuOptionsState::leavePressed()
 {
 
     if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
@@ -113,7 +114,7 @@ void MenuInitialState::leavePressed()
         masked_blit(this->leave_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->setRunning(false);
+            this->game->popState();
         }
 
     }

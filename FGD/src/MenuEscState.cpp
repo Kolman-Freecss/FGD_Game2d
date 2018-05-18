@@ -4,6 +4,7 @@
 #include <GameStateManager.h>
 #include <BaseGame.h>
 #include <MenuInitialState.h>
+#include <MenuOptionsState.h>
 
 using namespace std;
 
@@ -90,7 +91,7 @@ void MenuEscState::optionsPressed()
         masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->popState();
+            this->game->pushState(new MenuOptionsState(this->game, 2));
         }
     }
     else

@@ -365,12 +365,13 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526579593 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
+1526655362 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
 	<MenuInitialState.h>
 	<allegro.h>
 	<GameState.h>
 	<GameStateManager.h>
 	<BaseGame.h>
+	<MenuOptionsState.h>
 
 1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\house.h
 	"Drawable.h"
@@ -384,10 +385,24 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526586367 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
+1526655341 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
 	<MenuEscState.h>
 	<allegro.h>
 	<GameState.h>
 	<GameStateManager.h>
 	<BaseGame.h>
+	<MenuInitialState.h>
+	<MenuOptionsState.h>
+
+1526655515 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsstate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526655562 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsstate.cpp
+	<MenuOptionsState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuInitialState.h>
 
