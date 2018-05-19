@@ -18,13 +18,13 @@ MenuOptionsGameState::MenuOptionsGameState(GameStateManager *game)
 void MenuOptionsGameState::init()
 {
 
-    this->background_image = load_bitmap("src\\Resources\\background_menuinitial.bmp",NULL);
-    this->new_game = load_bitmap("src\\Resources\\new_game.bmp",NULL);
-    this->new_game_pressed = load_bitmap("src\\Resources\\new_game_pressed.bmp",NULL);
-    this->options = load_bitmap("src\\Resources\\options.bmp",NULL);
-    this->options_pressed = load_bitmap("src\\Resources\\options_pressed.bmp",NULL);
-    this->leave = load_bitmap("src\\Resources\\leave.bmp",NULL);
-    this->leave_pressed = load_bitmap("src\\Resources\\leave_pressed.bmp",NULL);
+    this->background_image = load_bitmap("src\\Resources\\Menu_game_options\\background_menu_esc.bmp",NULL);
+    this->music = load_bitmap("src\\Resources\\Menu_game_options\\music.bmp",NULL);
+    this->music_pressed = load_bitmap("src\\Resources\\Menu_game_options\\music_pressed.bmp",NULL);
+    this->music_check = load_bitmap("src\\Resources\\Menu_game_options\\music_checked.bmp",NULL);
+    this->music_pressed_check = load_bitmap("src\\Resources\\Menu_game_options\\music_checked_pressed.bmp",NULL);
+    this->returnn = load_bitmap("src\\Resources\\Menu_game_options\\return.bmp",NULL);
+    this->return_pressed = load_bitmap("src\\Resources\\Menu_game_options\\return_pressed.bmp",NULL);
 
     install_mouse();
 
@@ -51,9 +51,8 @@ void MenuOptionsGameState::draw()
 
     masked_blit(this->background_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 200, MIDDLE_SCREEN_Y - 200, 400, 400);
 
-    newGamePressed();
-    optionsPressed();
-    leavePressed();
+    musicPressed();
+    returnPressedF();
 
 
 
@@ -62,51 +61,45 @@ void MenuOptionsGameState::draw()
 }
 
 
-void MenuOptionsGameState::newGamePressed()
+void MenuOptionsGameState::musicPressed()
 {
 
     if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
-       mouse_y >= (MIDDLE_SCREEN_Y - 30) && mouse_y <= (MIDDLE_SCREEN_Y + 36))
+       mouse_y >= (MIDDLE_SCREEN_Y - 180) && mouse_y <= (MIDDLE_SCREEN_Y - 114))
     {
-        masked_blit(this->new_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
+
+        if(!this->getSound()){
+            masked_blit(this->music_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 180, 268, 66);
+        }else{
+            masked_blit(this->music_pressed_check, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 180, 268, 66);
+        }
         if(mouse_b & 1)
         {
-            this->game->pushState(new BaseGame(1, game));
+            if(!this->getSound()){
+                this->setSound(true);
+            }else{
+                this->setSound(false);
+            }
         }
     }
     else
     {
-        masked_blit(this->new_game, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
-    }
-
-}
-
-void MenuOptionsGameState::optionsPressed()
-{
-
-    if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
-       mouse_y >= (MIDDLE_SCREEN_Y + 50) && mouse_y <= (MIDDLE_SCREEN_Y + 116))
-    {
-        masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
-        if(mouse_b & 1)
-        {
-            this->game->popState();
+        if(!this->getSound()){
+            masked_blit(this->music, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 180, 268, 66);
+        }else{
+            masked_blit(this->music_check, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 180, 268, 66);
         }
     }
-    else
-    {
-        masked_blit(this->options, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
-    }
 
 }
 
-void MenuOptionsGameState::leavePressed()
+void MenuOptionsGameState::returnPressedF()
 {
 
     if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
-       mouse_y >= (MIDDLE_SCREEN_Y + 130) && mouse_y <= (MIDDLE_SCREEN_Y + 196))
+       mouse_y >= (MIDDLE_SCREEN_Y + 114) && mouse_y <= (MIDDLE_SCREEN_Y + 170))
     {
-        masked_blit(this->leave_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
+        masked_blit(this->return_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 114, 268, 66);
         if(mouse_b & 1)
         {
             this->game->popState();
@@ -115,7 +108,7 @@ void MenuOptionsGameState::leavePressed()
     }
     else
     {
-        masked_blit(this->leave, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
+        masked_blit(this->returnn, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 114, 268, 66);
     }
 
 }
