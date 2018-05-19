@@ -5,7 +5,7 @@
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
 	<iostream>
 
-1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+1526677252 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
@@ -122,7 +122,7 @@
 	"Drawable.h"
 	<vector>
 
-1526584780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+1526675047 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
 	<House.h>
 	"Map.h"
 	"allegro.h"
@@ -280,7 +280,7 @@
 
 1526325033 >
 
-1526662960 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
+1526692845 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
 1526579004 ture/MenuInicial
@@ -296,11 +296,8 @@
 	<vector>
 	<allegro.h>
 
-1526398145 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestate.cpp
-	<GameState.h>
-	<vector>
-	<allegro.h>
-	<iostream>
+1526692878 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestate.cpp
+	"GameState.h"
 
 1526340385 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\character.cpp
 	"Character.h"
@@ -367,7 +364,7 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526655795 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
+1526687598 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
 	<MenuInitialState.h>
 	<allegro.h>
 	<GameState.h>
@@ -387,20 +384,20 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526655795 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
+1526687588 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
 	<MenuEscState.h>
 	<allegro.h>
 	<GameState.h>
 	<GameStateManager.h>
 	<BaseGame.h>
 	<MenuInitialState.h>
-	<MenuOptionsState.h>
+	<MenuOptionsGameState.h>
 
-1526655795 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsstate.h
+1526692784 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsstate.h
 	<GameState.h>
 	<GameStateManager.h>
 
-1526655795 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsstate.cpp
+1526693059 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsstate.cpp
 	<MenuOptionsState.h>
 	<allegro.h>
 	<GameState.h>
@@ -419,4 +416,16 @@
 1526664554 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinventariostate.h
 	<GameState.h>
 	<GameStateManager.h>
+
+1526687393 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsgamestate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526687612 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsgamestate.cpp
+	<MenuOptionsGameState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuInitialState.h>
 

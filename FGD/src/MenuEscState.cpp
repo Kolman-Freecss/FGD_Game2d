@@ -4,7 +4,7 @@
 #include <GameStateManager.h>
 #include <BaseGame.h>
 #include <MenuInitialState.h>
-#include <MenuOptionsState.h>
+#include <MenuOptionsGameState.h>
 
 using namespace std;
 
@@ -72,7 +72,7 @@ void MenuEscState::newGamePressed()
         masked_blit(this->new_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->pushState(new BaseGame(1, game));
+            this->game->pushState(new BaseGame(this->getDifficulty(), game));
         }
     }
     else
@@ -91,7 +91,7 @@ void MenuEscState::optionsPressed()
         masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->pushState(new MenuOptionsState(this->game, 2));
+            this->game->pushState(new MenuOptionsGameState(this->game));
         }
     }
     else

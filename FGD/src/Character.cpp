@@ -18,6 +18,8 @@ Character::Character(BITMAP ***animations, int health, int damage, double speed,
     this->damage = damage;
     this->speed = speed;
     this->shield = shield;
+    this->ax = x;
+    this->y = y;
 }
 
 int Character::getSpeed()
