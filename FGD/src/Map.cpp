@@ -13,14 +13,6 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     this->quantEnemies = quantEnemies;
     this->quantElementsOfAmbient = quantElementsOfAmbient;
 
-    //Drawable **mapAmbient;
-    //vector<Enemy*> firtMapEnemies;
-    /**
-    Fill the matrix of animations enemy
-    */
-
-
-
     /**
     Reservamos memoria para la matriz
     */
@@ -40,12 +32,43 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
     this->chargeMatrixAmbient(this->ambientMatrix, 1);
 
+    /**
+    Generacion dinamica de enemigos comprovando la colision con otros enemigos, player o ambiente
+    */
     srand(time(NULL));
     for(int i = 0; i < this->quantEnemies; i++){
         int positionX = rand()%(800-33);
         int positionY = rand()%(600-50);
         //std::cout << positionX << " position x " << positionY << " position y";
-        this->enemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 50, 33));
+        Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 50, 33);
+        /*bool generado = true;
+        while(generado){
+                //col with enemies
+            for(int j = 0; j < this->getVectorEnemies().size(); j++){
+                while (enemy->collision(getVectorEnemies().at(j))){
+                    positionX = rand()%(800-33);
+                    positionY = rand()%(600-50);
+                    enemy->setX(positionX);
+                    enemy->setY(positionY);
+                    if(!enemy->collision(getVectorEnemies().at(j))){
+                        j = 0;
+                    }
+                }
+            }
+        //col with ambient
+            for (int i = 0; i < 1; i++) {
+                for (int j = 0; j < 2; j++) {
+                    if (i != 0 || j != 0) {
+                        if (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                            this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                            this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                        }
+                    }
+
+                }
+            }
+        }*/
+        this->enemies.push_back(enemy);
     }
 
     /*
