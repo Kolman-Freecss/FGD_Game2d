@@ -72,7 +72,7 @@
 	<GameState.h>
 	<MenuInitialState.h>
 
-1526674721 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1526772695 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -83,12 +83,13 @@
 	<MenuEscState.h>
 	<MenuInventarioState.h>
 
-1526674721 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+1526764493 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
 	<Player.h>
 	<GameState.h>
+	<DAOMap.h>
 
 1526584780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
 	<allegro.h>
@@ -112,23 +113,24 @@
 1525711913 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomanager.h
 	"DAOMap.h"
 
-1526314876 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomap.h
+1526764517 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomap.h
 	<vector>
 	"Map.h"
 
-1526487769 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
+1526760493 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
 	<allegro.h>
 	"Enemy.h"
 	"Drawable.h"
 	<vector>
 
-1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+1526772890 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
 	<House.h>
 	"Map.h"
 	"allegro.h"
 	"Enemy.h"
+	"GameStateManager.h"
 
-1526485811 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
+1526772708 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
 	"DAOMap.h"
 	"Map.h"
 	<vector>
@@ -280,7 +282,7 @@
 
 1526325033 >
 
-1526696704 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
+1526759346 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
 
 1526579004 ture/MenuInicial

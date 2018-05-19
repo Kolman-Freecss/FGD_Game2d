@@ -26,7 +26,7 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
 void BaseGame::init()
 {
 
-    DAOMap managerMaps = DAOMap(this->gameDificulty);
+    managerMaps = DAOMap(this->gameDificulty);
     this->activeMap = managerMaps.getMap(0);
 
     /**
@@ -43,6 +43,16 @@ void BaseGame::init()
     this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
 
 
+
+}
+
+void BaseGame::getEvents()
+{
+
+    if (key[KEY_I]) this->game->pushState(new MenuInventarioState(this->game));
+    if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
+
+    this->nextMap();
 
 }
 
@@ -117,11 +127,14 @@ void BaseGame::draw()
 }
 
 
-void BaseGame::getEvents()
+
+void BaseGame::nextMap()
 {
 
-    if (key[KEY_I]) this->game->pushState(new MenuInventarioState(this->game));
-    if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
+    if(this->player.getX() == 750 && this->player.getY() == GameStateManager::SIZE_WINDOW_Y / 2)
+        {
+            this->activeMap = this->managerMaps.getMap(1);
+        }
 
 }
 
