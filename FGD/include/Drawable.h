@@ -16,7 +16,6 @@ class Drawable{
     //Tipo colision 1=circular 2=cuadrada
     int collisionType;
     int walkCollision[2];
-    int weaponCollision[2];
     int collisionRadius;
 
     int x;
@@ -38,6 +37,8 @@ class Drawable{
     Drawable(BITMAP ***animations, int x, int y, int height, int width);
     Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width);
     //virtual ~Drawable();
+
+    //getters setters
     int getX();
     int getY();
     int getHeight();
@@ -47,8 +48,8 @@ class Drawable{
     void setX(int x);
     void setY(int y);
 
-    virtual //void printSprite(BITMAP *image, BITMAP *buffer, int source_x, int source_y, int dest_x, int dest_y, int width, int height);
-    void draw(BITMAP *buffer);
+    //funciones
+    virtual void draw(BITMAP *buffer);
     bool attackCollision(Drawable *drawable, Weapon *weapon, int direction);
     void drawAmbient(BITMAP *buffer);
     bool collision(Drawable *drawable);
@@ -56,7 +57,6 @@ class Drawable{
     BITMAP *getBitmapAmbient();
 
     void genWalkCollision();
-    void genAtackCollision();
 
 
 };

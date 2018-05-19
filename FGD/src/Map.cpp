@@ -45,7 +45,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         int positionX = rand()%(800-33);
         int positionY = rand()%(600-50);
         //std::cout << positionX << " position x " << positionY << " position y";
-        this->enemies.push_back(new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 50, 33));
+        this->enemies.push_back(new Enemy(matrixAnimationsEnemy, 1000, 20, 1, 5000, positionX, positionY, 50, 33));
     }
 
     /*

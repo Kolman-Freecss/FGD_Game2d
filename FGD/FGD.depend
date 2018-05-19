@@ -393,3 +393,172 @@
 	<GameStateManager.h>
 	<BaseGame.h>
 
+1526699116 source:d:\users\moya\git\project\fgd\src\basegame.cpp
+	<BaseGame.h>
+	<vector>
+	<DAOMap.h>
+	<allegro.h>
+	<iostream>
+	<GameState.h>
+	<GameStateManager.h>
+
+1526671509 d:\users\moya\git\project\fgd\include\basegame.h
+	<Map.h>
+	<vector>
+	<Enemy.h>
+	<Player.h>
+	<GameState.h>
+
+1526671509 d:\users\moya\git\project\fgd\include\map.h
+	<allegro.h>
+	"Enemy.h"
+	"Drawable.h"
+	<vector>
+
+1526068616 d:\users\moya\git\project\fgd\include\enemy.h
+	<vector>
+	"Character.h"
+	"Object.h"
+	"String.h"
+
+1526671509 d:\users\moya\git\project\fgd\include\character.h
+	"Drawable.h"
+	<allegro.h>
+	<vector>
+
+1526694212 d:\users\moya\git\project\fgd\include\drawable.h
+	<allegro.h>
+	<Weapon.h>
+	<cmath>
+	"math.h"
+	"Weapon.h"
+
+1526671509 d:\users\moya\git\project\fgd\include\weapon.h
+	"Object.h"
+
+1526068550 d:\users\moya\git\project\fgd\include\object.h
+
+1526671509 d:\users\moya\git\project\fgd\include\player.h
+	"Character.h"
+	"Inventory.h"
+
+1526671509 d:\users\moya\git\project\fgd\include\inventory.h
+	<vector>
+	"Object.h"
+
+1526671509 d:\users\moya\git\project\fgd\include\gamestate.h
+	<GameStateManager.h>
+
+1526671509 d:\users\moya\git\project\fgd\include\gamestatemanager.h
+	<vector>
+	<allegro.h>
+
+1526671509 d:\users\moya\git\project\fgd\include\daomap.h
+	<vector>
+	"Map.h"
+
+1526699141 source:d:\users\moya\git\project\fgd\src\character.cpp
+	"Character.h"
+	"Drawable.h"
+
+1526068538 source:d:\users\moya\git\project\fgd\src\dao\daomanager.cpp
+	"DAOManager.h"
+	"DAOMap.h"
+
+1526068538 d:\users\moya\git\project\fgd\include\daomanager.h
+	"DAOMap.h"
+
+1526671509 source:d:\users\moya\git\project\fgd\src\dao\daomap.cpp
+	"DAOMap.h"
+	"Map.h"
+	<vector>
+	"allegro.h"
+	"Enemy.h"
+
+1526698727 source:d:\users\moya\git\project\fgd\src\drawable.cpp
+	<allegro.h>
+	"Drawable.h"
+	<cmath>
+	<iostream>
+	"Weapon.h"
+	<algorithm>
+
+1526671509 source:d:\users\moya\git\project\fgd\src\enemy.cpp
+	"Enemy.h"
+
+1526671509 source:d:\users\moya\git\project\fgd\src\gamestatemanager.cpp
+	<GameStateManager.h>
+	<allegro.h>
+	<GameState.h>
+	<BaseGame.h>
+
+1526671509 source:d:\users\moya\git\project\fgd\src\house.cpp
+	"House.h"
+	<allegro.h>
+
+1526671509 d:\users\moya\git\project\fgd\include\house.h
+	"Drawable.h"
+	<allegro.h>
+
+1526671509 source:d:\users\moya\git\project\fgd\src\inventory.cpp
+	"Inventory.h"
+	"vector"
+
+1526671509 source:d:\users\moya\git\project\fgd\src\main\main.cpp
+	<allegro.h>
+	<BaseGame.h>
+	<GameStateManager.h>
+	<GameState.h>
+	<MenuInitialState.h>
+
+1526671509 d:\users\moya\git\project\fgd\include\menuinitialstate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526698212 source:d:\users\moya\git\project\fgd\src\map.cpp
+	<House.h>
+	"Map.h"
+	"allegro.h"
+	"Enemy.h"
+
+1526671509 source:d:\users\moya\git\project\fgd\src\menuinitialstate.cpp
+	<MenuInitialState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+
+1525467399 source:d:\users\moya\git\project\fgd\src\object.cpp
+	"Object.h"
+
+1526671509 source:d:\users\moya\git\project\fgd\src\player.cpp
+	"Player.h"
+	<allegro.h>
+
+1525467399 source:d:\users\moya\git\project\fgd\src\potion.cpp
+	"Potion.h"
+
+1525467399 d:\users\moya\git\project\fgd\include\potion.h
+	"Object.h"
+
+1525467399 source:d:\users\moya\git\project\fgd\src\shield.cpp
+	"Shield.h"
+
+1525467399 d:\users\moya\git\project\fgd\include\shield.h
+	"Weapon.h"
+
+1525467399 source:d:\users\moya\git\project\fgd\src\sword.cpp
+	"Sword.h"
+
+1525467399 d:\users\moya\git\project\fgd\include\sword.h
+	"Weapon.h"
+
+1526671510 source:d:\users\moya\git\project\fgd\src\skelleton.cpp
+	"Skelleton.h"
+
+1526671509 d:\users\moya\git\project\fgd\include\skelleton.h
+	<Enemy.h>
+
+1526671510 source:d:\users\moya\git\project\fgd\src\weapon.cpp
+	"Weapon.h"
+

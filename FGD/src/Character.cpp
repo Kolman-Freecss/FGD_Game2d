@@ -18,6 +18,12 @@ Character::Character(BITMAP ***animations, int health, int damage, double speed,
     this->damage = damage;
     this->speed = speed;
     this->shield = shield;
+    this->isAlive = true;
+    this->ax = x;
+    this->ay = y;
+    genWalkCollision();
+    collisionType = 1;
+
 }
 
 int Character::getDirection(){
@@ -160,11 +166,11 @@ int Character::getDamage(){
 }
 
 bool Character::isIsAlive() {
-    return false;
+    return isAlive;
 }
 
 void Character::setIsAlive(bool isAlive) {
-
+    this->isAlive = isAlive;
 }
 
 void Character::setDamage(int damage) {

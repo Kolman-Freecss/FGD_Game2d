@@ -18,6 +18,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FGD.dir/src/Skelleton.cpp.obj"
   "CMakeFiles/FGD.dir/src/Sword.cpp.obj"
   "CMakeFiles/FGD.dir/src/Weapon.cpp.obj"
+  "CMakeFiles/FGD.dir/main.cpp.obj"
   "FGD.pdb"
   "FGD.exe"
   "FGD.exe.manifest"

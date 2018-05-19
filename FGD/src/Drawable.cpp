@@ -8,12 +8,9 @@
 using namespace std;
 
 
-Drawable::Drawable()
-{
-    x = 10;
-    y = 10;
-}
+Drawable::Drawable() {
 
+}
 Drawable::Drawable(BITMAP ***animations, int x, int y, int height, int width)
 {
 
@@ -23,15 +20,15 @@ Drawable::Drawable(BITMAP ***animations, int x, int y, int height, int width)
     this->height = height;
     this->width = width;
 
-    genWalkCollision();
+   //genWalkCollision();
     this->collisionRadius = (width/3)*2;
-
-    this->collisionType = 1;
+    //this->collisionType = 1;
 }
+
 
 /**
 Constructor para instanciar el contenido del Ambiente del mapa
-*/
+ */
 Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
 {
     this->bitmapAmbient = bitmapAmbient;
@@ -43,6 +40,7 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
     this->collisionRadius = (width/3)*2;
 
 }
+
 
 void Drawable::draw(BITMAP *buffer){
         BITMAP* bitmapAnimation = this->animations[0][0];
@@ -63,7 +61,7 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction
         float endAngle;
         float startAngle = 0;
         //switch (this->activeBitmap[0]) {
-            //activeBitmap[0]=1;
+                // activeBitmap[0]=1;
         switch (direction) {
             case UP:
                 startAngle = 90-percent/2;
@@ -80,10 +78,10 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction
             default:;
         }
         endAngle = percent + startAngle;
-
-        if (angle >= startAngle && angle <= endAngle) {
+        //calcular si punto dentro de sector circulo
+        if (angle >= startAngle && angle <= endAngle) {//calculo normal
             return true;
-        }else if ((angle >= startAngle || angle <= startAngle*-1) && activeBitmap[0]==1) {
+        }else if ((angle >= startAngle || angle <= startAngle*-1) && direction==RIGHT) {//calculo para derecha
             return true;
         }else {
             return false;
@@ -132,8 +130,6 @@ void Drawable::genWalkCollision(){
     this->walkCollision[1] = (this->height/6)*5;
 }
 
-
-
 void Drawable::setHeight(int height)
 {
     this->height = height;
@@ -167,16 +163,12 @@ int Drawable::getY()
 
 int Drawable::getHeight()
 {
-    return 0;
+    return height;
 }
 
 int Drawable::getWidth()
 {
-    return 0;
-}
-
-void Drawable::genAtackCollision() {
-
+    return width;
 }
 
 BITMAP *Drawable::getBitmapAmbient()
