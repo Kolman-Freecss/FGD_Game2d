@@ -56,7 +56,7 @@ class Drawable{
     int distance(Drawable *drawable);
     BITMAP *getBitmapAmbient();
 
-    void genWalkCollision();
+    virtual void genWalkCollision();
 
 
 };

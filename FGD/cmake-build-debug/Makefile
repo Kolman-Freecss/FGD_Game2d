@@ -635,6 +635,33 @@ src/Sword.cpp.s:
 	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Sword.cpp.s
 .PHONY : src/Sword.cpp.s
 
+src/Timer.obj: src/Timer.cpp.obj
+
+.PHONY : src/Timer.obj
+
+# target to build an object file
+src/Timer.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Timer.cpp.obj
+.PHONY : src/Timer.cpp.obj
+
+src/Timer.i: src/Timer.cpp.i
+
+.PHONY : src/Timer.i
+
+# target to preprocess a source file
+src/Timer.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Timer.cpp.i
+.PHONY : src/Timer.cpp.i
+
+src/Timer.s: src/Timer.cpp.s
+
+.PHONY : src/Timer.s
+
+# target to generate assembly for a file
+src/Timer.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Timer.cpp.s
+.PHONY : src/Timer.cpp.s
+
 src/Weapon.obj: src/Weapon.cpp.obj
 
 .PHONY : src/Weapon.obj
@@ -728,6 +755,9 @@ help:
 	@echo ... src/Sword.obj
 	@echo ... src/Sword.i
 	@echo ... src/Sword.s
+	@echo ... src/Timer.obj
+	@echo ... src/Timer.i
+	@echo ... src/Timer.s
 	@echo ... src/Weapon.obj
 	@echo ... src/Weapon.i
 	@echo ... src/Weapon.s

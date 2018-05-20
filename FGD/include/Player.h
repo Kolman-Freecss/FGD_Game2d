@@ -13,7 +13,9 @@ class Player : public Character {
     //virtual ~Player();
     void keyboard();
 
- private:
+    void genWalkCollision() override;
+
+private:
     int experiencia;
     int level;
     int shield;

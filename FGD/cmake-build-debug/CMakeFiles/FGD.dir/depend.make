@@ -12,6 +12,8 @@ CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/GameState.h
 CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/GameStateManager.h
 CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/Inventory.h
 CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/Map.h
+CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/MenuEscState.h
+CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/MenuInventarioState.h
 CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/Object.h
 CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/Player.h
 CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../include/Weapon.h
@@ -20,6 +22,7 @@ CMakeFiles/FGD.dir/src/BaseGame.cpp.obj: ../src/BaseGame.cpp
 CMakeFiles/FGD.dir/src/Character.cpp.obj: ../include/Character.h
 CMakeFiles/FGD.dir/src/Character.cpp.obj: ../include/Drawable.h
 CMakeFiles/FGD.dir/src/Character.cpp.obj: ../include/Object.h
+CMakeFiles/FGD.dir/src/Character.cpp.obj: ../include/Timer.h
 CMakeFiles/FGD.dir/src/Character.cpp.obj: ../include/Weapon.h
 CMakeFiles/FGD.dir/src/Character.cpp.obj: ../src/Character.cpp
 
@@ -64,6 +67,7 @@ CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../include/Inventory.h
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../include/Map.h
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../include/Object.h
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../include/Player.h
+CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../include/Timer.h
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../include/Weapon.h
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../src/GameStateManager.cpp
 
@@ -146,6 +150,9 @@ CMakeFiles/FGD.dir/src/Sword.cpp.obj: ../include/Object.h
 CMakeFiles/FGD.dir/src/Sword.cpp.obj: ../include/Sword.h
 CMakeFiles/FGD.dir/src/Sword.cpp.obj: ../include/Weapon.h
 CMakeFiles/FGD.dir/src/Sword.cpp.obj: ../src/Sword.cpp
+
+CMakeFiles/FGD.dir/src/Timer.cpp.obj: ../include/Timer.h
+CMakeFiles/FGD.dir/src/Timer.cpp.obj: ../src/Timer.cpp
 
 CMakeFiles/FGD.dir/src/Weapon.cpp.obj: ../include/Object.h
 CMakeFiles/FGD.dir/src/Weapon.cpp.obj: ../include/Weapon.h

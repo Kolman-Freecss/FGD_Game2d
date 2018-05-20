@@ -3,9 +3,9 @@
 Enemy::Enemy(){}
 
 Enemy::Enemy(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width):
-            Character(animations, health, damage, speed, shield, x, y, height, width)
-{
-
+            Character(animations, health, damage, speed, shield, x, y, height, width) {
+    genWalkCollision();
+    this->collisionRadius = 15;
 
 
 }
@@ -49,7 +49,7 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
     {
         this->walkLEFT();
     }
-
+    // TODO CAMBIAR A FUNCION
     if ( this->x < 0 ) this->x = ax;
     if ( this->x+this->width > 800 ) this->x = ax;
     if ( this->y < 0 ) this->y = ay;
@@ -57,4 +57,9 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
 
     this->timeNextRandomize++;
 
+}
+
+void Enemy::genWalkCollision() {
+    this->walkCollision[0] = 39;
+    this->walkCollision[1] = 49;
 }

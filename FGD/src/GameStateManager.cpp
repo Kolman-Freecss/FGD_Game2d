@@ -2,6 +2,8 @@
 #include <allegro.h>
 #include <GameState.h>
 #include <BaseGame.h>
+#include <iostream>
+#include <Timer.h>
 
 using namespace std;
 
@@ -49,6 +51,7 @@ void GameStateManager::gameLoop()
 {
 
     while(this->isRunning()){
+        Timer::timerTIC();
 
         /**
         Si no hay ningun estado en el vector de estados directamente se salta las acciones que siguen

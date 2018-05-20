@@ -139,6 +139,9 @@
 		<Unit filename="D:/Users/moya/git/Project/FGD/include/Sword.h">
 			<Option target="FGD"/>
 		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/Timer.h">
+			<Option target="FGD"/>
+		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/include/Weapon.h">
 			<Option target="FGD"/>
 		</Unit>
@@ -239,6 +242,9 @@
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Sword.cpp">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/Timer.cpp">
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Weapon.cpp">

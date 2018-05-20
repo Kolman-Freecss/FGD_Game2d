@@ -90,7 +90,19 @@ Drawable.h
 vector
 -
 
+../include/MenuEscState.h
+GameState.h
+-
+GameStateManager.h
+-
+
 ../include/MenuInitialState.h
+GameState.h
+-
+GameStateManager.h
+-
+
+../include/MenuInventarioState.h
 GameState.h
 -
 GameStateManager.h
@@ -120,6 +132,8 @@ Enemy.h
 Weapon.h
 ../include/Weapon.h
 
+../include/Timer.h
+
 ../include/Weapon.h
 Object.h
 ../include/Object.h
@@ -143,8 +157,16 @@ GameState.h
 -
 GameStateManager.h
 -
+MenuEscState.h
+-
+MenuInventarioState.h
+-
 
 D:/Users/moya/git/Project/FGD/src/Character.cpp
+Timer.h
+-
+iostream
+-
 Character.h
 D:/Users/moya/git/Project/FGD/src/Character.h
 Drawable.h
@@ -194,6 +216,10 @@ allegro.h
 GameState.h
 -
 BaseGame.h
+-
+iostream
+-
+Timer.h
 -
 
 D:/Users/moya/git/Project/FGD/src/House.cpp
@@ -267,6 +293,10 @@ D:/Users/moya/git/Project/FGD/src/Skelleton.h
 D:/Users/moya/git/Project/FGD/src/Sword.cpp
 Sword.h
 D:/Users/moya/git/Project/FGD/src/Sword.h
+
+D:/Users/moya/git/Project/FGD/src/Timer.cpp
+Timer.h
+D:/Users/moya/git/Project/FGD/src/Timer.h
 
 D:/Users/moya/git/Project/FGD/src/Weapon.cpp
 Weapon.h

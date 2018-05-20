@@ -23,6 +23,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Users/moya/git/Project/FGD/src/Shield.cpp" "D:/Users/moya/git/Project/FGD/cmake-build-debug/CMakeFiles/FGD.dir/src/Shield.cpp.obj"
   "D:/Users/moya/git/Project/FGD/src/Skelleton.cpp" "D:/Users/moya/git/Project/FGD/cmake-build-debug/CMakeFiles/FGD.dir/src/Skelleton.cpp.obj"
   "D:/Users/moya/git/Project/FGD/src/Sword.cpp" "D:/Users/moya/git/Project/FGD/cmake-build-debug/CMakeFiles/FGD.dir/src/Sword.cpp.obj"
+  "D:/Users/moya/git/Project/FGD/src/Timer.cpp" "D:/Users/moya/git/Project/FGD/cmake-build-debug/CMakeFiles/FGD.dir/src/Timer.cpp.obj"
   "D:/Users/moya/git/Project/FGD/src/Weapon.cpp" "D:/Users/moya/git/Project/FGD/cmake-build-debug/CMakeFiles/FGD.dir/src/Weapon.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

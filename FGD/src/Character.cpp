@@ -1,6 +1,11 @@
+#include <Timer.h>
+#include <iostream>
 #include "Character.h"
 #include "Drawable.h"
 
+/**
+ * Constructor vacio
+ */
 Character::Character()
 {
 }
@@ -11,6 +16,18 @@ Character::Character()
     this->health = health;
 }*/
 
+/**
+ * Contructor basico con los datos necesarios para que se muestre por pantalla
+ * @param animations matriz que contiene todas las animaciones del personage 
+ * @param health
+ * @param damage
+ * @param speed
+ * @param shield
+ * @param x
+ * @param y
+ * @param height
+ * @param width
+ */
 Character::Character(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width):
                     Drawable(animations, x, y, height, width)
 {
@@ -18,12 +35,19 @@ Character::Character(BITMAP ***animations, int health, int damage, double speed,
     this->damage = damage;
     this->speed = speed;
     this->shield = shield;
-    this->isAlive = true;
+    this->alive = true;
     this->ax = x;
     this->ay = y;
-    genWalkCollision();
-    collisionType = 1;
 
+    //this->genWalkCollision();
+    this->collisionType = 1;
+
+    this->activeBitmap[0] = 0;
+    this->activeBitmap[1] = 0;
+
+    this->timeLastAnim = 0;
+    this->attackChecked = true;
+    this->attacking = false;
 }
 
 int Character::getDirection(){
@@ -50,97 +74,151 @@ void Character::walkUP(){
     this->direction = UP;
     this->ay = y;
     this->y-= this->speed;
-    walkUPanim();
-}
-void Character::walkDOWN(){
-    this->direction = DOWN;
-    this->ay = y;
-    this->y+= this->speed;
-    walkDOWNanim();
+    walkAnimation();
 }
 void Character::walkRIGHT(){
     this->direction = RIGHT;
     this->ax = x;
     this->x+= this->speed;
-    walkRIGHTanim();
+    walkAnimation();
+}
+void Character::walkDOWN(){
+    this->direction = DOWN;
+    this->ay = y;
+    this->y+= this->speed;
+    walkAnimation();
 }
 void Character::walkLEFT(){
     this->direction = LEFT;
     this->ax = x;
     this->x-= this->speed;
-    walkLEFTanim();
+    walkAnimation();
 }
-
-void Character::walkUPanim(){
-
-}
-void Character::walkDOWNanim(){
-
-}
-void Character::walkRIGHTanim(){
-
-}
-void Character::walkLEFTanim(){
-
-}
-
-void Character::attackUPanim() {
-    //TODO
-        //averiguar como saver cuantas animaciones  hay en la posicion
-        if (activeBitmap[1]) {
-            activeBitmap[1] = activeBitmap[1]++;
-
-        }else{
-            activeBitmap[1] = 0;
-            isAttacking = false;
-        }
-
-
-
-}
-
-void Character::attackDOWNanim() {
-
-}
-
-void Character::attackRIGHTanim() {
-
-}
-
-void Character::attackLEFTanim() {
-
-}
-
-bool Character::getIsAttacking() {
-    return isAttacking;
-}
-
-void Character::setIsAttacking(bool op) {
-    this->isAttacking = op;
-}
-
-void Character::attack() {
-    if (!isAttacking) {
-
-        this->isAttacking = true;
+void Character::walkAnimation(){
+    activeBitmap[0] = direction;
+    if (Timer::getTime()-10 > timeLastAnim) {
+        timeLastAnim = Timer::getTime();
 
         switch (direction) {
             case UP:
-                attackUPanim();
+                walkUPanim();
                 break;
             case RIGHT:
-                attackRIGHTanim();
+                walkRIGHTanim();
                 break;
             case DOWN:
-                attackDOWNanim();
+                walkDOWNanim();
                 break;
             case LEFT:
-                attackLEFTanim();
+                walkLEFTanim();
                 break;
             default:;
         }
     }
+}
 
+
+void Character::walkUPanim(){
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+    }
+
+
+
+}
+void Character::walkRIGHTanim(){
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+    }
+}
+
+void Character::walkDOWNanim(){
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+    }
+}
+
+void Character::walkLEFTanim(){
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+    }
+}
+
+
+void Character::attack() {
+
+        if (Timer::getTime()-10 > timeLastAnim) {
+            timeLastAnim = Timer::getTime();
+            activeBitmap[0] = direction + 4;//colocar en posicion atacke
+            switch (direction) {
+                case UP:
+                    attackUPanim();
+                    break;
+                case RIGHT:
+                    attackRIGHTanim();
+                    break;
+                case DOWN:
+                    attackDOWNanim();
+                    break;
+                case LEFT:
+                    attackLEFTanim();
+                    break;
+                default:;
+            }
+        }
+
+
+}
+
+void Character::attackUPanim() {
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+        attacking = false;
+    }
+
+}
+void Character::attackRIGHTanim() {
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+        attacking = false;
+    }
+}
+void Character::attackDOWNanim() {
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+        attacking = false;
+    }
+}
+
+void Character::attackLEFTanim() {
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+        attacking = false;
+    }
+}
+
+bool Character::isAttacking() {
+    return attacking;
+}
+
+void Character::setAttacking(bool op) {
+    this->attacking = op;
 }
 
 void Character::wounded(Character *attackingCharacter) {
@@ -157,20 +235,22 @@ void Character::wounded(Character *attackingCharacter) {
     //TODO evento a check vida
     if (this->health <=0){
         //funcion que mata al character
-        isAlive = false;
+        alive = false;
     }
 }
+
+
 
 int Character::getDamage(){
     return damage;
 }
 
 bool Character::isIsAlive() {
-    return isAlive;
+    return alive;
 }
 
 void Character::setIsAlive(bool isAlive) {
-    this->isAlive = isAlive;
+    this->alive = isAlive;
 }
 
 void Character::setDamage(int damage) {
@@ -194,10 +274,18 @@ void Character::setShield(int shield) {
 }
 
 
-Weapon *Character::getSelectedWeapon() const {
+Weapon *Character::getSelectedWeapon(){
     return selectedWeapon;
 }
 
 void Character::setSelectedWeapon(Weapon *selectedWeapon) {
     Character::selectedWeapon = selectedWeapon;
+}
+
+bool Character::isAttackChecked(){
+    return attackChecked;
+}
+
+void Character::setAttackChecked(bool endAttack) {
+    Character::attackChecked = endAttack;
 }

@@ -19,7 +19,9 @@ class Enemy : public Character {
     */
     void update();
 
- private:
+    void genWalkCollision() override;
+
+private:
      int direction;
      int timeNextRandomize;
 

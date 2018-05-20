@@ -59,4 +59,4 @@ add_executable(FGD
     src/Skelleton.cpp
     src/Sword.cpp
     src/Weapon.cpp
-    main.cpp)
+    main.cpp src/Timer.cpp include/Timer.h)

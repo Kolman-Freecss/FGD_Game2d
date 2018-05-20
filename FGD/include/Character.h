@@ -16,9 +16,12 @@ protected:
     int shield;
     int ax;
     int ay;
-    bool isAttacking;
+
     Weapon *selectedWeapon;
-    bool isAlive;
+    bool alive;
+    int timeLastAnim;
+    bool attacking;
+    bool attackChecked;
 
 
     /**
@@ -40,21 +43,23 @@ protected:
     int getAY();
 
     void walkUP();
-    void walkDOWN();
     void walkRIGHT();
+    void walkDOWN();
     void walkLEFT();
 
+    void walkAnimation();
+
     void walkUPanim();
-    void walkDOWNanim();
     void walkRIGHTanim();
+    void walkDOWNanim();
     void walkLEFTanim();
 
     void attack();
-    bool getIsAttacking();
-    void setIsAttacking(bool op);
-
+    bool isAttacking();
+    void setAttacking(bool op);
 
     void wounded(Character *attackingCharacter);
+
 
     void attackUPanim();
     void attackDOWNanim();
@@ -81,9 +86,13 @@ protected:
 
     void setDirection(int direction);
 
-    Weapon *getSelectedWeapon() const;
+    Weapon *getSelectedWeapon();
 
     void setSelectedWeapon(Weapon *selectedWeapon);
+
+    bool isAttackChecked();
+
+    void setAttackChecked(bool endAttack);
 
 
 };

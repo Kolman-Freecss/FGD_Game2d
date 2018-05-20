@@ -35,14 +35,83 @@ void BaseGame::init()
     */
     BITMAP*** matrixAnimationsPlayer;
     matrixAnimationsPlayer = new BITMAP**[1];
-    for(int i = 0; i < 1; i++){
-        matrixAnimationsPlayer[i] = new BITMAP*[1];
+    for(int i = 0; i < 12; i++){
+        matrixAnimationsPlayer[i] = new BITMAP*[4];
     }
-    BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
-    matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 10, 20, 50, 50, 50, 33);
-    //TODO PONER ARMA
+    //BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
+    //matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
+
+    //TODO QUITAR
+    //WALK
+    matrixAnimationsPlayer[0][0] = load_bitmap("src\\Resources\\SKELETON1\\SWU1.bmp",NULL);
+    matrixAnimationsPlayer[0][1] = load_bitmap("src\\Resources\\SKELETON1\\SWU2.bmp",NULL);
+    matrixAnimationsPlayer[0][2] = load_bitmap("src\\Resources\\SKELETON1\\SWU1.bmp",NULL);
+    matrixAnimationsPlayer[0][3] = load_bitmap("src\\Resources\\SKELETON1\\SWU4.bmp",NULL);
+
+    matrixAnimationsPlayer[1][0] = load_bitmap("src\\Resources\\SKELETON1\\SWR1.bmp",NULL);
+    matrixAnimationsPlayer[1][1] = load_bitmap("src\\Resources\\SKELETON1\\SWR2.bmp",NULL);
+    matrixAnimationsPlayer[1][2] = load_bitmap("src\\Resources\\SKELETON1\\SWR1.bmp",NULL);
+    matrixAnimationsPlayer[1][3] = load_bitmap("src\\Resources\\SKELETON1\\SWR4.bmp",NULL);
+
+    matrixAnimationsPlayer[2][0] = load_bitmap("src\\Resources\\SKELETON1\\SWD1.bmp",NULL);
+    matrixAnimationsPlayer[2][1] = load_bitmap("src\\Resources\\SKELETON1\\SWD2.bmp",NULL);
+    matrixAnimationsPlayer[2][2] = load_bitmap("src\\Resources\\SKELETON1\\SWD1.bmp",NULL);
+    matrixAnimationsPlayer[2][3] = load_bitmap("src\\Resources\\SKELETON1\\SWD4.bmp",NULL);
+
+    matrixAnimationsPlayer[3][0] = load_bitmap("src\\Resources\\SKELETON1\\SWL1.bmp",NULL);
+    matrixAnimationsPlayer[3][1] = load_bitmap("src\\Resources\\SKELETON1\\SWL2.bmp",NULL);
+    matrixAnimationsPlayer[3][2] = load_bitmap("src\\Resources\\SKELETON1\\SWL1.bmp",NULL);
+    matrixAnimationsPlayer[3][3] = load_bitmap("src\\Resources\\SKELETON1\\SWL4.bmp",NULL);
+
+    //ATTACK
+    matrixAnimationsPlayer[4][0] = load_bitmap("src\\Resources\\SKELETON1\\SAU1.bmp",NULL);
+    matrixAnimationsPlayer[4][1] = load_bitmap("src\\Resources\\SKELETON1\\SAU2.bmp",NULL);
+    matrixAnimationsPlayer[4][2] = load_bitmap("src\\Resources\\SKELETON1\\SAU3.bmp",NULL);
+    matrixAnimationsPlayer[4][3] = load_bitmap("src\\Resources\\SKELETON1\\SAU4.bmp",NULL);
+
+    matrixAnimationsPlayer[5][0] = load_bitmap("src\\Resources\\SKELETON1\\SAR1.bmp",NULL);
+    matrixAnimationsPlayer[5][1] = load_bitmap("src\\Resources\\SKELETON1\\SAR2.bmp",NULL);
+    matrixAnimationsPlayer[5][2] = load_bitmap("src\\Resources\\SKELETON1\\SAR3.bmp",NULL);
+    matrixAnimationsPlayer[5][3] = load_bitmap("src\\Resources\\SKELETON1\\SAR4.bmp",NULL);
+
+    matrixAnimationsPlayer[6][0] = load_bitmap("src\\Resources\\SKELETON1\\SAD1.bmp",NULL);
+    matrixAnimationsPlayer[6][1] = load_bitmap("src\\Resources\\SKELETON1\\SAD2.bmp",NULL);
+    matrixAnimationsPlayer[6][2] = load_bitmap("src\\Resources\\SKELETON1\\SAD3.bmp",NULL);
+    matrixAnimationsPlayer[6][3] = load_bitmap("src\\Resources\\SKELETON1\\SAD4.bmp",NULL);
+
+    matrixAnimationsPlayer[7][0] = load_bitmap("src\\Resources\\SKELETON1\\SAL1.bmp",NULL);
+    matrixAnimationsPlayer[7][1] = load_bitmap("src\\Resources\\SKELETON1\\SAL2.bmp",NULL);
+    matrixAnimationsPlayer[7][2] = load_bitmap("src\\Resources\\SKELETON1\\SAL3.bmp",NULL);
+    matrixAnimationsPlayer[7][3] = load_bitmap("src\\Resources\\SKELETON1\\SAL4.bmp",NULL);
+
+    //DIE
+    matrixAnimationsPlayer[8][0] = load_bitmap("src\\Resources\\SKELETON1\\SDU1.bmp",NULL);
+    matrixAnimationsPlayer[8][1] = load_bitmap("src\\Resources\\SKELETON1\\SDU2.bmp",NULL);
+    matrixAnimationsPlayer[8][2] = load_bitmap("src\\Resources\\SKELETON1\\SDU3.bmp",NULL);
+    matrixAnimationsPlayer[8][3] = load_bitmap("src\\Resources\\SKELETON1\\SDU4.bmp",NULL);
+
+    matrixAnimationsPlayer[9][0] = load_bitmap("src\\Resources\\SKELETON1\\SDR1.bmp",NULL);
+    matrixAnimationsPlayer[9][1] = load_bitmap("src\\Resources\\SKELETON1\\SDR2.bmp",NULL);
+    matrixAnimationsPlayer[9][2] = load_bitmap("src\\Resources\\SKELETON1\\SDR3.bmp",NULL);
+    matrixAnimationsPlayer[9][3] = load_bitmap("src\\Resources\\SKELETON1\\SDR4.bmp",NULL);
+
+    matrixAnimationsPlayer[10][0] = load_bitmap("src\\Resources\\SKELETON1\\SDD1.bmp",NULL);
+    matrixAnimationsPlayer[10][1] = load_bitmap("src\\Resources\\SKELETON1\\SDD2.bmp",NULL);
+    matrixAnimationsPlayer[10][2] = load_bitmap("src\\Resources\\SKELETON1\\SDD3.bmp",NULL);
+    matrixAnimationsPlayer[10][3] = load_bitmap("src\\Resources\\SKELETON1\\SDD4.bmp",NULL);
+
+    matrixAnimationsPlayer[11][0] = load_bitmap("src\\Resources\\SKELETON1\\SDL1.bmp",NULL);
+    matrixAnimationsPlayer[11][1] = load_bitmap("src\\Resources\\SKELETON1\\SDL2.bmp",NULL);
+    matrixAnimationsPlayer[11][2] = load_bitmap("src\\Resources\\SKELETON1\\SDL1.bmp",NULL);
+    matrixAnimationsPlayer[11][3] = load_bitmap("src\\Resources\\SKELETON1\\SDL4.bmp",NULL);
+
+    //FIN QUITAR
+
+
+    //player50x33
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 64, 75);
+    //TODO
     this->player.setSelectedWeapon(new Weapon(100,1));
 
 
@@ -70,20 +139,26 @@ void BaseGame::update()
 
     //TODO CAMBIAR A FUNCION
     // character attacking
-    if (player.getIsAttacking()){
-        for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-            if (player.attackCollision(this->activeMap.getVectorEnemies().at(i), player.getSelectedWeapon(),player.getDirection())){
-                //HIT A ENEMIGO
-                //TODO CONTROL DAÑO A ENEMIGO
-                this->activeMap.getVectorEnemies().at(i)->wounded(&this->player);
-                cout << this->activeMap.getVectorEnemies().at(i)->getHealth() <<endl;
-                cout << this->activeMap.getVectorEnemies().at(i)->getShield() <<endl;
-                cout << this->activeMap.getVectorEnemies().at(i)->isIsAlive() <<endl;
-            } else{
+    if (player.isAttacking()) {
 
+
+        if (!player.isAttackChecked()) {
+
+
+            for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
+                if (player.attackCollision(this->activeMap.getVectorEnemies().at(i), player.getSelectedWeapon(),
+                                           player.getDirection())) {
+                    //HIT A ENEMIGO
+                    //TODO CONTROL DAÑO A ENEMIGO
+                    this->activeMap.getVectorEnemies().at(i)->wounded(&this->player);
+                    cout << "HP" << this->activeMap.getVectorEnemies().at(i)->getHealth() << endl;
+                    cout << "SHIELD" << this->activeMap.getVectorEnemies().at(i)->getShield() << endl;
+                    cout << "ALIVE" << this->activeMap.getVectorEnemies().at(i)->isIsAlive() << endl;
+                }
             }
+            player.setAttackChecked(true);
         }
-        this->player.setIsAttacking(false);
+        player.attack();
     }
     //FIN character attacking
 

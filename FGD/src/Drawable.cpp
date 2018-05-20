@@ -20,8 +20,8 @@ Drawable::Drawable(BITMAP ***animations, int x, int y, int height, int width)
     this->height = height;
     this->width = width;
 
-   //genWalkCollision();
-    this->collisionRadius = (width/3)*2;
+    //genWalkCollision();
+    //this->collisionRadius = (width/3)*2;
     //this->collisionType = 1;
 }
 
@@ -43,8 +43,12 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
 
 
 void Drawable::draw(BITMAP *buffer){
-        BITMAP* bitmapAnimation = this->animations[0][0];
+    try {
+        BITMAP *bitmapAnimation = this->animations[activeBitmap[0]][activeBitmap[1]];
         masked_blit(bitmapAnimation, buffer, 0, 0, x, y, width, height);
+    }catch (exception& e){
+        cout << "petada" << endl;
+    }
 }
 
 void Drawable::drawAmbient(BITMAP *buffer){
@@ -53,15 +57,14 @@ void Drawable::drawAmbient(BITMAP *buffer){
 
 bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction) {
 
-    //cambiar 100 por weapon->getAttackDistance()
+    //TODO cambiar 100 por weapon->getAttackDistance()
     if (distance(drawable)< 100){
 
         float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14;
         float percent = 90;
         float endAngle;
         float startAngle = 0;
-        //switch (this->activeBitmap[0]) {
-                // activeBitmap[0]=1;
+
         switch (direction) {
             case UP:
                 startAngle = 90-percent/2;
@@ -124,7 +127,7 @@ int Drawable::distance(Drawable *drawable){
 
 }
 
-
+//TODO BORRAR
 void Drawable::genWalkCollision(){
     this->walkCollision[0] = this->width/2;
     this->walkCollision[1] = (this->height/6)*5;

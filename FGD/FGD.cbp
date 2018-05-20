@@ -57,6 +57,7 @@
 		<Unit filename="include/Skelleton.h" />
 		<Unit filename="include/State.h" />
 		<Unit filename="include/Sword.h" />
+		<Unit filename="include/Timer.h" />
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="src/BaseGame.cpp" />
 		<Unit filename="src/Character.cpp" />
@@ -64,10 +65,7 @@
 		<Unit filename="src/Dao/DAOMap.cpp" />
 		<Unit filename="src/Drawable.cpp" />
 		<Unit filename="src/Enemy.cpp" />
-<<<<<<< HEAD
-=======
 		<Unit filename="src/GameState.cpp" />
->>>>>>> Develop
 		<Unit filename="src/GameStateManager.cpp" />
 		<Unit filename="src/House.cpp" />
 		<Unit filename="src/Inventory.cpp" />
@@ -99,6 +97,7 @@
 		<Unit filename="src/Shield.cpp" />
 		<Unit filename="src/Skelleton.cpp" />
 		<Unit filename="src/Sword.cpp" />
+		<Unit filename="src/Timer.cpp" />
 		<Unit filename="src/Weapon.cpp" />
 		<Extensions>
 			<code_completion />

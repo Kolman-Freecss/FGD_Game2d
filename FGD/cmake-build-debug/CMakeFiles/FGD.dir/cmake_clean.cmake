@@ -19,6 +19,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FGD.dir/src/Sword.cpp.obj"
   "CMakeFiles/FGD.dir/src/Weapon.cpp.obj"
   "CMakeFiles/FGD.dir/main.cpp.obj"
+  "CMakeFiles/FGD.dir/src/Timer.cpp.obj"
   "FGD.pdb"
   "FGD.exe"
   "FGD.exe.manifest"
