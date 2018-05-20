@@ -5,6 +5,8 @@
 #include <iostream>
 #include <GameState.h>
 #include <GameStateManager.h>
+#include <MenuEscState.h>
+#include <MenuInventarioState.h>
 
 using namespace std;
 
@@ -132,6 +134,9 @@ void BaseGame::draw()
 
 void BaseGame::getEvents()
 {
+
+    if (key[KEY_I]) this->game->pushState(new MenuInventarioState(this->game));
+    if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
 
 }
 

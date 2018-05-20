@@ -25,6 +25,18 @@ class GameState {
      virtual void update()=0;
      virtual void draw()=0;
 
+protected:
+
+     void setDifficulty(int difficulty);
+     int getDifficulty();
+     void setSound(bool sound);
+     bool getSound();
+
+ private:
+
+    int difficulty = 1;
+    bool sound = true;
+
 
 };
 

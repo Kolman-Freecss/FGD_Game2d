@@ -105,7 +105,7 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
     switch(numMap){
 
         case 1:
-                BITMAP *bitmapTest = load_bitmap("src\\Resources\\grass.bmp",NULL);
+                BITMAP *bitmapTest = load_bitmap("src\\Resources\\rocks.bmp",NULL);
                 matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
                 BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);

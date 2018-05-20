@@ -3,6 +3,7 @@
 #include <GameState.h>
 #include <GameStateManager.h>
 #include <BaseGame.h>
+#include <MenuOptionsState.h>
 
 using namespace std;
 
@@ -18,7 +19,7 @@ void MenuInitialState::init()
 {
 
     this->logo = load_bitmap("src\\Resources\\shield_logo_all.bmp",NULL);
-    this->background_image = load_bitmap("src\\Resources\\background_menuinitial.bmp",NULL);
+    this->background_image = load_bitmap("src\\Resources\\background_menu_initial.bmp",NULL);
     this->new_game = load_bitmap("src\\Resources\\new_game.bmp",NULL);
     this->new_game_pressed = load_bitmap("src\\Resources\\new_game_pressed.bmp",NULL);
     this->options = load_bitmap("src\\Resources\\options.bmp",NULL);
@@ -74,7 +75,7 @@ void MenuInitialState::newGamePressed()
         masked_blit(this->new_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
         if(mouse_b & 1)
         {
-            this->game->pushState(new BaseGame(1, game));
+            this->game->pushState(new BaseGame(this->getDifficulty(), game));
         }
     }
     else
@@ -91,7 +92,10 @@ void MenuInitialState::optionsPressed()
        mouse_y >= (MIDDLE_SCREEN_Y + 50) && mouse_y <= (MIDDLE_SCREEN_Y + 116))
     {
         masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
-
+        if(mouse_b & 1)
+        {
+            this->game->pushState(new MenuOptionsState(this->game));
+        }
     }
     else
     {
