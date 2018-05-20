@@ -14,16 +14,23 @@ class MenuEscState : public GameState{
      const static int MIDDLE_SCREEN_Y = GameStateManager::SIZE_WINDOW_Y / 2;
 
     BITMAP *background_image;
-    BITMAP *new_game;
-    BITMAP *new_game_pressed;
     BITMAP *options;
     BITMAP *options_pressed;
+    BITMAP *save_game;
+    BITMAP *save_game_pressed;
     BITMAP *menu_initial;
     BITMAP *menu_initial_pressed;
+    BITMAP *leave_game;
+    BITMAP *leave_game_pressed;
+    BITMAP *back_game;
+    BITMAP *back_game_pressed;
 
-    void newGamePressed();
+
     void optionsPressed();
+    void saveGamePressed();
     void menuPressed();
+    void leavePressed();
+    void backPressed();
 
     /**
     Initial method

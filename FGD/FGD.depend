@@ -946,11 +946,11 @@
 	"House.h"
 	<allegro.h>
 
-1526654564 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuescstate.h
+1526757145 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuescstate.h
 	<GameState.h>
 	<GameStateManager.h>
 
-1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
+1526757145 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
 	<MenuEscState.h>
 	<allegro.h>
 	<GameState.h>
@@ -983,11 +983,11 @@
 	<GameState.h>
 	<GameStateManager.h>
 
-1526696704 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsgamestate.h
+1526757145 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsgamestate.h
 	<GameState.h>
 	<GameStateManager.h>
 
-1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsgamestate.cpp
+1526757145 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsgamestate.cpp
 	<MenuOptionsGameState.h>
 	<allegro.h>
 	<GameState.h>

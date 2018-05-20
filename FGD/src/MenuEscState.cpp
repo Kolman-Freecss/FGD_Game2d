@@ -19,13 +19,18 @@ MenuEscState::MenuEscState(GameStateManager *game)
 void MenuEscState::init()
 {
 
-    this->background_image = load_bitmap("src\\Resources\\background_menuinitial.bmp",NULL);
-    this->new_game = load_bitmap("src\\Resources\\new_game.bmp",NULL);
-    this->new_game_pressed = load_bitmap("src\\Resources\\new_game_pressed.bmp",NULL);
-    this->options = load_bitmap("src\\Resources\\options.bmp",NULL);
-    this->options_pressed = load_bitmap("src\\Resources\\options_pressed.bmp",NULL);
-    this->menu_initial = load_bitmap("src\\Resources\\menu_initial.bmp",NULL);
-    this->menu_initial_pressed = load_bitmap("src\\Resources\\menu_initial_pressed.bmp",NULL);
+    this->background_image = load_bitmap("src\\Resources\\Menu_esc\\background_menu_esc.bmp",NULL);
+    this->options = load_bitmap("src\\Resources\\Menu_esc\\options_esc.bmp",NULL);
+    this->options_pressed = load_bitmap("src\\Resources\\Menu_esc\\options_esc_pressed.bmp",NULL);
+    this->save_game = load_bitmap("src\\Resources\\Menu_esc\\guardar_partida.bmp",NULL);
+    this->save_game_pressed = load_bitmap("src\\Resources\\Menu_esc\\guardar_partida_pressed.bmp",NULL);
+    this->menu_initial = load_bitmap("src\\Resources\\Menu_esc\\menu_initial_game.bmp",NULL);
+    this->menu_initial_pressed = load_bitmap("src\\Resources\\Menu_esc\\menu_initial_game_pressed.bmp",NULL);
+    this->leave_game = load_bitmap("src\\Resources\\Menu_esc\\leave_game.bmp",NULL);
+    this->leave_game_pressed = load_bitmap("src\\Resources\\Menu_esc\\leave_game_pressed.bmp",NULL);
+    this->back_game = load_bitmap("src\\Resources\\Menu_esc\\return_game.bmp",NULL);
+    this->back_game_pressed = load_bitmap("src\\Resources\\Menu_esc\\return_game_pressed.bmp",NULL);
+
 
     install_mouse();
 
@@ -52,9 +57,11 @@ void MenuEscState::draw()
 
     masked_blit(this->background_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 200, MIDDLE_SCREEN_Y - 200, 400, 400);
 
-    newGamePressed();
     optionsPressed();
+    saveGamePressed();
     menuPressed();
+    leavePressed();
+    backPressed();
 
 
 
@@ -63,32 +70,13 @@ void MenuEscState::draw()
 }
 
 
-void MenuEscState::newGamePressed()
-{
-
-    if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
-       mouse_y >= (MIDDLE_SCREEN_Y - 30) && mouse_y <= (MIDDLE_SCREEN_Y + 36))
-    {
-        masked_blit(this->new_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
-        if(mouse_b & 1)
-        {
-            this->game->pushState(new BaseGame(this->getDifficulty(), game));
-        }
-    }
-    else
-    {
-        masked_blit(this->new_game, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
-    }
-
-}
-
 void MenuEscState::optionsPressed()
 {
 
-    if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
-       mouse_y >= (MIDDLE_SCREEN_Y + 50) && mouse_y <= (MIDDLE_SCREEN_Y + 116))
+    if(mouse_x >= (MIDDLE_SCREEN_X - 150) && mouse_x <= (MIDDLE_SCREEN_X + 150) &&
+       mouse_y >= (MIDDLE_SCREEN_Y - 180) && mouse_y <= (MIDDLE_SCREEN_Y - 130))
     {
-        masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
+        masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 180, 300, 50);
         if(mouse_b & 1)
         {
             this->game->pushState(new MenuOptionsGameState(this->game));
@@ -96,18 +84,38 @@ void MenuEscState::optionsPressed()
     }
     else
     {
-        masked_blit(this->options, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
+        masked_blit(this->options, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 180, 300, 50);
     }
 
 }
 
+void MenuEscState::saveGamePressed()
+{
+
+    if(mouse_x >= (MIDDLE_SCREEN_X - 150) && mouse_x <= (MIDDLE_SCREEN_X + 150) &&
+       mouse_y >= (MIDDLE_SCREEN_Y - 110) && mouse_y <= (MIDDLE_SCREEN_Y - 60))
+    {
+        masked_blit(this->save_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 110, 300, 50);
+        if(mouse_b & 1)
+        {
+            //TO DO
+        }
+    }
+    else
+    {
+        masked_blit(this->save_game, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 110, 300, 50);
+    }
+
+}
+
+
 void MenuEscState::menuPressed()
 {
 
-    if(mouse_x >= (MIDDLE_SCREEN_X - 134) && mouse_x <= (MIDDLE_SCREEN_X + 134) &&
-       mouse_y >= (MIDDLE_SCREEN_Y + 130) && mouse_y <= (MIDDLE_SCREEN_Y + 196))
+    if(mouse_x >= (MIDDLE_SCREEN_X - 150) && mouse_x <= (MIDDLE_SCREEN_X + 150) &&
+       mouse_y >= (MIDDLE_SCREEN_Y - 40) && mouse_y <= (MIDDLE_SCREEN_Y + 10))
     {
-        masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
+        masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 40, 300, 50);
         if(mouse_b & 1)
         {
             this->game->pushState(new MenuInitialState(this->game));
@@ -116,7 +124,47 @@ void MenuEscState::menuPressed()
     }
     else
     {
-        masked_blit(this->menu_initial, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
+        masked_blit(this->menu_initial, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 40, 300, 50);
+    }
+
+}
+
+void MenuEscState::leavePressed()
+{
+
+    if(mouse_x >= (MIDDLE_SCREEN_X - 150) && mouse_x <= (MIDDLE_SCREEN_X + 150) &&
+       mouse_y >= (MIDDLE_SCREEN_Y + 30) && mouse_y <= (MIDDLE_SCREEN_Y + 80))
+    {
+        masked_blit(this->leave_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 30, 300, 50);
+        if(mouse_b & 1)
+        {
+            this->game->setRunning(false);
+        }
+
+    }
+    else
+    {
+        masked_blit(this->leave_game, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 30, 300, 50);
+    }
+
+}
+
+void MenuEscState::backPressed()
+{
+
+    if(mouse_x >= (MIDDLE_SCREEN_X - 150) && mouse_x <= (MIDDLE_SCREEN_X + 150) &&
+       mouse_y >= (MIDDLE_SCREEN_Y + 120) && mouse_y <= (MIDDLE_SCREEN_Y + 170))
+    {
+        masked_blit(this->back_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 120, 300, 50);
+        if(mouse_b & 1)
+        {
+            this->game->popState();
+        }
+
+    }
+    else
+    {
+        masked_blit(this->back_game, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 120, 300, 50);
     }
 
 }
