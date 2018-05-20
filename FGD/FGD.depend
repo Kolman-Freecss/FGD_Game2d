@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # depslib dependency file v1.0
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\fgd\main.cpp
 	<iostream>
@@ -562,3 +563,436 @@
 1526671510 source:d:\users\moya\git\project\fgd\src\weapon.cpp
 	"Weapon.h"
 
+=======
+# depslib dependency file v1.0
+1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\fgd\main.cpp
+	<iostream>
+
+1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
+	<iostream>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+	"Character.h"
+	"Drawable.h"
+
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+	"Drawable.h"
+	<allegro.h>
+	<vector>
+
+1526487772 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\object.cpp
+	"Object.h"
+
+1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\object.h
+
+1526487771 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\inventory.cpp
+	"Inventory.h"
+
+1526487769 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\inventory.h
+	<vector>
+
+1526579580 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\player.cpp
+	"Player.h"
+	<allegro.h>
+
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
+	"Character.h"
+
+1526674721 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\enemy.cpp
+	"Enemy.h"
+
+1526674721 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\enemy.h
+	<vector>
+	"Character.h"
+	"Object.h"
+	"String.h"
+
+1526487772 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\potion.cpp
+	"Potion.h"
+
+1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\potion.h
+	"Object.h"
+
+1526487772 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\weapon.cpp
+	"Weapon.h"
+
+1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\weapon.h
+	"Object.h"
+
+1526487772 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\shield.cpp
+	"Shield.h"
+
+1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\shield.h
+	"Weapon.h"
+
+1526487772 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\sword.cpp
+	"Sword.h"
+
+1526487770 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\sword.h
+	"Weapon.h"
+
+1526579659 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\main\main.cpp
+	<allegro.h>
+	<BaseGame.h>
+	<GameStateManager.h>
+	<GameState.h>
+	<MenuInitialState.h>
+
+1526674721 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+	<BaseGame.h>
+	<vector>
+	<DAOMap.h>
+	<allegro.h>
+	<iostream>
+	<GameState.h>
+	<GameStateManager.h>
+	<MenuEscState.h>
+	<MenuInventarioState.h>
+
+1526674721 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+	<Map.h>
+	<vector>
+	<Enemy.h>
+	<Player.h>
+	<GameState.h>
+
+1526584780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
+	<allegro.h>
+	"Drawable.h"
+	<cmath>
+	<iostream>
+	"Weapon.h"
+	<algorithm>
+
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\drawable.h
+	<allegro.h>
+	<Weapon.h>
+	<cmath>
+	"math.h"
+	"Weapon.h"
+
+1525711913 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomanager.cpp
+	"DAOManager.h"
+	"DAOMap.h"
+
+1525711913 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomanager.h
+	"DAOMap.h"
+
+1526314876 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomap.h
+	<vector>
+	"Map.h"
+
+1526487769 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
+	<allegro.h>
+	"Enemy.h"
+	"Drawable.h"
+	<vector>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+	<House.h>
+	"Map.h"
+	"allegro.h"
+	"Enemy.h"
+
+1526485811 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
+	"DAOMap.h"
+	"Map.h"
+	<vector>
+	"allegro.h"
+	"Enemy.h"
+
+1526497191 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\skelleton.cpp
+	"Skelleton.h"
+
+1526497191 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\skelleton.h
+	<Enemy.h>
+
+1526499101 source:c:\users\alumne\documents\projecto\project\fgd\src\character.cpp
+	"Character.h"
+	"Drawable.h"
+
+1526499099 c:\users\alumne\documents\projecto\project\fgd\include\character.h
+	"Drawable.h"
+	<allegro.h>
+	<vector>
+
+1526499099 c:\users\alumne\documents\projecto\project\fgd\include\drawable.h
+	<allegro.h>
+	<Weapon.h>
+	<cmath>
+	"math.h"
+	"Weapon.h"
+
+1526319108 c:\users\alumne\documents\projecto\project\fgd\include\weapon.h
+	"Object.h"
+
+1526319108 c:\users\alumne\documents\projecto\project\fgd\include\object.h
+
+1525980860 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomanager.cpp
+	"DAOManager.h"
+	"DAOMap.h"
+
+1525980860 c:\users\alumne\documents\projecto\project\fgd\include\daomanager.h
+	"DAOMap.h"
+
+1526319116 c:\users\alumne\documents\projecto\project\fgd\include\daomap.h
+	<vector>
+	"Map.h"
+
+1526492636 c:\users\alumne\documents\projecto\project\fgd\include\map.h
+	<allegro.h>
+	"Enemy.h"
+	"Drawable.h"
+	<vector>
+
+1526319108 c:\users\alumne\documents\projecto\project\fgd\include\enemy.h
+	<vector>
+	"Character.h"
+	"Object.h"
+	"String.h"
+
+1526492636 source:c:\users\alumne\documents\projecto\project\fgd\src\dao\daomap.cpp
+	"DAOMap.h"
+	"Map.h"
+	<vector>
+	"allegro.h"
+	"Enemy.h"
+
+1526394460 source:c:\users\alumne\documents\projecto\project\fgd\src\enemy.cpp
+	"Enemy.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\inventory.cpp
+	"Inventory.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\inventory.h
+	<vector>
+
+1526492636 source:c:\users\alumne\documents\projecto\project\fgd\src\main\main.cpp
+	<allegro.h>
+	<BaseGame.h>
+	<GameStateManager.h>
+	<GameState.h>
+
+1526499099 c:\users\alumne\documents\projecto\project\fgd\include\player.h
+	"Character.h"
+
+1526574020 c:\users\alumne\documents\projecto\project\fgd\include\basegame.h
+	<Map.h>
+	<vector>
+	<Enemy.h>
+	<Player.h>
+	<GameState.h>
+
+1526577048 source:c:\users\alumne\documents\projecto\project\fgd\src\map.cpp
+	<House.h>
+	"Map.h"
+	"allegro.h"
+	"Enemy.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\object.cpp
+	"Object.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\potion.cpp
+	"Potion.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\potion.h
+	"Object.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\shield.cpp
+	"Shield.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\shield.h
+	"Weapon.h"
+
+1525377352 source:c:\users\alumne\documents\projecto\project\fgd\src\sword.cpp
+	"Sword.h"
+
+1525377352 c:\users\alumne\documents\projecto\project\fgd\include\sword.h
+	"Weapon.h"
+
+1526319108 source:c:\users\alumne\documents\projecto\project\fgd\src\weapon.cpp
+	"Weapon.h"
+
+1526580159 source:c:\users\alumne\documents\projecto\project\fgd\src\basegame.cpp
+	<BaseGame.h>
+	<vector>
+	<DAOMap.h>
+	<allegro.h>
+	<iostream>
+	<GameState.h>
+	<GameStateManager.h>
+
+1526499101 source:c:\users\alumne\documents\projecto\project\fgd\src\player.cpp
+	"Player.h"
+	<allegro.h>
+
+1526578261 source:c:\users\alumne\documents\projecto\project\fgd\src\drawable.cpp
+	<allegro.h>
+	"Drawable.h"
+	<cmath>
+	<iostream>
+	"Weapon.h"
+	<algorithm>
+
+1524504601 D
+
+1526568461 source:c:\users\alumne\documents\projecto\project\fgd\src\house.cpp
+	"House.h"
+	<allegro.h>
+
+1526568336 c:\users\alumne\documents\projecto\project\fgd\include\house.h
+	"Drawable.h"
+	<allegro.h>
+
+1526325033 >
+
+1526696704 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
+	<GameStateManager.h>
+
+1526579004 ture/MenuInicial
+	<GameStateManager.h>
+
+1526665994 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+	<GameStateManager.h>
+	<allegro.h>
+	<GameState.h>
+	<BaseGame.h>
+
+1526579659 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestatemanager.h
+	<vector>
+	<allegro.h>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestate.cpp
+	"GameState.h"
+
+1526340385 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\character.cpp
+	"Character.h"
+	"Drawable.h"
+
+1526397167 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\drawable.cpp
+	<allegro.h>
+	"Drawable.h"
+	<cmath>
+	<iostream>
+	"Weapon.h"
+
+1526340383 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\enemy.cpp
+	"Enemy.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\inventory.cpp
+	"Inventory.h"
+
+1526397232 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\map.cpp
+	"Map.h"
+	"allegro.h"
+	"Enemy.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\object.cpp
+	"Object.h"
+
+1526340390 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\player.cpp
+	"Player.h"
+	<allegro.h>
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\potion.cpp
+	"Potion.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\shield.cpp
+	"Shield.h"
+
+1524504601 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\pojos_implement\sword.cpp
+	"Sword.h"
+
+1524504601 elop
+
+1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestate.h
+	<GameStateManager.h>
+
+1526493737 c:\users\alumne\documents\projecto\project\fgd\include\gamestatemanager.h
+	<vector>
+	<allegro.h>
+
+1526493737 source:c:\users\alumne\documents\projecto\project\fgd\src\gamestatemanager.cpp
+	<GameStateManager.h>
+	<allegro.h>
+	<GameState.h>
+	<BaseGame.h>
+
+1526493737 source:c:\users\alumne\documents\projecto\project\fgd\src\skelleton.cpp
+	"Skelleton.h"
+
+1526493737 c:\users\alumne\documents\projecto\project\fgd\include\skelleton.h
+	<Enemy.h>
+
+1526493737 
+
+1526579593 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinitialstate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinitialstate.cpp
+	<MenuInitialState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuOptionsState.h>
+
+1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\house.h
+	"Drawable.h"
+	<allegro.h>
+
+1526584780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\house.cpp
+	"House.h"
+	<allegro.h>
+
+1526654564 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuescstate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuescstate.cpp
+	<MenuEscState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuInitialState.h>
+	<MenuOptionsGameState.h>
+
+1526696704 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsstate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsstate.cpp
+	<MenuOptionsState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuInitialState.h>
+
+1526664554 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuinventariostate.cpp
+	<MenuInventarioState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuInitialState.h>
+
+1526664554 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuinventariostate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526696704 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\menuoptionsgamestate.h
+	<GameState.h>
+	<GameStateManager.h>
+
+1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\menuoptionsgamestate.cpp
+	<MenuOptionsGameState.h>
+	<allegro.h>
+	<GameState.h>
+	<GameStateManager.h>
+	<BaseGame.h>
+	<MenuInitialState.h>
+
+>>>>>>> Develop
