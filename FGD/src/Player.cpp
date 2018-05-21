@@ -20,8 +20,19 @@ void Player::genWalkCollision() {
     this->walkCollision[1] = 49;
 }
 
-void Player::keyboard()
-{
+void Player::keyboard(){
+    /**
+    * Attack key
+    */
+    if(key[KEY_SPACE]) {
+        if (!attacking) {
+            cout << "attacked"<< endl;
+
+            this->attacking = true;
+            this->attackChecked = false;
+        }
+    }
+
     if ( key[KEY_UP] )
     {
         walkUP();
@@ -38,14 +49,7 @@ void Player::keyboard()
     {
         walkRIGHT();
     }
-    if(key[KEY_SPACE]) {
-        if (!attacking) {
-            cout << "attacked"<< endl;
 
-            this->attacking = true;
-            this->attackChecked = false;
-        }
-    }
 
     // limites TODO CAMBIAR A FUNCION
     if ( this->x < 0 ) this->x = 0;
