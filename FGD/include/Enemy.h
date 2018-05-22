@@ -26,6 +26,7 @@ class Enemy : public Character {
     bool detectionRadiusEnemy(Drawable *drawable);
 
 private:
+    bool changeDirectionIfCol = false;
      int direction;
      int timeNextRandomize;
      /**

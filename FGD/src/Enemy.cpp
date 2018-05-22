@@ -52,10 +52,16 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
         this->walkLEFT();
     }
     // TODO CAMBIAR A FUNCION
-    if ( this->x < 0 ) this->x = ax;
-    if ( this->x+this->width > 800 ) this->x = ax;
-    if ( this->y < 0 ) this->y = ay;
-    if ( this->y+this->height > 600 ) this->y = ay;
+    if ( this->x < 0 ){ this->x = ax; this->changeDirectionIfCol = true;}
+    if ( this->x+this->width > 800 ) {this->x = ax; this->changeDirectionIfCol = true;}
+    if ( this->y < 0 ) {this->y = ay; this->changeDirectionIfCol = true;}
+    if ( this->y+this->height > 600 ) {this->y = ay; this->changeDirectionIfCol = true;}
+
+    if(this->changeDirectionIfCol)
+    {
+        this->direction = rand()%4;
+        this->changeDirectionIfCol = false;
+    }
 
     this->timeNextRandomize++;
 
