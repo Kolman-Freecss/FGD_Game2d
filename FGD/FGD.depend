@@ -598,14 +598,24 @@
 1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\player.h
 	"Character.h"
 
+<<<<<<< HEAD
 1526674721 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\enemy.cpp
+=======
+1526669630 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\enemy.cpp
+>>>>>>> feature/ArtificialIntelligence
 	"Enemy.h"
+	<Drawable.h>
 
+<<<<<<< HEAD
 1526674721 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\enemy.h
+=======
+1526673709 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\enemy.h
+>>>>>>> feature/ArtificialIntelligence
 	<vector>
 	"Character.h"
 	"Object.h"
 	"String.h"
+	<Drawable.h>
 
 1526487772 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\potion.cpp
 	"Potion.h"
@@ -638,7 +648,11 @@
 	<GameState.h>
 	<MenuInitialState.h>
 
+<<<<<<< HEAD
 1527004036 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+=======
+1526669618 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+>>>>>>> feature/ArtificialIntelligence
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -650,7 +664,11 @@
 	<MenuInventarioState.h>
 	<Music.h>
 
+<<<<<<< HEAD
 1526764493 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+=======
+1526666030 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+>>>>>>> feature/ArtificialIntelligence
 	<Map.h>
 	<vector>
 	<Enemy.h>
@@ -856,7 +874,11 @@
 1526579004 ture/MenuInicial
 	<GameStateManager.h>
 
+<<<<<<< HEAD
 1527003439 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+=======
+1526665994 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+>>>>>>> feature/ArtificialIntelligence
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
