@@ -83,7 +83,7 @@ void MenuOptionsState::musicPressed()
         }else{
             masked_blit(this->music_pressed_checked, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
         }
-        if(mouse_b & 1)
+        if(this->leftClick())
         {
             if(!this->getSound()){
                 this->setSound(true);
@@ -117,7 +117,7 @@ void MenuOptionsState::difficultyPressed()
             masked_blit(this->hard_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
         }
 
-        if(mouse_b & 1)
+        if(this->leftClick())
         {
             if (this->getDifficulty() == 1){
                 this->setDifficulty(2);

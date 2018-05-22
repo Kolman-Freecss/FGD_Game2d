@@ -33,11 +33,13 @@ protected:
      int getDifficulty();
      void setSound(bool sound);
      bool getSound();
+     bool leftClick();
 
  private:
 
-    int difficulty = 1;
-    bool sound = true;
+    static int difficulty;
+    static bool sound;
+    static int timeClicked;
 
 
 };
