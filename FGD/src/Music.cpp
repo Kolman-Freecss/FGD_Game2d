@@ -2,6 +2,7 @@
 #include <allegro.h>
 
 SAMPLE* Music::map1 =  load_sample("src\\Resources\\Music\\wah_fuzz.wav");
+bool Music::map1IsPlaying = false;
 
 Music::Music(){
 
@@ -20,10 +21,22 @@ void Music::init(){
 void Music::soundMap1()
 {
     play_sample( Music::map1, 100, 128, 900, 1);
+    Music::setMap1IsPlaying(true);
 }
 
 void Music::stopSoundBackground(){
      stop_sample( Music::map1 );
+     Music::setMap1IsPlaying(false);
+}
+
+bool Music::getMap1IsPlaying()
+{
+    return Music::map1IsPlaying;
+}
+
+void Music::setMap1IsPlaying(bool check)
+{
+    Music::map1IsPlaying = check;
 }
 
 

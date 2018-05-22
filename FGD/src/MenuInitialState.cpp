@@ -32,11 +32,14 @@ void MenuInitialState::init()
     //set_mouse_sprite(mouse);
     show_mouse(screen);
 
-    if(this->getSound()){
-        managerMusic.soundMap1();
-    }else{
-        managerMusic.stopSoundBackground();
-    }
+
+        if(this->getSound()){
+            if(!this->managerMusic.getMap1IsPlaying()){
+                managerMusic.soundMap1();
+            }
+        }else{
+            managerMusic.stopSoundBackground();
+        }
 
 }
 

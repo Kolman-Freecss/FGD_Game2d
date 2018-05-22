@@ -30,7 +30,7 @@ void MenuInventarioState::init()
 void MenuInventarioState::getEvents()
 {
 
-    if (key[KEY_I]) this->game->popState();
+    if (GameState::keyI()) this->game->popState();
 
 }
 

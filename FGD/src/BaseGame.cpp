@@ -95,8 +95,10 @@ void BaseGame::init()
     //TODO
     this->player.setSelectedWeapon(new Weapon(100,1));
 
-    if(this->getSound()){
-        managerMusic.soundMap1();
+    if(!this->managerMusic.getMap1IsPlaying()){
+        if(this->getSound()){
+            managerMusic.soundMap1();
+        }
     }
 
 
@@ -106,7 +108,9 @@ void BaseGame::init()
 void BaseGame::getEvents()
 {
 
-    if (key[KEY_I]) this->game->pushState(new MenuInventarioState(this->game));
+    if (GameState::keyI()){
+            this->game->pushState(new MenuInventarioState(this->game));
+    }
     if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
 
     this->nextMap();

@@ -34,6 +34,7 @@ protected:
      void setSound(bool sound);
      bool getSound();
      bool leftClick();
+     bool keyI();
 
  private:
 

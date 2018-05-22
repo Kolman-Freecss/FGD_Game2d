@@ -43,3 +43,13 @@ bool GameState::leftClick()
     }
     return false;
 }
+
+bool GameState::keyI()
+{
+    if((key[KEY_I]) && (Timer::getTime()-10 > this->timeClicked))
+    {
+        this->timeClicked = Timer::getTime();
+        return true;
+    }
+    return false;
+}
