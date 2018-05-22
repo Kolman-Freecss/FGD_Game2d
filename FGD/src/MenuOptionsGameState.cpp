@@ -73,12 +73,14 @@ void MenuOptionsGameState::musicPressed()
         }else{
             masked_blit(this->music_pressed_check, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 180, 268, 66);
         }
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             if(!this->getSound()){
                 this->setSound(true);
+                managerMusic.soundMap1();
             }else{
                 this->setSound(false);
+                managerMusic.stopSoundBackground();
             }
         }
     }
@@ -100,7 +102,7 @@ void MenuOptionsGameState::returnPressedF()
        mouse_y >= (MIDDLE_SCREEN_Y + 114) && mouse_y <= (MIDDLE_SCREEN_Y + 170))
     {
         masked_blit(this->return_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 114, 268, 66);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->popState();
         }

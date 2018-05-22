@@ -94,6 +94,7 @@ void BaseGame::init()
     this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 65, 73);
     //TODO
     this->player.setSelectedWeapon(new Weapon(100,1));
+
     if(this->getSound()){
         managerMusic.soundMap1();
     }

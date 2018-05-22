@@ -87,8 +87,10 @@ void MenuOptionsState::musicPressed()
         {
             if(!this->getSound()){
                 this->setSound(true);
+                managerMusic.soundMap1();
             }else{
                 this->setSound(false);
+                managerMusic.stopSoundBackground();
             }
         }
     }
@@ -149,7 +151,7 @@ void MenuOptionsState::backPressed()
        mouse_y >= (510) && mouse_y <= (550))
     {
         masked_blit(this->backk_pressed, this->game->getBuffer(), 0, 0, 50, 510, 214, 40);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->popState();
         }

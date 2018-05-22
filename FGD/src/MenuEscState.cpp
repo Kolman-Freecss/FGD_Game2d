@@ -77,7 +77,7 @@ void MenuEscState::optionsPressed()
        mouse_y >= (MIDDLE_SCREEN_Y - 180) && mouse_y <= (MIDDLE_SCREEN_Y - 130))
     {
         masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 180, 300, 50);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->pushState(new MenuOptionsGameState(this->game));
         }
@@ -96,7 +96,7 @@ void MenuEscState::saveGamePressed()
        mouse_y >= (MIDDLE_SCREEN_Y - 110) && mouse_y <= (MIDDLE_SCREEN_Y - 60))
     {
         masked_blit(this->save_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 110, 300, 50);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             //TO DO
         }
@@ -116,7 +116,7 @@ void MenuEscState::menuPressed()
        mouse_y >= (MIDDLE_SCREEN_Y - 40) && mouse_y <= (MIDDLE_SCREEN_Y + 10))
     {
         masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 40, 300, 50);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->pushState(new MenuInitialState(this->game));
         }
@@ -136,7 +136,7 @@ void MenuEscState::leavePressed()
        mouse_y >= (MIDDLE_SCREEN_Y + 30) && mouse_y <= (MIDDLE_SCREEN_Y + 80))
     {
         masked_blit(this->leave_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 30, 300, 50);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->setRunning(false);
         }
@@ -156,7 +156,7 @@ void MenuEscState::backPressed()
        mouse_y >= (MIDDLE_SCREEN_Y + 120) && mouse_y <= (MIDDLE_SCREEN_Y + 170))
     {
         masked_blit(this->back_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 120, 300, 50);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->popState();
         }

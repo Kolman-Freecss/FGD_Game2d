@@ -32,6 +32,12 @@ void MenuInitialState::init()
     //set_mouse_sprite(mouse);
     show_mouse(screen);
 
+    if(this->getSound()){
+        managerMusic.soundMap1();
+    }else{
+        managerMusic.stopSoundBackground();
+    }
+
 }
 
 void MenuInitialState::getEvents()
@@ -73,7 +79,7 @@ void MenuInitialState::newGamePressed()
        mouse_y >= (MIDDLE_SCREEN_Y - 30) && mouse_y <= (MIDDLE_SCREEN_Y + 36))
     {
         masked_blit(this->new_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->pushState(new BaseGame(this->getDifficulty(), game));
         }
@@ -92,7 +98,7 @@ void MenuInitialState::optionsPressed()
        mouse_y >= (MIDDLE_SCREEN_Y + 50) && mouse_y <= (MIDDLE_SCREEN_Y + 116))
     {
         masked_blit(this->options_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 50, 268, 66);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->pushState(new MenuOptionsState(this->game));
         }
@@ -111,7 +117,7 @@ void MenuInitialState::leavePressed()
        mouse_y >= (MIDDLE_SCREEN_Y + 130) && mouse_y <= (MIDDLE_SCREEN_Y + 196))
     {
         masked_blit(this->leave_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y + 130, 268, 66);
-        if(mouse_b & 1)
+        if(GameState::leftClick())
         {
             this->game->setRunning(false);
         }

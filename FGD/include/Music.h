@@ -13,7 +13,7 @@ class Music {
         void init();
         void soundMap1();
         void stopSoundBackground();
-        SAMPLE *map1;
+        static SAMPLE *map1;
 
  private:
 
