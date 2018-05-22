@@ -2,12 +2,14 @@
 #define GameState_h
 
 #include <GameStateManager.h>
+#include <Music.h>
 
 class GameState {
 
  public:
 
      GameStateManager *game;
+     Music managerMusic = Music();
 
      /**
      Initial methods

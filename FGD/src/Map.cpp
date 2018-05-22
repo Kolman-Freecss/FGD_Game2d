@@ -15,11 +15,42 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     this->quantElementsOfAmbient = quantElementsOfAmbient;
 
     /**
-    Reservamos memoria para la matriz
+    Segons el numero de mapa que cargem assignem una quantitat d'elements per saber
+    cuanta memoria hem de reservar y quants elements hem de recorrer a la hora de printar
     */
-    this->ambientMatrix = new Drawable*[1];
-    for(int i = 0; i < 1; i++){
-         this->ambientMatrix[i] = new Drawable[2];
+    switch(numMap){
+
+        case 1:
+                this->quantOtherElements = 1;
+                this->quantTrees = 2;
+                this->quantHouses = 2;
+
+                break;
+
+        case 2:
+
+                break;
+    }
+
+    /**
+    Reservamos memoria para la matriz segons la quantitat d'elements a cada posició
+    */
+
+    /**
+    TO DO : Habria que cambiar el nombre de "quantTrees quantHouses"
+            ya que en otro mapa puede haber en la misma posicion otro tipo de elemento porque o no hay arboles o no hay casas
+    */
+    this->ambientMatrix = new Drawable*[this->quantElementsOfAmbient];
+    for(int i = 0; i < this->quantElementsOfAmbient; i++){
+            switch(i){
+                case 0: this->ambientMatrix[i] = new Drawable[this->quantOtherElements];
+                        break;
+                case 1: this->ambientMatrix[i] = new Drawable[this->quantTrees];
+                        break;
+                case 2: this->ambientMatrix[i] = new Drawable[this->quantHouses];
+                        break;
+            }
+         //this->ambientMatrix[i] = new Drawable[2];
     }
 
     /**
@@ -31,12 +62,11 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     }
 
 
-    /**bitmap3
+    /**
     Cargamos las matrices de datos
     */
     this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
     this->chargeMatrixAmbient(this->ambientMatrix, 1);
-
 
 
 
@@ -49,17 +79,20 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         int positionY = rand()%(600-50);
         //std::cout << positionX << " position x " << positionY << " position y";
         Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 50, 33);
-        /*bool generado = true;
-        while(generado){
+
+       /* bool generado = false;
+        while(!generado){
                 //col with enemies
+            generado = true;
             for(int j = 0; j < this->getVectorEnemies().size(); j++){
-                while (enemy->collision(getVectorEnemies().at(j))){
+                if (enemy->collision(getVectorEnemies().at(j))){
                     positionX = rand()%(800-33);
                     positionY = rand()%(600-50);
                     enemy->setX(positionX);
                     enemy->setY(positionY);
                     if(!enemy->collision(getVectorEnemies().at(j))){
                         j = 0;
+                        generado = false;
                     }
                 }
             }
@@ -68,15 +101,28 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 for (int j = 0; j < 2; j++) {
                     if (i != 0 || j != 0) {
                         if (enemy->collision(&this->getAmbientMatrix()[i][j])) {
-                            this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
-                            this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                                positionX = rand()%(800-33);
+                                positionY = rand()%(600-50);
+                                enemy->setX(positionX);
+                                enemy->setY(positionY);
+                                if(!enemy->collision(getVectorEnemies().at(j))){
+                                    j = 0;
+                                    generado = false;
+                                }
                         }
                     }
 
                 }
             }
         }*/
+        //col with player
+        /*if(enemy->collision())
+
+        }*/
+
+
         this->enemies.push_back(enemy);
+
     }
 
     /*
@@ -160,17 +206,28 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 BITMAP *bitmapTest = load_bitmap("src\\Resources\\First_Map\\grass.bmp",NULL);
                 matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
+
+
                 /**
                 1 = Arboles
                 */
                 bitmapTest = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
-                matrix[0][1] = Drawable(bitmapTest, 50, 50 , 51, 50);
+                matrix[1][0] = Drawable(bitmapTest, 50, 50 , 51, 50);
 
-                //BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
-                //matrix[0][2] = House(bitmapTest2, 150, 150, 228,138);
+                bitmapTest = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+                matrix[1][1] = Drawable(bitmapTest, 500, 500 , 51, 50);
 
-                //BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\First_Map\\volcan.bmp",NULL);
-                //matrix[0][1] = House(bitmapTest3, (GameStateManager::SIZE_WINDOW_X/2 - 85), (GameStateManager::SIZE_WINDOW_Y/2 - 100), 200,190);
+
+
+                /**
+                2 = Casas
+                */
+                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
+                matrix[2][0] = House(bitmapTest2, 150, 150, 228,138);
+
+                BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
+                matrix[2][1] = House(bitmapTest3, 500, 150, 228,138);
+
 
                 break;
         }
@@ -180,7 +237,16 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[0][0] = Drawable(map2_bitmapTest, 0, 0 , 0, 0);
 
                 BITMAP *map2_bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
-                matrix[0][1] = House(map2_bitmapTest2, 150, 150, 228,138);
+                matrix[1][0] = House(map2_bitmapTest2, 150, 150, 228,138);
+
+                map2_bitmapTest2 = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+                matrix[1][1] = Drawable(map2_bitmapTest2, 500, 500 , 51, 50);
+
+                BITMAP *map2_bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
+                matrix[2][0] = House(map2_bitmapTest3, 150, 150, 228,138);
+
+                BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
+                matrix[2][1] = House(bitmapTest3, 500, 150, 228,138);
 
                 break;
         }
@@ -229,4 +295,19 @@ Drawable** Map::getAmbientMatrix()
 int Map::getQuantElementsOfAmbient()
 {
     return this->quantElementsOfAmbient;
+}
+
+int Map::getQuantOtherElements()
+{
+    return this->quantOtherElements;
+}
+
+int Map::getQuantTrees()
+{
+    return this->quantTrees;
+}
+
+int Map::getQuantHouses()
+{
+    return this->quantHouses;
 }
