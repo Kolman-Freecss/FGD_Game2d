@@ -6,6 +6,13 @@
 
 using namespace std;
 
+/**
+Para declararlo desde otra interfaz sin tener que instanciarlo
+*/
+DAOMap::DAOMap()
+{
+
+}
 
 /**
 Rellena todas las matrices de un mapa en concreto que contendra lo siguiente:
@@ -26,6 +33,28 @@ DAOMap::DAOMap(int difficult)
         Case 1 = Dificultad Facil
         */
         case 1: this->quantEnemies = 5;
+                this->quantElementsAmbient = 3;
+                for(int i = 0; i < 2; i++){
+                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->numMap++;
+                }
+                break;
+
+                /**
+        Case 2 = Dificultad Medio
+        */
+        case 2: this->quantEnemies = 8;
+                this->quantElementsAmbient = 1;
+                for(int i = 0; i < 1; i++){
+                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->numMap++;
+                }
+                break;
+
+                /**
+        Case 3 = Dificultad Dificil
+        */
+        case 3: this->quantEnemies = 10;
                 this->quantElementsAmbient = 1;
                 for(int i = 0; i < 1; i++){
                     this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));

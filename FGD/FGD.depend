@@ -571,11 +571,11 @@
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
 	<iostream>
 
-1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+1527005172 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+1527005192 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>
@@ -638,7 +638,7 @@
 	<GameState.h>
 	<MenuInitialState.h>
 
-1526674721 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
+1527004036 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\basegame.cpp
 	<BaseGame.h>
 	<vector>
 	<DAOMap.h>
@@ -648,15 +648,17 @@
 	<GameStateManager.h>
 	<MenuEscState.h>
 	<MenuInventarioState.h>
+	<Music.h>
 
-1526674721 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
+1526764493 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\basegame.h
 	<Map.h>
 	<vector>
 	<Enemy.h>
 	<Player.h>
 	<GameState.h>
+	<DAOMap.h>
 
-1526584780 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
+1526972539 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\drawable.cpp
 	<allegro.h>
 	"Drawable.h"
 	<cmath>
@@ -664,7 +666,7 @@
 	"Weapon.h"
 	<algorithm>
 
-1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\drawable.h
+1526972538 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\drawable.h
 	<allegro.h>
 	<Weapon.h>
 	<cmath>
@@ -678,23 +680,24 @@
 1525711913 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomanager.h
 	"DAOMap.h"
 
-1526314876 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomap.h
+1526764517 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\daomap.h
 	<vector>
 	"Map.h"
 
-1526487769 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
+1527004036 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\map.h
 	<allegro.h>
 	"Enemy.h"
 	"Drawable.h"
 	<vector>
 
-1526696704 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
+1527004036 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\map.cpp
 	<House.h>
 	"Map.h"
 	"allegro.h"
 	"Enemy.h"
+	"GameStateManager.h"
 
-1526485811 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
+1527004036 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\dao\daomap.cpp
 	"DAOMap.h"
 	"Map.h"
 	<vector>
@@ -846,13 +849,14 @@
 
 1526325033 >
 
-1526696704 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
+1527003439 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\gamestate.h
 	<GameStateManager.h>
+	<Music.h>
 
 1526579004 ture/MenuInicial
 	<GameStateManager.h>
 
-1526665994 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
+1527003439 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\gamestatemanager.cpp
 	<GameStateManager.h>
 	<allegro.h>
 	<GameState.h>
@@ -995,4 +999,15 @@
 	<BaseGame.h>
 	<MenuInitialState.h>
 
+<<<<<<< HEAD
 >>>>>>> Develop
+=======
+1527003439 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\music.h
+	<allegro.h>
+	<vector>
+
+1527003439 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\music.cpp
+	"Music.h"
+	<allegro.h>
+
+>>>>>>> feature/Musica+Estetica+Funcionalidades

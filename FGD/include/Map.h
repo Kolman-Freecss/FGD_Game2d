@@ -18,9 +18,19 @@ class Map{
     int getQuantElementsOfAmbient();
     //virtual ~Map();
 
+    int getQuantOtherElements();
+    int getQuantTrees();
+    int getQuantHouses();
+
  private:
 
+    int quantOtherElements;
+     int quantTrees;
+     int quantHouses;
+
+
     vector<Enemy*> enemies;
+
     Drawable **ambientMatrix;
     int sizeOfMatrix;
 
