@@ -23,6 +23,8 @@ class Enemy : public Character {
 
     void genWalkCollision() override;
 
+    bool detectionRadiusEnemy(Drawable *drawable);
+
 private:
      int direction;
      int timeNextRandomize;

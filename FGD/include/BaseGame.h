@@ -46,6 +46,7 @@ class BaseGame : public GameState{
     int gameDificulty;
 
     void artificialIntelligence();
+    int directionIA(Enemy *drawable);
 
     void nextMap();
 

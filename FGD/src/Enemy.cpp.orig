@@ -4,10 +4,17 @@
 Enemy::Enemy(){}
 
 Enemy::Enemy(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width):
+<<<<<<< HEAD
             Character(animations, health, damage, speed, shield, x, y, height, width) {
     genWalkCollision();
     this->collisionRadius = 15;
+
+=======
+            Character(animations, health, damage, speed, shield, x, y, height, width)
+{
+
     this->detectionRadius = 150;
+>>>>>>> feature/ArtificialIntelligence
 
 }
 
@@ -61,16 +68,18 @@ Se podria hacer un switch pero no lo hago por tema de que quiero mirar el rollo 
 
 }
 
+<<<<<<< HEAD
 void Enemy::genWalkCollision() {
     this->walkCollision[0] = 39;
     this->walkCollision[1] = 49;
 }
-
-bool Enemy::detectionRadiusEnemy(Drawable *drawable)
+=======
+/*void Enemy::detectionRadiusEnemy(Drawable *drawable)
 {
     //Si es menor esta dentro del radio
-    if (distance(drawable) < (this->detectionRadius) ){
+    if (distance(drawable) < (this->detectionRadius) {
         return true;
     }
     return false;
-}
+}*/
+>>>>>>> feature/ArtificialIntelligence

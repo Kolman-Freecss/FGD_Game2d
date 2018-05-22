@@ -124,9 +124,9 @@ void BaseGame::update()
     /**
     * MOVIMIENTO ENEMIGOS
     */
-    for (int i=0 ; i < this->activeMap.getVectorEnemies().size();i++){
-        this->activeMap.getVectorEnemies().at(i)->update();
-    }
+
+
+    this->artificialIntelligence();
 
     /**
      * check colisiones
@@ -229,10 +229,72 @@ void BaseGame::artificialIntelligence()
     vector<Enemy*> vectorE = this->activeMap.getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
             //Update de enemigo para luego printarlo
-        vectorE.at(i)->update();
-        vectorE.at(i)->draw(this->game->getBuffer());
-    }
+        if(vectorE.at(i)->detectionRadiusEnemy(&this->player)){
 
+            int direction = this->directionIA(vectorE.at(i));
+
+            if(direction == 0)
+            {
+                vectorE.at(i)->walkUP();
+            }
+            if(direction == 1)
+            {
+                vectorE.at(i)->walkRIGHT();
+            }
+            if(direction == 2)
+            {
+                vectorE.at(i)->walkDOWN();
+            }
+            if(direction == 3)
+            {
+                vectorE.at(i)->walkLEFT();
+            }
+        }else{
+            this->activeMap.getVectorEnemies().at(i)->update();
+        }
+    }
+}
+
+
+int BaseGame::directionIA(Enemy *drawable)
+{
+            float angle = atan2(drawable->getY() - this->player.getY(), drawable->getX() - this->player.getX()) *180/3.14;
+            float percent = 90;
+            float endAngle;
+            float startAngle = 0;
+            int direction = 0;
+            bool detected = false;
+            while ( direction < 4 && !detected){
+                switch (direction) {
+                    //UP
+                    case 0:
+                        startAngle = 90-percent/2;
+                        break;
+                    //RIGHT
+                    case 1:
+                        startAngle = 180-percent/2;
+                        break;
+                    //DOWN
+                    case 2:
+                        startAngle = -90-percent/2;
+                        break;
+                    //LEFT
+                    case 3:
+                        startAngle = 0-percent/2;
+                        break;
+                    default:;
+                }
+
+
+                endAngle = percent + startAngle;
+                //calcular si punto dentro de sector circulo
+                if (angle >= startAngle && angle <= endAngle) {//calculo normal
+                    return direction;
+                }else if ((angle >= startAngle || angle <= startAngle*-1) && direction==1) {//calculo para derecha
+                    return direction;
+                }
+                direction++;
+            }
 }
 
 
