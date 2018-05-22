@@ -98,6 +98,12 @@ void GameStateManager::createBuffer()
     this->buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
 
     clear_to_color(buffer, 0xaaaaaa);
+
+    // incializa el audio en allegro
+    if (install_sound(DIGI_AUTODETECT, MIDI_AUTODETECT, NULL) != 0) {
+       allegro_message("Error: inicializando sistema de sonido\n%s\n", allegro_error);
+    }
+
 }
 
 

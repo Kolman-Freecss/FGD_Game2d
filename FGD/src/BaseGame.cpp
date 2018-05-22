@@ -7,6 +7,7 @@
 #include <GameStateManager.h>
 #include <MenuEscState.h>
 #include <MenuInventarioState.h>
+#include <Music.h>
 
 using namespace std;
 
@@ -27,7 +28,8 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
 void BaseGame::init()
 {
 
-    DAOMap managerMaps = DAOMap(this->gameDificulty);
+
+    managerMaps = DAOMap(this->gameDificulty);
     this->activeMap = managerMaps.getMap(0);
 
     /**
@@ -92,7 +94,21 @@ void BaseGame::init()
     this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 65, 73);
     //TODO
     this->player.setSelectedWeapon(new Weapon(100,1));
+    if(this->getSound()){
+        managerMusic.soundMap1();
+    }
 
+
+
+}
+
+void BaseGame::getEvents()
+{
+
+    if (key[KEY_I]) this->game->pushState(new MenuInventarioState(this->game));
+    if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
+
+    this->nextMap();
 
 }
 
@@ -153,16 +169,36 @@ void BaseGame::draw()
     int lengthMatrix = this->activeMap.getQuantElementsOfAmbient();
 
     for(int i = 0; i < lengthMatrix; i++){
-        for(int j = 0; j < 2; j++){
 
-            BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient();
+        switch(i){
 
-            if(i == 0 && j == 0){
-                stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
-            }
-            else{
-                matrix[i][j].drawAmbient(this->game->getBuffer());
-            }
+            /**
+            Background y otros elementos
+            */
+            case 0: {
+                        BITMAP *bitmapAmbient = matrix[i][0].getBitmapAmbient();
+                        stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+                        break;
+                    }
+            /**
+            Arboles
+            */
+            case 1: {
+                        for(int j = 0; j < this->activeMap.getQuantTrees(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+
+            /**
+            Casas
+            */
+            case 2: {
+                        for(int j = 0; j < this->activeMap.getQuantHouses(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
         }
     }
 
@@ -186,11 +222,14 @@ void BaseGame::draw()
 }
 
 
-void BaseGame::getEvents()
+
+void BaseGame::nextMap()
 {
 
-    if (key[KEY_I]) this->game->pushState(new MenuInventarioState(this->game));
-    if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
+    if(this->player.getX() == 750 && this->player.getY() == GameStateManager::SIZE_WINDOW_Y / 2)
+        {
+            this->activeMap = this->managerMaps.getMap(1);
+        }
 
 }
 

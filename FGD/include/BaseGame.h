@@ -6,6 +6,7 @@
 #include <Enemy.h>
 #include <Player.h>
 #include <GameState.h>
+#include <DAOMap.h>
 
 using namespace std;
 
@@ -29,7 +30,10 @@ class BaseGame : public GameState{
 
     Map activeMap;
     Player player;
+    DAOMap managerMaps;
     BaseGame(int difficult, GameStateManager *game);
+
+
 
  private:
     BITMAP *buffer;
@@ -41,6 +45,8 @@ class BaseGame : public GameState{
     */
     int gameDificulty;
 
+
+    void nextMap();
 
     void collisionCheck();
 

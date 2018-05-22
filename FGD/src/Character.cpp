@@ -10,11 +10,6 @@ Character::Character()
 {
 }
 
-/*Character::Character(BITMAP **animations, int health)
-{
-    this->animations = animations;
-    this->health = health;
-}*/
 
 /**
  * Contructor basico con los datos necesarios para que se muestre por pantalla

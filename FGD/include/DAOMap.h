@@ -8,6 +8,7 @@ using namespace std;
 
 class DAOMap {
     public:
+        DAOMap();
         DAOMap(int difficult);
         vector<Map> getMapList();
         Map getMap(int id);
