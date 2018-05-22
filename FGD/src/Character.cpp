@@ -18,7 +18,7 @@ Character::Character()
 
 /**
  * Contructor basico con los datos necesarios para que se muestre por pantalla
- * @param animations matriz que contiene todas las animaciones del personage 
+ * @param animations matriz que contiene todas las animaciones del personage
  * @param health
  * @param damage
  * @param speed

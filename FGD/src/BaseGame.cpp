@@ -34,8 +34,8 @@ void BaseGame::init()
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
     */
     BITMAP*** matrixAnimationsPlayer;
-    matrixAnimationsPlayer = new BITMAP**[1];
-    for(int i = 0; i < 12; i++){
+    matrixAnimationsPlayer = new BITMAP**[8];
+    for(int i = 0; i < 8; i++){
         matrixAnimationsPlayer[i] = new BITMAP*[4];
     }
 

@@ -32,7 +32,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     /**
     Reservamos memoria para la matriz
     */
-    BITMAP ***matrixAnimationsEnemy = new BITMAP**[1];
+    BITMAP*** matrixAnimationsEnemy;
+    matrixAnimationsEnemy = new BITMAP**[12];
     for(int i = 0; i < 12; i++){
         matrixAnimationsEnemy[i] = new BITMAP*[4];
     }
