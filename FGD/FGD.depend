@@ -5,11 +5,11 @@
 1514144174 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\main.cpp
 	<iostream>
 
-1527003431 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
+1527005172 source:c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\src\character.cpp
 	"Character.h"
 	"Drawable.h"
 
-1526579579 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
+1527005192 c:\users\smarroma\desktop\grado superior\projecte_final_curs\repositori github\project\fgd\include\character.h
 	"Drawable.h"
 	<allegro.h>
 	<vector>

@@ -80,12 +80,12 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         //std::cout << positionX << " position x " << positionY << " position y";
         Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 50, 33);
 
-       /* bool generado = false;
+        bool generado = false;
         while(!generado){
                 //col with enemies
             generado = true;
             for(int j = 0; j < this->getVectorEnemies().size(); j++){
-                if (enemy->collision(getVectorEnemies().at(j))){
+                while (enemy->collision(getVectorEnemies().at(j))){
                     positionX = rand()%(800-33);
                     positionY = rand()%(600-50);
                     enemy->setX(positionX);
@@ -100,7 +100,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             for (int i = 0; i < 1; i++) {
                 for (int j = 0; j < 2; j++) {
                     if (i != 0 || j != 0) {
-                        if (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                        while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
                                 positionX = rand()%(800-33);
                                 positionY = rand()%(600-50);
                                 enemy->setX(positionX);
@@ -111,15 +111,20 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                                 }
                         }
                     }
-
                 }
             }
-        }*/
-        //col with player
-        /*if(enemy->collision())
-
-        }*/
-
+            /**
+            Recuadro donde aparecerá el player
+            */
+           if(positionX <= 100 && positionY <= 100)
+            {
+                positionX = rand()%(800-33);
+                positionY = rand()%(600-50);
+                enemy->setX(positionX);
+                enemy->setY(positionY);
+                generado = false;
+            }
+        }
 
         this->enemies.push_back(enemy);
 
