@@ -1,4 +1,4 @@
-# Install script for directory: D:/Users/moya/git/Project/FGD
+# Install script for directory: C:/Users/alumne/Documents/Projecto/Project/FGD
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Users/moya/git/Project/FGD/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/alumne/Documents/Projecto/Project/FGD/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

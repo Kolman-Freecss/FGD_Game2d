@@ -21,9 +21,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     switch(numMap){
 
         case 1:
-                this->quantOtherElements = 1;
-                this->quantTrees = 2;
-                this->quantHouses = 2;
+                this->col0Quantity = 0;
+                this->col1Quantity = 1;
+                this->col2Quantity = 2;
 
                 break;
 
@@ -43,11 +43,11 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     this->ambientMatrix = new Drawable*[this->quantElementsOfAmbient];
     for(int i = 0; i < this->quantElementsOfAmbient; i++){
             switch(i){
-                case 0: this->ambientMatrix[i] = new Drawable[this->quantOtherElements];
+                case 0: this->ambientMatrix[i] = new Drawable[this->col0Quantity];
                         break;
-                case 1: this->ambientMatrix[i] = new Drawable[this->quantTrees];
+                case 1: this->ambientMatrix[i] = new Drawable[this->col1Quantity];
                         break;
-                case 2: this->ambientMatrix[i] = new Drawable[this->quantHouses];
+                case 2: this->ambientMatrix[i] = new Drawable[this->col2Quantity];
                         break;
             }
          //this->ambientMatrix[i] = new Drawable[2];
@@ -76,19 +76,19 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     */
     srand(time(NULL));
     for(int i = 0; i < this->quantEnemies; i++){
-        int positionX = rand()%(800-33);
-        int positionY = rand()%(600-50);
-        //std::cout << positionX << " position x " << positionY << " position y";
-        Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 64, 75);
 
+        //std::cout << positionX << " position x " << positionY << " position y";
+        Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, 0, 0, 64, 75);
+        int positionX = rand()%(800-75);
+        int positionY = rand()%(600-64);
         bool generado = false;
         while(!generado){
                 //col with enemies
             generado = true;
             for(int j = 0; j < this->getVectorEnemies().size(); j++){
                 while (enemy->collision(getVectorEnemies().at(j))){
-                    positionX = rand()%(800-33);
-                    positionY = rand()%(600-50);
+                    positionX = rand()%(800-75);
+                    positionY = rand()%(600-64);
                     enemy->setX(positionX);
                     enemy->setY(positionY);
                     if(!enemy->collision(getVectorEnemies().at(j))){
@@ -102,8 +102,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 for (int j = 0; j < 2; j++) {
                     if (i != 0 || j != 0) {
                         while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
-                                positionX = rand()%(800-33);
-                                positionY = rand()%(600-50);
+                                positionX = rand()%(800-75);
+                                positionY = rand()%(600-64);
                                 enemy->setX(positionX);
                                 enemy->setY(positionY);
                                 if(!enemy->collision(getVectorEnemies().at(j))){
@@ -119,8 +119,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             */
            if(positionX <= 100 && positionY <= 100)
             {
-                positionX = rand()%(800-33);
-                positionY = rand()%(600-50);
+                positionX = rand()%(800-75);
+                positionY = rand()%(600-64);
                 enemy->setX(positionX);
                 enemy->setY(positionY);
                 generado = false;
@@ -333,17 +333,35 @@ int Map::getQuantElementsOfAmbient()
     return this->quantElementsOfAmbient;
 }
 
-int Map::getQuantOtherElements()
-{
-    return this->quantOtherElements;
+int Map::getCol0Quantity() {
+    return col0Quantity;
 }
 
-int Map::getQuantTrees()
-{
-    return this->quantTrees;
+void Map::setCol0Quantity(int col0Quantity) {
+    Map::col0Quantity = col0Quantity;
 }
 
-int Map::getQuantHouses()
-{
-    return this->quantHouses;
+int Map::getCol1Quantity() {
+    return col1Quantity;
 }
+
+void Map::setCol1Quantity(int col1Quantity) {
+    Map::col1Quantity = col1Quantity;
+}
+
+int Map::getCol2Quantity() {
+    return col2Quantity;
+}
+
+void Map::setCol2Quantity(int col2Quantity) {
+    Map::col2Quantity = col2Quantity;
+}
+
+int Map::getCol3Quantity() {
+    return col3Quantity;
+}
+
+void Map::setCol3Quantity(int col3Quantity) {
+    Map::col3Quantity = col3Quantity;
+}
+
