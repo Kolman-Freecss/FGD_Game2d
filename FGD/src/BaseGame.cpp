@@ -8,6 +8,7 @@
 #include <MenuEscState.h>
 #include <MenuInventarioState.h>
 #include <Music.h>
+#include <Inventory.h>
 
 using namespace std;
 
@@ -96,11 +97,17 @@ void BaseGame::init()
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
     this->player.setSelectedWeapon(weaponOfPlayer);
-    int sizeTest = this->player.getInventory().getObjectList().size();
-    this->player.getInventory().getObjectList().push_back(weaponOfPlayer);
-    int sizeTest2 = this->player.getInventory().getObjectList().size();
-    this->player.getInventory().getObjectList().push_back(new Object());
-    int sizeTest3 = this->player.getInventory().getObjectList().size();
+
+    /**TEEEEEST**/
+    int sizeTest = this->player.getInventory()->getObjectList().size();
+    this->player.getInventory()->getObjectList().push_back(weaponOfPlayer);
+    int sizeTest2 = this->player.getInventory()->getObjectList().size();
+    this->player.getInventory()->getObjectList().push_back(new Object());
+    int sizeTest3 = this->player.getInventory()->getObjectList().size();
+    Inventory *aux = this->player.getInventory();
+    aux->getObjectList().push_back(new Object());
+    int sizeTest4 = aux->getObjectList().size();
+    int sizeTest5 = this->player.getInventory()->getObjectList().size();
 
     if(!this->managerMusic.getMap1IsPlaying()){
         if(this->getSound()){
@@ -170,7 +177,6 @@ void BaseGame::update()
         player.attack();
     }
     //FIN character attacking
-
 
 }
 

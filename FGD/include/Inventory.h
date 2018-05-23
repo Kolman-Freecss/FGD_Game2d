@@ -22,6 +22,8 @@ private:
     vector< Object* > objectList;
 
 public:
+    Inventory();
+
     int getMaxObjects();
 
     void setMaxObjects(int maxObjects);

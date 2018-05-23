@@ -3,6 +3,10 @@
 
 using namespace std;
 
+Inventory::Inventory()
+{
+}
+
 int Inventory::getMaxObjects() {
     return maxObjects;
 }

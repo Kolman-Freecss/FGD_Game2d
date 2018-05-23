@@ -6,6 +6,7 @@
 #include <MenuInitialState.h>
 #include <vector>
 #include <Weapon.h>
+#include <sstream>
 
 using namespace std;
 
@@ -79,8 +80,9 @@ void MenuInventarioState::draw()
 
     this->drawPagination();
     this->drawObjects();
-    //this->drawCharacteristicsSelectedWeapon();
-    //this->drawMoney();
+    this->drawCharacteristicsSelectedWeapon();
+    this->drawStatsPlayer();
+    this->drawMoney();
 
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
@@ -103,26 +105,33 @@ Función que printa los objetos del player en el inventario
 void MenuInventarioState::drawObjects()
 {
     int posX = MenuInventarioState::MIDDLE_SCREEN_X + 100;
-    int posXAux = posX;
-    int posY = MenuInventarioState::MIDDLE_SCREEN_Y - 250;
+    int posXAux;
+    int posY = MenuInventarioState::MIDDLE_SCREEN_Y - 226;
     int posYAux = posY;
     int i = 0;
-    /*BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+
+    BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
-    this->player.getInventory().getObjectList().push_back(weaponOfPlayer);*/
-    int sizeVector = this->player.getInventory().getObjectList().size();
+    vector<Object*> vectorAux;
+    vectorAux.push_back(weaponOfPlayer);
+    this->player.getInventory()->setObjectList(vectorAux);
+
+    int sizeVector3 = vectorAux.size();
+
+    int sizeVector = this->player.getInventory()->getObjectList().size();
     if(sizeVector > 0){
         for(int j = 0; j < 4; j++)
         {
-            posYAux += 86;
+            posYAux += 64;
+            posXAux = posX;
             for( int a = 0; a < 3; a++)
             {
                 posXAux += 70;
-                BITMAP *imageToDraw = this->player.getInventory().getObjectList().at(i)->getImageOfObject();
-                int width = this->player.getInventory().getObjectList().at(i)->getWidth();
-                int height = this->player.getInventory().getObjectList().at(i)->getHeight();
+                BITMAP *imageToDraw = this->player.getInventory()->getObjectList().at(i)->getImageOfObject();
+                int width = this->player.getInventory()->getObjectList().at(i)->getWidth();
+                int height = this->player.getInventory()->getObjectList().at(i)->getHeight();
 
-                masked_blit(imageToDraw, this->game->getBuffer(), 0,0, posXAux, posYAux, width, height);
+                masked_blit(imageToDraw, this->game->getBuffer(), 0,0, width, height, 46, 40);
                 i++;
                 if(i == sizeVector){
                     break;
@@ -144,13 +153,17 @@ Función que printa los stats del Player
 void MenuInventarioState::drawStatsPlayer()
 {
 
-   /* char *characteristics[] = {"Damage: \n",
-                                "Speed: Probando",
-                                };*/
+   vector<char*> characteristics;
+    characteristics.push_back("Dano: " );
+    characteristics.push_back("Velocidad: ");
+    int posYAux = MIDDLE_SCREEN_Y - 50;
 
+    for(int i = 0; i < characteristics.size(); i++){
+        textout_ex(this->game->getBuffer(), font, characteristics.at(i),
+                          MIDDLE_SCREEN_X + 25, posYAux, makecol(0, 0, 0), -1);
+        posYAux += 14;
+    }
 
-    /*textout_right_ex(screen, font, "hola probando",
-                       MIDDLE_SCREEN_X + 25, MIDDLE_SCREEN_Y + 40, makecol(0, 255, 255), -1);*/
 }
 
 /**
@@ -160,12 +173,14 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
 {
 
     vector<char*> characteristics;
-    characteristics.push_back("Hola \n");
-    characteristics.push_back("Probando \n");
+    characteristics.push_back("Dano: " );
+    characteristics.push_back("Velocidad: ");
+    int posYAux = MIDDLE_SCREEN_Y + 40;
 
     for(int i = 0; i < characteristics.size(); i++){
-        textout_right_ex(screen, font, characteristics.at(i),
-            MIDDLE_SCREEN_X + 25, MIDDLE_SCREEN_Y + 40, makecol(0, 255, 255), -1);
+        textout_ex(this->game->getBuffer(), font, characteristics.at(i),
+                          MIDDLE_SCREEN_X + 25, posYAux, makecol(0, 0, 0), -1);
+        posYAux += 14;
     }
 }
 
@@ -175,13 +190,15 @@ Función que printa el dinero del Player
 void MenuInventarioState::drawMoney()
 {
 
-    /*char *characteristics[] = {"Damage: \n",
-                                "Speed: Probando",
-                                };*/
     //char *characteristics = this->player.getInventory().getCurrentMoney();
 
-//Justificarlo  a la izquierda
-    /*textout_justify(screen, font, "dinero",
-                       MIDDLE_SCREEN_X + 340, MIDDLE_SCREEN_Y + 134, makecol(0, 255, 255), -1);*/
+
+    std::stringstream x;
+    x << this->player.getInventory()->getCurrentMoney();
+    const char *characteristics = x.str().c_str();
+
+        textout_ex(this->game->getBuffer(), font, characteristics,
+                          MIDDLE_SCREEN_X + 292, MIDDLE_SCREEN_Y + 134, makecol(0, 0, 0), -1);
+
 }
 

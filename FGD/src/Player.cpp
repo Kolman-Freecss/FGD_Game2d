@@ -16,7 +16,7 @@ this->collisionRadius = 15;
 Le almacenamos la espada en el inventario
 */
 
-
+this->inventory = new Inventory();
 }
 
 void Player::genWalkCollision() {
@@ -71,7 +71,7 @@ void Player::keyboard(){
 
 /////////////////////////////              GET & SET                  /////////////////////////
 
-Inventory Player::getInventory()
+Inventory* Player::getInventory()
 {
     return this->inventory;
 }
