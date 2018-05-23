@@ -30,7 +30,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         case 2:
                 this->quantOtherElements = 1;
                 this->col1Quantity = 2;
-                this->col2Quantity = 2;
+                this->col2Quantity = 3;
 
                 break;
     }
@@ -70,7 +70,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     Cargamos las matrices de datos
     */
     this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
-    this->chargeMatrixAmbient(this->ambientMatrix, 1);
+    this->chargeMatrixAmbient(this->ambientMatrix, numMap);
 
 
 
@@ -286,6 +286,9 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
 
                 BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
                 matrix[2][1] = House(bitmapTest3, 500, 150, 228,138);
+
+                BITMAP *bitmapTest4 = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+                matrix[2][2] = Drawable(bitmapTest4, 600, 100 , 51, 50);
 
                 break;
         }

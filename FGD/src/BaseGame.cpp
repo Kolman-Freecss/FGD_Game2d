@@ -32,7 +32,8 @@ void BaseGame::init()
 
     managerMaps = new DAOMap(this->gameDificulty);
     this->activeMap = new Map();
-    this->activeMap = managerMaps->getMap(1);
+    int sizeMaps = managerMaps->getMapList().size();
+    this->activeMap = managerMaps->getMap(0);
 
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
