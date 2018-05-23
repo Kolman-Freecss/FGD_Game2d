@@ -191,7 +191,7 @@ void BaseGame::draw()
             Arboles
             */
             case 1: {
-                        for(int j = 0; j < this->activeMap.getQuantTrees(); j++){
+                        for(int j = 0; j < this->activeMap.getCol1Quantity(); j++){
                             matrix[i][j].drawAmbient(this->game->getBuffer());
                         }
                         break;
@@ -201,7 +201,7 @@ void BaseGame::draw()
             Casas
             */
             case 2: {
-                        for(int j = 0; j < this->activeMap.getQuantHouses(); j++){
+                        for(int j = 0; j < this->activeMap.getCol2Quantity(); j++){
                             matrix[i][j].drawAmbient(this->game->getBuffer());
                         }
                         break;
@@ -333,19 +333,33 @@ void BaseGame::colPlayerWithEnemies() {
 void BaseGame::colPlayerWithAmbient(){
     //TODO CAMBIAR MAS ADELANTE
 
-    for (int i=0;i<1;i++){
-        for (int j=0;j<2;j++) {
-            if (i!=0 || j!=0) {
-                if (player.collision(&this->activeMap.getAmbientMatrix()[i][j])){
-                    //TODO
-                    this->player.setX(this->player.getAX());
-                    this->player.setY(this->player.getAY());
 
+    for (int i = 0; i < this->activeMap.getQuantElementsOfAmbient(); i++) {
+        switch (i){
+            case 1:
+                for (int j = 0; j < this->activeMap.getCol1Quantity(); j++) {
+                    if (this->player.collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                        //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                        this->player.setX(this->player.getAX());
+                        this->player.setY(this->player.getAY());
+                    }
                 }
-            }
+                break;
+            case 2:
+                for (int j = 0; j < this->activeMap.getCol2Quantity(); j++) {
+
+                    if (this->player.collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                        //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                        this->player.setX(this->player.getAX());
+                        this->player.setY(this->player.getAY());
+                    }
+                }
+                break;
         }
     }
+
 }
+
 
 
 void BaseGame::colEnemies(){
@@ -370,18 +384,28 @@ void BaseGame::colEnemies(){
 }
 void BaseGame::colEnemiesWithAmbient(){
     for (int p = 0; p < this->activeMap.getVectorEnemies().size(); ++p) {
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 2; j++) {
-                if (i != 0 || j != 0) {
-                    if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
-                        //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
-                        this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
-                        this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
-                    } else {
+        for (int i = 0; i < this->activeMap.getQuantElementsOfAmbient(); i++) {
+            switch (i){
+                case 1:
+                    for (int j = 0; j < this->activeMap.getCol1Quantity(); j++) {
 
+                        if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                            //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                            this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                            this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                        }
                     }
-                }
+                    break;
+                case 2:
+                    for (int j = 0; j < this->activeMap.getCol2Quantity(); j++) {
 
+                        if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                            //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                            this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                            this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                        }
+                    }
+                    break;
             }
         }
     }
