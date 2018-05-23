@@ -114,11 +114,11 @@ void MenuInventarioState::drawObjects()
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
     vector<Object*> vectorAux;
     vectorAux.push_back(weaponOfPlayer);
-    this->player.getInventory()->setObjectList(vectorAux);
+    this->player.getInventory().setObjectList(vectorAux);
 
     int sizeVector3 = vectorAux.size();
 
-    int sizeVector = this->player.getInventory()->getObjectList().size();
+    int sizeVector = this->player.getInventory().getObjectList().size();
     if(sizeVector > 0){
         for(int j = 0; j < 4; j++)
         {
@@ -127,9 +127,9 @@ void MenuInventarioState::drawObjects()
             for( int a = 0; a < 3; a++)
             {
                 posXAux += 70;
-                BITMAP *imageToDraw = this->player.getInventory()->getObjectList().at(i)->getImageOfObject();
-                int width = this->player.getInventory()->getObjectList().at(i)->getWidth();
-                int height = this->player.getInventory()->getObjectList().at(i)->getHeight();
+                BITMAP *imageToDraw = this->player.getInventory().getObjectList().at(i)->getImageOfObject();
+                int width = this->player.getInventory().getObjectList().at(i)->getWidth();
+                int height = this->player.getInventory().getObjectList().at(i)->getHeight();
 
                 masked_blit(imageToDraw, this->game->getBuffer(), 0,0, width, height, 46, 40);
                 i++;
@@ -194,7 +194,7 @@ void MenuInventarioState::drawMoney()
 
 
     std::stringstream x;
-    x << this->player.getInventory()->getCurrentMoney();
+    x << this->player.getInventory().getCurrentMoney();
     const char *characteristics = x.str().c_str();
 
         textout_ex(this->game->getBuffer(), font, characteristics,

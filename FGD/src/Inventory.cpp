@@ -5,6 +5,8 @@ using namespace std;
 
 Inventory::Inventory()
 {
+
+    this->currentMoney = 20;
 }
 
 int Inventory::getMaxObjects() {
@@ -32,7 +34,7 @@ void Inventory::setMaxMoney(int maxMoney) {
 }
 
 int Inventory::getCurrentMoney() {
-    return currentMoney;
+    return this->currentMoney;
 }
 
 void Inventory::setCurrentMoney(int currentMoney) {

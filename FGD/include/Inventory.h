@@ -18,7 +18,7 @@ private:
     int maxObjects;
     int maxCurrentObjects;
     int maxMoney;
-    int currentMoney = 20;
+    int currentMoney;
     vector< Object* > objectList;
 
 public:
