@@ -12,42 +12,27 @@ class Map{
  public:
     Map();
     Map(int quantEnemies, int quantElementsOfAmbient, int numMap);
-
     void setAmbientMatrix(Drawable **ambientMatrix);
-
     vector<Enemy*> getVectorEnemies();
     Drawable **getAmbientMatrix();
     int getQuantElementsOfAmbient();
-
-
     //virtual ~Map();
-    int getCol0Quantity();
 
-    void setCol0Quantity(int col0Quantity);
+    int getQuantOtherElements();
+    int getQuantTrees();
+    int getQuantHouses();
 
-    int getCol1Quantity();
+ private:
 
-    void setCol1Quantity(int col1Quantity);
+    int quantOtherElements;
+     int quantTrees;
+     int quantHouses;
 
-    int getCol2Quantity();
-
-    void setCol2Quantity(int col2Quantity);
-
-    int getCol3Quantity();
-
-    void setCol3Quantity(int col3Quantity);
-
-
-private:
-
-    int col0Quantity; //ELEMENTOS SIN COLISION + BACKGROUND
-    int col1Quantity;
-    int col2Quantity;
-    int col3Quantity;
 
     vector<Enemy*> enemies;
 
     Drawable **ambientMatrix;
+    int sizeOfMatrix;
 
     /**
     Cantidad de enemigos que habra que estara asociado al nivel del juego que sea actualmente

@@ -14,7 +14,10 @@ class MenuInventarioState : public GameState{
      const static int MIDDLE_SCREEN_Y = GameStateManager::SIZE_WINDOW_Y / 2;
 
     BITMAP *background_image;
-    BITMAP *player;
+    BITMAP *player_image;
+    BITMAP *coin_gold;
+    BITMAP *pagination_1;
+    BITMAP *pagination_2;
 
 
     /**
@@ -32,6 +35,15 @@ class MenuInventarioState : public GameState{
     void draw();
 
     MenuInventarioState(GameStateManager *game);
+
+ private:
+     int pagination = 1;
+
+    void drawPagination();
+    void drawObjects();
+    void drawStatsPlayer();
+    void drawCharacteristicsSelectedWeapon();
+    void drawMoney();
 
 
 

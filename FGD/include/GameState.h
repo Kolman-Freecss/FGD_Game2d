@@ -3,6 +3,7 @@
 
 #include <GameStateManager.h>
 #include <Music.h>
+#include <Player.h>
 
 class GameState {
 
@@ -10,6 +11,7 @@ class GameState {
 
      GameStateManager *game;
      Music managerMusic = Music();
+     Player player;
 
      /**
      Initial methods

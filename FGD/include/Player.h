@@ -15,6 +15,8 @@ class Player : public Character {
 
     void genWalkCollision() override;
 
+    Inventory getInventory();
+
 private:
     int experiencia;
     int level;

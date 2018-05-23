@@ -29,7 +29,7 @@ class BaseGame : public GameState{
     void draw();
 
     Map activeMap;
-    Player player;
+
     DAOMap managerMaps;
     BaseGame(int difficult, GameStateManager *game);
 
