@@ -2,44 +2,94 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="src\MenuEscState.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4787" topLine="140" />
-		</Cursor>
-	</File>
 	<File name="include\MenuInitialState.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="426" topLine="6" />
-		</Cursor>
-	</File>
-	<File name="src\Map.cpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2568" topLine="62" />
-		</Cursor>
-	</File>
-	<File name="include\DAOManager.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="241" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\BaseGame.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4178" topLine="73" />
-		</Cursor>
-	</File>
-	<File name="include\GameStateManager.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="943" topLine="0" />
+			<Cursor1 position="426" topLine="3" />
 		</Cursor>
 	</File>
 	<File name="src\GameState.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="162" topLine="0" />
+			<Cursor1 position="733" topLine="35" />
+		</Cursor>
+	</File>
+	<File name="include\Player.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="394" topLine="6" />
+		</Cursor>
+	</File>
+	<File name="src\MenuEscState.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2301" topLine="49" />
+		</Cursor>
+	</File>
+	<File name="include\Music.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="316" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\MenuOptionsState.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2737" topLine="81" />
+		</Cursor>
+	</File>
+	<File name="include\Map.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="433" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\MenuOptionsState.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="696" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="src\GameStateManager.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1214" topLine="60" />
+		</Cursor>
+	</File>
+	<File name="src\Drawable.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1562" topLine="12" />
+		</Cursor>
+	</File>
+	<File name="src\Map.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="9714" topLine="252" />
+		</Cursor>
+	</File>
+	<File name="src\Music.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="306" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="src\Player.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="16" topLine="52" />
 		</Cursor>
 	</File>
 	<File name="include\BaseGame.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="138" topLine="6" />
+			<Cursor1 position="451" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="include\DAOMap.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="553" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="include\Enemy.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="563" topLine="3" />
+		</Cursor>
+	</File>
+	<File name="src\MenuInitialState.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="997" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="include\GameStateManager.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="978" topLine="10" />
 		</Cursor>
 	</File>
 	<File name="src\Dao\DAOManager.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -52,24 +102,14 @@
 			<Cursor1 position="459" topLine="5" />
 		</Cursor>
 	</File>
-	<File name="src\Main\Main.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MenuOptionsGameState.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="292" topLine="5" />
+			<Cursor1 position="2779" topLine="89" />
 		</Cursor>
 	</File>
-	<File name="src\MenuOptionsState.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\Timer.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2623" topLine="107" />
-		</Cursor>
-	</File>
-	<File name="src\Player.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="40" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\GameStateManager.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1593" topLine="87" />
+			<Cursor1 position="136" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\MenuEscState.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -77,74 +117,74 @@
 			<Cursor1 position="765" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="src\Drawable.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Inventory.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1033" topLine="28" />
+			<Cursor1 position="300" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="include\MenuInventarioState.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="811" topLine="29" />
+		</Cursor>
+	</File>
+	<File name="src\Main\Main.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="292" topLine="5" />
 		</Cursor>
 	</File>
 	<File name="include\MenuOptionsGameState.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="444" topLine="0" />
+			<Cursor1 position="444" topLine="28" />
 		</Cursor>
 	</File>
-	<File name="include\Map.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\BaseGame.cpp" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="433" topLine="0" />
+			<Cursor1 position="10888" topLine="328" />
 		</Cursor>
 	</File>
-	<File name="src\MenuInitialState.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Enemy.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2037" topLine="60" />
+			<Cursor1 position="1549" topLine="39" />
 		</Cursor>
 	</File>
-	<File name="include\GameState.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\Timer.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="228" topLine="11" />
+			<Cursor1 position="18" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="include\DAOMap.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\MenuInventarioState.cpp" open="1" top="1" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="553" topLine="4" />
+			<Cursor1 position="2765" topLine="93" />
 		</Cursor>
 	</File>
-	<File name="src\Character.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\DAOManager.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="79" topLine="0" />
+			<Cursor1 position="241" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="include\Drawable.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1136" topLine="22" />
+			<Cursor1 position="368" topLine="11" />
 		</Cursor>
 	</File>
-	<File name="include\Player.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="include\GameState.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="331" topLine="0" />
+			<Cursor1 position="114" topLine="9" />
+		</Cursor>
+	</File>
+	<File name="src\Character.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="924" topLine="24" />
+		</Cursor>
+	</File>
+	<File name="include\Inventory.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="351" topLine="8" />
 		</Cursor>
 	</File>
 	<File name="src\Dao\DAOMap.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="754" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="include\Inventory.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="309" topLine="2" />
-		</Cursor>
-	</File>
-	<File name="include\MenuOptionsState.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="696" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="src\Enemy.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="64" topLine="18" />
-		</Cursor>
-	</File>
-	<File name="src\MenuOptionsGameState.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1561" topLine="46" />
+			<Cursor1 position="1309" topLine="28" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

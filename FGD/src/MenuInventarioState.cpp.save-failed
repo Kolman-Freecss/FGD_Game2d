@@ -5,7 +5,6 @@
 #include <BaseGame.h>
 #include <MenuInitialState.h>
 #include <vector>
-#include <Weapon.h>
 
 using namespace std;
 
@@ -78,7 +77,6 @@ void MenuInventarioState::draw()
     masked_blit(this->coin_gold, this->game->getBuffer(), 0,0, MIDDLE_SCREEN_X + 264, MIDDLE_SCREEN_Y + 129, 24, 18);
 
     this->drawPagination();
-    this->drawObjects();
     //this->drawCharacteristicsSelectedWeapon();
     //this->drawMoney();
 
@@ -102,38 +100,7 @@ Función que printa los objetos del player en el inventario
 */
 void MenuInventarioState::drawObjects()
 {
-    int posX = MenuInventarioState::MIDDLE_SCREEN_X + 100;
-    int posXAux = posX;
-    int posY = MenuInventarioState::MIDDLE_SCREEN_Y - 250;
-    int posYAux = posY;
-    int i = 0;
-    /*BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
-    Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
-    this->player.getInventory().getObjectList().push_back(weaponOfPlayer);*/
-    int sizeVector = this->player.getInventory().getObjectList().size();
-    if(sizeVector > 0){
-        for(int j = 0; j < 4; j++)
-        {
-            posYAux += 86;
-            for( int a = 0; a < 3; a++)
-            {
-                posXAux += 70;
-                BITMAP *imageToDraw = this->player.getInventory().getObjectList().at(i)->getImageOfObject();
-                int width = this->player.getInventory().getObjectList().at(i)->getWidth();
-                int height = this->player.getInventory().getObjectList().at(i)->getHeight();
 
-                masked_blit(imageToDraw, this->game->getBuffer(), 0,0, posXAux, posYAux, width, height);
-                i++;
-                if(i == sizeVector){
-                    break;
-                }
-
-            }
-            if(i == sizeVector){
-                break;
-            }
-        }
-      }
 
 
 }

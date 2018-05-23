@@ -19,7 +19,7 @@ private:
     int maxCurrentObjects;
     int maxMoney;
     int currentMoney = 20;
-    std::vector< Object* > objectList;
+    vector< Object* > objectList;
 
 public:
     int getMaxObjects();

@@ -1,10 +1,12 @@
 #include "Weapon.h"
+#include <Object.h>
 
-Weapon::Weapon(){
+/*Weapon::Weapon(){
 
-}
+}*/
 
-Weapon::Weapon(int attackDistance, int damage){
+Weapon::Weapon(int attackDistance, int damage, BITMAP *imageOfObject, int width, int height):
+        Object(imageOfObject, width, height){
     this->attackDistance = attackDistance;
     this->damage = damage;
 }

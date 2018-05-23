@@ -93,7 +93,14 @@ void BaseGame::init()
     //PLAYER FINAL
     this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 65, 73);
     //TODO
-    this->player.setSelectedWeapon(new Weapon(100,1));
+    BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+    Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
+    this->player.setSelectedWeapon(weaponOfPlayer);
+    int sizeTest = this->player.getInventory().getObjectList().size();
+    this->player.getInventory().getObjectList().push_back(weaponOfPlayer);
+    int sizeTest2 = this->player.getInventory().getObjectList().size();
+    this->player.getInventory().getObjectList().push_back(new Object());
+    int sizeTest3 = this->player.getInventory().getObjectList().size();
 
     if(!this->managerMusic.getMap1IsPlaying()){
         if(this->getSound()){

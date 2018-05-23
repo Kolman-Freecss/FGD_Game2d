@@ -12,6 +12,10 @@ Player::Player(BITMAP ***animations, int health, int damage, double speed, int s
 {
 genWalkCollision();
 this->collisionRadius = 15;
+/**
+Le almacenamos la espada en el inventario
+*/
+
 
 }
 
