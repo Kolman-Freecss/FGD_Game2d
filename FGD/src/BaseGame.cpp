@@ -378,7 +378,7 @@ void BaseGame::colPlayerWithAmbient(){
     }
 }
 
-
+//Col entre enemigos y player
 void BaseGame::colEnemies(){
     for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
         for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
@@ -387,6 +387,8 @@ void BaseGame::colEnemies(){
                     //TODO
                     this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
                     this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+                    int direction = rand()%4;
+                    this->activeMap.getVectorEnemies().at(i)->setDirectionEnemy(direction);
                 }
             }
         }
@@ -401,19 +403,42 @@ void BaseGame::colEnemies(){
 }
 void BaseGame::colEnemiesWithAmbient(){
     for (int p = 0; p < this->activeMap.getVectorEnemies().size(); ++p) {
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 2; j++) {
-                if (i != 0 || j != 0) {
-                    if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
-                        //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
-                        this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
-                        this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
-                    } else {
+        for (int i = 0; i < this->activeMap.getQuantElementsOfAmbient(); i++) {
 
+            switch(i){
+                case 0: {break;}
+
+                case 1: {
+                        for (int j=0;j<this->activeMap.getCol1Quantity();j++) {
+                            if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                                //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                                this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                                this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                                int direction = rand()%4;
+                                this->activeMap.getVectorEnemies().at(p)->setDirectionEnemy(direction);
+
+                            }
+                        }
+                        break;
                     }
-                }
 
+                case 2: {
+
+                        for (int j = 0; j < this->activeMap.getCol2Quantity(); j++) {
+                            if (this->activeMap.getVectorEnemies().at(p)->collision(&this->activeMap.getAmbientMatrix()[i][j])) {
+                                //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                                this->activeMap.getVectorEnemies().at(p)->setX(this->activeMap.getVectorEnemies().at(p)->getAX());
+                                this->activeMap.getVectorEnemies().at(p)->setY(this->activeMap.getVectorEnemies().at(p)->getAY());
+                                int direction = rand()%4;
+                                this->activeMap.getVectorEnemies().at(p)->setDirectionEnemy(direction);
+                            }
+                        }
+                        break;
+                    }
             }
+
+
+
         }
     }
 }
