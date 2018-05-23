@@ -32,7 +32,6 @@ void BaseGame::init()
 
     managerMaps = new DAOMap(this->gameDificulty);
     this->activeMap = new Map();
-    int sizeMaps = managerMaps->getMapList().size();
     this->activeMap = managerMaps->getMap(0);
 
     /**

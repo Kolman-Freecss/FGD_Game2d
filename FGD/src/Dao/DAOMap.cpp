@@ -34,12 +34,10 @@ DAOMap::DAOMap(int difficult)
         */
         case 1: this->quantEnemies = 5;
                 this->quantElementsAmbient = 3;
-                int numSize;
                 for(int i = 0; i < 2; i++){
                     this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
                     this->numMap++;
-                    this->quantEnemies+=4;
-                    numSize = this->mapList.size();
+                    this->quantEnemies+=2;
                 }
                 break;
 
