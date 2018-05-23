@@ -22,8 +22,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
 
         case 1:
                 this->quantOtherElements = 1;
-                this->quantTrees = 2;
-                this->quantHouses = 2;
+                this->col1Quantity = 2;
+                this->col2Quantity = 2;
 
                 break;
 
@@ -45,9 +45,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             switch(i){
                 case 0: this->ambientMatrix[i] = new Drawable[this->quantOtherElements];
                         break;
-                case 1: this->ambientMatrix[i] = new Drawable[this->quantTrees];
+                case 1: this->ambientMatrix[i] = new Drawable[this->col1Quantity];
                         break;
-                case 2: this->ambientMatrix[i] = new Drawable[this->quantHouses];
+                case 2: this->ambientMatrix[i] = new Drawable[this->col2Quantity];
                         break;
             }
          //this->ambientMatrix[i] = new Drawable[2];
@@ -338,12 +338,12 @@ int Map::getQuantOtherElements()
     return this->quantOtherElements;
 }
 
-int Map::getQuantTrees()
+int Map::getCol1Quantity()
 {
-    return this->quantTrees;
+    return this->col1Quantity;
 }
 
-int Map::getQuantHouses()
+int Map::getCol2Quantity()
 {
-    return this->quantHouses;
+    return this->col2Quantity;
 }

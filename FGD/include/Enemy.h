@@ -22,6 +22,7 @@ class Enemy : public Character {
     //bool detectionRadiusEnemy(Drawable *drawable);
 
     void genWalkCollision() override;
+    void setDirectionEnemy(int direction);
 
     bool detectionRadiusEnemy(Drawable *drawable);
 

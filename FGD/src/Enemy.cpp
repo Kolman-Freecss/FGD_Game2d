@@ -80,3 +80,8 @@ bool Enemy::detectionRadiusEnemy(Drawable *drawable)
     }
     return false;
 }
+
+void Enemy::setDirectionEnemy(int direction)
+{
+    this->direction = direction;
+}

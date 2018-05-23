@@ -19,14 +19,14 @@ class Map{
     //virtual ~Map();
 
     int getQuantOtherElements();
-    int getQuantTrees();
-    int getQuantHouses();
+    int getCol1Quantity();
+    int getCol2Quantity();
 
  private:
 
     int quantOtherElements;
-     int quantTrees;
-     int quantHouses;
+     int col1Quantity;
+     int col2Quantity;
 
 
     vector<Enemy*> enemies;
