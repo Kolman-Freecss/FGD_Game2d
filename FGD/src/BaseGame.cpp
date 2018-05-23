@@ -228,13 +228,16 @@ void BaseGame::draw()
     */
     vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
-            //Update de enemigo para luego printarlo
 
         vectorE.at(i)->draw(this->game->getBuffer());
+        drawEnemyHUD(vectorE.at(i));
     }
 
 
     this->player.draw(this->game->getBuffer());
+
+
+    drawHUD();
 
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
@@ -443,3 +446,45 @@ void BaseGame::colEnemiesWithAmbient(){
         }
     }
 }
+
+
+void BaseGame::drawHUD() {
+
+    //barras de vida player
+    int posXbars = 10;
+    int posYhp = 10;
+    int posYsh = 25;
+
+    BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
+    masked_blit(BlackBar, this->game->getBuffer(), 0, 0, posXbars-2, posYhp-2, 104, 14);
+    masked_blit(BlackBar, this->game->getBuffer(), 0, 0, posXbars-2, posYsh-2, 104, 14);
+
+
+    BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
+    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, posXbars, posYhp, this->player.getHealth(), 10);
+
+    BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
+    masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, posXbars, posYsh, this->player.getShield(), 10);
+
+}
+
+void BaseGame::drawEnemyHUD(Enemy *enemy) {
+    int maxSizeBar = enemy->getWidth();
+    //barras de vida enemigo
+    int posXbars = 0;
+    int posYhp = -5;
+    int posYsh = -15;
+
+    BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
+    masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()-posYhp-1, maxSizeBar +2, 7);
+    masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()-posYsh-1, maxSizeBar +2, 7);
+
+
+    BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
+    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()-posYhp, (enemy->getHealth()*100)/maxSizeBar, 5);
+
+    BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
+    masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()-posYsh, (enemy->getShield()*100)/maxSizeBar, 5);
+
+}
+
