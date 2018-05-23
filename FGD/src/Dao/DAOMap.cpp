@@ -35,7 +35,7 @@ DAOMap::DAOMap(int difficult)
         case 1: this->quantEnemies = 5;
                 this->quantElementsAmbient = 3;
                 for(int i = 0; i < 2; i++){
-                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
                     this->numMap++;
                 }
                 break;
@@ -46,7 +46,7 @@ DAOMap::DAOMap(int difficult)
         case 2: this->quantEnemies = 10;
                 this->quantElementsAmbient = 3;
                 for(int i = 0; i < 2; i++){
-                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
                     this->numMap++;
                 }
                 break;
@@ -57,7 +57,7 @@ DAOMap::DAOMap(int difficult)
         case 3: this->quantEnemies = 15;
                 this->quantElementsAmbient = 3;
                 for(int i = 0; i < 2; i++){
-                    this->mapList.push_back(Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
                     this->numMap++;
                 }
                 break;
@@ -67,12 +67,12 @@ DAOMap::DAOMap(int difficult)
     }
 }
 
-vector<Map> DAOMap::getMapList()
+vector<Map*> DAOMap::getMapList()
 {
     return mapList;
 }
 
-Map DAOMap::getMap(int id)
+Map* DAOMap::getMap(int id)
 {
     return mapList.at(id);
 }

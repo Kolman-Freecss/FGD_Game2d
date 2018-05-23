@@ -28,9 +28,9 @@ class BaseGame : public GameState{
     void update();
     void draw();
 
-    Map activeMap;
+    Map *activeMap;
 
-    DAOMap managerMaps;
+    DAOMap *managerMaps;
     BaseGame(int difficult, GameStateManager *game);
 
 
