@@ -204,21 +204,22 @@ void Map::chargeMatrixAnimationsOfEnemy(BITMAP ***matrix, int numMap)
             matrix[7][3] = load_bitmap("src\\Resources\\SKELETON1\\SAL4.bmp",NULL);
 
             //DIE
+            //Up
             matrix[8][0] = load_bitmap("src\\Resources\\SKELETON1\\SDU1.bmp",NULL);
             matrix[8][1] = load_bitmap("src\\Resources\\SKELETON1\\SDU2.bmp",NULL);
             matrix[8][2] = load_bitmap("src\\Resources\\SKELETON1\\SDU3.bmp",NULL);
             matrix[8][3] = load_bitmap("src\\Resources\\SKELETON1\\SDU4.bmp",NULL);
-
+            //Right
             matrix[9][0] = load_bitmap("src\\Resources\\SKELETON1\\SDR1.bmp",NULL);
             matrix[9][1] = load_bitmap("src\\Resources\\SKELETON1\\SDR2.bmp",NULL);
             matrix[9][2] = load_bitmap("src\\Resources\\SKELETON1\\SDR3.bmp",NULL);
             matrix[9][3] = load_bitmap("src\\Resources\\SKELETON1\\SDR4.bmp",NULL);
-
+            //Down
             matrix[10][0] = load_bitmap("src\\Resources\\SKELETON1\\SDD1.bmp",NULL);
             matrix[10][1] = load_bitmap("src\\Resources\\SKELETON1\\SDD2.bmp",NULL);
             matrix[10][2] = load_bitmap("src\\Resources\\SKELETON1\\SDD3.bmp",NULL);
             matrix[10][3] = load_bitmap("src\\Resources\\SKELETON1\\SDD4.bmp",NULL);
-
+            //Left
             matrix[11][0] = load_bitmap("src\\Resources\\SKELETON1\\SDL1.bmp",NULL);
             matrix[11][1] = load_bitmap("src\\Resources\\SKELETON1\\SDL2.bmp",NULL);
             matrix[11][2] = load_bitmap("src\\Resources\\SKELETON1\\SDL3.bmp",NULL);

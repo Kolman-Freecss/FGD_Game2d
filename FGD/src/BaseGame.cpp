@@ -228,6 +228,16 @@ void BaseGame::draw()
     vector<Enemy*> vectorE = this->activeMap.getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
             //Update de enemigo para luego printarlo
+        if(!vectorE.at(i)->isIsAlive())
+        {
+            vectorE.at(i)->enemyDie();
+            //ponerle tiempo
+            if(!vectorE.at(i)->isAttacking()){
+                vectorE.erase(vectorE.begin()+i -1 );
+                continue;
+            }
+
+        }
 
         vectorE.at(i)->draw(this->game->getBuffer());
     }
@@ -248,24 +258,25 @@ void BaseGame::artificialIntelligence()
     for (int i = 0; i < vectorE.size(); i++){
             //Update de enemigo para luego printarlo
         if(vectorE.at(i)->detectionRadiusEnemy(&this->player)){
+            if (vectorE.at(i)->isIsAlive() && !vectorE.at(i)->isAttacking()){
+                int direction = this->directionIA(vectorE.at(i));
 
-            int direction = this->directionIA(vectorE.at(i));
-
-            if(direction == 0)
-            {
-                vectorE.at(i)->walkUP();
-            }
-            if(direction == 1)
-            {
-                vectorE.at(i)->walkRIGHT();
-            }
-            if(direction == 2)
-            {
-                vectorE.at(i)->walkDOWN();
-            }
-            if(direction == 3)
-            {
-                vectorE.at(i)->walkLEFT();
+                if(direction == 0)
+                {
+                    vectorE.at(i)->walkUP();
+                }
+                if(direction == 1)
+                {
+                    vectorE.at(i)->walkRIGHT();
+                }
+                if(direction == 2)
+                {
+                    vectorE.at(i)->walkDOWN();
+                }
+                if(direction == 3)
+                {
+                    vectorE.at(i)->walkLEFT();
+                }
             }
         }else{
             this->activeMap.getVectorEnemies().at(i)->update();

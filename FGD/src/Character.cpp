@@ -208,14 +208,11 @@ void Character::attackLEFTanim() {
     }
 }
 
-bool Character::isAttacking() {
-    return attacking;
-}
 
-void Character::setAttacking(bool op) {
-    this->attacking = op;
-}
 
+/**
+Funcion herido para player y enemigo
+*/
 void Character::wounded(Character *attackingCharacter) {
     int totalDamage = attackingCharacter->damage + attackingCharacter->selectedWeapon->getDamage();
     if (this->shield - totalDamage < 0){
@@ -231,10 +228,18 @@ void Character::wounded(Character *attackingCharacter) {
     if (this->health <=0){
         //funcion que mata al character
         alive = false;
+        attackChecked = false;
+        attacking = true;
     }
 }
 
+bool Character::isAttacking() {
+    return attacking;
+}
 
+void Character::setAttacking(bool op) {
+    this->attacking = op;
+}
 
 int Character::getDamage(){
     return damage;

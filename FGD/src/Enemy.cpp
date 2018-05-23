@@ -85,3 +85,22 @@ void Enemy::setDirectionEnemy(int direction)
 {
     this->direction = direction;
 }
+
+int Enemy::getDirectionEnemy()
+{
+    return this->direction;
+}
+
+void Enemy::enemyDie()
+{
+
+    this->activeBitmap[0] = this->direction += 8;
+
+    if (activeBitmap[1] < 3) {
+        activeBitmap[1]++;
+    } else {
+        activeBitmap[1] = 0;
+        attacking = false;
+    }
+
+}

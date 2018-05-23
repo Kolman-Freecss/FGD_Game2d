@@ -23,8 +23,11 @@ class Enemy : public Character {
 
     void genWalkCollision() override;
     void setDirectionEnemy(int direction);
+    int getDirectionEnemy();
 
     bool detectionRadiusEnemy(Drawable *drawable);
+
+    void enemyDie();
 
 private:
     bool changeDirectionIfCol = false;

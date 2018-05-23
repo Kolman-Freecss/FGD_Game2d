@@ -35,7 +35,7 @@ void Player::keyboard(){
     if(key[KEY_SPACE]) {
         if (!attacking) {
             cout << "attacked"<< endl;
-
+            this->activeBitmap[1] = 0;
             this->attacking = true;
             this->attackChecked = false;
         }
