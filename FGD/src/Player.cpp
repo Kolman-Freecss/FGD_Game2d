@@ -1,6 +1,7 @@
 #include "Player.h"
 #include <allegro.h>
 #include <iostream>
+#include <Inventory.h>
 
 Player::Player()
 {
@@ -20,6 +21,9 @@ void Player::genWalkCollision() {
     this->walkCollision[1] = 49;
 }
 
+/**
+Manejo del teclado del personaje + colisión de limites
+*/
 void Player::keyboard(){
     /**
     * Attack key
@@ -56,4 +60,14 @@ void Player::keyboard(){
     if ( this->x+this->width > 800 ) this->x = 800-this->width;
     if ( this->y < 0 ) this->y = 0;
     if ( this->y+this->height > 600 ) this->y = 600-this->height;
+}
+
+
+
+
+/////////////////////////////              GET & SET                  /////////////////////////
+
+Inventory Player::getInventory()
+{
+    return this->inventory;
 }

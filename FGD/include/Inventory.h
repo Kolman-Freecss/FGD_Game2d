@@ -9,10 +9,16 @@ using namespace std;
 class Inventory {
 
 private:
+    /**
+    Num que cambia dependiendo del nivel de la bolsa que tengas
+    1 = 8
+    2 = 16
+    3 = 24
+    */
     int maxObjects;
     int maxCurrentObjects;
     int maxMoney;
-    int currentMoney;
+    int currentMoney = 20;
     std::vector< Object* > objectList;
 
 public:
