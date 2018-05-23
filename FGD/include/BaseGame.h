@@ -27,6 +27,8 @@ class BaseGame : public GameState{
     void getEvents();
     void update();
     void draw();
+    void drawHUD();
+    void drawEnemyHUD(Enemy *enemy);
 
     Map activeMap;
 
@@ -36,7 +38,6 @@ class BaseGame : public GameState{
 
 
  private:
-    BITMAP *buffer;
     /**
     La dificultad que ha elegido el usuario en el Login lo recibe aqui (El constructor lo recibe)
     - 1 = Facil
