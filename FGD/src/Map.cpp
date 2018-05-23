@@ -28,6 +28,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 break;
 
         case 2:
+                this->quantOtherElements = 1;
+                this->col1Quantity = 2;
+                this->col2Quantity = 2;
 
                 break;
     }

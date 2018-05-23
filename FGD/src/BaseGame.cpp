@@ -31,7 +31,8 @@ void BaseGame::init()
 
 
     managerMaps = DAOMap(this->gameDificulty);
-    this->activeMap = managerMaps.getMap(0);
+    this->activeMap = Map();
+    this->activeMap = managerMaps.getMap(1);
 
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
@@ -319,7 +320,7 @@ int BaseGame::directionIA(Enemy *drawable)
 void BaseGame::nextMap()
 {
 
-    if(this->player.getX() == 750 && this->player.getY() == GameStateManager::SIZE_WINDOW_Y / 2)
+    if(this->player.getX() > 600 && this->player.getY() >= GameStateManager::SIZE_WINDOW_Y / 2)
         {
             this->activeMap = this->managerMaps.getMap(1);
         }
