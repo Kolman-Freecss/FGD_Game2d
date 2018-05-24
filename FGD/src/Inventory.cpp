@@ -6,7 +6,7 @@ using namespace std;
 
 Inventory::Inventory()
 {
-
+ this->objectList = new vector<Object*>();
     this->currentMoney = 20;
 }
 
@@ -46,14 +46,14 @@ vector<Object *>* Inventory::getObjectListPtr() {
     /*int size1 = this->objectList.size();
     this->objectList.push_back(new Object());
     int size2 = this->objectList.size();*/
-    return &objectList;
-}
-
-vector<Object *> Inventory::getObjectList() {
     return objectList;
 }
 
-void Inventory::setObjectList(vector<Object *> &objectList) {
+vector<Object *>* Inventory::getObjectList() {
+    return objectList;
+}
+
+void Inventory::setObjectList(vector<Object *>* &objectList) {
     Inventory::objectList = objectList;
 }
 

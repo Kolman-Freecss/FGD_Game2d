@@ -19,7 +19,7 @@ private:
     int maxCurrentObjects;
     int maxMoney;
     int currentMoney;
-    vector< Object* > objectList;
+    vector< Object* >* objectList;
 
 public:
     Inventory();
@@ -39,11 +39,11 @@ public:
     int getCurrentMoney();
 
     vector<Object *>* getObjectListPtr();
-    vector<Object *> getObjectList();
+    vector<Object *>* getObjectList();
 
     void setCurrentMoney(int currentMoney);
 
-    void setObjectList( std::vector<Object *> &objectList);
+    void setObjectList( std::vector<Object *>* &objectList);
 
 
 };

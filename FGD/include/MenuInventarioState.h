@@ -3,6 +3,7 @@
 
 #include <GameState.h>
 #include <GameStateManager.h>
+#include <Player.h>
 
 using namespace std;
 
@@ -34,7 +35,7 @@ class MenuInventarioState : public GameState{
     void update();
     void draw();
 
-    MenuInventarioState(GameStateManager *game);
+    MenuInventarioState(GameStateManager *game, Player *player);
 
  private:
      int pagination = 1;
@@ -44,6 +45,8 @@ class MenuInventarioState : public GameState{
     void drawStatsPlayer();
     void drawCharacteristicsSelectedWeapon();
     void drawMoney();
+
+    Player *playerInventory;
 
 
 

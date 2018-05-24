@@ -101,13 +101,14 @@ void BaseGame::init()
 
     /**TEEEEEST**/
     int sizeTest = this->player.getInventory().getObjectListPtr()->size();
+    this->player.bitmapObject = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     this->player.getInventory().getObjectListPtr()->push_back(weaponOfPlayer);
-    vector<Object *>* vectorAux = this->player.getInventory().getObjectListPtr();
+    /*vector<Object *>* vectorAux = this->player.getInventory().getObjectListPtr();
 
-    int sizeAux = vectorAux->size();
+    int sizeAux = vectorAux->size();*/
     int sizeTest2 = this->player.getInventory().getObjectListPtr()->size();
-    this->player.getInventory().getObjectList().push_back(new Object());
-    int sizeTest3 = this->player.getInventory().getObjectList().size();
+    //this->player.getInventory().getObjectList()->push_back(new Object());
+    int sizeTest3 = this->player.getInventory().getObjectList()->size();
 
 
     /*Inventory aux = this->player.getInventory();
@@ -129,7 +130,7 @@ void BaseGame::getEvents()
 {
 
     if (GameState::keyI()){
-            this->game->pushState(new MenuInventarioState(this->game));
+            this->game->pushState(new MenuInventarioState(this->game, &this->player));
     }
     if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
 

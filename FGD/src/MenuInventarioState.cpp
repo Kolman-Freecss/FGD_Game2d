@@ -7,12 +7,14 @@
 #include <vector>
 #include <Weapon.h>
 #include <sstream>
+#include <Player.h>
 
 using namespace std;
 
-MenuInventarioState::MenuInventarioState(GameStateManager *game)
+MenuInventarioState::MenuInventarioState(GameStateManager *game, Player *player)
 {
     this->game = game;
+    this->playerInventory = player;
 
     this->init();
 
@@ -82,7 +84,7 @@ void MenuInventarioState::draw()
     this->drawObjects();
     this->drawCharacteristicsSelectedWeapon();
     this->drawStatsPlayer();
-    this->drawMoney();
+    //this->drawMoney();
 
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
@@ -118,7 +120,7 @@ void MenuInventarioState::drawObjects()
 
 //    int sizeVector3 = vectorAux.size();
 
-    int sizeVector = this->player.getInventory().getObjectList().size();
+    int sizeVector = this->playerInventory->getInventory().getObjectListPtr()->size();
     if(sizeVector > 0){
         for(int j = 0; j < 4; j++)
         {
@@ -127,11 +129,12 @@ void MenuInventarioState::drawObjects()
             for( int a = 0; a < 3; a++)
             {
                 posXAux += 70;
-                BITMAP *imageToDraw = this->player.getInventory().getObjectList().at(i)->getImageOfObject();
-                int width = this->player.getInventory().getObjectList().at(i)->getWidth();
-                int height = this->player.getInventory().getObjectList().at(i)->getHeight();
+                Object *obAux = this->playerInventory->getInventory().getObjectListPtr()->at(0);
+                BITMAP *imageToDraw = this->playerInventory->getInventory().getObjectListPtr()->at(i)->getImageOfObject();
+                int width = this->playerInventory->getInventory().getObjectListPtr()->at(i)->getWidth();
+                int height = this->playerInventory->getInventory().getObjectListPtr()->at(i)->getHeight();
 
-                masked_blit(imageToDraw, this->game->getBuffer(), 0,0, width, height, 46, 40);
+                masked_blit(this->playerInventory->bitmapObject, this->game->getBuffer(), 0,0, posXAux, posYAux, obAux->getWidth(), 40);
                 i++;
                 if(i == sizeVector){
                     break;
@@ -194,7 +197,7 @@ void MenuInventarioState::drawMoney()
 
 
     std::stringstream x;
-    x << this->player.getInventory().getCurrentMoney();
+    x << this->playerInventory->getInventory().getCurrentMoney();
     const char *characteristics = x.str().c_str();
 
         textout_ex(this->game->getBuffer(), font, characteristics,
