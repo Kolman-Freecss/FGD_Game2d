@@ -11,6 +11,7 @@ class Object{
      BITMAP *getImageOfObject();
      int getWidth();
      int getHeight();
+     int getLevel();
 
  protected:
     int level;

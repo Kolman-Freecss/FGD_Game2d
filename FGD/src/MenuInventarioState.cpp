@@ -10,6 +10,8 @@
 #include <Player.h>
 #include <stdio.h>
 #include <string.h>
+#include <Object.h>
+#include <iostream>
 
 using namespace std;
 
@@ -112,10 +114,15 @@ void MenuInventarioState::drawObjects()
     int posXAux;
     int posY = MenuInventarioState::MIDDLE_SCREEN_Y - 226;
     int posYAux = posY;
-    int i = 0;
+    int i;
+    if(this->pagination == 1){
+        i = 0;
+    }else if (this->pagination == 2){
+        i = 11;
+    }
 
     int sizeVector = this->playerInventory->getInventory()->getObjectListPtr()->size();
-    if(sizeVector > 0){
+    if(sizeVector >= i){
         for(int j = 0; j < 4; j++)
         {
             posYAux += 64;
@@ -216,7 +223,89 @@ Función que printa el estado y la descripción del arma seleccionada
 void MenuInventarioState::drawCharacteristicsSelectedWeapon()
 {
 
-    vector<char*> characteristics;
+    int posX = MenuInventarioState::MIDDLE_SCREEN_X + 100;
+    int posXAux;
+    int posY = MenuInventarioState::MIDDLE_SCREEN_Y - 228;
+    int posYAux = posY;
+    int i = 0;
+    int heightCuadrado = 44;
+    int widthCuadrado = 50;
+
+    Object *selectedObject = new Object();
+    selectedObject = this->playerInventory->getInventory()->getObjectListPtr()->at(0);
+
+    /**
+    Segun donde clickes te coje un objeto u otro
+    */
+    int sizeVector = this->playerInventory->getInventory()->getObjectListPtr()->size();
+    if(mouse_x >= (MIDDLE_SCREEN_X + 170) && mouse_x <= (MIDDLE_SCREEN_X + 360) &&
+       mouse_y >= (MIDDLE_SCREEN_Y - 164) && mouse_y <= (MIDDLE_SCREEN_Y + 72)){
+        //Siempre tendra la espada pero por un futuro cambio en ello
+            if(sizeVector > 0){
+                for(int j = 0; j < 4; j++)
+                {
+                    posYAux += 64;
+                    posXAux = posX;
+                    for( int a = 0; a < 3; a++)
+                    {
+                        posXAux += 70;
+                        if(mouse_x >= posXAux && mouse_x <= posXAux + widthCuadrado &&
+                            mouse_y >= posYAux && mouse_y <= posYAux + heightCuadrado){
+                                if(GameState::leftClick())
+                                    {
+                                        selectedObject = this->playerInventory->getInventory()->getObjectListPtr()->at(i);
+                                        cout << "entro 2";
+                                    }
+                            }
+                        i++;
+                        if(i == sizeVector){
+                            break;
+                        }
+
+                    }
+                    if(i == sizeVector){
+                        break;
+                    }
+                }
+              }
+       }
+
+
+
+
+
+
+
+
+
+
+    int posYAux2 = MIDDLE_SCREEN_Y + 40;
+
+    textout_ex(this->game->getBuffer(), font, "Dano: ",
+            MIDDLE_SCREEN_X + 25, posYAux2, makecol(0, 0, 0), -1);
+
+    std::stringstream stream;
+    stream << this->playerInventory->getInventory()->getObjectListPtr()->at(0)->getWidth();
+    const char *damage = stream.str().c_str();
+
+    textout_ex(this->game->getBuffer(), font, "2",
+            MIDDLE_SCREEN_X + 25 + 42, posYAux2, makecol(0, 0, 0), -1);
+
+
+    posYAux2 += 14;
+
+    textout_ex(this->game->getBuffer(), font, "Velocidad: ",
+            MIDDLE_SCREEN_X + 25, posYAux2, makecol(0, 0, 0), -1);
+
+    std::stringstream streamHealth;
+    streamHealth << this->playerInventory->getHealth();
+    const char *health = streamHealth.str().c_str();
+
+    textout_ex(this->game->getBuffer(), font, damage,
+            MIDDLE_SCREEN_X + 25 + 42, posYAux2, makecol(0, 0, 0), -1);
+
+
+    /*vector<char*> characteristics;
     characteristics.push_back("Dano: " );
     characteristics.push_back("Velocidad: ");
     int posYAux = MIDDLE_SCREEN_Y + 40;
@@ -225,7 +314,7 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
         textout_ex(this->game->getBuffer(), font, characteristics.at(i),
                           MIDDLE_SCREEN_X + 25, posYAux, makecol(0, 0, 0), -1);
         posYAux += 14;
-    }
+    }*/
 }
 
 /**
