@@ -473,7 +473,7 @@ void BaseGame::drawEnemyHUD(Enemy *enemy) {
     //barras de vida enemigo
     int posXbars = 0;
     int posYhp = -15;
-    int posYsh = -s5;
+    int posYsh = -5;
 
     BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
     masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYhp-1, maxSizeBar +2, 7);
@@ -481,7 +481,7 @@ void BaseGame::drawEnemyHUD(Enemy *enemy) {
 
 
     BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
-    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enmy->getY()+posYhp, (enemy->getHealth()*100)/maxSizeBar, 5);
+    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYhp, (enemy->getHealth()*100)/maxSizeBar, 5);
 
     BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
     masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*100)/maxSizeBar, 5);
