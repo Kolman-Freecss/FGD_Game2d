@@ -38,11 +38,12 @@ public:
 
     int getCurrentMoney();
 
+    vector<Object *>* getObjectListPtr();
     vector<Object *> getObjectList();
 
     void setCurrentMoney(int currentMoney);
 
-    void setObjectList(const std::vector<Object *> &objectList);
+    void setObjectList( std::vector<Object *> &objectList);
 
 
 };

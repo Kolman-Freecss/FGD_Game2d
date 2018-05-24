@@ -38,11 +38,14 @@ protected:
      bool leftClick();
      bool keyI();
 
+     char* generalKeyboard();
+
  private:
 
     static int difficulty;
     static bool sound;
     static int timeClicked;
+    static int timePress;
 
 
 };

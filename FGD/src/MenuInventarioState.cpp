@@ -112,11 +112,11 @@ void MenuInventarioState::drawObjects()
 
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
-    vector<Object*> vectorAux;
+    /*vector<Object*> vectorAux;
     vectorAux.push_back(weaponOfPlayer);
-    this->player.getInventory().setObjectList(vectorAux);
+    this->player.getInventory().setObjectList(vectorAux);*/
 
-    int sizeVector3 = vectorAux.size();
+//    int sizeVector3 = vectorAux.size();
 
     int sizeVector = this->player.getInventory().getObjectList().size();
     if(sizeVector > 0){

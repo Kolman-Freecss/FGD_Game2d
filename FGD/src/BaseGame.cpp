@@ -100,15 +100,20 @@ void BaseGame::init()
     this->player.setSelectedWeapon(weaponOfPlayer);
 
     /**TEEEEEST**/
-    int sizeTest = this->player.getInventory().getObjectList().size();
-    this->player.getInventory().getObjectList().push_back(weaponOfPlayer);
-    int sizeTest2 = this->player.getInventory().getObjectList().size();
+    int sizeTest = this->player.getInventory().getObjectListPtr()->size();
+    this->player.getInventory().getObjectListPtr()->push_back(weaponOfPlayer);
+    vector<Object *>* vectorAux = this->player.getInventory().getObjectListPtr();
+
+    int sizeAux = vectorAux->size();
+    int sizeTest2 = this->player.getInventory().getObjectListPtr()->size();
     this->player.getInventory().getObjectList().push_back(new Object());
     int sizeTest3 = this->player.getInventory().getObjectList().size();
-    Inventory aux = this->player.getInventory();
+
+
+    /*Inventory aux = this->player.getInventory();
     aux.getObjectList().push_back(new Object());
     int sizeTest4 = aux.getObjectList().size();
-    int sizeTest5 = this->player.getInventory().getObjectList().size();
+    int sizeTest5 = this->player.getInventory().getObjectList().size();*/
 
     if(!this->managerMusic.getMap1IsPlaying()){
         if(this->getSound()){
