@@ -38,8 +38,12 @@ public:
 
     int getCurrentMoney();
 
+    /**
+    Un vector que anirá sincronitzat amb el vector de objectes del inventari del player
+    */
+    vector<BITMAP*> bitmapsObjects;
+
     vector<Object *>* getObjectListPtr();
-    vector<Object *>* getObjectList();
 
     void setCurrentMoney(int currentMoney);
 

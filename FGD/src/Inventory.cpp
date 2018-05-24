@@ -6,8 +6,8 @@ using namespace std;
 
 Inventory::Inventory()
 {
- this->objectList = new vector<Object*>();
-    this->currentMoney = 20;
+    this->objectList = new vector<Object*>();
+    this->currentMoney = 1;
 }
 
 int Inventory::getMaxObjects() {
@@ -43,13 +43,6 @@ void Inventory::setCurrentMoney(int currentMoney) {
 }
 
 vector<Object *>* Inventory::getObjectListPtr() {
-    /*int size1 = this->objectList.size();
-    this->objectList.push_back(new Object());
-    int size2 = this->objectList.size();*/
-    return objectList;
-}
-
-vector<Object *>* Inventory::getObjectList() {
     return objectList;
 }
 

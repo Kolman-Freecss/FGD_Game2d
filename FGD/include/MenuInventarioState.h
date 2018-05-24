@@ -38,7 +38,7 @@ class MenuInventarioState : public GameState{
     MenuInventarioState(GameStateManager *game, Player *player);
 
  private:
-     int pagination = 1;
+    int pagination = 1;
 
     void drawPagination();
     void drawObjects();

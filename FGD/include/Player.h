@@ -13,17 +13,17 @@ class Player : public Character {
     Player(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width);
     //virtual ~Player();
     void keyboard();
-    BITMAP *bitmapObject;
 
     void genWalkCollision() override;
 
-    Inventory getInventory();
+    Inventory* getInventory();
 
 private:
     int experiencia;
     int level;
     int shield;
-    Inventory inventory;
+    Inventory *inventory;
+
 };
 
 #endif // Player_h
