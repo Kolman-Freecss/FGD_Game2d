@@ -42,6 +42,7 @@ public:
     Un vector que anirá sincronitzat amb el vector de objectes del inventari del player
     */
     vector<BITMAP*> bitmapsObjects;
+    vector<int> vectorWidth;
 
     vector<Object *>* getObjectListPtr();
 

@@ -131,10 +131,11 @@ void MenuInventarioState::drawObjects()
             {
                 posXAux += 70;
                 BITMAP *imageToDraw = this->playerInventory->getInventory()->bitmapsObjects.at(i);
+                int width2 = this->playerInventory->getInventory()->vectorWidth.at(i);
                 int width = this->playerInventory->getInventory()->getObjectListPtr()->at(i)->getWidth();
                 int height = this->playerInventory->getInventory()->getObjectListPtr()->at(i)->getHeight();
 
-                masked_blit(imageToDraw, this->game->getBuffer(), 0,0, posXAux, posYAux, width, height);
+                masked_blit(imageToDraw, this->game->getBuffer(), 0,0, posXAux, posYAux, width2, height);
                 i++;
                 if(i == sizeVector){
                     break;

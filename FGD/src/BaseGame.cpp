@@ -106,6 +106,7 @@ void BaseGame::init()
 
     /**TEEEEEST**/
     this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+    this->player.getInventory()->vectorWidth.push_back(46);
     this->player.getInventory()->getObjectListPtr()->push_back(weaponOfPlayer);
 
 
