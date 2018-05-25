@@ -14,18 +14,20 @@ DAOMap::DAOMap()
 
 }
 
+DAOMap::~DAOMap()
+{
+    for(int i = 0; i < this->mapList.size(); i++)
+    {
+        delete[] this->mapList.at(i);
+    }
+}
+
 /**
 Rellena todas las matrices de un mapa en concreto que contendra lo siguiente:
 Vector de enemigos, matriz de Ambiente, la longitud de la matriz
 */
 DAOMap::DAOMap(int difficult)
 {
-    /*Drawable **mapAmbient;
-    vector<Enemy*> firtMapEnemies;
-    /**
-    Fill the matrix of animations enemy
-    */
-    //BITMAP ***matrixAnimationsEnemy;
 
     switch(difficult){
 

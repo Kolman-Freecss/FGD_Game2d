@@ -25,6 +25,11 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
 
 }
 
+BaseGame::~BaseGame()
+{
+    this->cleanUp();
+}
+
 
 void BaseGame::init()
 {
@@ -270,6 +275,24 @@ void BaseGame::artificialIntelligence()
         }
     }
 }
+
+void BaseGame::cleanUp()
+{
+
+    delete this->activeMap;
+    delete this->managerMaps;
+
+
+}
+
+
+
+
+
+
+
+
+//////////////////    FUNCIONES FUERA DEL LOOP PRINCIPAL        //////////////////////
 
 
 int BaseGame::directionIA(Enemy *drawable)

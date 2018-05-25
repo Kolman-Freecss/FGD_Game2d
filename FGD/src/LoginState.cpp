@@ -19,6 +19,13 @@ LoginState::LoginState(GameStateManager *game)
 
 void LoginState::init()
 {
+    /**
+    Reserva de memoria
+    */
+    this->charUserInput = new vector<char*>();
+    this->charPasswordInput = new vector<char*>();
+    this->maxLength = 12;
+
 
     this->checkRegister = false;
 
@@ -67,22 +74,7 @@ void LoginState::getEvents()
 void LoginState::update()
 {
 
-    if(this->checkUser){
-        this->charUserInput.push_back(this->generalKeyboard());
-        cout << this->charUserInput.size() << " ";
-        for(int i = 0; i < charUserInput.size(); i++){
-        textout_ex(this->game->getBuffer(), font, charUserInput.at(i),
-                          MIDDLE_SCREEN_X - 80, MIDDLE_SCREEN_Y, makecol(0, 0, 0), -1);
-        }
-    }
-    if(this->checkPassword){
-        this->charUserInput.push_back(this->generalKeyboard());
 
-        for(int i = 0; i < charUserInput.size(); i++){
-        textout_ex(this->game->getBuffer(), font, charUserInput.at(i),
-                          MIDDLE_SCREEN_X - 80, MIDDLE_SCREEN_Y + 75, makecol(0, 0, 0), -1);
-        }
-    }
 
 
 
@@ -101,6 +93,35 @@ void LoginState::draw()
 
     userPressed();
     passwordPressed();
+
+
+    if(this->checkUser){
+
+        this->generalKeyboard(1);
+
+
+    }
+    if(this->checkPassword){
+
+        this->generalKeyboard(2);
+
+
+        //Tendria que escribir *
+
+    }
+
+        for(int i = 0; i < charUserInput->size(); i++){
+
+            textout_ex(this->game->getBuffer(), font, charUserInput->at(i),
+                              MIDDLE_SCREEN_X - 80 + i * 9, MIDDLE_SCREEN_Y, makecol(0, 0, 0), -1);
+
+        }
+
+        for(int i = 0; i < charPasswordInput->size(); i++){
+        textout_ex(this->game->getBuffer(), font, "*",
+                         MIDDLE_SCREEN_X - 80 + i * 9, MIDDLE_SCREEN_Y + 75, makecol(0, 0, 0), -1);
+        }
+
     if(!checkRegister){
         enterPressed();
         registerPressed();
@@ -131,7 +152,6 @@ void LoginState::userPressed()
             mouse_y >= (MIDDLE_SCREEN_Y - 25) && mouse_y <= (MIDDLE_SCREEN_Y + 25))){
             if(GameState::leftClick())
             {
-                this->charUserInput.clear();
                 this->checkPassword = false;
                 this->checkUser = true;
             }
@@ -157,7 +177,6 @@ void LoginState::passwordPressed()
             mouse_y >= (MIDDLE_SCREEN_Y + 50) && mouse_y <= (MIDDLE_SCREEN_Y + 100))){
             if(GameState::leftClick())
             {
-                this->charUserInput.clear();
                 this->checkUser = false;
                 this->checkPassword = true;
             }
@@ -250,7 +269,7 @@ void LoginState::clickOut()
          ((mouse_y <= (MIDDLE_SCREEN_Y + 50) || mouse_y >= (MIDDLE_SCREEN_Y + 100))))){
         if(GameState::leftClick())
         {
-                    this->charUserInput.clear();
+                    this->charUserInput->clear();
                     this->checkPassword = false;
                     this->checkUser = false;
         }
