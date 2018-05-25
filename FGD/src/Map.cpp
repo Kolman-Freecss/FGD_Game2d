@@ -22,7 +22,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
 
         case 1:
                 this->quantOtherElements = 1;
-                this->col1Quantity = 2;
+                //Trees
+                this->col1Quantity = 4;
+                //Houses
                 this->col2Quantity = 2;
 
                 break;
@@ -242,7 +244,7 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
     switch(numMap){
 
         case 1:{
-                BITMAP *bitmapTest = load_bitmap("src\\Resources\\First_Map\\grass.bmp",NULL);
+                BITMAP *bitmapTest = load_bitmap("src\\Resources\\Map_1\\grass.bmp",NULL);
                 matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
 
@@ -250,22 +252,28 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 /**
                 1 = Arboles
                 */
-                bitmapTest = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+                bitmapTest = load_bitmap("src\\Resources\\Map_1\\arbol.bmp",NULL);
                 matrix[1][0] = Drawable(bitmapTest, 50, 50 , 51, 50);
 
-                bitmapTest = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+                bitmapTest = load_bitmap("src\\Resources\\Map_1\\arbol.bmp",NULL);
                 matrix[1][1] = Drawable(bitmapTest, 500, 500 , 51, 50);
+
+                bitmapTest = load_bitmap("src\\Resources\\Map_1\\arbol_2.bmp",NULL);
+                matrix[1][2] = Drawable(bitmapTest, 500, 500 , 64, 62);
+
+                bitmapTest = load_bitmap("src\\Resources\\Map_1\\arbol_2.bmp",NULL);
+                matrix[1][3] = Drawable(bitmapTest, 500, 500 , 64, 62);
 
 
 
                 /**
                 2 = Casas
                 */
-                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
-                matrix[2][0] = House(bitmapTest2, 150, 150, 228,138);
+                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\Map_1\\casa.bmp",NULL);
+                matrix[2][0] = House(bitmapTest2, 150, 150, 96,80);
 
-                BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
-                matrix[2][1] = House(bitmapTest3, 500, 150, 228,138);
+                BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\Map_1\\casa.bmp",NULL);
+                matrix[2][1] = House(bitmapTest3, 500, 150, 96,80);
 
 
                 break;
@@ -278,8 +286,10 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 BITMAP *map2_bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
                 matrix[1][0] = House(map2_bitmapTest2, 150, 150, 228,138);
 
-                map2_bitmapTest2 = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+                map2_bitmapTest2 = load_bitmap("src\\Resources\\Map_1\\arbol.bmp",NULL);
                 matrix[1][1] = Drawable(map2_bitmapTest2, 500, 500 , 51, 50);
+
+
 
                 BITMAP *map2_bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
                 matrix[2][0] = House(map2_bitmapTest3, 150, 150, 228,138);
@@ -287,7 +297,9 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 BITMAP *bitmapTest3 = load_bitmap("src\\Resources\\house1.bmp",NULL);
                 matrix[2][1] = House(bitmapTest3, 500, 150, 228,138);
 
-                BITMAP *bitmapTest4 = load_bitmap("src\\Resources\\First_Map\\arbol.bmp",NULL);
+
+
+                BITMAP *bitmapTest4 = load_bitmap("src\\Resources\\Map_1\\arbol.bmp",NULL);
                 matrix[2][2] = Drawable(bitmapTest4, 600, 100 , 51, 50);
 
                 break;
