@@ -161,7 +161,15 @@ void BaseGame::update()
                                            player.getDirection())) {
                     //HIT A ENEMIGO
                     //TODO CONTROL DAÑO A ENEMIGO
-                    this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
+                    bool isKilled = this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
+                    if (isKilled){
+                        player.setExperience(player.getExperience()+ 100) ;
+                        cout << "+exp " << player.getExperience() << endl;
+
+                        player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
+                        cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
+                    }
+
                     cout << "HP " << this->activeMap->getVectorEnemies().at(i)->getHealth() << endl;
                     cout << "SHIELD " << this->activeMap->getVectorEnemies().at(i)->getShield() << endl;
                     cout << "ALIVE " << this->activeMap->getVectorEnemies().at(i)->isIsAlive() << endl;
@@ -245,28 +253,30 @@ void BaseGame::artificialIntelligence()
     vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
             //Update de enemigo para luego printarlo
-        if(vectorE.at(i)->detectionRadiusEnemy(&this->player)){
+        if (vectorE.at(i)->isIsAlive()){
+            if(vectorE.at(i)->detectionRadiusEnemy(&this->player) ){
 
-            int direction = this->directionIA(vectorE.at(i));
+                int direction = this->directionIA(vectorE.at(i));
 
-            if(direction == 0)
-            {
-                vectorE.at(i)->walkUP();
+                if(direction == Drawable::UP)
+                {
+                    vectorE.at(i)->walkUP();
+                }
+                if(direction == Drawable::RIGHT)
+                {
+                    vectorE.at(i)->walkRIGHT();
+                }
+                if(direction == Drawable::DOWN)
+                {
+                    vectorE.at(i)->walkDOWN();
+                }
+                if(direction == Drawable::LEFT)
+                {
+                    vectorE.at(i)->walkLEFT();
+                }
+            }else{
+                this->activeMap->getVectorEnemies().at(i)->update();
             }
-            if(direction == 1)
-            {
-                vectorE.at(i)->walkRIGHT();
-            }
-            if(direction == 2)
-            {
-                vectorE.at(i)->walkDOWN();
-            }
-            if(direction == 3)
-            {
-                vectorE.at(i)->walkLEFT();
-            }
-        }else{
-            this->activeMap->getVectorEnemies().at(i)->update();
         }
     }
 }
@@ -333,7 +343,7 @@ void BaseGame::collisionCheck() {
 
 void BaseGame::colPlayerWithEnemies() {
     for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
-        if (this->player.collision(this->activeMap->getVectorEnemies().at(i))){
+        if (this->player.collision(this->activeMap->getVectorEnemies().at(i)) && this->activeMap->getVectorEnemies().at(i)->isIsAlive()){
             //TODO
             this->player.setX(this->player.getAX()) ;
             this->player.setY(this->player.getAY()) ;
@@ -381,7 +391,7 @@ void BaseGame::colEnemies(){
     for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
         for (int j = 0; j < this->activeMap->getVectorEnemies().size(); ++j) {
             if (i!=j){
-                if (this->activeMap->getVectorEnemies().at(i)->collision(this->activeMap->getVectorEnemies().at(j))){
+                if (this->activeMap->getVectorEnemies().at(i)->collision(this->activeMap->getVectorEnemies().at(j)) && this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
                     //TODO
                     this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
                     this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
@@ -463,22 +473,23 @@ void BaseGame::drawHUD() {
 }
 
 void BaseGame::drawEnemyHUD(Enemy *enemy) {
-    int maxSizeBar = enemy->getWidth();
-    //barras de vida enemigo
-    int posXbars = 0;
-    int posYhp = -15;
-    int posYsh = -5;
+    if (enemy->isIsAlive()){
+        int maxSizeBar = enemy->getWidth();
+        //barras de vida enemigo
+        int posXbars = 0;
+        int posYhp = -15;
+        int posYsh = -5;
 
-    BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
-    masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYhp-1, maxSizeBar +2, 7);
-    masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYsh-1, maxSizeBar +2, 7);
+        BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
+        masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYhp-1, maxSizeBar +2, 7);
+        masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYsh-1, maxSizeBar +2, 7);
 
 
-    BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
-    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYhp, (enemy->getHealth()*100)/maxSizeBar, 5);
+        BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
+        masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYhp, (enemy->getHealth()*100)/maxSizeBar, 5);
 
-    BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
-    masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*100)/maxSizeBar, 5);
-
+        BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
+        masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*100)/maxSizeBar, 5);
+    }
 }
 

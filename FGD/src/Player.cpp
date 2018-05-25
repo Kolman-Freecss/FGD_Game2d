@@ -12,6 +12,7 @@ Player::Player(BITMAP ***animations, int health, int damage, double speed, int s
 {
 genWalkCollision();
 this->collisionRadius = 15;
+this->experience = 0;
 /**
 Le almacenamos la espada en el inventario
 */
@@ -26,7 +27,7 @@ void Player::genWalkCollision() {
 }
 
 /**
-Manejo del teclado del personaje + colisión de limites
+Manejo del teclado del personaje + colision de limites
 */
 void Player::keyboard(){
     /**
@@ -74,4 +75,28 @@ void Player::keyboard(){
 Inventory* Player::getInventory()
 {
     return this->inventory;
+}
+
+int Player::getExperience() {
+    return experience;
+}
+
+void Player::setExperience(int experience) {
+    Player::experience = experience;
+}
+
+int Player::getLevel() {
+    return level;
+}
+
+void Player::setLevel(int level) {
+    Player::level = level;
+}
+
+int Player::getShield() {
+    return shield;
+}
+
+void Player::setShield(int shield) {
+    Player::shield = shield;
 }

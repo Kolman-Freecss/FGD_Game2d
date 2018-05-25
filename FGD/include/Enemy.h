@@ -26,12 +26,14 @@ class Enemy : public Character {
 
     bool detectionRadiusEnemy(Drawable *drawable);
 
+    Object* randomizeDrop();
+
 private:
     bool changeDirectionIfCol = false;
      int direction;
      int timeNextRandomize;
      /**
-     Simulación inteligencia artificial
+     Simulacion inteligencia artificial
      */
      int detectionRadius;
 
@@ -40,6 +42,7 @@ private:
      * @element-type Object
      */
     std::vector< Object* > loot;
+
 
 
 };
