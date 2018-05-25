@@ -58,7 +58,6 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 case 2: this->ambientMatrix[i] = new Drawable[this->col2Quantity];
                         break;
             }
-         //this->ambientMatrix[i] = new Drawable[2];
     }
 
     /**
@@ -84,9 +83,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     */
     srand(time(NULL));
     for(int i = 0; i < this->quantEnemies; i++){
-        int positionX = rand()%(800-64);
-        int positionY = rand()%(600-75);
-        //std::cout << positionX << " position x " << positionY << " position y";
+        int positionX = rand()%(800-75);
+        int positionY = rand()%(600-64);
         Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 64, 75);
 
         bool generado = false;
@@ -95,8 +93,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             generado = true;
             for(int j = 0; j < this->getVectorEnemies().size(); j++){
                 while (enemy->collision(getVectorEnemies().at(j))){
-                    positionX = rand()%(800-64);
-                    positionY = rand()%(600-75);
+                    positionX = rand()%(800-75);
+                    positionY = rand()%(600-64);
                     enemy->setXandAX(positionX);
                     enemy->setYandAY(positionY);
                     if(!enemy->collision(getVectorEnemies().at(j))){
@@ -107,21 +105,16 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             }
         //col with ambient
             for (int i = 0; i < this->getQuantElementsOfAmbient(); i++) {
-                    //cout << this->getQuantElementsOfAmbient() << "\n";
-                    //cout << this->getCol1Quantity() << "\n";
-                    //cout << this->getCol2Quantity() << "\n";
                     switch(i){
                         case 1 : {for (int j = 0; j < this->getCol1Quantity(); j++) {
                                         while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
-                                                positionX = rand()%(800-64);
-                                                positionY = rand()%(600-75);
+                                                positionX = rand()%(800-75);
+                                                positionY = rand()%(600-64);
                                                 enemy->setXandAX(positionX);
                                                 enemy->setYandAY(positionY);
-                                                cout << "1_setX" << "\n";
                                                 if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
                                                     j = 0;
                                                     generado = false;
-                                                    cout << "1" << "\n";
                                                 }
                                             }
                                     }
@@ -130,15 +123,13 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
 
                         case 2:{for (int j = 0; j < this->getCol2Quantity(); j++) {
                                         while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
-                                                positionX = rand()%(800-64);
-                                                positionY = rand()%(600-75);
+                                                positionX = rand()%(800-75);
+                                                positionY = rand()%(600-64);
                                                 enemy->setXandAX(positionX);
                                                 enemy->setYandAY(positionY);
-                                                cout << "2_setX" << "\n";
                                                 if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
                                                     j = 0;
                                                     generado = false;
-                                                    cout << "2" << "\n";
                                                 }
                                             }
                                     }
@@ -153,34 +144,17 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             */
            if(positionX <= 100 && positionY <= 100)
             {
-                positionX = rand()%(800-64);
-                positionY = rand()%(600-75);
+                positionX = rand()%(800-75);
+                positionY = rand()%(600-64);
                 enemy->setXandAX(positionX);
                 enemy->setYandAY(positionY);
                 generado = false;
-                cout << "3_setX" << "\n";
             }
         }
 
         this->enemies.push_back(enemy);
 
     }
-
-    /*
-    /**
-    Free allocated values and memory of matrix
-
-    for(int i = 0; i < 1; i++){
-            for(int j = 0; j < 2; j++){
-                delete[] matrixAnimationsEnemy[i][j];
-            }
-    }
-    delete[] matrixAnimationsEnemy;
-    //delete[] matrixAnimationsEnemy;
-    for(int i = 0; i < 1; i++){
-                delete[] this->ambientMatrix[i];
-    }
-    delete[] this->ambientMatrix;*/
 
 
 }

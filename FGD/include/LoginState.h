@@ -63,7 +63,7 @@ class LoginState : public GameState{
     bool checkUser;
     bool checkPassword;
 
-    vector<char *> charUserInput;
+    vector<char *>* charUserInput;
 
     void clickOut();
 

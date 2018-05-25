@@ -19,7 +19,7 @@ class BaseGame : public GameState{
     */
     void init();
 
-    void cleanUp(){};
+    void cleanUp();
 
     void pause(){};
     void resume(){};
@@ -34,6 +34,7 @@ class BaseGame : public GameState{
 
     DAOMap *managerMaps;
     BaseGame(int difficult, GameStateManager *game);
+    virtual ~BaseGame();
 
 
 

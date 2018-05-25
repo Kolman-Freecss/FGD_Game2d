@@ -59,7 +59,7 @@ bool GameState::keyI()
 
 char* GameState::generalKeyboard()
 {
-    char *characterInput;
+    char *characterInput = new char();
     if(Timer::getTime()-10 > this->timePress){
 
         if(key[KEY_A]){ characterInput = "a"; cout << "a";}
