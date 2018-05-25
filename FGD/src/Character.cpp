@@ -284,3 +284,15 @@ bool Character::isAttackChecked(){
 void Character::setAttackChecked(bool endAttack) {
     Character::attackChecked = endAttack;
 }
+
+void Character::setXandAX(int posX)
+{
+    this->x = posX;
+    this->ax = posX;
+}
+
+void Character::setYandAY(int posY)
+{
+    this->y = posY;
+    this->ay = posY;
+}

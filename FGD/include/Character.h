@@ -40,6 +40,8 @@ protected:
     int getSpeed();
     int getAX();
     int getAY();
+    void setXandAX(int posX);
+    void setYandAY(int posY);
 
     void walkUP();
     void walkRIGHT();
