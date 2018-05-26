@@ -96,7 +96,6 @@ void BaseGame::init()
     //FIN QUITAR
 
 
-    //player50x33
     //PLAYER FINAL
     this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 65, 73);
     //TODO
@@ -104,10 +103,20 @@ void BaseGame::init()
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
     this->player.setSelectedWeapon(weaponOfPlayer);
 
-    /**TEEEEEST**/
+    /**Nuevo formato**/
+    this->player.getInventory()->vectorAttackDistance.push_back(100);
+    this->player.getInventory()->vectorDamage.push_back(1);
     this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
     this->player.getInventory()->vectorWidth.push_back(46);
-    this->player.getInventory()->getObjectListPtr()->push_back(weaponOfPlayer);
+    this->player.getInventory()->vectorHeight.push_back(40);
+
+    this->player.getInventory()->vectorAttackDistance.push_back(200);
+    this->player.getInventory()->vectorDamage.push_back(4);
+    this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+    this->player.getInventory()->vectorWidth.push_back(46);
+    this->player.getInventory()->vectorHeight.push_back(40);
+
+    this->player.getInventory()->objectList->push_back(weaponOfPlayer);
 
 
     if(!this->managerMusic.getMap1IsPlaying()){
