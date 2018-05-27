@@ -28,7 +28,7 @@ void MenuInventarioState::init()
 {
 
     this->background_image = load_bitmap("src\\Resources\\Inventario.bmp",NULL);
-    this->player_image = load_bitmap("src\\Resources\\player_inventory.bmp",NULL);
+    this->player_image = load_bitmap("src\\Resources\\Inventory\\player_inventory.bmp",NULL);
     this->coin_gold = load_bitmap("src\\Resources\\Inventory\\coin_gold.bmp",NULL);
     this->pagination_1 = load_bitmap("src\\Resources\\Inventory\\pagination_1.bmp",NULL);
     this->pagination_2 = load_bitmap("src\\Resources\\Inventory\\pagination_2.bmp",NULL);
@@ -80,7 +80,7 @@ void MenuInventarioState::draw()
 
     masked_blit(this->background_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X, MIDDLE_SCREEN_Y - 200, 400, 400);
     //Player
-    masked_blit(this->player_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X + 50, MIDDLE_SCREEN_Y - 165, 52, 100);
+    masked_blit(this->player_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X + 50, MIDDLE_SCREEN_Y - 165, 73, 65);
     //Coin
     masked_blit(this->coin_gold, this->game->getBuffer(), 0,0, MIDDLE_SCREEN_X + 264, MIDDLE_SCREEN_Y + 129, 24, 18);
 

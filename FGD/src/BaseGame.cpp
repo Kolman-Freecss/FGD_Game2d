@@ -97,7 +97,7 @@ void BaseGame::init()
 
 
     //PLAYER FINAL
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 65, 73);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 330, 65, 73);
     //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
@@ -208,6 +208,11 @@ void BaseGame::draw()
             case 0: {
                         BITMAP *bitmapAmbient = matrix[i][0].getBitmapAmbient();
                         stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+                        for(int j = 1; j < this->activeMap->getQuantOtherElements(); j++){
+                            //if(this->activeMap->numMap != 1 || j != 1){
+                                matrix[i][j].drawAmbient(this->game->getBuffer());
+                            //}
+                        }
                         break;
                     }
             /**
@@ -229,6 +234,42 @@ void BaseGame::draw()
                         }
                         break;
                     }
+            /**
+            Casas
+            */
+            case 3: {
+                        for(int j = 0; j < this->activeMap->getCol3Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 4: {
+                        for(int j = 0; j < this->activeMap->getCol4Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 5: {
+                        for(int j = 0; j < this->activeMap->getCol5Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 6: {
+                        for(int j = 0; j < this->activeMap->getCol6Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
         }
     }
 
@@ -244,6 +285,11 @@ void BaseGame::draw()
 
 
     this->player.draw(this->game->getBuffer());
+
+    /*if(this->activeMap->numMap == 1)
+    {
+        matrix[0][1].drawAmbient(this->game->getBuffer());
+    }*/
 
 
     drawHUD();
@@ -350,7 +396,7 @@ int BaseGame::directionIA(Enemy *drawable)
 void BaseGame::nextMap()
 {
 
-    if(this->player.getX() > 600 && this->player.getY() >= GameStateManager::SIZE_WINDOW_Y / 2)
+    if(this->player.getX() > 706 && this->player.getY() >= 380)
         {
             this->activeMap = this->managerMaps->getMap(1);
         }
