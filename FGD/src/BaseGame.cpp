@@ -414,6 +414,12 @@ void BaseGame::nextMap()
             this->player.setXandAX(50);
             this->player.setYandAY(500);
         }
+    else if (this->activeMap->numMap == 4 && this->player.getX() > 440 && this->player.getY() >= 236)
+        {
+            this->activeMap = this->managerMaps->getMap(4);
+            this->player.setXandAX(430);
+            this->player.setYandAY(650);
+        }
 
 }
 

@@ -76,6 +76,17 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 this->col6Quantity = 0;
 
                 break;
+
+        case 5:
+                this->quantOtherElements = 1;
+                this->col1Quantity = 0;
+                this->col2Quantity = 0;
+                this->col3Quantity = 0;
+                this->col4Quantity = 0;
+                this->col5Quantity = 0;
+                this->col6Quantity = 0;
+
+                break;
     }
 
     /**
@@ -505,6 +516,13 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[4][4] = Drawable(bitmapTest, 690, 370 , 27, 42);
                 matrix[4][5] = Drawable(bitmapTest, 300, 390 , 27, 42);
 
+
+                break;
+        }
+
+        case 5:  {
+                BITMAP *bitmapTest = load_bitmap("src\\Resources\\Map_5\\castle_dentro.bmp",NULL);
+                matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
                 break;
         }
