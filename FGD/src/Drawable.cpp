@@ -41,6 +41,19 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
 
 }
 
+Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int width, int height, int colPosX, int colPosY, int colRadius) {
+    this->bitmapAmbient = bitmapAmbient;
+    this->x = x;
+    this->y = y;
+    this->height = height;
+    this->width = width;
+    this->walkCollision[0] = colPosX;
+    this->walkCollision[1] = colPosY;
+    this->collisionType = 1;
+    this->collisionRadius = colRadius;
+
+}
+
 
 void Drawable::draw(BITMAP *buffer){
     try {

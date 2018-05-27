@@ -36,6 +36,9 @@ class Drawable{
     Drawable();
     Drawable(BITMAP ***animations, int x, int y, int height, int width);
     Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width);
+
+    Drawable(BITMAP *bitmapAmbient, int x, int y, int width, int height, int colPosX, int colPosY, int colRadius);
+
     //virtual ~Drawable();
 
     //getters setters

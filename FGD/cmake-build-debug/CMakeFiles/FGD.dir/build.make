@@ -231,10 +231,35 @@ CMakeFiles/FGD.dir/src/Enemy.cpp.obj.provides: CMakeFiles/FGD.dir/src/Enemy.cpp.
 CMakeFiles/FGD.dir/src/Enemy.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Enemy.cpp.obj
 
 
+CMakeFiles/FGD.dir/src/GameState.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/GameState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/GameState.cpp.obj: ../src/GameState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FGD.dir/src/GameState.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\GameState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\GameState.cpp
+
+CMakeFiles/FGD.dir/src/GameState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/GameState.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\GameState.cpp > CMakeFiles\FGD.dir\src\GameState.cpp.i
+
+CMakeFiles/FGD.dir/src/GameState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/GameState.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\GameState.cpp -o CMakeFiles\FGD.dir\src\GameState.cpp.s
+
+CMakeFiles/FGD.dir/src/GameState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/GameState.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/GameState.cpp.obj.provides: CMakeFiles/FGD.dir/src/GameState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/GameState.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/GameState.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/GameState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/GameState.cpp.obj
+
+
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj: ../src/GameStateManager.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\GameStateManager.cpp.obj -c D:\Users\moya\git\Project\FGD\src\GameStateManager.cpp
 
 CMakeFiles/FGD.dir/src/GameStateManager.cpp.i: cmake_force
@@ -259,7 +284,7 @@ CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj.provides.build: CMakeFiles/FGD.d
 CMakeFiles/FGD.dir/src/House.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/House.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/House.cpp.obj: ../src/House.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/FGD.dir/src/House.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/FGD.dir/src/House.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\House.cpp.obj -c D:\Users\moya\git\Project\FGD\src\House.cpp
 
 CMakeFiles/FGD.dir/src/House.cpp.i: cmake_force
@@ -284,7 +309,7 @@ CMakeFiles/FGD.dir/src/House.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Hous
 CMakeFiles/FGD.dir/src/Inventory.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Inventory.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Inventory.cpp.obj: ../src/Inventory.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/FGD.dir/src/Inventory.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/FGD.dir/src/Inventory.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Inventory.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Inventory.cpp
 
 CMakeFiles/FGD.dir/src/Inventory.cpp.i: cmake_force
@@ -306,10 +331,35 @@ CMakeFiles/FGD.dir/src/Inventory.cpp.obj.provides: CMakeFiles/FGD.dir/src/Invent
 CMakeFiles/FGD.dir/src/Inventory.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Inventory.cpp.obj
 
 
+CMakeFiles/FGD.dir/src/LoginState.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/LoginState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/LoginState.cpp.obj: ../src/LoginState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/FGD.dir/src/LoginState.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\LoginState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\LoginState.cpp
+
+CMakeFiles/FGD.dir/src/LoginState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/LoginState.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\LoginState.cpp > CMakeFiles\FGD.dir\src\LoginState.cpp.i
+
+CMakeFiles/FGD.dir/src/LoginState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/LoginState.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\LoginState.cpp -o CMakeFiles\FGD.dir\src\LoginState.cpp.s
+
+CMakeFiles/FGD.dir/src/LoginState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/LoginState.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/LoginState.cpp.obj.provides: CMakeFiles/FGD.dir/src/LoginState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/LoginState.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/LoginState.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/LoginState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/LoginState.cpp.obj
+
+
 CMakeFiles/FGD.dir/src/Map.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Map.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Map.cpp.obj: ../src/Map.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/FGD.dir/src/Map.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/FGD.dir/src/Map.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Map.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Map.cpp
 
 CMakeFiles/FGD.dir/src/Map.cpp.i: cmake_force
@@ -331,10 +381,35 @@ CMakeFiles/FGD.dir/src/Map.cpp.obj.provides: CMakeFiles/FGD.dir/src/Map.cpp.obj.
 CMakeFiles/FGD.dir/src/Map.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Map.cpp.obj
 
 
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj: ../src/MenuEscState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\MenuEscState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\MenuEscState.cpp
+
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/MenuEscState.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\MenuEscState.cpp > CMakeFiles\FGD.dir\src\MenuEscState.cpp.i
+
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/MenuEscState.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\MenuEscState.cpp -o CMakeFiles\FGD.dir\src\MenuEscState.cpp.s
+
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.provides: CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj
+
+
 CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj: ../src/MenuInitialState.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\MenuInitialState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\MenuInitialState.cpp
 
 CMakeFiles/FGD.dir/src/MenuInitialState.cpp.i: cmake_force
@@ -356,10 +431,110 @@ CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj.provides: CMakeFiles/FGD.dir/src
 CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj
 
 
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj: ../src/MenuInventarioState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\MenuInventarioState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\MenuInventarioState.cpp
+
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\MenuInventarioState.cpp > CMakeFiles\FGD.dir\src\MenuInventarioState.cpp.i
+
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\MenuInventarioState.cpp -o CMakeFiles\FGD.dir\src\MenuInventarioState.cpp.s
+
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.provides: CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj
+
+
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj: ../src/MenuOptionsGameState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\MenuOptionsGameState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\MenuOptionsGameState.cpp
+
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\MenuOptionsGameState.cpp > CMakeFiles\FGD.dir\src\MenuOptionsGameState.cpp.i
+
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\MenuOptionsGameState.cpp -o CMakeFiles\FGD.dir\src\MenuOptionsGameState.cpp.s
+
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.provides: CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj
+
+
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj: ../src/MenuOptionsState.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\MenuOptionsState.cpp.obj -c D:\Users\moya\git\Project\FGD\src\MenuOptionsState.cpp
+
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\MenuOptionsState.cpp > CMakeFiles\FGD.dir\src\MenuOptionsState.cpp.i
+
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\MenuOptionsState.cpp -o CMakeFiles\FGD.dir\src\MenuOptionsState.cpp.s
+
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.provides: CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj
+
+
+CMakeFiles/FGD.dir/src/Music.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/Music.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/Music.cpp.obj: ../src/Music.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/FGD.dir/src/Music.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Music.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Music.cpp
+
+CMakeFiles/FGD.dir/src/Music.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/Music.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\Music.cpp > CMakeFiles\FGD.dir\src\Music.cpp.i
+
+CMakeFiles/FGD.dir/src/Music.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/Music.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\Music.cpp -o CMakeFiles\FGD.dir\src\Music.cpp.s
+
+CMakeFiles/FGD.dir/src/Music.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/Music.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/Music.cpp.obj.provides: CMakeFiles/FGD.dir/src/Music.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Music.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/Music.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/Music.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Music.cpp.obj
+
+
 CMakeFiles/FGD.dir/src/Object.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Object.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Object.cpp.obj: ../src/Object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/FGD.dir/src/Object.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/FGD.dir/src/Object.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Object.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Object.cpp
 
 CMakeFiles/FGD.dir/src/Object.cpp.i: cmake_force
@@ -384,7 +559,7 @@ CMakeFiles/FGD.dir/src/Object.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Obj
 CMakeFiles/FGD.dir/src/Player.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Player.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Player.cpp.obj: ../src/Player.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/FGD.dir/src/Player.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/FGD.dir/src/Player.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Player.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Player.cpp
 
 CMakeFiles/FGD.dir/src/Player.cpp.i: cmake_force
@@ -409,7 +584,7 @@ CMakeFiles/FGD.dir/src/Player.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Pla
 CMakeFiles/FGD.dir/src/Potion.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Potion.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Potion.cpp.obj: ../src/Potion.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/FGD.dir/src/Potion.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/FGD.dir/src/Potion.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Potion.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Potion.cpp
 
 CMakeFiles/FGD.dir/src/Potion.cpp.i: cmake_force
@@ -434,7 +609,7 @@ CMakeFiles/FGD.dir/src/Potion.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Pot
 CMakeFiles/FGD.dir/src/Shield.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Shield.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Shield.cpp.obj: ../src/Shield.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/FGD.dir/src/Shield.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/FGD.dir/src/Shield.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Shield.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Shield.cpp
 
 CMakeFiles/FGD.dir/src/Shield.cpp.i: cmake_force
@@ -459,7 +634,7 @@ CMakeFiles/FGD.dir/src/Shield.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Shi
 CMakeFiles/FGD.dir/src/Skelleton.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Skelleton.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Skelleton.cpp.obj: ../src/Skelleton.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/FGD.dir/src/Skelleton.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/FGD.dir/src/Skelleton.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Skelleton.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Skelleton.cpp
 
 CMakeFiles/FGD.dir/src/Skelleton.cpp.i: cmake_force
@@ -484,7 +659,7 @@ CMakeFiles/FGD.dir/src/Skelleton.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/
 CMakeFiles/FGD.dir/src/Sword.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Sword.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Sword.cpp.obj: ../src/Sword.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/FGD.dir/src/Sword.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/FGD.dir/src/Sword.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Sword.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Sword.cpp
 
 CMakeFiles/FGD.dir/src/Sword.cpp.i: cmake_force
@@ -506,10 +681,35 @@ CMakeFiles/FGD.dir/src/Sword.cpp.obj.provides: CMakeFiles/FGD.dir/src/Sword.cpp.
 CMakeFiles/FGD.dir/src/Sword.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Sword.cpp.obj
 
 
+CMakeFiles/FGD.dir/src/Timer.cpp.obj: CMakeFiles/FGD.dir/flags.make
+CMakeFiles/FGD.dir/src/Timer.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
+CMakeFiles/FGD.dir/src/Timer.cpp.obj: ../src/Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/FGD.dir/src/Timer.cpp.obj"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Timer.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Timer.cpp
+
+CMakeFiles/FGD.dir/src/Timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/Timer.cpp.i"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\Timer.cpp > CMakeFiles\FGD.dir\src\Timer.cpp.i
+
+CMakeFiles/FGD.dir/src/Timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/Timer.cpp.s"
+	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\Timer.cpp -o CMakeFiles\FGD.dir\src\Timer.cpp.s
+
+CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires:
+
+.PHONY : CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires
+
+CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides: CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides.build
+.PHONY : CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides
+
+CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Timer.cpp.obj
+
+
 CMakeFiles/FGD.dir/src/Weapon.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/src/Weapon.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/src/Weapon.cpp.obj: ../src/Weapon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/FGD.dir/src/Weapon.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/FGD.dir/src/Weapon.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Weapon.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Weapon.cpp
 
 CMakeFiles/FGD.dir/src/Weapon.cpp.i: cmake_force
@@ -534,7 +734,7 @@ CMakeFiles/FGD.dir/src/Weapon.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Wea
 CMakeFiles/FGD.dir/main.cpp.obj: CMakeFiles/FGD.dir/flags.make
 CMakeFiles/FGD.dir/main.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
 CMakeFiles/FGD.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/FGD.dir/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/FGD.dir/main.cpp.obj"
 	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\main.cpp.obj -c D:\Users\moya\git\Project\FGD\main.cpp
 
 CMakeFiles/FGD.dir/main.cpp.i: cmake_force
@@ -556,31 +756,6 @@ CMakeFiles/FGD.dir/main.cpp.obj.provides: CMakeFiles/FGD.dir/main.cpp.obj.requir
 CMakeFiles/FGD.dir/main.cpp.obj.provides.build: CMakeFiles/FGD.dir/main.cpp.obj
 
 
-CMakeFiles/FGD.dir/src/Timer.cpp.obj: CMakeFiles/FGD.dir/flags.make
-CMakeFiles/FGD.dir/src/Timer.cpp.obj: CMakeFiles/FGD.dir/includes_CXX.rsp
-CMakeFiles/FGD.dir/src/Timer.cpp.obj: ../src/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/FGD.dir/src/Timer.cpp.obj"
-	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe"  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FGD.dir\src\Timer.cpp.obj -c D:\Users\moya\git\Project\FGD\src\Timer.cpp
-
-CMakeFiles/FGD.dir/src/Timer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FGD.dir/src/Timer.cpp.i"
-	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Users\moya\git\Project\FGD\src\Timer.cpp > CMakeFiles\FGD.dir\src\Timer.cpp.i
-
-CMakeFiles/FGD.dir/src/Timer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FGD.dir/src/Timer.cpp.s"
-	"D:\Program Files (x86)\CodeBlocks\MinGW\bin\mingw32-g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Users\moya\git\Project\FGD\src\Timer.cpp -o CMakeFiles\FGD.dir\src\Timer.cpp.s
-
-CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires:
-
-.PHONY : CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires
-
-CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides: CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires
-	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides.build
-.PHONY : CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides
-
-CMakeFiles/FGD.dir/src/Timer.cpp.obj.provides.build: CMakeFiles/FGD.dir/src/Timer.cpp.obj
-
-
 # Object files for target FGD
 FGD_OBJECTS = \
 "CMakeFiles/FGD.dir/src/Dao/DAOManager.cpp.obj" \
@@ -590,20 +765,27 @@ FGD_OBJECTS = \
 "CMakeFiles/FGD.dir/src/Character.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Drawable.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Enemy.cpp.obj" \
+"CMakeFiles/FGD.dir/src/GameState.cpp.obj" \
 "CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj" \
 "CMakeFiles/FGD.dir/src/House.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Inventory.cpp.obj" \
+"CMakeFiles/FGD.dir/src/LoginState.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Map.cpp.obj" \
+"CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj" \
 "CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj" \
+"CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj" \
+"CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj" \
+"CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj" \
+"CMakeFiles/FGD.dir/src/Music.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Object.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Player.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Potion.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Shield.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Skelleton.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Sword.cpp.obj" \
+"CMakeFiles/FGD.dir/src/Timer.cpp.obj" \
 "CMakeFiles/FGD.dir/src/Weapon.cpp.obj" \
-"CMakeFiles/FGD.dir/main.cpp.obj" \
-"CMakeFiles/FGD.dir/src/Timer.cpp.obj"
+"CMakeFiles/FGD.dir/main.cpp.obj"
 
 # External object files for target FGD
 FGD_EXTERNAL_OBJECTS =
@@ -615,25 +797,32 @@ FGD.exe: CMakeFiles/FGD.dir/src/BaseGame.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Character.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Drawable.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Enemy.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/GameState.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/House.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Inventory.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/LoginState.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Map.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/Music.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Object.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Player.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Potion.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Shield.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Skelleton.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Sword.cpp.obj
+FGD.exe: CMakeFiles/FGD.dir/src/Timer.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/src/Weapon.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/main.cpp.obj
-FGD.exe: CMakeFiles/FGD.dir/src/Timer.cpp.obj
 FGD.exe: CMakeFiles/FGD.dir/build.make
 FGD.exe: CMakeFiles/FGD.dir/linklibs.rsp
 FGD.exe: CMakeFiles/FGD.dir/objects1.rsp
 FGD.exe: CMakeFiles/FGD.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable FGD.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Linking CXX executable FGD.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\FGD.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -648,20 +837,27 @@ CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/BaseGame.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Character.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Drawable.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Enemy.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/GameState.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/GameStateManager.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/House.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Inventory.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/LoginState.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Map.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/MenuInitialState.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Music.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Object.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Player.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Potion.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Shield.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Skelleton.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Sword.cpp.obj.requires
+CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Weapon.cpp.obj.requires
 CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/main.cpp.obj.requires
-CMakeFiles/FGD.dir/requires: CMakeFiles/FGD.dir/src/Timer.cpp.obj.requires
 
 .PHONY : CMakeFiles/FGD.dir/requires
 

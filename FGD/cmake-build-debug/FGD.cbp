@@ -112,10 +112,28 @@
 		<Unit filename="D:/Users/moya/git/Project/FGD/include/Inventory.h">
 			<Option target="FGD"/>
 		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/LoginState.h">
+			<Option target="FGD"/>
+		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/include/Map.h">
 			<Option target="FGD"/>
 		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuEscState.h">
+			<Option target="FGD"/>
+		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuInitialState.h">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuInventarioState.h">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuOptionsGameState.h">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuOptionsState.h">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/include/Music.h">
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/include/Object.h">
@@ -166,6 +184,9 @@
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Enemy.cpp">
 			<Option target="FGD"/>
 		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/GameState.cpp">
+			<Option target="FGD"/>
+		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/GameStateManager.cpp">
 			<Option target="FGD"/>
 		</Unit>
@@ -175,13 +196,31 @@
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Inventory.cpp">
 			<Option target="FGD"/>
 		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/LoginState.cpp">
+			<Option target="FGD"/>
+		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Main/Main.cpp">
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Map.cpp">
 			<Option target="FGD"/>
 		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuEscState.cpp">
+			<Option target="FGD"/>
+		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuInitialState.cpp">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuInventarioState.cpp">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuOptionsGameState.cpp">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuOptionsState.cpp">
+			<Option target="FGD"/>
+		</Unit>
+		<Unit filename="D:/Users/moya/git/Project/FGD/src/Music.cpp">
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Object.cpp">
@@ -191,48 +230,6 @@
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Potion.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/Mouse.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/Player_Front_With_Sword.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/Player_W_Trans.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/background_menuinitial.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/grass.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/house.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/house1.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/leave.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/leave_pressed.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/new_game.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/new_game_pressed.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/options.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/options_pressed.bmp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Resources/shield_logo_all.bmp">
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="D:/Users/moya/git/Project/FGD/src/Shield.cpp">
