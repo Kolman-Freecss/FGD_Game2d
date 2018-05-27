@@ -37,7 +37,7 @@ void BaseGame::init()
 
     managerMaps = new DAOMap(this->gameDificulty);
     this->activeMap = new Map();
-    this->activeMap = managerMaps->getMap(3);
+    this->activeMap = managerMaps->getMap(0);
 
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
@@ -97,7 +97,7 @@ void BaseGame::init()
 
 
     //PLAYER FINAL
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 330, 65, 73);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
     //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
@@ -407,6 +407,12 @@ void BaseGame::nextMap()
             this->activeMap = this->managerMaps->getMap(2);
             this->player.setXandAX(340);
             this->player.setYandAY(20);
+        }
+    else if (this->activeMap->numMap == 3 && this->player.getX() > 690 && this->player.getY() >= 450)
+        {
+            this->activeMap = this->managerMaps->getMap(3);
+            this->player.setXandAX(50);
+            this->player.setYandAY(500);
         }
 
 }
