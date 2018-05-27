@@ -399,6 +399,8 @@ void BaseGame::nextMap()
     if(this->player.getX() > 706 && this->player.getY() >= 380)
         {
             this->activeMap = this->managerMaps->getMap(1);
+            this->player.setXandAX(20);
+            this->player.setYandAY(350);
         }
 
 }
