@@ -63,6 +63,19 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 this->col6Quantity = 0;
 
                 break;
+
+        case 4:
+                this->quantOtherElements = 2;
+                this->col1Quantity = 1;
+                this->col2Quantity = 12;
+                //Agua
+                this->col3Quantity = 3;
+                //tiburon
+                this->col4Quantity = 6;
+                this->col5Quantity = 0;
+                this->col6Quantity = 0;
+
+                break;
     }
 
     /**
@@ -106,84 +119,86 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     this->chargeMatrixAmbient(this->ambientMatrix, numMap);
 
 
+    if(numMap != 4 && numMap != 5){
+        /**
+        Generacion dinamica de enemigos comprovando la colision con otros enemigos, player o ambiente
+        */
+        srand(time(NULL));
+        for(int i = 0; i < this->quantEnemies; i++){
+            int positionX = rand()%(800-75);
+            int positionY = rand()%(600-64);
+            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 64, 75);
 
-    /**
-    Generacion dinamica de enemigos comprovando la colision con otros enemigos, player o ambiente
-    */
-    srand(time(NULL));
-    for(int i = 0; i < this->quantEnemies; i++){
-        int positionX = rand()%(800-75);
-        int positionY = rand()%(600-64);
-        Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 64, 75);
+            bool generado = false;
+            while(!generado){
+                    //col with enemies
+                generado = true;
+                for(int j = 0; j < this->getVectorEnemies().size(); j++){
+                    while (enemy->collision(getVectorEnemies().at(j))){
+                        positionX = rand()%(800-75);
+                        positionY = rand()%(600-64);
+                        enemy->setXandAX(positionX);
+                        enemy->setYandAY(positionY);
+                        if(!enemy->collision(getVectorEnemies().at(j))){
+                            j = 0;
+                            generado = false;
+                        }
+                    }
+                }
+            //col with ambient
+                for (int i = 0; i < this->getQuantElementsOfAmbient(); i++) {
+                        switch(i){
+                            case 1 : {for (int j = 0; j < this->getCol1Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                        break;
+                            }
 
-        bool generado = false;
-        while(!generado){
-                //col with enemies
-            generado = true;
-            for(int j = 0; j < this->getVectorEnemies().size(); j++){
-                while (enemy->collision(getVectorEnemies().at(j))){
+                            case 2:{for (int j = 0; j < this->getCol2Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+
+                        }
+
+                }
+                /**
+                Recuadro donde aparece el player
+                */
+               if(positionX <= 300 && positionY >= 220)
+                {
                     positionX = rand()%(800-75);
                     positionY = rand()%(600-64);
                     enemy->setXandAX(positionX);
                     enemy->setYandAY(positionY);
-                    if(!enemy->collision(getVectorEnemies().at(j))){
-                        j = 0;
-                        generado = false;
-                    }
+                    generado = false;
                 }
             }
-        //col with ambient
-            for (int i = 0; i < this->getQuantElementsOfAmbient(); i++) {
-                    switch(i){
-                        case 1 : {for (int j = 0; j < this->getCol1Quantity(); j++) {
-                                        while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
-                                                positionX = rand()%(800-75);
-                                                positionY = rand()%(600-64);
-                                                enemy->setXandAX(positionX);
-                                                enemy->setYandAY(positionY);
-                                                if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
-                                                    j = 0;
-                                                    generado = false;
-                                                }
-                                            }
-                                    }
-                                    break;
-                        }
 
-                        case 2:{for (int j = 0; j < this->getCol2Quantity(); j++) {
-                                        while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
-                                                positionX = rand()%(800-75);
-                                                positionY = rand()%(600-64);
-                                                enemy->setXandAX(positionX);
-                                                enemy->setYandAY(positionY);
-                                                if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
-                                                    j = 0;
-                                                    generado = false;
-                                                }
-                                            }
-                                    }
-                                break;
-                        }
+            this->enemies.push_back(enemy);
 
-                    }
-
-            }
-            /**
-            Recuadro donde aparece el player
-            */
-           if(positionX <= 300 && positionY >= 220)
-            {
-                positionX = rand()%(800-75);
-                positionY = rand()%(600-64);
-                enemy->setXandAX(positionX);
-                enemy->setYandAY(positionY);
-                generado = false;
-            }
         }
-
-        this->enemies.push_back(enemy);
-
     }
+    //Generacion enemigos terminada
 
 
 }
@@ -391,7 +406,7 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 break;
         }
 
-       case 3:
+       case 3:{
                 BITMAP *bitmapTest = load_bitmap("src\\Resources\\Map_3\\rocks.bmp",NULL);
                 matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
@@ -451,16 +466,48 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[5][17] = Drawable(bitmapTest, 300, 450, 128, 82);
 
                 break;
+       }
 
-                /*
-        case 4:
-                BITMAP *bitmapTest = load_bitmap("src\\Resources\\rocks.bmp",NULL);
+
+        case 4:  {
+                BITMAP *bitmapTest = load_bitmap("src\\Resources\\Map_4\\rocks.bmp",NULL);
                 matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
+                bitmapTest = load_bitmap("src\\Resources\\Map_4\\puente.bmp",NULL);
+                matrix[0][1] = Drawable(bitmapTest, 378, 350 , 91, 233);
 
-                BITMAP *bitmapTest2 = load_bitmap("src\\Resources\\house1.bmp",NULL);
-                matrix[0][1] = House(bitmapTest2, 150, 150, 228,138);
+                bitmapTest = load_bitmap("src\\Resources\\Map_4\\castle.bmp",NULL);
+                matrix[1][0] = Drawable(bitmapTest, 300, 0 , 236, 280);
 
-                break;*/
+                bitmapTest = load_bitmap("src\\Resources\\Map_4\\tumba_castillo.bmp",NULL);
+                matrix[2][0] = Drawable(bitmapTest, 700, 20 , 31, 30);
+                matrix[2][1] = Drawable(bitmapTest, 730, 20 , 31, 30);
+                matrix[2][2] = Drawable(bitmapTest, 760, 20 , 31, 30);
+                matrix[2][3] = Drawable(bitmapTest, 700, 70 , 31, 30);
+                matrix[2][4] = Drawable(bitmapTest, 730, 70 , 31, 30);
+                matrix[2][5] = Drawable(bitmapTest, 760, 70 , 31, 30);
+                matrix[2][6] = Drawable(bitmapTest, 50, 20 , 31, 30);
+                matrix[2][7] = Drawable(bitmapTest, 80, 20 , 31, 30);
+                matrix[2][8] = Drawable(bitmapTest, 110, 20 , 31, 30);
+                matrix[2][9] = Drawable(bitmapTest, 50, 70 , 31, 30);
+                matrix[2][10] = Drawable(bitmapTest, 80, 70 , 31, 30);
+                matrix[2][11] = Drawable(bitmapTest, 110, 70 , 31, 30);
+
+                bitmapTest = load_bitmap("src\\Resources\\Map_4\\agua.bmp",NULL);
+                matrix[3][0] = Drawable(bitmapTest, 0, 350 , 91, 189);
+                matrix[3][1] = House(bitmapTest, 189, 350 , 91, 189);
+                matrix[3][2] = House(bitmapTest, 611, 350 , 91, 189);
+
+                bitmapTest = load_bitmap("src\\Resources\\Map_4\\aleta_tiburon.bmp",NULL);
+                matrix[4][0] = Drawable(bitmapTest, 50, 370 , 27, 42);
+                matrix[4][1] = Drawable(bitmapTest, 120, 390 , 27, 42);
+                matrix[4][2] = Drawable(bitmapTest, 200, 380 , 27, 42);
+                matrix[4][3] = Drawable(bitmapTest, 650, 390 , 27, 42);
+                matrix[4][4] = Drawable(bitmapTest, 690, 370 , 27, 42);
+                matrix[4][5] = Drawable(bitmapTest, 300, 390 , 27, 42);
+
+
+                break;
+        }
 
     }
 
