@@ -396,11 +396,17 @@ int BaseGame::directionIA(Enemy *drawable)
 void BaseGame::nextMap()
 {
 
-    if(this->player.getX() > 706 && this->player.getY() >= 380)
+    if(this->activeMap->numMap == 1 && this->player.getX() > 706 && this->player.getY() >= 380)
         {
             this->activeMap = this->managerMaps->getMap(1);
             this->player.setXandAX(20);
             this->player.setYandAY(350);
+        }
+    else if (this->activeMap->numMap == 2 && this->player.getX() > 470 && this->player.getY() >= 500)
+        {
+            this->activeMap = this->managerMaps->getMap(2);
+            this->player.setXandAX(340);
+            this->player.setYandAY(20);
         }
 
 }
