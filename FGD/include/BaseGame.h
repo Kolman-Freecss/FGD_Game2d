@@ -19,7 +19,7 @@ class BaseGame : public GameState{
     */
     void init();
 
-    void cleanUp(){};
+    void cleanUp();
 
     void pause(){};
     void resume(){};
@@ -27,16 +27,18 @@ class BaseGame : public GameState{
     void getEvents();
     void update();
     void draw();
+    void drawHUD();
+    void drawEnemyHUD(Enemy *enemy);
 
-    Map activeMap;
+    Map *activeMap;
 
-    DAOMap managerMaps;
+    DAOMap *managerMaps;
     BaseGame(int difficult, GameStateManager *game);
+    virtual ~BaseGame();
 
 
 
  private:
-    BITMAP *buffer;
     /**
     La dificultad que ha elegido el usuario en el Login lo recibe aqui (El constructor lo recibe)
     - 1 = Facil
@@ -49,6 +51,7 @@ class BaseGame : public GameState{
     int directionIA(Enemy *drawable);
 
     void nextMap();
+    void previousMap();
 
     void collisionCheck();
 

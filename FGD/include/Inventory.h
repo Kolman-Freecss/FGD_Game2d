@@ -19,10 +19,11 @@ private:
     int maxCurrentObjects;
     int maxMoney;
     int currentMoney;
-    vector< Object* > objectList;
+
 
 public:
     Inventory();
+    vector< Object* >* objectList;
 
     int getMaxObjects();
 
@@ -38,11 +39,20 @@ public:
 
     int getCurrentMoney();
 
-    vector<Object *> getObjectList();
+    /**
+    Un vector que anirá sincronitzat amb el vector de objectes del inventari del player
+    */
+    vector<int> vectorAttackDistance;
+    vector<int> vectorDamage;
+    vector<BITMAP*> bitmapsObjects;
+    vector<int> vectorWidth;
+    vector<int> vectorHeight;
+
+    vector<Object *>* getObjectListPtr();
 
     void setCurrentMoney(int currentMoney);
 
-    void setObjectList(const std::vector<Object *> &objectList);
+    void setObjectList( std::vector<Object *>* &objectList);
 
 
 };

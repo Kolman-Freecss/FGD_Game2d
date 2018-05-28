@@ -34,26 +34,110 @@ protected:
 
 
  public:
+    /**
+     *
+     */
     Character();
+
+    /**
+     *
+     * @param animations
+     * @param health
+     * @param damage
+     * @param speed
+     * @param shield
+     * @param x
+     * @param y
+     * @param height
+     * @param width
+     */
     Character(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width);
 
+    /**
+     *
+     * @return
+     */
     int getSpeed();
+
+    /**
+     *
+     * @return
+     */
     int getAX();
+
+    /**
+     *
+     * @return
+     */
     int getAY();
 
+    /**
+     *
+     * @param posX
+     */
+    void setXandAX(int posX);
+
+    /**
+     *
+     * @param posY
+     */
+    void setYandAY(int posY);
+
+    /**
+     *
+     */
     void walkUP();
+
+    /**
+     *
+     */
     void walkRIGHT();
+
+    /**
+     *
+     */
     void walkDOWN();
+
+    /**
+     *
+     */
     void walkLEFT();
 
+    /**
+     *
+     */
     void walkAnimation();
 
+    /**
+     *
+     */
     void walkUPanim();
+
+    /**
+     *
+     */
     void walkRIGHTanim();
+
+    /**
+     *
+     */
     void walkDOWNanim();
+
+    /**
+     *
+     */
     void walkLEFTanim();
 
+
+    /**
+     *
+     */
     void attack();
+
+    /**
+     *
+     * @return
+     */
     bool isAttacking();
     void setAttacking(bool op);
 

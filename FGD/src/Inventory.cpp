@@ -1,12 +1,13 @@
 #include "Inventory.h"
 #include "vector"
+#include <Object.h>
 
 using namespace std;
 
 Inventory::Inventory()
 {
-
-    this->currentMoney = 20;
+    this->objectList = new vector<Object*>();
+    this->currentMoney = 1;
 }
 
 int Inventory::getMaxObjects() {
@@ -41,11 +42,11 @@ void Inventory::setCurrentMoney(int currentMoney) {
     Inventory::currentMoney = currentMoney;
 }
 
-vector<Object *> Inventory::getObjectList() {
+vector<Object *>* Inventory::getObjectListPtr() {
     return objectList;
 }
 
-void Inventory::setObjectList(const std::vector<Object *> &objectList) {
+void Inventory::setObjectList(vector<Object *>* &objectList) {
     Inventory::objectList = objectList;
 }
 

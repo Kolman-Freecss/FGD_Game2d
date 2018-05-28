@@ -29,6 +29,10 @@ class GameState {
      virtual void update()=0;
      virtual void draw()=0;
 
+     vector<char *>* charUserInput;
+     vector<char *>* charPasswordInput;
+     int maxLength;
+
 protected:
 
      void setDifficulty(int difficulty);
@@ -38,11 +42,14 @@ protected:
      bool leftClick();
      bool keyI();
 
+     void generalKeyboard(int userOrPass);
+
  private:
 
     static int difficulty;
     static bool sound;
     static int timeClicked;
+    static int timePress;
 
 
 };

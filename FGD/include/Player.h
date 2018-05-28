@@ -3,6 +3,7 @@
 
 #include "Character.h"
 #include "Inventory.h"
+#include <allegro.h>
 
 
 class Player : public Character {
@@ -15,13 +16,14 @@ class Player : public Character {
 
     void genWalkCollision() override;
 
-    Inventory getInventory();
+    Inventory* getInventory();
 
 private:
     int experiencia;
     int level;
     int shield;
-    Inventory inventory;
+    Inventory *inventory;
+
 };
 
 #endif // Player_h

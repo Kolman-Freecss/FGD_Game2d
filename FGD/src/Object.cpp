@@ -25,3 +25,8 @@ int Object::getHeight()
 {
     this->height;
 }
+
+int Object::getLevel()
+{
+    this->level;
+}

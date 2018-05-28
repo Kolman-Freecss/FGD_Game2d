@@ -9,9 +9,10 @@ using namespace std;
 class DAOMap {
     public:
         DAOMap();
+        virtual ~DAOMap();
         DAOMap(int difficult);
-        vector<Map> getMapList();
-        Map getMap(int id);
+        vector<Map*> getMapList();
+        Map* getMap(int id);
         int getDifficultGame();
         void setDifficultGame(int difficult);
 
@@ -23,7 +24,7 @@ class DAOMap {
         Numero autoincremental que se va incrementando a medida que se meten mapas en el vector
         */
         int numMap = 1;
-        vector<Map> mapList;
+        vector<Map*> mapList;
 
 
 };
