@@ -28,7 +28,7 @@ void MenuInventarioState::init()
 {
 
     this->background_image = load_bitmap("src\\Resources\\Inventario.bmp",NULL);
-    this->player_image = load_bitmap("src\\Resources\\player_inventory.bmp",NULL);
+    this->player_image = load_bitmap("src\\Resources\\Inventory\\player_inventory.bmp",NULL);
     this->coin_gold = load_bitmap("src\\Resources\\Inventory\\coin_gold.bmp",NULL);
     this->pagination_1 = load_bitmap("src\\Resources\\Inventory\\pagination_1.bmp",NULL);
     this->pagination_2 = load_bitmap("src\\Resources\\Inventory\\pagination_2.bmp",NULL);
@@ -80,7 +80,7 @@ void MenuInventarioState::draw()
 
     masked_blit(this->background_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X, MIDDLE_SCREEN_Y - 200, 400, 400);
     //Player
-    masked_blit(this->player_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X + 50, MIDDLE_SCREEN_Y - 165, 52, 100);
+    masked_blit(this->player_image, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X + 50, MIDDLE_SCREEN_Y - 165, 73, 65);
     //Coin
     masked_blit(this->coin_gold, this->game->getBuffer(), 0,0, MIDDLE_SCREEN_X + 264, MIDDLE_SCREEN_Y + 129, 24, 18);
 
@@ -121,7 +121,7 @@ void MenuInventarioState::drawObjects()
         i = 11;
     }
 
-    int sizeVector = this->playerInventory->getInventory()->getObjectListPtr()->size();
+    int sizeVector = this->playerInventory->getInventory()->bitmapsObjects.size();
     if(sizeVector >= i){
         for(int j = 0; j < 4; j++)
         {
@@ -131,8 +131,9 @@ void MenuInventarioState::drawObjects()
             {
                 posXAux += 70;
                 BITMAP *imageToDraw = this->playerInventory->getInventory()->bitmapsObjects.at(i);
-                int width = this->playerInventory->getInventory()->getObjectListPtr()->at(i)->getWidth();
-                int height = this->playerInventory->getInventory()->getObjectListPtr()->at(i)->getHeight();
+                int width = this->playerInventory->getInventory()->vectorWidth.at(i);
+                //int width = this->playerInventory->getInventory()->objectList->at(i)->getWidth();
+                int height = this->playerInventory->getInventory()->vectorHeight.at(i);
 
                 masked_blit(imageToDraw, this->game->getBuffer(), 0,0, posXAux, posYAux, width, height);
                 i++;
@@ -155,40 +156,6 @@ Función que printa los stats del Player
 */
 void MenuInventarioState::drawStatsPlayer()
 {
-
-    /*std::stringstream stream;
-    stream << this->playerInventory->getDamage();
-    const char *damage = stream.str().c_str();
-
-
-   vector<char*>* characteristics = new vector<char *>();
-    characteristics->push_back("Dano: "  );
-    int lenghtDamage = 20;
-
-    char* conversion = strdup(damage);
-    characteristics->push_back(conversion);
-
-    characteristics->push_back("Velocidad: ");
-    int posYAux = MIDDLE_SCREEN_Y - 50;
-
-    int size1 = characteristics->size();
-
-    //strcpy(characteristics->at(0), damage);
-
-    for(int i = 0; i < characteristics->size(); i++){
-        if(i%2 == 0){
-            textout_ex(this->game->getBuffer(), font, characteristics->at(i),
-                            MIDDLE_SCREEN_X + 25, posYAux, makecol(0, 0, 0), -1);
-        }else{
-            textout_ex(this->game->getBuffer(), font, characteristics->at(i),
-                            MIDDLE_SCREEN_X + 25 + lenghtDamage, posYAux, makecol(0, 0, 0), -1);
-        }
-
-        if(i%2 != 0){
-            posYAux += 14;
-        }
-    }*/
-
 
     int posYAux = MIDDLE_SCREEN_Y - 50;
 
@@ -231,13 +198,10 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
     int heightCuadrado = 44;
     int widthCuadrado = 50;
 
-    Object *selectedObject = new Object();
-    selectedObject = this->playerInventory->getInventory()->getObjectListPtr()->at(0);
-
     /**
     Segun donde clickes te coje un objeto u otro
     */
-    int sizeVector = this->playerInventory->getInventory()->getObjectListPtr()->size();
+    int sizeVector = this->playerInventory->getInventory()->bitmapsObjects.size();
     if(mouse_x >= (MIDDLE_SCREEN_X + 170) && mouse_x <= (MIDDLE_SCREEN_X + 360) &&
        mouse_y >= (MIDDLE_SCREEN_Y - 164) && mouse_y <= (MIDDLE_SCREEN_Y + 72)){
         //Siempre tendra la espada pero por un futuro cambio en ello
@@ -249,12 +213,12 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
                     for( int a = 0; a < 3; a++)
                     {
                         posXAux += 70;
+
                         if(mouse_x >= posXAux && mouse_x <= posXAux + widthCuadrado &&
                             mouse_y >= posYAux && mouse_y <= posYAux + heightCuadrado){
                                 if(GameState::leftClick())
                                     {
-                                        selectedObject = this->playerInventory->getInventory()->getObjectListPtr()->at(i);
-                                        cout << "entro 2";
+                                        this->selectedObject = i;
                                     }
                             }
                         i++;
@@ -271,24 +235,16 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
        }
 
 
-
-
-
-
-
-
-
-
     int posYAux2 = MIDDLE_SCREEN_Y + 40;
 
     textout_ex(this->game->getBuffer(), font, "Dano: ",
             MIDDLE_SCREEN_X + 25, posYAux2, makecol(0, 0, 0), -1);
 
     std::stringstream stream;
-    stream << this->playerInventory->getInventory()->getObjectListPtr()->at(0)->getWidth();
+    stream << this->playerInventory->getInventory()->vectorDamage.at(selectedObject);
     const char *damage = stream.str().c_str();
 
-    textout_ex(this->game->getBuffer(), font, "2",
+    textout_ex(this->game->getBuffer(), font, damage,
             MIDDLE_SCREEN_X + 25 + 42, posYAux2, makecol(0, 0, 0), -1);
 
 
@@ -297,24 +253,14 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
     textout_ex(this->game->getBuffer(), font, "Velocidad: ",
             MIDDLE_SCREEN_X + 25, posYAux2, makecol(0, 0, 0), -1);
 
-    std::stringstream streamHealth;
-    streamHealth << this->playerInventory->getHealth();
-    const char *health = streamHealth.str().c_str();
+    std::stringstream streamAttackDistance;
+    streamAttackDistance << this->playerInventory->getInventory()->vectorAttackDistance.at(selectedObject);
+    const char *attackDistance = streamAttackDistance.str().c_str();
 
-    textout_ex(this->game->getBuffer(), font, damage,
-            MIDDLE_SCREEN_X + 25 + 42, posYAux2, makecol(0, 0, 0), -1);
+    textout_ex(this->game->getBuffer(), font, attackDistance,
+            MIDDLE_SCREEN_X + 25 + 80, posYAux2, makecol(0, 0, 0), -1);
 
 
-    /*vector<char*> characteristics;
-    characteristics.push_back("Dano: " );
-    characteristics.push_back("Velocidad: ");
-    int posYAux = MIDDLE_SCREEN_Y + 40;
-
-    for(int i = 0; i < characteristics.size(); i++){
-        textout_ex(this->game->getBuffer(), font, characteristics.at(i),
-                          MIDDLE_SCREEN_X + 25, posYAux, makecol(0, 0, 0), -1);
-        posYAux += 14;
-    }*/
 }
 
 /**

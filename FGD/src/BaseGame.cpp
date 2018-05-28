@@ -25,6 +25,11 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
 
 }
 
+BaseGame::~BaseGame()
+{
+    this->cleanUp();
+}
+
 
 void BaseGame::init()
 {
@@ -91,18 +96,25 @@ void BaseGame::init()
     //FIN QUITAR
 
 
-    //player50x33
-    //PLAYER FINAL
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 2, 20, 50, 50, 65, 73);
-    //TODO
+
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
+    //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
-    this->player.setSelectedWeapon(weaponOfPlayer);
-
-    /**TEEEEEST**/
+    this->player.setSelectedWeapon(weaponOfPlayer);
+
+    /**Nuevo formato**/
+    this->player.getInventory()->vectorAttackDistance.push_back(100);
+    this->player.getInventory()->vectorDamage.push_back(1);
     this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
-    this->player.getInventory()->getObjectListPtr()->push_back(weaponOfPlayer);
-
+    this->player.getInventory()->vectorWidth.push_back(46);
+    this->player.getInventory()->vectorHeight.push_back(40);
+    this->player.getInventory()->vectorAttackDistance.push_back(200);
+    this->player.getInventory()->vectorDamage.push_back(4);
+    this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+    this->player.getInventory()->vectorWidth.push_back(46);
+    this->player.getInventory()->vectorHeight.push_back(40);
+    this->player.getInventory()->objectList->push_back(weaponOfPlayer);
 
     if(!this->managerMusic.getMap1IsPlaying()){
         if(this->getSound()){
@@ -123,6 +135,7 @@ void BaseGame::getEvents()
     if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
 
     this->nextMap();
+    this->previousMap();
 
 }
 
@@ -201,6 +214,11 @@ void BaseGame::draw()
             case 0: {
                         BITMAP *bitmapAmbient = matrix[i][0].getBitmapAmbient();
                         stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+                        for(int j = 1; j < this->activeMap->getQuantOtherElements(); j++){
+                            //if(this->activeMap->numMap != 1 || j != 1){
+                                matrix[i][j].drawAmbient(this->game->getBuffer());
+                            //}
+                        }
                         break;
                     }
             /**
@@ -222,6 +240,42 @@ void BaseGame::draw()
                         }
                         break;
                     }
+            /**
+            Casas
+            */
+            case 3: {
+                        for(int j = 0; j < this->activeMap->getCol3Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 4: {
+                        for(int j = 0; j < this->activeMap->getCol4Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 5: {
+                        for(int j = 0; j < this->activeMap->getCol5Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 6: {
+                        for(int j = 0; j < this->activeMap->getCol6Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
         }
     }
 
@@ -237,6 +291,10 @@ void BaseGame::draw()
 
 
     this->player.draw(this->game->getBuffer());
+
+    /*if(this->activeMap->numMap == 1){
+        matrix[0][1].drawAmbient(this->game->getBuffer());
+    }*/
 
 
     drawHUD();
@@ -281,6 +339,7 @@ void BaseGame::artificialIntelligence()
     }
 }
 
+//////////////////    FUNCIONES FUERA DEL LOOP PRINCIPAL        //////////////////////
 
 int BaseGame::directionIA(Enemy *drawable)
 {
@@ -327,12 +386,64 @@ int BaseGame::directionIA(Enemy *drawable)
 void BaseGame::nextMap()
 {
 
-    if(this->player.getX() > 600 && this->player.getY() >= GameStateManager::SIZE_WINDOW_Y / 2)
+    if(this->activeMap->numMap == 1 && this->player.getX() > 720 && this->player.getY() >= 350 && this->player.getY() <= 420)
         {
             this->activeMap = this->managerMaps->getMap(1);
+            this->player.setXandAX(50);
+            this->player.setYandAY(350);
+        }
+    else if (this->activeMap->numMap == 2 && this->player.getX() > 430 && this->player.getX() <= 520 && this->player.getY() >= 535)
+        {
+            this->activeMap = this->managerMaps->getMap(2);
+            this->player.setXandAX(340);
+            this->player.setYandAY(20);
+        }
+    else if (this->activeMap->numMap == 3 && this->player.getX() > 700 && this->player.getY() >= 340 && this->player.getY() <= 465)
+        {
+            this->activeMap = this->managerMaps->getMap(3);
+            this->player.setXandAX(50);
+            this->player.setYandAY(500);
+        }
+    else if (this->activeMap->numMap == 4 && this->player.getX() >= 380 && this->player.getX() <= 440
+              && this->player.getY() >= 180 && this->player.getY() <= 200)
+        {
+            this->activeMap = this->managerMaps->getMap(4);
+            this->player.setXandAX(360);
+            this->player.setYandAY(500);
         }
 
 }
+
+void BaseGame::previousMap()
+{
+
+    if(this->activeMap->numMap == 2 && this->player.getX() <=  2 && this->player.getY() >= 350 && this->player.getY() <= 415)
+        {
+            this->activeMap = this->managerMaps->getMap(0);
+            this->player.setXandAX(650);
+            this->player.setYandAY(380);
+        }
+    else if (this->activeMap->numMap == 3 && this->player.getX() >= 310 && this->player.getX() <= 405 && this->player.getY() <= 0)
+        {
+            this->activeMap = this->managerMaps->getMap(1);
+            this->player.setXandAX(470);
+            this->player.setYandAY(500);
+        }
+    else if (this->activeMap->numMap == 4 && this->player.getX() <= 0 && this->player.getY() >= 430)
+        {
+            this->activeMap = this->managerMaps->getMap(2);
+            this->player.setXandAX(690);
+            this->player.setYandAY(350);
+        }
+    else if (this->activeMap->numMap == 5 && this->player.getX() >= 295 && this->player.getX() <= 420 && this->player.getY() >= 520)
+        {
+            this->activeMap = this->managerMaps->getMap(3);
+            this->player.setXandAX(410);
+            this->player.setYandAY(230);
+        }
+
+}
+
 
 void BaseGame::collisionCheck() {
     colPlayerWithEnemies();
@@ -492,4 +603,7 @@ void BaseGame::drawEnemyHUD(Enemy *enemy) {
         masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*100)/maxSizeBar, 5);
     }
 }
-
+void BaseGame::cleanUp(){
+    delete this->activeMap;
+    delete this->managerMaps;
+}

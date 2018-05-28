@@ -21,12 +21,22 @@ class Map{
     int getQuantOtherElements();
     int getCol1Quantity();
     int getCol2Quantity();
+    int getCol3Quantity();
+    int getCol4Quantity();
+    int getCol5Quantity();
+    int getCol6Quantity();
+
+    int numMap;
 
  private:
 
     int quantOtherElements;
      int col1Quantity;
      int col2Quantity;
+     int col3Quantity;
+     int col4Quantity;
+     int col5Quantity;
+     int col6Quantity;
 
 
     vector<Enemy*> enemies;
