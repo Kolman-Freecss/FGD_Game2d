@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Users\moya\git\Project\FGD
+CMAKE_SOURCE_DIR = C:\Users\alumne\Documents\Projecto\Project\FGD
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Users\moya\git\Project\FGD\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\alumne\Documents\Projecto\Project\FGD\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = D:\Users\moya\git\Project\FGD\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"D:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"D:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2018.1.2\bin\cmake\bin\cmake.exe" -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\alumne\Documents\Projecto\Project\FGD\cmake-build-debug\CMakeFiles C:\Users\alumne\Documents\Projecto\Project\FGD\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Users\moya\git\Project\FGD\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\alumne\Documents\Projecto\Project\FGD\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -311,6 +311,33 @@ src/Enemy.cpp.s:
 	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Enemy.cpp.s
 .PHONY : src/Enemy.cpp.s
 
+src/GameState.obj: src/GameState.cpp.obj
+
+.PHONY : src/GameState.obj
+
+# target to build an object file
+src/GameState.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/GameState.cpp.obj
+.PHONY : src/GameState.cpp.obj
+
+src/GameState.i: src/GameState.cpp.i
+
+.PHONY : src/GameState.i
+
+# target to preprocess a source file
+src/GameState.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/GameState.cpp.i
+.PHONY : src/GameState.cpp.i
+
+src/GameState.s: src/GameState.cpp.s
+
+.PHONY : src/GameState.s
+
+# target to generate assembly for a file
+src/GameState.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/GameState.cpp.s
+.PHONY : src/GameState.cpp.s
+
 src/GameStateManager.obj: src/GameStateManager.cpp.obj
 
 .PHONY : src/GameStateManager.obj
@@ -392,6 +419,33 @@ src/Inventory.cpp.s:
 	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Inventory.cpp.s
 .PHONY : src/Inventory.cpp.s
 
+src/LoginState.obj: src/LoginState.cpp.obj
+
+.PHONY : src/LoginState.obj
+
+# target to build an object file
+src/LoginState.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/LoginState.cpp.obj
+.PHONY : src/LoginState.cpp.obj
+
+src/LoginState.i: src/LoginState.cpp.i
+
+.PHONY : src/LoginState.i
+
+# target to preprocess a source file
+src/LoginState.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/LoginState.cpp.i
+.PHONY : src/LoginState.cpp.i
+
+src/LoginState.s: src/LoginState.cpp.s
+
+.PHONY : src/LoginState.s
+
+# target to generate assembly for a file
+src/LoginState.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/LoginState.cpp.s
+.PHONY : src/LoginState.cpp.s
+
 src/Main/Main.obj: src/Main/Main.cpp.obj
 
 .PHONY : src/Main/Main.obj
@@ -446,6 +500,33 @@ src/Map.cpp.s:
 	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Map.cpp.s
 .PHONY : src/Map.cpp.s
 
+src/MenuEscState.obj: src/MenuEscState.cpp.obj
+
+.PHONY : src/MenuEscState.obj
+
+# target to build an object file
+src/MenuEscState.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuEscState.cpp.obj
+.PHONY : src/MenuEscState.cpp.obj
+
+src/MenuEscState.i: src/MenuEscState.cpp.i
+
+.PHONY : src/MenuEscState.i
+
+# target to preprocess a source file
+src/MenuEscState.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuEscState.cpp.i
+.PHONY : src/MenuEscState.cpp.i
+
+src/MenuEscState.s: src/MenuEscState.cpp.s
+
+.PHONY : src/MenuEscState.s
+
+# target to generate assembly for a file
+src/MenuEscState.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuEscState.cpp.s
+.PHONY : src/MenuEscState.cpp.s
+
 src/MenuInitialState.obj: src/MenuInitialState.cpp.obj
 
 .PHONY : src/MenuInitialState.obj
@@ -472,6 +553,114 @@ src/MenuInitialState.s: src/MenuInitialState.cpp.s
 src/MenuInitialState.cpp.s:
 	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuInitialState.cpp.s
 .PHONY : src/MenuInitialState.cpp.s
+
+src/MenuInventarioState.obj: src/MenuInventarioState.cpp.obj
+
+.PHONY : src/MenuInventarioState.obj
+
+# target to build an object file
+src/MenuInventarioState.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.obj
+.PHONY : src/MenuInventarioState.cpp.obj
+
+src/MenuInventarioState.i: src/MenuInventarioState.cpp.i
+
+.PHONY : src/MenuInventarioState.i
+
+# target to preprocess a source file
+src/MenuInventarioState.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.i
+.PHONY : src/MenuInventarioState.cpp.i
+
+src/MenuInventarioState.s: src/MenuInventarioState.cpp.s
+
+.PHONY : src/MenuInventarioState.s
+
+# target to generate assembly for a file
+src/MenuInventarioState.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuInventarioState.cpp.s
+.PHONY : src/MenuInventarioState.cpp.s
+
+src/MenuOptionsGameState.obj: src/MenuOptionsGameState.cpp.obj
+
+.PHONY : src/MenuOptionsGameState.obj
+
+# target to build an object file
+src/MenuOptionsGameState.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.obj
+.PHONY : src/MenuOptionsGameState.cpp.obj
+
+src/MenuOptionsGameState.i: src/MenuOptionsGameState.cpp.i
+
+.PHONY : src/MenuOptionsGameState.i
+
+# target to preprocess a source file
+src/MenuOptionsGameState.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.i
+.PHONY : src/MenuOptionsGameState.cpp.i
+
+src/MenuOptionsGameState.s: src/MenuOptionsGameState.cpp.s
+
+.PHONY : src/MenuOptionsGameState.s
+
+# target to generate assembly for a file
+src/MenuOptionsGameState.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsGameState.cpp.s
+.PHONY : src/MenuOptionsGameState.cpp.s
+
+src/MenuOptionsState.obj: src/MenuOptionsState.cpp.obj
+
+.PHONY : src/MenuOptionsState.obj
+
+# target to build an object file
+src/MenuOptionsState.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.obj
+.PHONY : src/MenuOptionsState.cpp.obj
+
+src/MenuOptionsState.i: src/MenuOptionsState.cpp.i
+
+.PHONY : src/MenuOptionsState.i
+
+# target to preprocess a source file
+src/MenuOptionsState.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.i
+.PHONY : src/MenuOptionsState.cpp.i
+
+src/MenuOptionsState.s: src/MenuOptionsState.cpp.s
+
+.PHONY : src/MenuOptionsState.s
+
+# target to generate assembly for a file
+src/MenuOptionsState.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/MenuOptionsState.cpp.s
+.PHONY : src/MenuOptionsState.cpp.s
+
+src/Music.obj: src/Music.cpp.obj
+
+.PHONY : src/Music.obj
+
+# target to build an object file
+src/Music.cpp.obj:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Music.cpp.obj
+.PHONY : src/Music.cpp.obj
+
+src/Music.i: src/Music.cpp.i
+
+.PHONY : src/Music.i
+
+# target to preprocess a source file
+src/Music.cpp.i:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Music.cpp.i
+.PHONY : src/Music.cpp.i
+
+src/Music.s: src/Music.cpp.s
+
+.PHONY : src/Music.s
+
+# target to generate assembly for a file
+src/Music.cpp.s:
+	$(MAKE) -f CMakeFiles\FGD.dir\build.make CMakeFiles/FGD.dir/src/Music.cpp.s
+.PHONY : src/Music.cpp.s
 
 src/Object.obj: src/Object.cpp.obj
 
@@ -719,6 +908,9 @@ help:
 	@echo ... src/Enemy.obj
 	@echo ... src/Enemy.i
 	@echo ... src/Enemy.s
+	@echo ... src/GameState.obj
+	@echo ... src/GameState.i
+	@echo ... src/GameState.s
 	@echo ... src/GameStateManager.obj
 	@echo ... src/GameStateManager.i
 	@echo ... src/GameStateManager.s
@@ -728,15 +920,33 @@ help:
 	@echo ... src/Inventory.obj
 	@echo ... src/Inventory.i
 	@echo ... src/Inventory.s
+	@echo ... src/LoginState.obj
+	@echo ... src/LoginState.i
+	@echo ... src/LoginState.s
 	@echo ... src/Main/Main.obj
 	@echo ... src/Main/Main.i
 	@echo ... src/Main/Main.s
 	@echo ... src/Map.obj
 	@echo ... src/Map.i
 	@echo ... src/Map.s
+	@echo ... src/MenuEscState.obj
+	@echo ... src/MenuEscState.i
+	@echo ... src/MenuEscState.s
 	@echo ... src/MenuInitialState.obj
 	@echo ... src/MenuInitialState.i
 	@echo ... src/MenuInitialState.s
+	@echo ... src/MenuInventarioState.obj
+	@echo ... src/MenuInventarioState.i
+	@echo ... src/MenuInventarioState.s
+	@echo ... src/MenuOptionsGameState.obj
+	@echo ... src/MenuOptionsGameState.i
+	@echo ... src/MenuOptionsGameState.s
+	@echo ... src/MenuOptionsState.obj
+	@echo ... src/MenuOptionsState.i
+	@echo ... src/MenuOptionsState.s
+	@echo ... src/Music.obj
+	@echo ... src/Music.i
+	@echo ... src/Music.s
 	@echo ... src/Object.obj
 	@echo ... src/Object.i
 	@echo ... src/Object.s

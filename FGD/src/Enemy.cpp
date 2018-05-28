@@ -1,5 +1,8 @@
 #include "Enemy.h"
+#include <allegro.h>
 #include <Drawable.h>
+#include <Sword.h>
+#include <iostream>
 
 Enemy::Enemy(){}
 
@@ -84,4 +87,25 @@ bool Enemy::detectionRadiusEnemy(Drawable *drawable)
 void Enemy::setDirectionEnemy(int direction)
 {
     this->direction = direction;
+}
+
+Object *Enemy::randomizeDrop() {
+    Object *object = 0;
+    //randomize object
+    //rand()%4;
+    //int objectType = rand()%4;//
+    int objectType = 0;
+    switch (objectType){
+        case 0://sword
+            int damage = (rand()%50)+50;
+            int attackDistance = (rand()%40)+20;
+            BITMAP *imageOfObject = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+            Weapon *newSword = new Weapon(attackDistance, damage,imageOfObject, 46,40);
+            cout << newSword->getDamage() << endl;
+            cout << newSword->getAttackDistance() << endl;
+            object = newSword;
+            break;
+    }
+
+    return object;
 }

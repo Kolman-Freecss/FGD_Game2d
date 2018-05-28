@@ -216,7 +216,8 @@ void Character::setAttacking(bool op) {
     this->attacking = op;
 }
 
-void Character::wounded(Character *attackingCharacter) {
+bool Character::wounded(Character *attackingCharacter) {
+    bool v_alive = this->alive;
     int totalDamage = attackingCharacter->damage + attackingCharacter->selectedWeapon->getDamage();
     if (this->shield - totalDamage < 0){
         totalDamage -= this->shield;
@@ -228,12 +229,20 @@ void Character::wounded(Character *attackingCharacter) {
     }
 
     //TODO evento a check vida
-    if (this->health <=0){
+    checkAlive();
+    if (v_alive == true && alive == false){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+void Character::checkAlive() {
+    if (health <= 0){
         //funcion que mata al character
         alive = false;
     }
 }
-
 
 
 int Character::getDamage(){

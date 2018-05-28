@@ -141,7 +141,7 @@ protected:
     bool isAttacking();
     void setAttacking(bool op);
 
-    void wounded(Character *attackingCharacter);
+    bool wounded(Character *attackingCharacter);
 
 
     void attackUPanim();
@@ -178,6 +178,7 @@ protected:
     void setAttackChecked(bool endAttack);
 
 
+    void checkAlive();
 };
 
 #endif // Character_h
