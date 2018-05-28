@@ -51,6 +51,7 @@ class BaseGame : public GameState{
     int directionIA(Enemy *drawable);
 
     void nextMap();
+    void previousMap();
 
     void collisionCheck();
 

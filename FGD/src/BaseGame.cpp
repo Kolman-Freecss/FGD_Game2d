@@ -138,6 +138,7 @@ void BaseGame::getEvents()
     if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
 
     this->nextMap();
+    this->previousMap();
 
 }
 
@@ -396,32 +397,64 @@ int BaseGame::directionIA(Enemy *drawable)
 void BaseGame::nextMap()
 {
 
-    if(this->activeMap->numMap == 1 && this->player.getX() > 706 && this->player.getY() >= 380)
+    if(this->activeMap->numMap == 1 && this->player.getX() > 720 && this->player.getY() >= 350 && this->player.getY() <= 420)
         {
             this->activeMap = this->managerMaps->getMap(1);
-            this->player.setXandAX(20);
+            this->player.setXandAX(50);
             this->player.setYandAY(350);
         }
-    else if (this->activeMap->numMap == 2 && this->player.getX() > 470 && this->player.getY() >= 500)
+    else if (this->activeMap->numMap == 2 && this->player.getX() > 430 && this->player.getX() <= 520 && this->player.getY() >= 535)
         {
             this->activeMap = this->managerMaps->getMap(2);
             this->player.setXandAX(340);
             this->player.setYandAY(20);
         }
-    else if (this->activeMap->numMap == 3 && this->player.getX() > 690 && this->player.getY() >= 450)
+    else if (this->activeMap->numMap == 3 && this->player.getX() > 700 && this->player.getY() >= 340 && this->player.getY() <= 465)
         {
             this->activeMap = this->managerMaps->getMap(3);
             this->player.setXandAX(50);
             this->player.setYandAY(500);
         }
-    else if (this->activeMap->numMap == 4 && this->player.getX() > 440 && this->player.getY() >= 236)
+    else if (this->activeMap->numMap == 4 && this->player.getX() >= 380 && this->player.getX() <= 440
+              && this->player.getY() >= 180 && this->player.getY() <= 200)
         {
             this->activeMap = this->managerMaps->getMap(4);
-            this->player.setXandAX(430);
-            this->player.setYandAY(650);
+            this->player.setXandAX(360);
+            this->player.setYandAY(500);
         }
 
 }
+
+void BaseGame::previousMap()
+{
+
+    if(this->activeMap->numMap == 2 && this->player.getX() <=  2 && this->player.getY() >= 350 && this->player.getY() <= 415)
+        {
+            this->activeMap = this->managerMaps->getMap(0);
+            this->player.setXandAX(650);
+            this->player.setYandAY(380);
+        }
+    else if (this->activeMap->numMap == 3 && this->player.getX() >= 310 && this->player.getX() <= 405 && this->player.getY() <= 0)
+        {
+            this->activeMap = this->managerMaps->getMap(1);
+            this->player.setXandAX(470);
+            this->player.setYandAY(500);
+        }
+    else if (this->activeMap->numMap == 4 && this->player.getX() <= 0 && this->player.getY() >= 430)
+        {
+            this->activeMap = this->managerMaps->getMap(2);
+            this->player.setXandAX(690);
+            this->player.setYandAY(350);
+        }
+    else if (this->activeMap->numMap == 5 && this->player.getX() >= 295 && this->player.getX() <= 420 && this->player.getY() >= 520)
+        {
+            this->activeMap = this->managerMaps->getMap(3);
+            this->player.setXandAX(410);
+            this->player.setYandAY(230);
+        }
+
+}
+
 
 void BaseGame::collisionCheck() {
     colPlayerWithEnemies();
