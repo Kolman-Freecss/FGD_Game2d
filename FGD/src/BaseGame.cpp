@@ -98,17 +98,17 @@ void BaseGame::init()
 
 
     this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
-    //TODO
+    //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
-    this->player.setSelectedWeapon(weaponOfPlayer);
-
+    this->player.setSelectedWeapon(weaponOfPlayer);
+
     /**Nuevo formato**/
     this->player.getInventory()->vectorAttackDistance.push_back(100);
     this->player.getInventory()->vectorDamage.push_back(1);
     this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
     this->player.getInventory()->vectorWidth.push_back(46);
-    this->player.getInventory()->vectorHeight.push_back(40);
+    this->player.getInventory()->vectorHeight.push_back(40);
     this->player.getInventory()->vectorAttackDistance.push_back(200);
     this->player.getInventory()->vectorDamage.push_back(4);
     this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
@@ -339,7 +339,7 @@ void BaseGame::artificialIntelligence()
     }
 }
 
-//////////////////    FUNCIONES FUERA DEL LOOP PRINCIPAL        //////////////////////
+//////////////////    FUNCIONES FUERA DEL LOOP PRINCIPAL        //////////////////////
 
 int BaseGame::directionIA(Enemy *drawable)
 {
@@ -597,10 +597,10 @@ void BaseGame::drawEnemyHUD(Enemy *enemy) {
 
 
         BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
-        masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYhp, (enemy->getHealth()*100)/maxSizeBar, 5);
+    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYhp, (enemy->getHealth()*maxSizeBar)/100, 5);
 
         BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
-        masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*100)/maxSizeBar, 5);
+    masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*maxSizeBar)/100, 5);
     }
 }
 void BaseGame::cleanUp(){
