@@ -26,7 +26,6 @@ http://www.evc-cit.info/cit020/allegro_tutorial.pdf
 Text Generator
 https://cooltext.com/
 
-<<<<<<< HEAD
 colision circular con cuadrado
 https://stackoverflow.com/questions/401847/circle-rectangle-collision-detection-intersection
 
@@ -39,12 +38,10 @@ https://www.youtube.com/watch?v=N-IYasb84bs&t=454s
 
 Enemigo simulando una IA:
 https://www.youtube.com/watch?v=wWb4FP9R0CQ
-=======
-obtener tiempo c++ //no tira con nuestro compilador
-http://www.cplusplus.com/reference/ctime/time/
-
 
 sprites
 https://forum.chaos-project.com/index.php?topic=2695.0
 http://www.mundo-maker.com/t5495-pack-de-mundo-maker-2012
->>>>>>> 84274dff1f7e4edf8f1e5b6e748ad3c6bfcff9bc
+
+timers
+https://wiki.allegro.cc/index.php?title=Using_Timers_in_Allegro_4
