@@ -4,6 +4,8 @@
 #include <GameState.h>
 #include <MenuInitialState.h>
 #include <LoginState.h>
+#include <WinState.h>
+#include <LostState.h>
 
 int main()
 {
@@ -17,7 +19,7 @@ int main()
     /**
     Load intro
     */
-    game.pushState(new LoginState(&game));
+    game.pushState(new LostState(&game));
     /**
     Game loop
     */

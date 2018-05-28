@@ -1,24 +1,27 @@
-#ifndef WinState_h
-#define WinState_h
+#ifndef LostState_h
+#define LostState_h
 
 #include <GameState.h>
 #include <GameStateManager.h>
 
 using namespace std;
 
-class WinState : public GameState{
+class LostState : public GameState{
 
  public:
 
     BITMAP *background_image;
     BITMAP *menu_initial;
     BITMAP *menu_initial_pressed;
+    BITMAP *charge_game;
+    BITMAP *charge_game_pressed;
     BITMAP *leave;
     BITMAP *leave_pressed;
 
     //BITMAP *mouse = load_bitmap("src\\Resources\\Mouse.bmp",NULL);
 
     void menuPressed();
+    void chargeGamePressed();
     void leavePressed();
 
 
@@ -36,7 +39,7 @@ class WinState : public GameState{
     void update();
     void draw();
 
-    WinState(GameStateManager *game);
+    LostState(GameStateManager *game);
 
  private:
 
@@ -44,4 +47,4 @@ class WinState : public GameState{
 
 };
 
-#endif // WinState_h
+#endif // LostState_h
