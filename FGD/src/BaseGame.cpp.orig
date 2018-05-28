@@ -3,6 +3,13 @@
 #include <DAOMap.h>
 #include <allegro.h>
 #include <iostream>
+#include <GameState.h>
+#include <GameStateManager.h>
+#include <MenuEscState.h>
+#include <MenuInventarioState.h>
+#include <Music.h>
+#include <Inventory.h>
+<<<<<<< HEAD
 
 using namespace std;
 
@@ -10,135 +17,705 @@ using namespace std;
 Carga el buffer sobre el que se printara todas las imagenes
 y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se printaran
 */
-BaseGame::BaseGame(int difficult)
+BaseGame::BaseGame(int difficult, GameStateManager *game)
 {
-    /**
-    Crea la pantalla y buffer donde printaremos el contenido
-    */
-    this->createBuffer();
+    this->game = game;
+    this->gameDificulty = difficult;
 
-    DAOMap managerMaps = DAOMap(difficult);
-    this->activeMap = managerMaps.getMap(0);
+    this->init();
+
+=======
+#include <WinState.h>
+
+using namespace std;
+
+/**
+Carga el buffer sobre el que se printara todas las imagenes
+y ademas instancia el DAOMap que el se encargara de rellenar las matrices que se printaran
+*/
+BaseGame::BaseGame(int difficult, GameStateManager *game)
+{
+    this->game = game;
+    this->gameDificulty = difficult;
+
+    this->init();
+
+>>>>>>> feature/WinState
 }
 
-void BaseGame::chargeGame()
+BaseGame::~BaseGame()
 {
+    this->cleanUp();
+}
+
+
+void BaseGame::init()
+{
+
+
+    managerMaps = new DAOMap(this->gameDificulty);
+    this->activeMap = new Map();
+    this->activeMap = managerMaps->getMap(0);
+
     /**
     Cargamos la matriz de animaciones que tendra el player y instanciamos al jugador
     */
     BITMAP*** matrixAnimationsPlayer;
-    matrixAnimationsPlayer = new BITMAP**[1];
-    for(int i = 0; i < 1; i++){
-        matrixAnimationsPlayer[i] = new BITMAP*[1];
+    matrixAnimationsPlayer = new BITMAP**[8];
+    for(int i = 0; i < 8; i++){
+        matrixAnimationsPlayer[i] = new BITMAP*[4];
     }
-    BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
-    matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 5, 20, 50, 50, 50, 33);
+    //BITMAP *bitmapPlayer = load_bitmap("src\\Resources\\Player_Front_With_Sword.bmp",NULL);
+    //matrixAnimationsPlayer[0][0] = bitmapPlayer; //*bitmapPlayer
 
+    //TODO QUITAR
+    //WALK
+    matrixAnimationsPlayer[0][0] = load_bitmap("src\\Resources\\PLAYER1\\PWU1.bmp",NULL);
+    matrixAnimationsPlayer[0][1] = load_bitmap("src\\Resources\\PLAYER1\\PWU2.bmp",NULL);
+    matrixAnimationsPlayer[0][2] = load_bitmap("src\\Resources\\PLAYER1\\PWU1.bmp",NULL);
+    matrixAnimationsPlayer[0][3] = load_bitmap("src\\Resources\\PLAYER1\\PWU4.bmp",NULL);
+
+    matrixAnimationsPlayer[1][0] = load_bitmap("src\\Resources\\PLAYER1\\PWR1.bmp",NULL);
+    matrixAnimationsPlayer[1][1] = load_bitmap("src\\Resources\\PLAYER1\\PWR2.bmp",NULL);
+    matrixAnimationsPlayer[1][2] = load_bitmap("src\\Resources\\PLAYER1\\PWR1.bmp",NULL);
+    matrixAnimationsPlayer[1][3] = load_bitmap("src\\Resources\\PLAYER1\\PWR4.bmp",NULL);
+
+    matrixAnimationsPlayer[2][0] = load_bitmap("src\\Resources\\PLAYER1\\PWD1.bmp",NULL);
+    matrixAnimationsPlayer[2][1] = load_bitmap("src\\Resources\\PLAYER1\\PWD2.bmp",NULL);
+    matrixAnimationsPlayer[2][2] = load_bitmap("src\\Resources\\PLAYER1\\PWD1.bmp",NULL);
+    matrixAnimationsPlayer[2][3] = load_bitmap("src\\Resources\\PLAYER1\\PWD4.bmp",NULL);
+
+    matrixAnimationsPlayer[3][0] = load_bitmap("src\\Resources\\PLAYER1\\PWL1.bmp",NULL);
+    matrixAnimationsPlayer[3][1] = load_bitmap("src\\Resources\\PLAYER1\\PWL2.bmp",NULL);
+    matrixAnimationsPlayer[3][2] = load_bitmap("src\\Resources\\PLAYER1\\PWL1.bmp",NULL);
+    matrixAnimationsPlayer[3][3] = load_bitmap("src\\Resources\\PLAYER1\\PWL4.bmp",NULL);
+
+    //ATTACK
+    matrixAnimationsPlayer[4][0] = load_bitmap("src\\Resources\\PLAYER1\\PAU1.bmp",NULL);
+    matrixAnimationsPlayer[4][1] = load_bitmap("src\\Resources\\PLAYER1\\PAU2.bmp",NULL);
+    matrixAnimationsPlayer[4][2] = load_bitmap("src\\Resources\\PLAYER1\\PAU3.bmp",NULL);
+    matrixAnimationsPlayer[4][3] = load_bitmap("src\\Resources\\PLAYER1\\PAU4.bmp",NULL);
+
+    matrixAnimationsPlayer[5][0] = load_bitmap("src\\Resources\\PLAYER1\\PAR1.bmp",NULL);
+    matrixAnimationsPlayer[5][1] = load_bitmap("src\\Resources\\PLAYER1\\PAR2.bmp",NULL);
+    matrixAnimationsPlayer[5][2] = load_bitmap("src\\Resources\\PLAYER1\\PAR3.bmp",NULL);
+    matrixAnimationsPlayer[5][3] = load_bitmap("src\\Resources\\PLAYER1\\PAR4.bmp",NULL);
+
+    matrixAnimationsPlayer[6][0] = load_bitmap("src\\Resources\\PLAYER1\\PAD1.bmp",NULL);
+    matrixAnimationsPlayer[6][1] = load_bitmap("src\\Resources\\PLAYER1\\PAD2.bmp",NULL);
+    matrixAnimationsPlayer[6][2] = load_bitmap("src\\Resources\\PLAYER1\\PAD3.bmp",NULL);
+    matrixAnimationsPlayer[6][3] = load_bitmap("src\\Resources\\PLAYER1\\PAD4.bmp",NULL);
+
+    matrixAnimationsPlayer[7][0] = load_bitmap("src\\Resources\\PLAYER1\\PAL1.bmp",NULL);
+    matrixAnimationsPlayer[7][1] = load_bitmap("src\\Resources\\PLAYER1\\PAL2.bmp",NULL);
+    matrixAnimationsPlayer[7][2] = load_bitmap("src\\Resources\\PLAYER1\\PAL3.bmp",NULL);
+    matrixAnimationsPlayer[7][3] = load_bitmap("src\\Resources\\PLAYER1\\PAL4.bmp",NULL);
+    //FIN QUITAR
+
+
+
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
+    //TODO
+    BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+    Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
+    this->player.setSelectedWeapon(weaponOfPlayer);
+
+    /**Nuevo formato**/
+    this->player.getInventory()->vectorAttackDistance.push_back(100);
+    this->player.getInventory()->vectorDamage.push_back(1);
+    this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+    this->player.getInventory()->vectorWidth.push_back(46);
+    this->player.getInventory()->vectorHeight.push_back(40);
+    this->player.getInventory()->vectorAttackDistance.push_back(200);
+    this->player.getInventory()->vectorDamage.push_back(4);
+    this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+    this->player.getInventory()->vectorWidth.push_back(46);
+    this->player.getInventory()->vectorHeight.push_back(40);
+    this->player.getInventory()->objectList->push_back(weaponOfPlayer);
+
+    if(!this->managerMusic.getMap1IsPlaying()){
+        if(this->getSound()){
+            managerMusic.soundMap1();
+        }
+    }
+
+
+
+}
+
+void BaseGame::getEvents()
+{
+
+    if (GameState::keyI()){
+            this->game->pushState(new MenuInventarioState(this->game, &this->player));
+    }
+    if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
+
+    this->nextMap();
+    this->previousMap();
+<<<<<<< HEAD
 
 }
 
 void BaseGame::update()
 {
-    //this->chargeGame();
-//if el mapa es 1
     /**
-    Movimiento player
+    * MOVIMIENTO PLAYER
     */
     this->player.keyboard();
+
+    //this->artificialIntelligence();
+
+    /**
+    * MOVIMIENTO ENEMIGOS
+    */
+
+
+    this->artificialIntelligence();
 
     /**
      * check colisiones
      */
-     //colision con enemigos
-    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-        if (this->player.collision(this->activeMap.getVectorEnemies().at(i))){
-            this->player.setX(this->player.getAX()) ;
-            this->player.setY(this->player.getAY()) ;
-        }
-    }
-    //colision enemigos con enemigos
-    for (int i = 0; i < this->activeMap.getVectorEnemies().size(); ++i) {
-        for (int j = 0; j < this->activeMap.getVectorEnemies().size(); ++j) {
-            if (i!=j){
-                if (this->activeMap.getVectorEnemies().at(i)->collision(this->activeMap.getVectorEnemies().at(j))){
-                    cout << "ENEMY col detect" << i;
-                    this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
-                    this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
+    this->collisionCheck();
 
 
+    //TODO CAMBIAR A FUNCION
+    // character attacking
+    if (player.isAttacking()) {
+
+
+        if (!player.isAttackChecked()) {
+
+
+            for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
+                if (player.attackCollision(this->activeMap->getVectorEnemies().at(i), player.getSelectedWeapon(),
+                                           player.getDirection())) {
+                    //HIT A ENEMIGO
+                    //TODO CONTROL DAÑO A ENEMIGO
+                    bool isKilled = this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
+                    if (isKilled){
+                        player.setExperience(player.getExperience()+ 100) ;
+                        cout << "+exp " << player.getExperience() << endl;
+
+                        player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
+                        cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
+                    }
+
+                    cout << "HP " << this->activeMap->getVectorEnemies().at(i)->getHealth() << endl;
+                    cout << "SHIELD " << this->activeMap->getVectorEnemies().at(i)->getShield() << endl;
+                    cout << "ALIVE " << this->activeMap->getVectorEnemies().at(i)->isIsAlive() << endl;
                 }
             }
+            player.setAttackChecked(true);
         }
-        if (this->activeMap.getVectorEnemies().at(i)->collision(&this->player)){
-            cout << "ENEMY col detect" << i;
-            this->activeMap.getVectorEnemies().at(i)->setX(this->activeMap.getVectorEnemies().at(i)->getAX());
-            this->activeMap.getVectorEnemies().at(i)->setY(this->activeMap.getVectorEnemies().at(i)->getAY());
-
-
-        }
+        player.attack();
     }
-
-
-
-    /**
-     * mostrar en pantalla
-     */
-    this->printGame();
-
+    //FIN character attacking
 
 }
 
 /**
 Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
 */
-void BaseGame::printGame()
+void BaseGame::draw()
 {
-    Drawable **matrix = this->activeMap.getAmbientMatrix();
-    int lengthMatrix = this->activeMap.getQuantElementsOfAmbient();
-
+    Drawable **matrix = this->activeMap->getAmbientMatrix();
+    int lengthMatrix = this->activeMap->getQuantElementsOfAmbient();
 
     for(int i = 0; i < lengthMatrix; i++){
-        for(int j = 0; j < lengthMatrix; j++){
 
-            BITMAP *bitmapAmbient = matrix[i][j].getBitmapAmbient();
+        switch(i){
 
-            if(i == 0 && j == 0){
-                stretch_blit(bitmapAmbient, this->buffer, 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, this->SIZE_WINDOW_X, this->SIZE_WINDOW_Y);
+            /**
+            Background y otros elementos
+            */
+            case 0: {
+                        BITMAP *bitmapAmbient = matrix[i][0].getBitmapAmbient();
+=======
+    this->winGame();
+
+}
+
+void BaseGame::update()
+{
+    /**
+    * MOVIMIENTO PLAYER
+    */
+    this->player.keyboard();
+
+    //this->artificialIntelligence();
+
+    /**
+    * MOVIMIENTO ENEMIGOS
+    */
+
+
+    this->artificialIntelligence();
+
+    /**
+     * check colisiones
+     */
+    this->collisionCheck();
+
+
+    //TODO CAMBIAR A FUNCION
+    // character attacking
+    if (player.isAttacking()) {
+
+
+        if (!player.isAttackChecked()) {
+
+
+            for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
+                if (player.attackCollision(this->activeMap->getVectorEnemies().at(i), player.getSelectedWeapon(),
+                                           player.getDirection())) {
+                    //HIT A ENEMIGO
+                    //TODO CONTROL DAÑO A ENEMIGO
+                    this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
+                    cout << "HP " << this->activeMap->getVectorEnemies().at(i)->getHealth() << endl;
+                    cout << "SHIELD " << this->activeMap->getVectorEnemies().at(i)->getShield() << endl;
+                    cout << "ALIVE " << this->activeMap->getVectorEnemies().at(i)->isIsAlive() << endl;
+                }
             }
-            else{
-                matrix[i][j].draw(this->buffer);
-            }
+            player.setAttackChecked(true);
+        }
+        player.attack();
+    }
+    //FIN character attacking
+
+}
+
+/**
+Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
+*/
+void BaseGame::draw()
+{
+    Drawable **matrix = this->activeMap->getAmbientMatrix();
+    int lengthMatrix = this->activeMap->getQuantElementsOfAmbient();
+
+    for(int i = 0; i < lengthMatrix; i++){
+
+        switch(i){
+
+            /**
+            Background y otros elementos
+            */
+            case 0: {
+                        BITMAP *bitmapAmbient = matrix[i][0].getBitmapAmbient();
+>>>>>>> feature/WinState
+                        stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+                        for(int j = 1; j < this->activeMap->getQuantOtherElements(); j++){
+                            //if(this->activeMap->numMap != 1 || j != 1){
+                                matrix[i][j].drawAmbient(this->game->getBuffer());
+                            //}
+                        }
+                        break;
+                    }
+            /**
+            Arboles
+            */
+            case 1: {
+                        for(int j = 0; j < this->activeMap->getCol1Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+
+            /**
+            Casas
+            */
+            case 2: {
+                        for(int j = 0; j < this->activeMap->getCol2Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 3: {
+                        for(int j = 0; j < this->activeMap->getCol3Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 4: {
+                        for(int j = 0; j < this->activeMap->getCol4Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 5: {
+                        for(int j = 0; j < this->activeMap->getCol5Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
+            /**
+            Casas
+            */
+            case 6: {
+                        for(int j = 0; j < this->activeMap->getCol6Quantity(); j++){
+                            matrix[i][j].drawAmbient(this->game->getBuffer());
+                        }
+                        break;
+                    }
         }
     }
 
     /**
     Printa todo el vector de Enemigos en pantalla
     */
-    vector<Enemy*> vectorE = this->activeMap.getVectorEnemies();
+    vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
-            //Update de enemigo para luego printarlo
-        vectorE.at(i)->update();
-        vectorE.at(i)->draw(this->buffer);
+
+        vectorE.at(i)->draw(this->game->getBuffer());
+        drawEnemyHUD(vectorE.at(i));
     }
 
 
-    this->player.draw(this->buffer);
+    this->player.draw(this->game->getBuffer());
 
-    blit(this->buffer, screen, 0, 0, 0, 0, 800, 600);
+    /*if(this->activeMap->numMap == 1){
+        matrix[0][1].drawAmbient(this->game->getBuffer());
+    }*/
+
+
+    drawHUD();
+
+    blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 
 
 }
 
-void BaseGame::createBuffer()
+void BaseGame::artificialIntelligence()
 {
-    set_color_depth(24);
 
-    set_gfx_mode(GFX_AUTODETECT_WINDOWED, SIZE_WINDOW_X, SIZE_WINDOW_Y, 0, 0);
+    vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
+    for (int i = 0; i < vectorE.size(); i++){
+            //Update de enemigo para luego printarlo
+        if (vectorE.at(i)->isIsAlive()){
+            if(vectorE.at(i)->detectionRadiusEnemy(&this->player) ){
 
-    this->buffer = create_bitmap(SIZE_WINDOW_X, SIZE_WINDOW_Y);
+                int direction = this->directionIA(vectorE.at(i));
 
-    clear_to_color(buffer, 0xaaaaaa);
+                if(direction == Drawable::UP)
+                {
+                    vectorE.at(i)->walkUP();
+                }
+                if(direction == Drawable::RIGHT)
+                {
+                    vectorE.at(i)->walkRIGHT();
+                }
+                if(direction == Drawable::DOWN)
+                {
+                    vectorE.at(i)->walkDOWN();
+                }
+                if(direction == Drawable::LEFT)
+                {
+                    vectorE.at(i)->walkLEFT();
+                }
+            }else{
+                this->activeMap->getVectorEnemies().at(i)->update();
+            }
+        }
+    }
+}
+
+//////////////////    FUNCIONES FUERA DEL LOOP PRINCIPAL        //////////////////////
+
+int BaseGame::directionIA(Enemy *drawable)
+{
+            float angle = atan2(drawable->getY() - this->player.getY(), drawable->getX() - this->player.getX()) *180/3.14;
+            float percent = 90;
+            float endAngle;
+            float startAngle = 0;
+            int direction = 0;
+            bool detected = false;
+            while ( direction < 4 && !detected){
+                switch (direction) {
+                    //UP
+                    case 0:
+                        startAngle = 90-percent/2;
+                        break;
+                    //RIGHT
+                    case 1:
+                        startAngle = 180-percent/2;
+                        break;
+                    //DOWN
+                    case 2:
+                        startAngle = -90-percent/2;
+                        break;
+                    //LEFT
+                    case 3:
+                        startAngle = 0-percent/2;
+                        break;
+                    default:;
+                }
+
+
+                endAngle = percent + startAngle;
+                //calcular si punto dentro de sector circulo
+                if (angle >= startAngle && angle <= endAngle) {//calculo normal
+                    return direction;
+                }else if ((angle >= startAngle || angle <= startAngle*-1) && direction==1) {//calculo para derecha
+                    return direction;
+                }
+                direction++;
+            }
+<<<<<<< HEAD
+}
+
+
+void BaseGame::nextMap()
+{
+
+    if(this->activeMap->numMap == 1 && this->player.getX() > 720 && this->player.getY() >= 350 && this->player.getY() <= 420)
+        {
+=======
+}
+
+void BaseGame::winGame()
+{
+    //SI A MATADO AL BOSS...
+    if(this->activeMap->numMap == 5 && this->player.getX() >= 400 && this->player.getX() <= 500
+       && this->player.getY() <= 40)
+    {
+        this->game->pushState(new WinState(this->game));
+    }
+}
+
+
+void BaseGame::nextMap()
+{
+
+    if(this->activeMap->numMap == 1 && this->player.getX() > 720 && this->player.getY() >= 350 && this->player.getY() <= 420)
+        {
+>>>>>>> feature/WinState
+            this->activeMap = this->managerMaps->getMap(1);
+            this->player.setXandAX(50);
+            this->player.setYandAY(350);
+        }
+    else if (this->activeMap->numMap == 2 && this->player.getX() > 430 && this->player.getX() <= 520 && this->player.getY() >= 535)
+        {
+            this->activeMap = this->managerMaps->getMap(2);
+            this->player.setXandAX(340);
+            this->player.setYandAY(20);
+        }
+    else if (this->activeMap->numMap == 3 && this->player.getX() > 700 && this->player.getY() >= 340 && this->player.getY() <= 465)
+        {
+            this->activeMap = this->managerMaps->getMap(3);
+            this->player.setXandAX(50);
+            this->player.setYandAY(500);
+        }
+    else if (this->activeMap->numMap == 4 && this->player.getX() >= 380 && this->player.getX() <= 440
+              && this->player.getY() >= 180 && this->player.getY() <= 200)
+        {
+            this->activeMap = this->managerMaps->getMap(4);
+            this->player.setXandAX(360);
+            this->player.setYandAY(500);
+        }
+
+}
+
+void BaseGame::previousMap()
+{
+
+    if(this->activeMap->numMap == 2 && this->player.getX() <=  2 && this->player.getY() >= 350 && this->player.getY() <= 415)
+        {
+            this->activeMap = this->managerMaps->getMap(0);
+            this->player.setXandAX(650);
+            this->player.setYandAY(380);
+        }
+    else if (this->activeMap->numMap == 3 && this->player.getX() >= 310 && this->player.getX() <= 405 && this->player.getY() <= 0)
+        {
+            this->activeMap = this->managerMaps->getMap(1);
+            this->player.setXandAX(470);
+            this->player.setYandAY(500);
+        }
+    else if (this->activeMap->numMap == 4 && this->player.getX() <= 0 && this->player.getY() >= 430)
+        {
+            this->activeMap = this->managerMaps->getMap(2);
+            this->player.setXandAX(690);
+            this->player.setYandAY(350);
+        }
+    else if (this->activeMap->numMap == 5 && this->player.getX() >= 295 && this->player.getX() <= 420 && this->player.getY() >= 520)
+        {
+            this->activeMap = this->managerMaps->getMap(3);
+            this->player.setXandAX(410);
+            this->player.setYandAY(230);
+        }
+
+}
+
+
+void BaseGame::collisionCheck() {
+    colPlayerWithEnemies();
+    colPlayerWithAmbient();
+    colEnemies();
+    colEnemiesWithAmbient();
+}
+
+void BaseGame::colPlayerWithEnemies() {
+    for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
+        if (this->player.collision(this->activeMap->getVectorEnemies().at(i)) && this->activeMap->getVectorEnemies().at(i)->isIsAlive()){
+            //TODO
+            this->player.setX(this->player.getAX()) ;
+            this->player.setY(this->player.getAY()) ;
+        }
+    }
+}
+
+void BaseGame::colPlayerWithAmbient(){
+    //TODO CAMBIAR MAS ADELANTE
+
+    for (int i=0;i<this->activeMap->getQuantElementsOfAmbient();i++){
+            switch(i){
+                case 0: {break;}
+
+                case 1: {
+                        for (int j=0;j<this->activeMap->getCol1Quantity();j++) {
+                            if (player.collision(&this->activeMap->getAmbientMatrix()[i][j])){
+                                //TODO
+                                this->player.setX(this->player.getAX());
+                                this->player.setY(this->player.getAY());
+
+                            }
+                        }
+                        break;
+                    }
+
+                case 2: {
+
+                        for (int j=0;j<this->activeMap->getCol2Quantity();j++) {
+                            if (player.collision(&this->activeMap->getAmbientMatrix()[i][j])){
+                                //TODO
+                                this->player.setX(this->player.getAX());
+                                this->player.setY(this->player.getAY());
+
+                            }
+                        }
+                        break;
+                    }
+            }
+    }
+}
+
+//Col entre enemigos y player
+void BaseGame::colEnemies(){
+    for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
+        for (int j = 0; j < this->activeMap->getVectorEnemies().size(); ++j) {
+            if (i!=j){
+                if (this->activeMap->getVectorEnemies().at(i)->collision(this->activeMap->getVectorEnemies().at(j)) && this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
+                    //TODO
+                    this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
+                    this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
+                    int direction = rand()%4;
+                    this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+                }
+            }
+        }
+        //col enemy with player
+        if (this->activeMap->getVectorEnemies().at(i)->collision(&this->player)){
+            //TODO
+            this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
+            this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
+        }
+    }
+
+}
+void BaseGame::colEnemiesWithAmbient(){
+    for (int p = 0; p < this->activeMap->getVectorEnemies().size(); ++p) {
+        for (int i = 0; i < this->activeMap->getQuantElementsOfAmbient(); i++) {
+
+            switch(i){
+                case 0: {break;}
+
+                case 1: {
+                        for (int j=0;j<this->activeMap->getCol1Quantity();j++) {
+                            if (this->activeMap->getVectorEnemies().at(p)->collision(&this->activeMap->getAmbientMatrix()[i][j])) {
+                                //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                                this->activeMap->getVectorEnemies().at(p)->setX(this->activeMap->getVectorEnemies().at(p)->getAX());
+                                this->activeMap->getVectorEnemies().at(p)->setY(this->activeMap->getVectorEnemies().at(p)->getAY());
+                                int direction = rand()%4;
+                                this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
+
+                            }
+                        }
+                        break;
+                    }
+
+                case 2: {
+
+                        for (int j = 0; j < this->activeMap->getCol2Quantity(); j++) {
+                            if (this->activeMap->getVectorEnemies().at(p)->collision(&this->activeMap->getAmbientMatrix()[i][j])) {
+                                //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                                this->activeMap->getVectorEnemies().at(p)->setX(this->activeMap->getVectorEnemies().at(p)->getAX());
+                                this->activeMap->getVectorEnemies().at(p)->setY(this->activeMap->getVectorEnemies().at(p)->getAY());
+                                int direction = rand()%4;
+                                this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
+                            }
+                        }
+                        break;
+                    }
+            }
+
+
+
+        }
+    }
+}
+
+
+void BaseGame::drawHUD() {
+
+    //barras de vida player
+    int posXbars = 10;
+    int posYhp = 10;
+    int posYsh = 25;
+
+    BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
+    masked_blit(BlackBar, this->game->getBuffer(), 0, 0, posXbars-2, posYhp-2, 104, 14);
+    masked_blit(BlackBar, this->game->getBuffer(), 0, 0, posXbars-2, posYsh-2, 104, 14);
+
+
+    BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
+    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, posXbars, posYhp, this->player.getHealth(), 10);
+
+    BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
+    masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, posXbars, posYsh, this->player.getShield(), 10);
+
+}
+
+void BaseGame::drawEnemyHUD(Enemy *enemy) {
+    if (enemy->isIsAlive()){
+        int maxSizeBar = enemy->getWidth();
+        //barras de vida enemigo
+        int posXbars = 0;
+        int posYhp = -15;
+        int posYsh = -5;
+
+        BITMAP *BlackBar = load_bitmap("src\\Resources\\hpbarblack.bmp",NULL);
+        masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYhp-1, maxSizeBar +2, 7);
+        masked_blit(BlackBar, this->game->getBuffer(), 0, 0,  enemy->getX()+posXbars-1, enemy->getY()+posYsh-1, maxSizeBar +2, 7);
+
+
+        BITMAP *bitmapHealth = load_bitmap("src\\Resources\\health.bmp",NULL);
+    masked_blit(bitmapHealth, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYhp, (enemy->getHealth()*maxSizeBar)/100, 5);
+
+        BITMAP *bitmapShield = load_bitmap("src\\Resources\\shield.bmp",NULL);
+    masked_blit(bitmapShield, this->game->getBuffer(), 0, 0, enemy->getX()+posXbars, enemy->getY()+posYsh, (enemy->getShield()*maxSizeBar)/100, 5);
+    }
+}
+void BaseGame::cleanUp(){
+    delete this->activeMap;
+    delete this->managerMaps;
 }

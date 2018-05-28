@@ -19,7 +19,7 @@ int main()
     /**
     Load intro
     */
-    game.pushState(new LostState(&game));
+    game.pushState(new LoginState(&game));
     /**
     Game loop
     */
