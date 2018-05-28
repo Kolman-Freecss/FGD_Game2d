@@ -112,7 +112,6 @@
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/include/Inventory.h">
 			<Option target="FGD"/>
 		</Unit>
-<<<<<<< HEAD
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/include/LoginState.h">
 			<Option target="FGD"/>
 		</Unit>
@@ -120,33 +119,6 @@
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/include/MenuEscState.h">
-=======
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/LoginState.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/Map.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuEscState.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuInitialState.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuInventarioState.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuOptionsGameState.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/MenuOptionsState.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/Music.h">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/include/Object.h">
->>>>>>> origin/feature/constructorAmbiente
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/include/MenuInitialState.h">
@@ -194,14 +166,7 @@
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/main.cpp">
 			<Option target="FGD"/>
 		</Unit>
-<<<<<<< HEAD
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/src/BaseGame.cpp">
-=======
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/GameState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/GameStateManager.cpp">
->>>>>>> origin/feature/constructorAmbiente
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/src/Character.cpp">
@@ -210,7 +175,6 @@
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/src/Dao/DAOManager.cpp">
 			<Option target="FGD"/>
 		</Unit>
-<<<<<<< HEAD
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/src/Dao/DAOMap.cpp">
 			<Option target="FGD"/>
 		</Unit>
@@ -269,42 +233,6 @@
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/src/Shield.cpp">
-=======
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/LoginState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Main/Main.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Map.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuEscState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuInitialState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuInventarioState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuOptionsGameState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/MenuOptionsState.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Music.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Object.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Player.cpp">
-			<Option target="FGD"/>
-		</Unit>
-		<Unit filename="D:/Users/moya/git/Project/FGD/src/Potion.cpp">
->>>>>>> origin/feature/constructorAmbiente
 			<Option target="FGD"/>
 		</Unit>
 		<Unit filename="C:/Users/alumne/Documents/Projecto/Project/FGD/src/Skelleton.cpp">

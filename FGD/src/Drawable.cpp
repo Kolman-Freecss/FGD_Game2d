@@ -41,7 +41,7 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width)
 
 }
 
-Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int width, int height, int colPosX, int colPosY, int colRadius) {
+Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int height, int width, int colPosX, int colPosY, int colRadius, int coltype) {
     this->bitmapAmbient = bitmapAmbient;
     this->x = x;
     this->y = y;
@@ -49,9 +49,8 @@ Drawable::Drawable(BITMAP *bitmapAmbient, int x, int y, int width, int height, i
     this->width = width;
     this->walkCollision[0] = colPosX;
     this->walkCollision[1] = colPosY;
-    this->collisionType = 1;
+    this->collisionType = coltype;
     this->collisionRadius = colRadius;
-
 }
 
 
@@ -110,13 +109,13 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction
 }
 bool Drawable::collision(Drawable *drawable){
     switch(drawable->collisionType) {
-        case 1://circular
+        case 1:{//circular
             if (distance(drawable) < (this->collisionRadius + drawable->collisionRadius)) {
                 return true;
             }
             break;
-        case 2: //cuadrada
-            //int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width));
+        }
+        case 2: {//cuadrada
 
             int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width-(drawable->width/10)));
             int DeltaY = this->y + this->walkCollision[1] - max(drawable->y, min(this->y + this->walkCollision[1], drawable->y + drawable->height));
@@ -124,7 +123,18 @@ bool Drawable::collision(Drawable *drawable){
                 return true;
             }
             break;
+        }
 
+        case 3:{
+
+            int DeltaX2 = this->x + this->walkCollision[0] - max(drawable->x+drawable->walkCollision[0], min(this->x + this->walkCollision[0], drawable->x+drawable->walkCollision[0] + drawable->width-drawable->walkCollision[0]));
+            int DeltaY2 = this->y + this->walkCollision[1] - max(drawable->y+drawable->walkCollision[1], min(this->y + this->walkCollision[1], drawable->y+drawable->walkCollision[1] + drawable->height-drawable->walkCollision[1]));
+            if ((DeltaX2 * DeltaX2 + DeltaY2 * DeltaY2) < (this->collisionRadius * this->collisionRadius)){
+                return true;
+            }
+
+            break;
+        }
     }
     return false;
 

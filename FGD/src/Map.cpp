@@ -346,16 +346,20 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 2 = Columnas y el pozo
                 */
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\columna.bmp",NULL);
-                matrix[3][0] = Drawable(bitmapTest, 300, 50, 70,24);
-                matrix[3][1] = Drawable(bitmapTest, 300, 180, 70,24);
-                matrix[3][2] = Drawable(bitmapTest, 300, 300, 70,24);
-                matrix[3][3] = Drawable(bitmapTest, 300, 450, 70,24);
-                matrix[3][4] = Drawable(bitmapTest, 580, 50, 70,24);
-                matrix[3][5] = Drawable(bitmapTest, 580, 180, 70,24);
-                matrix[3][6] = Drawable(bitmapTest, 580, 300, 70,24);
-                matrix[3][7] = Drawable(bitmapTest, 580, 450, 70,24);
+                //TODO constructor cambiar columna
+
+                //Drawable(itmapAmbient, x, int y, int width, int height, int colPosX, int colPosY, int colRadius, int coltype) {
+
+                matrix[3][0] = Drawable(bitmapTest, 300, 50, 70,24, 0, 45, 0, 3);
+                matrix[3][1] = Drawable(bitmapTest, 300, 180, 70,24, 0, 45, 0, 3);
+                matrix[3][2] = Drawable(bitmapTest, 300, 300, 70,24, 0, 45, 0, 3);
+                matrix[3][3] = Drawable(bitmapTest, 300, 450, 70,24, 0, 45, 0, 3);
+                matrix[3][4] = Drawable(bitmapTest, 580, 50, 70,24, 0, 45, 0, 3);
+                matrix[3][5] = Drawable(bitmapTest, 580, 180, 70,24, 0, 45, 0, 3);
+                matrix[3][6] = Drawable(bitmapTest, 580, 300, 70,24, 0, 45, 0, 3);
+                matrix[3][7] = Drawable(bitmapTest, 580, 450, 70,24, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\pozo.bmp",NULL);
-                matrix[3][8] = Drawable(bitmapTest, 650, 150, 87,72);
+                matrix[3][8] = Drawable(bitmapTest, 650, 150, 87,72, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\bordillo_piedra.bmp",NULL);
                 matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64);
                 matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64);
