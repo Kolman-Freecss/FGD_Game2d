@@ -107,6 +107,17 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction
     }
 
 }
+
+
+bool Drawable::isBehind(Drawable *drawable) {
+    int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width));
+    int DeltaY = this->y + this->walkCollision[1] - max(drawable->y, min(this->y + this->walkCollision[1], drawable->y + drawable->height-this->walkCollision[1]));
+    if ((DeltaX * DeltaX + DeltaY * DeltaY) < (this->collisionRadius * this->collisionRadius)){
+        return true;
+    }
+    return false;
+}
+
 bool Drawable::collision(Drawable *drawable){
     switch(drawable->collisionType) {
         case 1:{//circular

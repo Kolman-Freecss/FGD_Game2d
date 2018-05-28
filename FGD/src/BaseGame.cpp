@@ -456,6 +456,7 @@ void BaseGame::colPlayerWithEnemies() {
     for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {
         if (this->player.collision(this->activeMap->getVectorEnemies().at(i)) && this->activeMap->getVectorEnemies().at(i)->isIsAlive()){
             //TODO
+
             this->player.setX(this->player.getAX()) ;
             this->player.setY(this->player.getAY()) ;
         }
@@ -485,10 +486,12 @@ void BaseGame::colPlayerWithAmbient(){
 
                         for (int j=0;j<this->activeMap->getCol2Quantity();j++) {
                             if (player.collision(&this->activeMap->getAmbientMatrix()[i][j])){
-                                //TODO
-                                this->player.setX(this->player.getAX());
-                                this->player.setY(this->player.getAY());
-
+                                    this->player.setX(this->player.getAX());
+                                    this->player.setY(this->player.getAY());
+                            }
+                            //
+                            if (player.isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                cout << "is behind "<< j << endl;
                             }
                         }
                         break;

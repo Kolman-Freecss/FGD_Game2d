@@ -55,6 +55,7 @@ class Drawable{
     virtual void draw(BITMAP *buffer);
     bool attackCollision(Drawable *drawable, Weapon *weapon, int direction);
     void drawAmbient(BITMAP *buffer);
+    bool isBehind(Drawable *drawable);
     bool collision(Drawable *drawable);
     int distance(Drawable *drawable);
     BITMAP *getBitmapAmbient();
