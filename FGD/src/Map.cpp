@@ -361,15 +361,15 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\pozo.bmp",NULL);
                 matrix[3][8] = Drawable(bitmapTest, 650, 150, 87,72, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\bordillo_piedra.bmp",NULL);
-                matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64);
-                matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64);
-                matrix[3][11] = Drawable(bitmapTest, 608, 350, 30,64);
-                matrix[3][12] = Drawable(bitmapTest, 736, 474, 30,64);
-                matrix[3][13] = Drawable(bitmapTest, 672, 474, 30,64);
-                matrix[3][14] = Drawable(bitmapTest, 608, 474, 30,64);
+                matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][11] = Drawable(bitmapTest, 608, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][12] = Drawable(bitmapTest, 736, 474, 30,64, 0, 0, 0, 2);
+                matrix[3][13] = Drawable(bitmapTest, 672, 474, 30,64, 0, 0, 0, 2);
+                matrix[3][14] = Drawable(bitmapTest, 608, 474, 30,64, 0, 0, 0, 2);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\paja_huerto.bmp",NULL);
-                matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64);
-                matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64);
+                matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64, 0, 0, 0, 2);
+                matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64, 0, 0, 0, 2);
 
                 break;
         }
@@ -379,37 +379,37 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[0][0] = Drawable(map2_bitmapTest, 0, 0 , 0, 0);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\cruz_tumba.bmp",NULL);
-                matrix[1][0] = Drawable(map2_bitmapTest, 20, 30 , 64, 47);
-                matrix[1][1] = Drawable(map2_bitmapTest, 80, 30 , 64, 47);
-                matrix[1][2] = Drawable(map2_bitmapTest, 140, 30 , 64, 47);
-                matrix[1][3] = Drawable(map2_bitmapTest, 200, 30 , 64, 47);
-                matrix[1][4] = Drawable(map2_bitmapTest, 20, 110 , 64, 47);
-                matrix[1][5] = Drawable(map2_bitmapTest, 80, 110 , 64, 47);
-                matrix[1][6] = Drawable(map2_bitmapTest, 140, 110 , 64, 47);
-                matrix[1][7] = Drawable(map2_bitmapTest, 200, 110 , 64, 47);
-                matrix[1][8] = Drawable(map2_bitmapTest, 20, 190 , 64, 47);
-                matrix[1][9] = Drawable(map2_bitmapTest, 80, 190 , 64, 47);
-                matrix[1][10] = Drawable(map2_bitmapTest, 140, 190 , 64, 47);
-                matrix[1][11] = Drawable(map2_bitmapTest, 200, 190 , 64, 47);
+                matrix[1][0] = Drawable(map2_bitmapTest, 20, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][1] = Drawable(map2_bitmapTest, 80, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][2] = Drawable(map2_bitmapTest, 140, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][3] = Drawable(map2_bitmapTest, 200, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][4] = Drawable(map2_bitmapTest, 20, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][5] = Drawable(map2_bitmapTest, 80, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][6] = Drawable(map2_bitmapTest, 140, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][7] = Drawable(map2_bitmapTest, 200, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][8] = Drawable(map2_bitmapTest, 20, 190 , 64, 47, 0, 0, 0, 2);
+                matrix[1][9] = Drawable(map2_bitmapTest, 80, 190 , 64, 47, 0, 0, 0, 2);
+                matrix[1][10] = Drawable(map2_bitmapTest, 140, 190 , 64, 47, 0, 0, 0, 2);
+                matrix[1][11] = Drawable(map2_bitmapTest, 200, 190 , 64, 47, 0, 0, 0, 2);
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\valla_tumbas.bmp",NULL);
-                matrix[1][12] = Drawable(map2_bitmapTest, 0, 254 , 32, 73);
-                matrix[1][13] = Drawable(map2_bitmapTest, 73, 254 , 32, 73);
-                matrix[1][14] = Drawable(map2_bitmapTest, 146, 254 , 32, 73);
+                matrix[1][12] = Drawable(map2_bitmapTest, 0, 254 , 32, 73, 0, 0, 0, 2);
+                matrix[1][13] = Drawable(map2_bitmapTest, 73, 254 , 32, 73, 0, 0, 0, 2);
+                matrix[1][14] = Drawable(map2_bitmapTest, 146, 254 , 32, 73, 0, 0, 0, 2);
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\valla_tumbas_rotada.bmp",NULL);
-                matrix[1][15] = Drawable(map2_bitmapTest, 247, 0, 74, 33);
-                matrix[1][16] = Drawable(map2_bitmapTest, 247, 74, 74, 33);
-                matrix[1][17] = Drawable(map2_bitmapTest, 247, 148, 74, 33);
+                matrix[1][15] = Drawable(map2_bitmapTest, 247, 0, 74, 33, 0, 0, 0, 2);
+                matrix[1][16] = Drawable(map2_bitmapTest, 247, 74, 74, 33, 0, 0, 0, 2);
+                matrix[1][17] = Drawable(map2_bitmapTest, 247, 148, 74, 33, 0, 0, 0, 2);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\agujero_ojos.bmp",NULL);
-                matrix[2][0] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 40, GameStateManager::SIZE_WINDOW_Y /2 - 40,  79, 81);
-                matrix[2][1] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 150, 470,  79, 81);
-                matrix[2][2] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 + 250, 470,  79, 81);
+                matrix[2][0] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 40, GameStateManager::SIZE_WINDOW_Y /2 - 40,  79, 81, 0, 0, 0, 2);
+                matrix[2][1] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 150, 470,  79, 81, 40, 40, 40, 1);
+                matrix[2][2] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 + 250, 470,  79, 81, 40, 40, 40, 1);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\arbol_map2.bmp",NULL);
-                matrix[3][0] = Drawable(map2_bitmapTest,470, 100,  99, 100);
-                matrix[3][1] = Drawable(map2_bitmapTest,670, 180,  99, 100);
-                matrix[3][2] = Drawable(map2_bitmapTest,350, 501,  99, 100);
-                matrix[3][3] = Drawable(map2_bitmapTest,540, 501,  99, 100);
+                matrix[3][0] = Drawable(map2_bitmapTest,470, 100,  99, 1000, 52, 92, 22, 1);
+                matrix[3][1] = Drawable(map2_bitmapTest,670, 180,  99, 100, 52, 92, 22, 1);
+                matrix[3][2] = Drawable(map2_bitmapTest,350, 501,  99, 100, 52, 92, 22, 1);
+                matrix[3][3] = Drawable(map2_bitmapTest,540, 501,  99, 100, 52, 92, 22, 1);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\casa_tumba.bmp",NULL);
                 matrix[4][0] = House(map2_bitmapTest, 600, 80,  120, 74);
