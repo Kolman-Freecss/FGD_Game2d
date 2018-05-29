@@ -518,6 +518,17 @@ void BaseGame::colPlayerWithAmbient(){
                     }
                     break;
                 }
+                case 5: {
+                    for (int j=0;j<this->activeMap->getCol5Quantity();j++) {
+                        if (player.collision(&this->activeMap->getAmbientMatrix()[i][j])){
+                            //TODO
+                            this->player.setX(this->player.getAX());
+                            this->player.setY(this->player.getAY());
+
+                        }
+                    }
+                    break;
+                }
             }
     }
 }
