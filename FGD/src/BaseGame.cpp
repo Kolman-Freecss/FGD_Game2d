@@ -186,10 +186,6 @@ void BaseGame::update()
                         player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
                         cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
                     }
-
-                    cout << "HP " << this->activeMap->getVectorEnemies().at(i)->getHealth() << endl;
-                    cout << "SHIELD " << this->activeMap->getVectorEnemies().at(i)->getShield() << endl;
-                    cout << "ALIVE " << this->activeMap->getVectorEnemies().at(i)->isIsAlive() << endl;
                 }
             }
             player.setAttackChecked(true);
@@ -327,16 +323,20 @@ void BaseGame::artificialIntelligence()
         if (vectorE.at(i)->isIsAlive()){
             if(vectorE.at(i)->detectionRadiusEnemy(&this->player) ){
                 if (vectorE.at(i)->attackCollision(&this->player, vectorE.at(i)->getSelectedWeapon(), vectorE.at(i)->getDirection())) {
-                    if (rand()%100 < 10){
+
+                    if (rand()%100 < 10 && !vectorE.at(i)->isAttacking()){
+                        vectorE.at(i)->setAttackChecked(false);
+                        vectorE.at(i)->setAttacking(true);
+                    }
+                    if (vectorE.at(i)->isAttacking()){
                         vectorE.at(i)->attack();
-                        if (player.wounded(vectorE.at(i))){
+                    }
+                    if (!vectorE.at(i)->isAttackChecked()) {
+                        vectorE.at(i)->setAttackChecked(true);
+                        if (player.wounded(vectorE.at(i))) {
                             this->drawHUD();
-                            //GAME OVER LOST
                             this->game->pushState(new LostState(this->game));
                         }
-                        cout << player.getHealth()<< endl;
-                        cout << player.getShield() << endl;
-
                     }
                 }else{
                     int direction = this->directionIA(vectorE.at(i));
