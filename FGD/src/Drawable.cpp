@@ -128,7 +128,7 @@ bool Drawable::collision(Drawable *drawable){
         }
         case 2: {//cuadrada
 
-            int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width-(drawable->width/10)));
+            int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width));
             int DeltaY = this->y + this->walkCollision[1] - max(drawable->y, min(this->y + this->walkCollision[1], drawable->y + drawable->height));
             if ((DeltaX * DeltaX + DeltaY * DeltaY) < (this->collisionRadius * this->collisionRadius)){
                 return true;

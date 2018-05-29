@@ -491,26 +491,26 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[0][1] = Drawable(bitmapTest, 378, 350 , 91, 233);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\castle.bmp",NULL);
-                matrix[1][0] = Drawable(bitmapTest, 300, 0 , 236, 280);
+                matrix[1][0] = Drawable(bitmapTest, 300, 0 , 236, 280, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\tumba_castillo.bmp",NULL);
-                matrix[2][0] = Drawable(bitmapTest, 700, 20 , 31, 30);
-                matrix[2][1] = Drawable(bitmapTest, 730, 20 , 31, 30);
-                matrix[2][2] = Drawable(bitmapTest, 760, 20 , 31, 30);
-                matrix[2][3] = Drawable(bitmapTest, 700, 70 , 31, 30);
-                matrix[2][4] = Drawable(bitmapTest, 730, 70 , 31, 30);
-                matrix[2][5] = Drawable(bitmapTest, 760, 70 , 31, 30);
-                matrix[2][6] = Drawable(bitmapTest, 50, 20 , 31, 30);
-                matrix[2][7] = Drawable(bitmapTest, 80, 20 , 31, 30);
-                matrix[2][8] = Drawable(bitmapTest, 110, 20 , 31, 30);
-                matrix[2][9] = Drawable(bitmapTest, 50, 70 , 31, 30);
-                matrix[2][10] = Drawable(bitmapTest, 80, 70 , 31, 30);
-                matrix[2][11] = Drawable(bitmapTest, 110, 70 , 31, 30);
+                matrix[2][0] = Drawable(bitmapTest, 700, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][1] = Drawable(bitmapTest, 730, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][2] = Drawable(bitmapTest, 760, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][3] = Drawable(bitmapTest, 700, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][4] = Drawable(bitmapTest, 730, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][5] = Drawable(bitmapTest, 760, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][6] = Drawable(bitmapTest, 50, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][7] = Drawable(bitmapTest, 80, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][8] = Drawable(bitmapTest, 110, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][9] = Drawable(bitmapTest, 50, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][10] = Drawable(bitmapTest, 80, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][11] = Drawable(bitmapTest, 110, 70 , 31, 30, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\agua.bmp",NULL);
-                matrix[3][0] = Drawable(bitmapTest, 0, 350 , 91, 189);
-                matrix[3][1] = House(bitmapTest, 189, 350 , 91, 189);
-                matrix[3][2] = House(bitmapTest, 611, 350 , 91, 189);
+                matrix[3][0] = Drawable(bitmapTest, 0, 350 , 91, 189, 0, 0, 0, 2);
+                matrix[3][1] = Drawable(bitmapTest, 189, 350 , 91, 189, 0, 0, 0, 2);
+                matrix[3][2] = Drawable(bitmapTest, 611, 350 , 91, 189, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\aleta_tiburon.bmp",NULL);
                 matrix[4][0] = Drawable(bitmapTest, 50, 370 , 27, 42);

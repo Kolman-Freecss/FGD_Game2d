@@ -11,7 +11,7 @@ Player::Player(BITMAP ***animations, int health, int damage, double speed, int s
             Character(animations, health, damage, speed, shield, x, y, height, width)
 {
 genWalkCollision();
-this->collisionRadius = 15;
+this->collisionRadius = 11;
 this->experience = 0;
 /**
 Le almacenamos la espada en el inventario
@@ -22,8 +22,8 @@ this->inventory = new Inventory();
 
 void Player::genWalkCollision() {
     //TODO cambiar posicion correcta
-    this->walkCollision[0] = 39;
-    this->walkCollision[1] = 49;
+    this->walkCollision[0] = 38;
+    this->walkCollision[1] = 60;
 }
 
 /**
