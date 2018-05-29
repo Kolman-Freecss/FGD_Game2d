@@ -39,6 +39,14 @@ class TextState : public GameState{
 
      vector<char*> vectorBocadillo1Mapa;
      int nextText;
+     int secondText;
+     //Per mostrar la primera vegada y ya
+     bool checkFirstText;
+     //Solo se usa una vez
+     bool checkNextText;
+     //Para el segundo texto
+     bool checkSecondText;
+
 
      int callState;
 

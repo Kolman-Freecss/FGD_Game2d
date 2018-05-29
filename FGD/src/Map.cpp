@@ -31,7 +31,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 //Houses y caja huerto
                 this->col2Quantity = 5;
                 this->col3Quantity = 17;
-                this->col4Quantity = 0;
+                this->col4Quantity = 1;
                 this->col5Quantity = 0;
                 this->col6Quantity = 0;
 
@@ -366,6 +366,9 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\paja_huerto.bmp",NULL);
                 matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64);
                 matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64);
+
+                bitmapTest = load_bitmap("src\\Resources\\Map_1\\NPC.bmp",NULL);
+                matrix[4][0] = Drawable(bitmapTest, 170, 370, 48, 44);
 
                 break;
         }

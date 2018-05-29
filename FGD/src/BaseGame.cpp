@@ -11,6 +11,7 @@
 #include <Inventory.h>
 #include <WinState.h>
 #include <TextState.h>
+#include <Drawable.h>
 
 using namespace std;
 
@@ -96,7 +97,6 @@ void BaseGame::init()
     matrixAnimationsPlayer[7][2] = load_bitmap("src\\Resources\\PLAYER1\\PAL3.bmp",NULL);
     matrixAnimationsPlayer[7][3] = load_bitmap("src\\Resources\\PLAYER1\\PAL4.bmp",NULL);
     //FIN QUITAR
-
 
 
     this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);

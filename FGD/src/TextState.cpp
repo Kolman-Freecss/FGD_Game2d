@@ -22,12 +22,19 @@ TextState::TextState(GameStateManager *game, int callState)
 void TextState::init()
 {
 
-    this->vectorBocadillo1Mapa.push_back("Hola juego");
-    this->nextText = 0;
+    this->checkFirstText = false;
+    this->nextText = 1;
+    this->secondText = 0;
+    this->checkSecondText = false;
+    this->checkNextText = false;
+    this->vectorBocadillo1Mapa.push_back("Pressiona el espai");
+    this->vectorBocadillo1Mapa.push_back("Primer texto");
     this->vectorBocadillo1Mapa.push_back("Segundo texto");
+    this->vectorBocadillo1Mapa.push_back("Tercer texto");
+    this->vectorBocadillo1Mapa.push_back("Cuarto texto");
 
 
-    //this->bocadilloMap1 = load_bitmap("src\\Resources\\WinState\\background_win.bmp",NULL);
+    this->bocadilloMap1 = load_bitmap("src\\Resources\\TextState\\bocadillo_texto.bmp",NULL);
 
     install_mouse();
 
@@ -61,6 +68,7 @@ void TextState::draw()
 
 
     if(this->callState == 0){
+        masked_blit(this->bocadilloMap1, this->game->getBuffer(), 0, 0, 80, 266, 150, 113);
         this->animationBocadilloMap1();
     }
 
@@ -72,41 +80,45 @@ void TextState::draw()
 
 void TextState::animationBocadilloMap1()
 {
-    //Para que no se salga del bocadillo de texto
 
+    if(!this->checkFirstText){
+        textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(0),
+                          90, 280, makecol(0, 0, 0), -1);
 
-
-
-    //for(int i = 0; i < this->vectorBocadillo1Mapa->size(); i++){
-
-
-    textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(nextText),
-                      200, 400, makecol(0, 0, 0), -1);
-
-    if(GameState::spacePress()){
-            this->nextText++;
-            if(this->nextText >= this->vectorBocadillo1Mapa.size()){
-                this->game->popState();
-            }
+    }
+    if(this->checkNextText){
+        textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(nextText),
+            90, 280, makecol(0, 0, 0), -1);
+    }
+    if(this->checkSecondText){
+        textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(secondText),
+                  90, 290, makecol(0, 0, 0), -1);
     }
 
-    //}
+    if(GameState::spacePress()){
+            if(this->nextText >= this->vectorBocadillo1Mapa.size()){
+                        this->game->popState();
+            }
+                if(!this->checkNextText){
+                    this->secondText+=2;
+                    this->checkNextText = true;
+                    this->checkSecondText = false;
 
+                    //El primer espacio ya borrara el primer texto
+                    this->checkFirstText = true;
+                }else if (this->checkNextText && !this->checkSecondText) {
+                    if(this->secondText >= this->vectorBocadillo1Mapa.size()){
+                            this->game->popState();
+                    }
+                    this->checkSecondText = true;
 
-    /*int posYAux = MIDDLE_SCREEN_Y - 50;
+                }else{
+                    this->nextText+=2;
+                    this->checkNextText = false;
+                    this->checkSecondText = false;
+                }
 
-    textout_ex(this->game->getBuffer(), font, "Hola este es el juego ",
-            MIDDLE_SCREEN_X + 25, posYAux, makecol(0, 0, 0), -1);
-
-    std::stringstream stream;
-    stream << this->playerInventory->getDamage();
-    const char *damage = stream.str().c_str();
-
-    textout_ex(this->game->getBuffer(), font, damage,
-            MIDDLE_SCREEN_X + 25 + 42, posYAux, makecol(0, 0, 0), -1);
-
-
-    posYAux += 14;*/
+    }
 
 
 }

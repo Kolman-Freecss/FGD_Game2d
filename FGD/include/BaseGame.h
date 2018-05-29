@@ -63,8 +63,7 @@ class BaseGame : public GameState{
     void colEnemiesWithAmbient();
 
 
-    //NPC + text
-    Drawable *NPC;
+    //text
     bool checkTextNpc;
 
 
