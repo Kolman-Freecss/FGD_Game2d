@@ -10,6 +10,7 @@
 #include <Music.h>
 #include <Inventory.h>
 #include <WinState.h>
+#include <TextState.h>
 
 using namespace std;
 
@@ -35,7 +36,7 @@ BaseGame::~BaseGame()
 void BaseGame::init()
 {
 
-
+    this->checkTextNpc = true;
     managerMaps = new DAOMap(this->gameDificulty);
     this->activeMap = new Map();
     this->activeMap = managerMaps->getMap(0);
@@ -300,6 +301,15 @@ void BaseGame::draw()
 
 
     drawHUD();
+
+    /**
+    Esta llamada seria para mostrar por primera y unica vez la presentación del juego
+    */
+    if(this->checkTextNpc){
+        this->game->pushState(new TextState(this->game, 0));
+        this->checkTextNpc = false;
+    }
+
 
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
