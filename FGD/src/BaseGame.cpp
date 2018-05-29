@@ -10,6 +10,8 @@
 #include <Music.h>
 #include <Inventory.h>
 #include <WinState.h>
+#include <TextState.h>
+#include <Drawable.h>
 #include <LostState.h>
 
 using namespace std;
@@ -36,7 +38,7 @@ BaseGame::~BaseGame()
 void BaseGame::init()
 {
 
-
+    this->checkTextNpc = true;
     managerMaps = new DAOMap(this->gameDificulty);
     this->activeMap = new Map();
     this->activeMap = managerMaps->getMap(0);
@@ -98,9 +100,7 @@ void BaseGame::init()
     //FIN QUITAR
 
 
-
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 30, 50, 330, 65, 73);
-    this->player.setShield(20);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
     //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
@@ -302,6 +302,15 @@ void BaseGame::draw()
 
 
     drawHUD();
+
+    /**
+    Esta llamada seria para mostrar por primera y unica vez la presentación del juego
+    */
+    if(this->checkTextNpc){
+        this->game->pushState(new TextState(this->game, 0));
+        this->checkTextNpc = false;
+    }
+
 
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
