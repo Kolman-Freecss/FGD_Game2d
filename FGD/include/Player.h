@@ -33,7 +33,6 @@ class Player : public Character {
 private:
     int experience;
     int level;
-    int shield;
     Inventory *inventory;
 
 };

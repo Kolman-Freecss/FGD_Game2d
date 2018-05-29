@@ -75,6 +75,7 @@
 		<Unit filename="src/House.cpp" />
 		<Unit filename="src/Inventory.cpp" />
 		<Unit filename="src/LoginState.cpp" />
+		<Unit filename="src/LostState.cpp" />
 		<Unit filename="src/Main/Main.cpp" />
 		<Unit filename="src/Map.cpp" />
 		<Unit filename="src/MenuEscState.cpp" />
@@ -243,6 +244,7 @@
 		<Unit filename="src/Sword.cpp" />
 		<Unit filename="src/Timer.cpp" />
 		<Unit filename="src/Weapon.cpp" />
+		<Unit filename="src/WinState.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

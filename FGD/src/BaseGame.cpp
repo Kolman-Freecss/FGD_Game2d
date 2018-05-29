@@ -10,6 +10,7 @@
 #include <Music.h>
 #include <Inventory.h>
 #include <WinState.h>
+#include <LostState.h>
 
 using namespace std;
 
@@ -98,7 +99,8 @@ void BaseGame::init()
 
 
 
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 30, 50, 330, 65, 73);
+    this->player.setShield(20);
     //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
@@ -315,26 +317,35 @@ void BaseGame::artificialIntelligence()
             //Update de enemigo para luego printarlo
         if (vectorE.at(i)->isIsAlive()){
             if(vectorE.at(i)->detectionRadiusEnemy(&this->player) ){
+                if (vectorE.at(i)->attackCollision(&this->player, vectorE.at(i)->getSelectedWeapon(), vectorE.at(i)->getDirection())) {
+                    if (rand()%100 < 10){
+                        vectorE.at(i)->attack();
+                        if (player.wounded(vectorE.at(i))){
+                            this->drawHUD();
+                            //GAME OVER LOST
+                            this->game->pushState(new LostState(this->game));
+                        }
+                        cout << player.getHealth()<< endl;
+                        cout << player.getShield() << endl;
 
-                int direction = this->directionIA(vectorE.at(i));
+                    }
+                }else{
+                    int direction = this->directionIA(vectorE.at(i));
 
-                if(direction == Drawable::UP)
-                {
-                    vectorE.at(i)->walkUP();
+                    if(direction == Drawable::UP) {
+                        vectorE.at(i)->walkUP();
+                    }
+                    if(direction == Drawable::RIGHT) {
+                        vectorE.at(i)->walkRIGHT();
+                    }
+                    if(direction == Drawable::DOWN) {
+                        vectorE.at(i)->walkDOWN();
+                    }
+                    if(direction == Drawable::LEFT) {
+                        vectorE.at(i)->walkLEFT();
+                    }
                 }
-                if(direction == Drawable::RIGHT)
-                {
-                    vectorE.at(i)->walkRIGHT();
-                }
-                if(direction == Drawable::DOWN)
-                {
-                    vectorE.at(i)->walkDOWN();
-                }
-                if(direction == Drawable::LEFT)
-                {
-                    vectorE.at(i)->walkLEFT();
-                }
-            }else{
+            }else {
                 this->activeMap->getVectorEnemies().at(i)->update();
             }
         }

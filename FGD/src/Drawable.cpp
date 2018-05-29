@@ -72,7 +72,7 @@ void Drawable::drawAmbient(BITMAP *buffer){
 bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction) {
 
     //TODO cambiar 100 por weapon->getAttackDistance()
-    if (distance(drawable)< 100){
+    if (distance(drawable)< weapon->getAttackDistance()){
 
         float angle = atan2(this->y - drawable->y, this->x - drawable->x) *180/3.14;
         float percent = 90;

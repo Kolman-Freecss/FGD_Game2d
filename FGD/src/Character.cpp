@@ -3,6 +3,8 @@
 #include "Character.h"
 #include "Drawable.h"
 
+using namespace std;
+
 /**
  * Constructor vacio
  */
@@ -224,7 +226,7 @@ bool Character::wounded(Character *attackingCharacter) {
         this->shield = 0;
         this->health -= totalDamage;
 
-    }else{
+    }else {
         this->shield -= totalDamage;
     }
 

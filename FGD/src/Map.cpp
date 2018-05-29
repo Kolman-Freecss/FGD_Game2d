@@ -204,7 +204,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                     generado = false;
                 }
             }
+            BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
 
+            enemy->setSelectedWeapon(new Weapon(100,1, swordOfPlayer, 46, 40));
             this->enemies.push_back(enemy);
 
         }
