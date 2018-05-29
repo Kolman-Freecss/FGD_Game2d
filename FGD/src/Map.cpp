@@ -157,6 +157,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                     }
                 }
             //col with ambient
+            /**
+            El indice es el numero de la columna de la matriz
+            */
                 for (int i = 0; i < this->getQuantElementsOfAmbient(); i++) {
                         switch(i){
                             case 1 : {for (int j = 0; j < this->getCol1Quantity(); j++) {
@@ -175,6 +178,62 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                             }
 
                             case 2:{for (int j = 0; j < this->getCol2Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 3:{for (int j = 0; j < this->getCol3Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 4:{for (int j = 0; j < this->getCol4Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 5:{for (int j = 0; j < this->getCol5Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 6:{for (int j = 0; j < this->getCol6Quantity(); j++) {
                                             while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
                                                     positionX = rand()%(800-75);
                                                     positionY = rand()%(600-64);

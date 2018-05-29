@@ -35,7 +35,8 @@ Character::Character(BITMAP ***animations, int health, int damage, double speed,
     this->alive = true;
     this->ax = x;
     this->ay = y;
-    this->efectiveCollision = false;
+    this->checkCollision = false;
+    this->checkCollisionWithOCharacther = false;
 
     //this->genWalkCollision();
     this->collisionType = 1;

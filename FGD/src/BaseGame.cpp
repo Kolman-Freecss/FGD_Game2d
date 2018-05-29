@@ -205,9 +205,36 @@ Printa todo el contenido de la pantalla (Enemigos, Ambiente, Player)
 */
 void BaseGame::draw()
 {
+
     Drawable **matrix = this->activeMap->getAmbientMatrix();
     int lengthMatrix = this->activeMap->getQuantElementsOfAmbient();
 
+    BITMAP *bitmapAmbient = matrix[0][0].getBitmapAmbient();
+    stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+
+
+
+    this->player.draw(this->game->getBuffer());
+
+
+    /**
+    Printa todo el vector de Enemigos en pantalla
+    */
+    vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
+    for (int i = 0; i < vectorE.size(); i++){
+
+        vectorE.at(i)->draw(this->game->getBuffer());
+        drawEnemyHUD(vectorE.at(i));
+    }
+
+
+
+
+
+
+    /**
+    Print Ambient
+    */
     for(int i = 0; i < lengthMatrix; i++){
 
         switch(i){
@@ -216,12 +243,9 @@ void BaseGame::draw()
             Background y otros elementos
             */
             case 0: {
-                        BITMAP *bitmapAmbient = matrix[i][0].getBitmapAmbient();
-                        stretch_blit(bitmapAmbient, this->game->getBuffer(), 0, 0, bitmapAmbient->w, bitmapAmbient->h, 0, 0, GameStateManager::SIZE_WINDOW_X, GameStateManager::SIZE_WINDOW_Y);
+
                         for(int j = 1; j < this->activeMap->getQuantOtherElements(); j++){
-                            //if(this->activeMap->numMap != 1 || j != 1){
                                 matrix[i][j].drawAmbient(this->game->getBuffer());
-                            //}
                         }
                         break;
                     }
@@ -283,18 +307,52 @@ void BaseGame::draw()
         }
     }
 
+
     /**
     Printa todo el vector de Enemigos en pantalla
     */
-    vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
+ /*   vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
 
         vectorE.at(i)->draw(this->game->getBuffer());
         drawEnemyHUD(vectorE.at(i));
+    }*/
+
+    /**
+    Printa Enemigos en pantalla si no hay colision
+    */
+    for (int i = 0; i < vectorE.size(); i++){
+        /**
+        Si no tiene colision con otro enemigo lo printa
+        */
+       /* */
+        /**
+        Si no tiene colision con ambiente lo printa
+        */
+        if(!vectorE.at(i)->checkCollision){
+            vectorE.at(i)->draw(this->game->getBuffer());
+            drawEnemyHUD(vectorE.at(i));
+        }else if(!vectorE.at(i)->checkCollisionWithOCharacther && !vectorE.at(i)->checkCollision){
+            vectorE.at(i)->draw(this->game->getBuffer());
+            drawEnemyHUD(vectorE.at(i));
+        }
+
+        vectorE.at(i)->checkCollision = false;
+        vectorE.at(i)->checkCollisionWithOCharacther = false;
     }
 
 
-    this->player.draw(this->game->getBuffer());
+
+    if(!player.checkCollision){
+        this->player.draw(this->game->getBuffer());
+
+    }
+    player.checkCollision = false;
+
+
+
+
+
 
     /*if(this->activeMap->numMap == 1){
         matrix[0][1].drawAmbient(this->game->getBuffer());
@@ -332,7 +390,7 @@ void BaseGame::artificialIntelligence()
                         if (player.wounded(vectorE.at(i))){
                             this->drawHUD();
                             //GAME OVER LOST
-                            this->game->pushState(new LostState(this->game));
+                            //this->game->pushState(new LostState(this->game));
                         }
                         cout << player.getHealth()<< endl;
                         cout << player.getShield() << endl;
@@ -492,6 +550,10 @@ void BaseGame::colPlayerWithEnemies() {
             this->player.setX(this->player.getAX()) ;
             this->player.setY(this->player.getAY()) ;
         }
+        if (player.isBehind(this->activeMap->getVectorEnemies().at(i))){
+            player.checkCollision = true;
+            cout << "is behind ";
+        }
     }
 }
 
@@ -510,6 +572,9 @@ void BaseGame::colPlayerWithAmbient(){
                                 this->player.setY(this->player.getAY());
 
                             }
+                            if (player.isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                player.checkCollision = true;
+                            }
                         }
                         break;
                     }
@@ -523,7 +588,7 @@ void BaseGame::colPlayerWithAmbient(){
                             }
                             //
                             if (player.isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
-                                cout << "is behind "<< j << endl;
+                                player.checkCollision = true;
                             }
                         }
                         break;
@@ -536,6 +601,9 @@ void BaseGame::colPlayerWithAmbient(){
                                 this->player.setY(this->player.getAY());
 
                             }
+                            if (player.isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                player.checkCollision = true;
+                            }
                         }
                         break;
                 }
@@ -547,6 +615,9 @@ void BaseGame::colPlayerWithAmbient(){
                             this->player.setY(this->player.getAY());
 
                         }
+                        if (player.isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                player.checkCollision = true;
+                            }
                     }
                     break;
                 }
@@ -558,6 +629,9 @@ void BaseGame::colPlayerWithAmbient(){
                             this->player.setY(this->player.getAY());
 
                         }
+                        if (player.isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                player.checkCollision = true;
+                            }
                     }
                     break;
                 }
@@ -576,6 +650,9 @@ void BaseGame::colEnemies(){
                     this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
                     int direction = rand()%4;
                     this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+                }
+                if (this->activeMap->getVectorEnemies().at(i)->isBehind(this->activeMap->getVectorEnemies().at(j)) && this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
+                    this->activeMap->getVectorEnemies().at(i)->checkCollisionWithOCharacther = true;
                 }
             }
         }
@@ -605,6 +682,9 @@ void BaseGame::colEnemiesWithAmbient(){
                                 this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
 
                             }
+                            if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
+                            }
                         }
                         break;
                     }
@@ -619,6 +699,9 @@ void BaseGame::colEnemiesWithAmbient(){
                                 int direction = rand()%4;
                                 this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
                             }
+                            if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
+                            }
                         }
                         break;
                 }
@@ -632,6 +715,9 @@ void BaseGame::colEnemiesWithAmbient(){
                             int direction = rand()%4;
                             this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
                         }
+                        if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
+                            }
                     }
                     break;
                 }
@@ -645,6 +731,9 @@ void BaseGame::colEnemiesWithAmbient(){
                             int direction = rand()%4;
                             this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
                         }
+                        if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
+                            }
                     }
                     break;
                 }
@@ -658,6 +747,9 @@ void BaseGame::colEnemiesWithAmbient(){
                             int direction = rand()%4;
                             this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
                         }
+                        if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
+                                this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
+                            }
                     }
                     break;
                 }
