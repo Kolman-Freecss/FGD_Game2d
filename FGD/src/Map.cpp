@@ -361,15 +361,15 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\pozo.bmp",NULL);
                 matrix[3][8] = Drawable(bitmapTest, 650, 150, 87,72, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\bordillo_piedra.bmp",NULL);
-                matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64);
-                matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64);
-                matrix[3][11] = Drawable(bitmapTest, 608, 350, 30,64);
-                matrix[3][12] = Drawable(bitmapTest, 736, 474, 30,64);
-                matrix[3][13] = Drawable(bitmapTest, 672, 474, 30,64);
-                matrix[3][14] = Drawable(bitmapTest, 608, 474, 30,64);
+                matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][11] = Drawable(bitmapTest, 608, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][12] = Drawable(bitmapTest, 736, 474, 30,64, 0, 0, 0, 2);
+                matrix[3][13] = Drawable(bitmapTest, 672, 474, 30,64, 0, 0, 0, 2);
+                matrix[3][14] = Drawable(bitmapTest, 608, 474, 30,64, 0, 0, 0, 2);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\paja_huerto.bmp",NULL);
-                matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64);
-                matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64);
+                matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64, 0, 0, 0, 2);
+                matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64, 0, 0, 0, 2);
 
                 break;
         }
