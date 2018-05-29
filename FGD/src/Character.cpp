@@ -37,12 +37,13 @@ Character::Character(BITMAP ***animations, int health, int damage, double speed,
     //this->genWalkCollision();
     this->collisionType = 1;
 
-    this->activeBitmap[0] = 0;
+    this->activeBitmap[0] = 1;
     this->activeBitmap[1] = 0;
 
     this->timeLastAnim = 0;
     this->attackChecked = true;
     this->attacking = false;
+    this->direction = 1;
 }
 
 int Character::getDirection(){

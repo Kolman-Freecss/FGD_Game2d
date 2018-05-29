@@ -57,6 +57,16 @@ bool GameState::keyI()
     return false;
 }
 
+bool GameState::spacePress()
+{
+    if((key[KEY_SPACE]) && (Timer::getTime()-10 > this->timePress))
+    {
+        this->timePress = Timer::getTime();
+        return true;
+    }
+    return false;
+}
+
 void GameState::generalKeyboard(int userOrPass)
 {
     char *characterInput = new char();
