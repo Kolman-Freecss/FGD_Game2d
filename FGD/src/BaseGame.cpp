@@ -589,11 +589,48 @@ void BaseGame::colEnemiesWithAmbient(){
                             }
                         }
                         break;
+                }
+                case 3: {
+
+                    for (int j = 0; j < this->activeMap->getCol3Quantity(); j++) {
+                        if (this->activeMap->getVectorEnemies().at(p)->collision(&this->activeMap->getAmbientMatrix()[i][j])) {
+                            //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                            this->activeMap->getVectorEnemies().at(p)->setX(this->activeMap->getVectorEnemies().at(p)->getAX());
+                            this->activeMap->getVectorEnemies().at(p)->setY(this->activeMap->getVectorEnemies().at(p)->getAY());
+                            int direction = rand()%4;
+                            this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
+                        }
                     }
+                    break;
+                }
+                case 4: {
+
+                    for (int j = 0; j < this->activeMap->getCol4Quantity(); j++) {
+                        if (this->activeMap->getVectorEnemies().at(p)->collision(&this->activeMap->getAmbientMatrix()[i][j])) {
+                            //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                            this->activeMap->getVectorEnemies().at(p)->setX(this->activeMap->getVectorEnemies().at(p)->getAX());
+                            this->activeMap->getVectorEnemies().at(p)->setY(this->activeMap->getVectorEnemies().at(p)->getAY());
+                            int direction = rand()%4;
+                            this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
+                        }
+                    }
+                    break;
+                }
+                case 5: {
+
+                    for (int j = 0; j < this->activeMap->getCol5Quantity(); j++) {
+                        if (this->activeMap->getVectorEnemies().at(p)->collision(&this->activeMap->getAmbientMatrix()[i][j])) {
+                            //TODO CAMBIAR FUNCION VOLVER ATRAS DE CHARACTER
+                            this->activeMap->getVectorEnemies().at(p)->setX(this->activeMap->getVectorEnemies().at(p)->getAX());
+                            this->activeMap->getVectorEnemies().at(p)->setY(this->activeMap->getVectorEnemies().at(p)->getAY());
+                            int direction = rand()%4;
+                            this->activeMap->getVectorEnemies().at(p)->setDirectionEnemy(direction);
+                        }
+                    }
+                    break;
+                }
+
             }
-
-
-
         }
     }
 }
