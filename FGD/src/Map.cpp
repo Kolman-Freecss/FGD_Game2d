@@ -129,8 +129,8 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
     this->chargeMatrixAmbient(this->ambientMatrix, numMap);
 
-
-    if(numMap != 4 && numMap != 5){
+    //if(numMap != 4 && numMap != 5){
+    if(numMap != 4){
         /**
         Generacion dinamica de enemigos comprovando la colision con otros enemigos, player o ambiente
         */
@@ -138,7 +138,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         for(int i = 0; i < this->quantEnemies; i++){
             int positionX = rand()%(800-75);
             int positionY = rand()%(600-64);
-            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 64, 75);
+            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 5, 1, 20, positionX, positionY, 64, 75);
 
             bool generado = false;
             while(!generado){

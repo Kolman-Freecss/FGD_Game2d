@@ -319,9 +319,13 @@ void BaseGame::artificialIntelligence()
 
     vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
-            //Update de enemigo para luego printarlo
         if (vectorE.at(i)->isIsAlive()){
             if(vectorE.at(i)->detectionRadiusEnemy(&this->player) ){
+
+                if (this->activeMap->numMap == 5){
+                    vectorE.at(i)->setDetectionRadius(2000);
+                }
+
                 if (vectorE.at(i)->attackCollision(&this->player, vectorE.at(i)->getSelectedWeapon(), vectorE.at(i)->getDirection())) {
 
                     if (rand()%100 < 10 && !vectorE.at(i)->isAttacking()){
@@ -354,7 +358,7 @@ void BaseGame::artificialIntelligence()
                         vectorE.at(i)->walkLEFT();
                     }
                 }
-            }else {
+            }else if (this->activeMap->numMap != 5){
                 this->activeMap->getVectorEnemies().at(i)->update();
             }
         }
