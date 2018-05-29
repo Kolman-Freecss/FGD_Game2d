@@ -465,10 +465,42 @@ int BaseGame::directionIA(Enemy *drawable)
 void BaseGame::winGame()
 {
     //SI A MATADO AL BOSS...
-    if(this->activeMap->numMap == 5 && this->player.getX() >= 400 && this->player.getX() <= 500
+    if(this->activeMap->numMap == 5 && this->player.getX() >= 334 && this->player.getX() <= 392
        && this->player.getY() <= 40)
     {
         this->game->pushState(new WinState(this->game));
+    }
+}
+
+void BaseGame::colPlayerAndEnemyWithLimits()
+{
+    /**
+    Enemigo boss no tendra colision con limites ya que seguirá al player, pero se deja aqui
+    por si en un futuro ponemos enemigos en este ultimo mapa
+    */
+    /*
+    for (int j = 0; j < this->activeMap->getVectorEnemies().size(); ++j) {
+        if (this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
+            this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
+            this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
+            int direction = rand()%4;
+            this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+        }
+    }*/
+    if(this->player.getX() <= 24) this->player.setXandAX(this->player.getAX());
+    if(this->player.getX() >= 703) this->player.setXandAX(this->player.getAX());
+    if(this->player.getY() <= 49) {
+        if(this->player.getX() <= 334 || this->player.getX() >= 392){
+            this->player.setYandAY(this->player.getAY());
+            this->player.setXandAX(this->player.getAX());
+        }
+    }
+
+    if(this->player.getY() >= 420){
+        if(this->player.getX() <= 290 || this->player.getX() >= 434){
+            this->player.setYandAY(this->player.getAY());
+            this->player.setXandAX(this->player.getAX());
+        }
     }
 }
 
@@ -540,7 +572,13 @@ void BaseGame::collisionCheck() {
     colPlayerWithAmbient();
     colEnemies();
     colEnemiesWithAmbient();
+    if(this->activeMap->numMap == 5){
+        colPlayerAndEnemyWithLimits();
+    }
 }
+
+
+
 
 void BaseGame::colPlayerWithEnemies() {
     for (int i = 0; i < this->activeMap->getVectorEnemies().size(); ++i) {

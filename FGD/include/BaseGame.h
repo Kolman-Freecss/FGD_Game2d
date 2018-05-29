@@ -61,6 +61,7 @@ class BaseGame : public GameState{
     void colPlayerWithAmbient();
     void colEnemies();
     void colEnemiesWithAmbient();
+    void colPlayerAndEnemyWithLimits();
 
 
     //text
