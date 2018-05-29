@@ -16,6 +16,7 @@ protected:
     int shield;
     int ax;
     int ay;
+    bool efectiveCollision;
 
     Weapon *selectedWeapon;
     bool alive;

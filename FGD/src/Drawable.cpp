@@ -108,7 +108,7 @@ bool Drawable::attackCollision(Drawable *drawable, Weapon *weapon, int direction
 
 }
 
-
+//collision no efectiva
 bool Drawable::isBehind(Drawable *drawable) {
     int DeltaX = this->x + this->walkCollision[0] - max(drawable->x, min(this->x + this->walkCollision[0], drawable->x + drawable->width));
     int DeltaY = this->y + this->walkCollision[1] - max(drawable->y, min(this->y + this->walkCollision[1], drawable->y + drawable->height-this->walkCollision[1]));
@@ -136,7 +136,7 @@ bool Drawable::collision(Drawable *drawable){
             break;
         }
 
-        case 3:{
+        case 3:{ // cuadrada efectiva
 
             int DeltaX2 = this->x + this->walkCollision[0] - max(drawable->x+drawable->walkCollision[0], min(this->x + this->walkCollision[0], drawable->x+drawable->walkCollision[0] + drawable->width-drawable->walkCollision[0]));
             int DeltaY2 = this->y + this->walkCollision[1] - max(drawable->y+drawable->walkCollision[1], min(this->y + this->walkCollision[1], drawable->y+drawable->walkCollision[1] + drawable->height-drawable->walkCollision[1]));
