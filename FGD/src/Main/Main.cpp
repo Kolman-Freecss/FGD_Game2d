@@ -4,6 +4,8 @@
 #include <GameState.h>
 #include <MenuInitialState.h>
 #include <LoginState.h>
+#include <WinState.h>
+#include <LostState.h>
 
 int main()
 {

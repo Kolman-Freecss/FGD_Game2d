@@ -52,6 +52,7 @@ class BaseGame : public GameState{
 
     void nextMap();
     void previousMap();
+    void winGame();
 
     void collisionCheck();
 

@@ -9,6 +9,7 @@
 #include <MenuInventarioState.h>
 #include <Music.h>
 #include <Inventory.h>
+#include <WinState.h>
 
 using namespace std;
 
@@ -136,6 +137,7 @@ void BaseGame::getEvents()
 
     this->nextMap();
     this->previousMap();
+    this->winGame();
 
 }
 
@@ -380,6 +382,16 @@ int BaseGame::directionIA(Enemy *drawable)
                 }
                 direction++;
             }
+}
+
+void BaseGame::winGame()
+{
+    //SI A MATADO AL BOSS...
+    if(this->activeMap->numMap == 5 && this->player.getX() >= 400 && this->player.getX() <= 500
+       && this->player.getY() <= 40)
+    {
+        this->game->pushState(new WinState(this->game));
+    }
 }
 
 
