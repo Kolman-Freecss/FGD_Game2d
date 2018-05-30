@@ -48,6 +48,9 @@ class BaseGame : public GameState{
     */
     int gameDificulty;
 
+    bool bossDetected;
+
+
     void artificialIntelligence();
     int directionIA(Enemy *drawable);
 

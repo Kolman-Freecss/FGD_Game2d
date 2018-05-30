@@ -26,6 +26,7 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
     this->gameDificulty = difficult;
 
     this->init();
+    this->bossDetected = false;
 
 }
 
@@ -150,13 +151,9 @@ void BaseGame::update()
     */
     this->player.keyboard();
 
-    //this->artificialIntelligence();
-
     /**
     * MOVIMIENTO ENEMIGOS
     */
-
-
     this->artificialIntelligence();
 
     /**
@@ -186,10 +183,6 @@ void BaseGame::update()
                         player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
                         cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
                     }
-
-                    cout << "HP " << this->activeMap->getVectorEnemies().at(i)->getHealth() << endl;
-                    cout << "SHIELD " << this->activeMap->getVectorEnemies().at(i)->getShield() << endl;
-                    cout << "ALIVE " << this->activeMap->getVectorEnemies().at(i)->isIsAlive() << endl;
                 }
             }
             player.setAttackChecked(true);
@@ -381,20 +374,31 @@ void BaseGame::artificialIntelligence()
 
     vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
     for (int i = 0; i < vectorE.size(); i++){
-            //Update de enemigo para luego printarlo
         if (vectorE.at(i)->isIsAlive()){
             if(vectorE.at(i)->detectionRadiusEnemy(&this->player) ){
+
+                if (this->activeMap->numMap == 5){
+                    vectorE.at(i)->setDetectionRadius(2000);
+                    this->bossDetected = true;
+
+                }
+
                 if (vectorE.at(i)->attackCollision(&this->player, vectorE.at(i)->getSelectedWeapon(), vectorE.at(i)->getDirection())) {
-                    if (rand()%100 < 10){
+
+                    if (rand()%100 < 10 && !vectorE.at(i)->isAttacking()){
+                        vectorE.at(i)->setAttackChecked(false);
+                        vectorE.at(i)->setAttacking(true);
+                    }
+                    if (vectorE.at(i)->isAttacking()){
                         vectorE.at(i)->attack();
-                        if (player.wounded(vectorE.at(i))){
+                    }
+                    if (!vectorE.at(i)->isAttackChecked()) {
+                        vectorE.at(i)->setAttackChecked(true);
+                        if (player.wounded(vectorE.at(i))) {
                             this->drawHUD();
                             //GAME OVER LOST
-                            //this->game->pushState(new LostState(this->game));
+                            this->game->pushState(new LostState(this->game));
                         }
-                        cout << player.getHealth()<< endl;
-                        cout << player.getShield() << endl;
-
                     }
                 }else{
                     int direction = this->directionIA(vectorE.at(i));
@@ -412,7 +416,7 @@ void BaseGame::artificialIntelligence()
                         vectorE.at(i)->walkLEFT();
                     }
                 }
-            }else {
+            }else if (this->activeMap->numMap != 5){
                 this->activeMap->getVectorEnemies().at(i)->update();
             }
         }
@@ -432,11 +436,11 @@ int BaseGame::directionIA(Enemy *drawable)
             while ( direction < 4 && !detected){
                 switch (direction) {
                     //UP
-                    case 0:
+                    case Drawable::UP:
                         startAngle = 90-percent/2;
                         break;
                     //RIGHT
-                    case 1:
+                    case Drawable::RIGHT:
                         startAngle = 180-percent/2;
                         break;
                     //DOWN
@@ -466,7 +470,7 @@ void BaseGame::winGame()
 {
     //SI A MATADO AL BOSS...
     if(this->activeMap->numMap == 5 && this->player.getX() >= 334 && this->player.getX() <= 392
-       && this->player.getY() <= 40)
+       && this->player.getY() <= 40 && !this->activeMap->getVectorEnemies().at(0)->isIsAlive())
     {
         this->game->pushState(new WinState(this->game));
     }
@@ -559,9 +563,11 @@ void BaseGame::previousMap()
         }
     else if (this->activeMap->numMap == 5 && this->player.getX() >= 295 && this->player.getX() <= 420 && this->player.getY() >= 520)
         {
-            this->activeMap = this->managerMaps->getMap(3);
-            this->player.setXandAX(410);
-            this->player.setYandAY(230);
+            if (!this->bossDetected){
+                this->activeMap = this->managerMaps->getMap(3);
+                this->player.setXandAX(410);
+                this->player.setYandAY(230);
+            }
         }
 
 }

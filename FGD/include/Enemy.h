@@ -28,6 +28,10 @@ class Enemy : public Character {
 
     Object* randomizeDrop();
 
+    int getDetectionRadius();
+
+    void setDetectionRadius(int detectionRadius);
+
 private:
     bool changeDirectionIfCol = false;
      int direction;

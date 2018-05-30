@@ -15,7 +15,6 @@ class Drawable{
 
     //Tipo colision 1=circular 2=cuadrada
     int collisionType;
-    int walkCollision[2];
     int collisionRadius;
 
     int x;
@@ -28,10 +27,13 @@ class Drawable{
     /**
      * CONSTS TO INDICATE DIRECTIONS
      */
+
     const static int UP = 0;
     const static int RIGHT = 1;
     const static int DOWN = 2;
     const static int LEFT = 3;
+
+    int walkCollision[2];
 
     Drawable();
     Drawable(BITMAP ***animations, int x, int y, int height, int width);

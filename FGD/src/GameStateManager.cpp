@@ -52,7 +52,6 @@ void GameStateManager::gameLoop()
 
     while(this->isRunning()){
         Timer::timerTIC();
-
         /**
         Si no hay ningun estado en el vector de estados directamente se salta las acciones que siguen
         y vuelve a ejecutar el bucle

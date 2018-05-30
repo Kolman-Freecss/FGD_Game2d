@@ -109,3 +109,11 @@ Object *Enemy::randomizeDrop() {
 
     return object;
 }
+
+int Enemy::getDetectionRadius() {
+    return detectionRadius;
+}
+
+void Enemy::setDetectionRadius(int detectionRadius) {
+    Enemy::detectionRadius = detectionRadius;
+}
