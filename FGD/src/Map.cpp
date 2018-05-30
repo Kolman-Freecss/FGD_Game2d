@@ -126,11 +126,16 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     /**
     Cargamos las matrices de datos
     */
-    this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
+    if (this->numMap == 5 ){
+        this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 5);
+
+    }else{
+        this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
+    }
     this->chargeMatrixAmbient(this->ambientMatrix, numMap);
 
-    //if(numMap != 4 && numMap != 5){
-    if(numMap != 4){
+    //if(numMap != 4 && numMap != 5){ç
+    if(numMap != 4 && numMap != 5){
         /**
         Generacion dinamica de enemigos comprovando la colision con otros enemigos, player o ambiente
         */
@@ -269,7 +274,14 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
             this->enemies.push_back(enemy);
 
         }
-    }
+    }else if (numMap == 5){
+            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 5, 1, 20, 300, 100, 116, 104);
+
+            BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+            enemy->setSelectedWeapon(new Weapon(50,1, swordOfPlayer, 46, 40));
+
+            this->enemies.push_back(enemy);
+        }
     //Generacion enemigos terminada
 
 
@@ -348,7 +360,71 @@ void Map::chargeMatrixAnimationsOfEnemy(BITMAP ***matrix, int numMap)
             matrix[11][1] = load_bitmap("src\\Resources\\SKELETON1\\SDL2.bmp",NULL);
             matrix[11][2] = load_bitmap("src\\Resources\\SKELETON1\\SDL3.bmp",NULL);
             matrix[11][3] = load_bitmap("src\\Resources\\SKELETON1\\SDL4.bmp",NULL);
+            break;
+        case 5:
+            //WALK
+            matrix[0][0] = load_bitmap("src\\Resources\\BOSS\\BWU1.bmp",NULL);
+            matrix[0][1] = load_bitmap("src\\Resources\\BOSS\\BWU2.bmp",NULL);
+            matrix[0][2] = load_bitmap("src\\Resources\\BOSS\\BWU1.bmp",NULL);
+            matrix[0][3] = load_bitmap("src\\Resources\\BOSS\\BWU4.bmp",NULL);
 
+            matrix[1][0] = load_bitmap("src\\Resources\\BOSS\\BWR1.bmp",NULL);
+            matrix[1][1] = load_bitmap("src\\Resources\\BOSS\\BWR2.bmp",NULL);
+            matrix[1][2] = load_bitmap("src\\Resources\\BOSS\\BWR1.bmp",NULL);
+            matrix[1][3] = load_bitmap("src\\Resources\\BOSS\\BWR4.bmp",NULL);
+
+            matrix[2][0] = load_bitmap("src\\Resources\\BOSS\\BWD1.bmp",NULL);
+            matrix[2][1] = load_bitmap("src\\Resources\\BOSS\\BWD2.bmp",NULL);
+            matrix[2][2] = load_bitmap("src\\Resources\\BOSS\\BWD1.bmp",NULL);
+            matrix[2][3] = load_bitmap("src\\Resources\\BOSS\\BWD4.bmp",NULL);
+
+            matrix[3][0] = load_bitmap("src\\Resources\\BOSS\\BWL1.bmp",NULL);
+            matrix[3][1] = load_bitmap("src\\Resources\\BOSS\\BWL2.bmp",NULL);
+            matrix[3][2] = load_bitmap("src\\Resources\\BOSS\\BWL1.bmp",NULL);
+            matrix[3][3] = load_bitmap("src\\Resources\\BOSS\\BWL4.bmp",NULL);
+
+            //ATTACK
+            matrix[4][0] = load_bitmap("src\\Resources\\BOSS\\BAU1.bmp",NULL);
+            matrix[4][1] = load_bitmap("src\\Resources\\BOSS\\BAU2.bmp",NULL);
+            matrix[4][2] = load_bitmap("src\\Resources\\BOSS\\BAU3.bmp",NULL);
+            matrix[4][3] = load_bitmap("src\\Resources\\BOSS\\BAU4.bmp",NULL);
+
+            matrix[5][0] = load_bitmap("src\\Resources\\BOSS\\BAR1.bmp",NULL);
+            matrix[5][1] = load_bitmap("src\\Resources\\BOSS\\BAR2.bmp",NULL);
+            matrix[5][2] = load_bitmap("src\\Resources\\BOSS\\BAR3.bmp",NULL);
+            matrix[5][3] = load_bitmap("src\\Resources\\BOSS\\BAR4.bmp",NULL);
+
+            matrix[6][0] = load_bitmap("src\\Resources\\BOSS\\BAD1.bmp",NULL);
+            matrix[6][1] = load_bitmap("src\\Resources\\BOSS\\BAD2.bmp",NULL);
+            matrix[6][2] = load_bitmap("src\\Resources\\BOSS\\BAD3.bmp",NULL);
+            matrix[6][3] = load_bitmap("src\\Resources\\BOSS\\BAD4.bmp",NULL);
+
+            matrix[7][0] = load_bitmap("src\\Resources\\BOSS\\BAL1.bmp",NULL);
+            matrix[7][1] = load_bitmap("src\\Resources\\BOSS\\BAL2.bmp",NULL);
+            matrix[7][2] = load_bitmap("src\\Resources\\BOSS\\BAL3.bmp",NULL);
+            matrix[7][3] = load_bitmap("src\\Resources\\BOSS\\BAL4.bmp",NULL);
+
+            //DIE
+            matrix[8][0] = load_bitmap("src\\Resources\\SKELETON1\\SDU1.bmp",NULL);
+            matrix[8][1] = load_bitmap("src\\Resources\\SKELETON1\\SDU2.bmp",NULL);
+            matrix[8][2] = load_bitmap("src\\Resources\\SKELETON1\\SDU3.bmp",NULL);
+            matrix[8][3] = load_bitmap("src\\Resources\\SKELETON1\\SDU4.bmp",NULL);
+
+            matrix[9][0] = load_bitmap("src\\Resources\\SKELETON1\\SDR1.bmp",NULL);
+            matrix[9][1] = load_bitmap("src\\Resources\\SKELETON1\\SDR2.bmp",NULL);
+            matrix[9][2] = load_bitmap("src\\Resources\\SKELETON1\\SDR3.bmp",NULL);
+            matrix[9][3] = load_bitmap("src\\Resources\\SKELETON1\\SDR4.bmp",NULL);
+
+            matrix[10][0] = load_bitmap("src\\Resources\\SKELETON1\\SDD1.bmp",NULL);
+            matrix[10][1] = load_bitmap("src\\Resources\\SKELETON1\\SDD2.bmp",NULL);
+            matrix[10][2] = load_bitmap("src\\Resources\\SKELETON1\\SDD3.bmp",NULL);
+            matrix[10][3] = load_bitmap("src\\Resources\\SKELETON1\\SDD4.bmp",NULL);
+
+            matrix[11][0] = load_bitmap("src\\Resources\\SKELETON1\\SDL1.bmp",NULL);
+            matrix[11][1] = load_bitmap("src\\Resources\\SKELETON1\\SDL2.bmp",NULL);
+            matrix[11][2] = load_bitmap("src\\Resources\\SKELETON1\\SDL3.bmp",NULL);
+            matrix[11][3] = load_bitmap("src\\Resources\\SKELETON1\\SDL4.bmp",NULL);
+            break;
             break;
        }
 }
