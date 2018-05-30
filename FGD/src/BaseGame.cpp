@@ -26,6 +26,7 @@ BaseGame::BaseGame(int difficult, GameStateManager *game)
     this->gameDificulty = difficult;
 
     this->init();
+    this->bossDetected = false;
 
 }
 
@@ -150,13 +151,9 @@ void BaseGame::update()
     */
     this->player.keyboard();
 
-    //this->artificialIntelligence();
-
     /**
     * MOVIMIENTO ENEMIGOS
     */
-
-
     this->artificialIntelligence();
 
     /**
@@ -382,6 +379,8 @@ void BaseGame::artificialIntelligence()
 
                 if (this->activeMap->numMap == 5){
                     vectorE.at(i)->setDetectionRadius(2000);
+                    this->bossDetected = true;
+
                 }
 
                 if (vectorE.at(i)->attackCollision(&this->player, vectorE.at(i)->getSelectedWeapon(), vectorE.at(i)->getDirection())) {
@@ -437,11 +436,11 @@ int BaseGame::directionIA(Enemy *drawable)
             while ( direction < 4 && !detected){
                 switch (direction) {
                     //UP
-                    case 0:
+                    case Drawable::UP:
                         startAngle = 90-percent/2;
                         break;
                     //RIGHT
-                    case 1:
+                    case Drawable::RIGHT:
                         startAngle = 180-percent/2;
                         break;
                     //DOWN
@@ -471,7 +470,7 @@ void BaseGame::winGame()
 {
     //SI A MATADO AL BOSS...
     if(this->activeMap->numMap == 5 && this->player.getX() >= 334 && this->player.getX() <= 392
-       && this->player.getY() <= 40)
+       && this->player.getY() <= 40 && !this->activeMap->getVectorEnemies().at(0)->isIsAlive())
     {
         this->game->pushState(new WinState(this->game));
     }
@@ -564,9 +563,11 @@ void BaseGame::previousMap()
         }
     else if (this->activeMap->numMap == 5 && this->player.getX() >= 295 && this->player.getX() <= 420 && this->player.getY() >= 520)
         {
-            this->activeMap = this->managerMaps->getMap(3);
-            this->player.setXandAX(410);
-            this->player.setYandAY(230);
+            if (!this->bossDetected){
+                this->activeMap = this->managerMaps->getMap(3);
+                this->player.setXandAX(410);
+                this->player.setYandAY(230);
+            }
         }
 
 }
