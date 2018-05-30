@@ -216,9 +216,14 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
 
                         if(mouse_x >= posXAux && mouse_x <= posXAux + widthCuadrado &&
                             mouse_y >= posYAux && mouse_y <= posYAux + heightCuadrado){
-                                if(GameState::leftClick())
-                                    {
+                                if(GameState::leftClick()){
                                         this->selectedObject = i;
+
+                                        int attackDistance = this->playerInventory->getInventory()->vectorAttackDistance.at(selectedObject);
+                                        int damage = this->playerInventory->getInventory()->vectorDamage.at(selectedObject);
+                                        BITMAP *bitmap = this->playerInventory->getInventory()->bitmapsObjects.at(selectedObject);
+
+                                        this->player.setSelectedWeapon(attackDistance,damage, bitmap, 46, 40);
                                     }
                             }
                         i++;

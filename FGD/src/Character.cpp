@@ -286,6 +286,10 @@ void Character::setShield(int shield) {
 Weapon *Character::getSelectedWeapon(){
     return selectedWeapon;
 }
+void Character::setSelectedWeapon(int attackDistance, int damage, BITMAP *imageOfObject, int width, int height ) {
+    Character::selectedWeapon = new Weapon(attackDistance, damage, imageOfObject, width, height);
+}
+
 
 void Character::setSelectedWeapon(Weapon *selectedWeapon) {
     Character::selectedWeapon = selectedWeapon;
