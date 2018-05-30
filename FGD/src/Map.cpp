@@ -395,13 +395,13 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 2 = Casas y la cajas del huerto
                 */
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\casa.bmp",NULL);
-                matrix[2][0] = House(bitmapTest, 730, 0, 96,70);
-                matrix[2][1] = House(bitmapTest, 650, 0, 96,70);
+                matrix[2][0] = Drawable(bitmapTest, 730, 0, 96,70, 0, 45, 0, 3);
+                matrix[2][1] = Drawable(bitmapTest, 650, 0, 96,70, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\casa_granja.bmp",NULL);
-                matrix[2][2] = House(bitmapTest, 0, GameStateManager::SIZE_WINDOW_X/2-150, 94,64);
-                matrix[2][3] = House(bitmapTest, 71, GameStateManager::SIZE_WINDOW_X/2-150, 94,64);
+                matrix[2][2] = Drawable(bitmapTest, 0, GameStateManager::SIZE_WINDOW_X/2-150, 94,64, 0, 45, 0, 3);
+                matrix[2][3] = Drawable(bitmapTest, 71, GameStateManager::SIZE_WINDOW_X/2-150, 94,64, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\cajas_huerto.bmp",NULL);
-                matrix[2][4] = House(bitmapTest, 0, 0, 128,128);
+                matrix[2][4] = Drawable(bitmapTest, 0, 0, 128,128);
 
                 /**
                 2 = Columnas y el pozo
@@ -476,7 +476,7 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[3][3] = Drawable(map2_bitmapTest,540, 501,  99, 100, 52, 92, 22, 1);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\casa_tumba.bmp",NULL);
-                matrix[4][0] = House(map2_bitmapTest, 600, 80,  120, 74);
+                matrix[4][0] = Drawable(map2_bitmapTest, 600, 80,  120, 74, 0, 65, 0, 3);
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\fuente.bmp",NULL);
                 matrix[4][1] = House(map2_bitmapTest, 660, 300,  99, 140);
 
@@ -496,9 +496,9 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[1][3] = Drawable(bitmapTest, 186, 0 , 70, 62, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\tienda_campaña.bmp",NULL);
-                matrix[2][0] = House(bitmapTest, 479, 0 , 88, 107);
-                matrix[2][1] = House(bitmapTest, 586, 0 , 88, 107);
-                matrix[2][2] = House(bitmapTest, 693, 0 , 88, 107);
+                matrix[2][0] = Drawable(bitmapTest, 479, 0 , 88, 107, 0, 45, 0, 3);
+                matrix[2][1] = Drawable(bitmapTest, 586, 0 , 88, 107, 0, 45, 0, 3);
+                matrix[2][2] = Drawable(bitmapTest, 693, 0 , 88, 107, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\lagito.bmp",NULL);
                 matrix[2][3] = House(bitmapTest, 120, 190 , 125, 109);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\cajas.bmp",NULL);
