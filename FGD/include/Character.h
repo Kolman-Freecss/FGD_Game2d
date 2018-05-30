@@ -17,6 +17,7 @@ protected:
     int ax;
     int ay;
 
+
     Weapon *selectedWeapon;
     bool alive;
     int timeLastAnim;
@@ -38,6 +39,14 @@ protected:
      *
      */
     Character();
+    /**
+    Si la colision ha sido la efectiva o no
+    */
+    bool checkCollision;
+    /**
+    Por si un enemigo tiene una colision con otro enemigo o un player tiene una colision con otro NPC aliado en su caso
+    */
+    bool checkCollisionWithOCharacther;
 
     /**
      *

@@ -59,6 +59,7 @@
 		<Unit filename="include/Skelleton.h" />
 		<Unit filename="include/State.h" />
 		<Unit filename="include/Sword.h" />
+		<Unit filename="include/TextState.h" />
 		<Unit filename="include/Timer.h" />
 		<Unit filename="include/Weapon.h" />
 		<Unit filename="src/BaseGame.cpp" />
