@@ -279,6 +279,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
 
             BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
             enemy->setSelectedWeapon(new Weapon(50,1, swordOfPlayer, 46, 40));
+            enemy->walkCollision[0] = 58;
+            enemy->walkCollision[1] = 92;
+
 
             this->enemies.push_back(enemy);
         }
