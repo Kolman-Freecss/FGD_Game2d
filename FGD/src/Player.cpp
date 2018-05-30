@@ -2,6 +2,7 @@
 #include <allegro.h>
 #include <iostream>
 #include <Inventory.h>
+#include <Music.h>
 
 Player::Player()
 {

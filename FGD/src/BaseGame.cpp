@@ -39,6 +39,11 @@ BaseGame::~BaseGame()
 void BaseGame::init()
 {
 
+    /**
+    Quitamos la musica del menu
+    */
+    this->managerMusic.stopSoundMenu();
+
     this->checkTextNpc = true;
     managerMaps = new DAOMap(this->gameDificulty);
     this->activeMap = new Map();
@@ -120,11 +125,11 @@ void BaseGame::init()
     this->player.getInventory()->vectorHeight.push_back(40);
     this->player.getInventory()->objectList->push_back(weaponOfPlayer);
 
-    if(!this->managerMusic.getMap1IsPlaying()){
+    /*if(!this->managerMusic.getMap1IsPlaying()){
         if(this->getSound()){
             managerMusic.soundMap1();
         }
-    }
+    }*/
 
 
 
@@ -138,6 +143,9 @@ void BaseGame::getEvents()
     }
     if ( key[KEY_ESC] ) this->game->pushState(new MenuEscState(game));
 
+    if(Music::checkMusicOrNot){
+        this->playMusic();
+    }
     this->nextMap();
     this->previousMap();
     this->winGame();
@@ -166,7 +174,7 @@ void BaseGame::update()
     // character attacking
     if (player.isAttacking()) {
 
-
+        player.attack();
         if (!player.isAttackChecked()) {
 
 
@@ -187,7 +195,7 @@ void BaseGame::update()
             }
             player.setAttackChecked(true);
         }
-        player.attack();
+
     }
     //FIN character attacking
 
@@ -345,19 +353,15 @@ void BaseGame::draw()
 
 
 
-
-
-    /*if(this->activeMap->numMap == 1){
-        matrix[0][1].drawAmbient(this->game->getBuffer());
-    }*/
-
-
     drawHUD();
 
     /**
     Esta llamada seria para mostrar por primera y unica vez la presentación del juego
     */
     if(this->checkTextNpc){
+        if(Music::isPlayingMap1){
+            this->managerMusic.stopSoundMap1();
+        }
         this->game->pushState(new TextState(this->game, 0));
         this->checkTextNpc = false;
     }
@@ -508,24 +512,44 @@ void BaseGame::colPlayerAndEnemyWithLimits()
     }
 }
 
+void BaseGame::playMusic()
+{
+
+    if(this->activeMap->numMap == 1){
+        this->managerMusic.soundMap1();
+    }else if(this->activeMap->numMap == 2){
+        this->managerMusic.soundMap2();
+    }else if(this->activeMap->numMap == 3){
+        this->managerMusic.soundMap3();
+    }else if(this->activeMap->numMap == 4){
+        this->managerMusic.soundMap4();
+    }else if(this->activeMap->numMap == 5){
+        this->managerMusic.soundMap5();
+    }
+
+}
+
 
 void BaseGame::nextMap()
 {
 
     if(this->activeMap->numMap == 1 && this->player.getX() > 720 && this->player.getY() >= 350 && this->player.getY() <= 420)
         {
+            this->managerMusic.stopSoundMap1();
             this->activeMap = this->managerMaps->getMap(1);
             this->player.setXandAX(50);
             this->player.setYandAY(350);
         }
     else if (this->activeMap->numMap == 2 && this->player.getX() > 430 && this->player.getX() <= 520 && this->player.getY() >= 535)
         {
+            this->managerMusic.stopSoundMap2();
             this->activeMap = this->managerMaps->getMap(2);
             this->player.setXandAX(340);
             this->player.setYandAY(20);
         }
     else if (this->activeMap->numMap == 3 && this->player.getX() > 700 && this->player.getY() >= 340 && this->player.getY() <= 465)
         {
+            this->managerMusic.stopSoundMap3();
             this->activeMap = this->managerMaps->getMap(3);
             this->player.setXandAX(50);
             this->player.setYandAY(500);
@@ -533,6 +557,7 @@ void BaseGame::nextMap()
     else if (this->activeMap->numMap == 4 && this->player.getX() >= 380 && this->player.getX() <= 440
               && this->player.getY() >= 180 && this->player.getY() <= 200)
         {
+            this->managerMusic.stopSoundMap4();
             this->activeMap = this->managerMaps->getMap(4);
             this->player.setXandAX(360);
             this->player.setYandAY(500);
@@ -545,24 +570,28 @@ void BaseGame::previousMap()
 
     if(this->activeMap->numMap == 2 && this->player.getX() <=  2 && this->player.getY() >= 350 && this->player.getY() <= 415)
         {
+            this->managerMusic.stopSoundMap2();
             this->activeMap = this->managerMaps->getMap(0);
             this->player.setXandAX(650);
             this->player.setYandAY(380);
         }
     else if (this->activeMap->numMap == 3 && this->player.getX() >= 310 && this->player.getX() <= 405 && this->player.getY() <= 0)
         {
+            this->managerMusic.stopSoundMap3();
             this->activeMap = this->managerMaps->getMap(1);
             this->player.setXandAX(470);
             this->player.setYandAY(500);
         }
     else if (this->activeMap->numMap == 4 && this->player.getX() <= 0 && this->player.getY() >= 430)
         {
+            this->managerMusic.stopSoundMap4();
             this->activeMap = this->managerMaps->getMap(2);
             this->player.setXandAX(690);
             this->player.setYandAY(350);
         }
     else if (this->activeMap->numMap == 5 && this->player.getX() >= 295 && this->player.getX() <= 420 && this->player.getY() >= 520)
         {
+            this->managerMusic.stopSoundMap5();
             if (!this->bossDetected){
                 this->activeMap = this->managerMaps->getMap(3);
                 this->player.setXandAX(410);

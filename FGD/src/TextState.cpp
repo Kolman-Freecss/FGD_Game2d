@@ -66,9 +66,12 @@ void TextState::draw()
 {
 
 
-
+    /**
+    Si le pasan un 0 quiere decir que es el primer mapa el que esta llamando a la clase
+    */
     if(this->callState == 0){
         masked_blit(this->bocadilloMap1, this->game->getBuffer(), 0, 0, 80, 266, 150, 113);
+        this->managerMusic.soundMap1();
         this->animationBocadilloMap1();
     }
 
@@ -108,6 +111,7 @@ void TextState::animationBocadilloMap1()
                     this->checkFirstText = true;
                 }else if (this->checkNextText && !this->checkSecondText) {
                     if(this->secondText >= this->vectorBocadillo1Mapa.size()){
+                            this->managerMusic.stopSoundMap1();
                             this->game->popState();
                     }
                     this->checkSecondText = true;

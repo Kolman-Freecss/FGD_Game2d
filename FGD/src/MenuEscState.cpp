@@ -118,6 +118,7 @@ void MenuEscState::menuPressed()
         masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y - 40, 300, 50);
         if(GameState::leftClick())
         {
+            Music::stopAllSounds();
             this->game->pushState(new MenuInitialState(this->game));
         }
 
@@ -138,6 +139,7 @@ void MenuEscState::leavePressed()
         masked_blit(this->leave_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 150, MIDDLE_SCREEN_Y + 30, 300, 50);
         if(GameState::leftClick())
         {
+            Music::stopAllSounds();
             this->game->setRunning(false);
         }
 

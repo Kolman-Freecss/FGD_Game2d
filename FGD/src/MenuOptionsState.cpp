@@ -85,12 +85,22 @@ void MenuOptionsState::musicPressed()
         }
         if(this->leftClick())
         {
-            if(!this->getSound()){
+            /*if(!this->getSound()){
                 this->setSound(true);
                 managerMusic.soundMap1();
             }else{
                 this->setSound(false);
                 managerMusic.stopSoundBackground();
+            }*/
+
+            if(!this->getSound()){
+                this->setSound(true);
+                managerMusic.soundMenu();
+                Music::checkMusicOrNot = true;
+            }else{
+                this->setSound(false);
+                managerMusic.stopSoundMenu();
+                Music::checkMusicOrNot = false;
             }
         }
     }

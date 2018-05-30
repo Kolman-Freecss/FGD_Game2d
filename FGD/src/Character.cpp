@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Character.h"
 #include "Drawable.h"
+#include <Music.h>
 
 using namespace std;
 
@@ -154,8 +155,13 @@ void Character::walkLEFTanim(){
 
 
 void Character::attack() {
+        if(!this->attackChecked)
+        {
+            this->managerMusic.soundAttack();
+        }
 
         if (Timer::getTime()-10 > timeLastAnim) {
+
             timeLastAnim = Timer::getTime();
             activeBitmap[0] = direction + 4;//colocar en posicion atacke
             switch (direction) {

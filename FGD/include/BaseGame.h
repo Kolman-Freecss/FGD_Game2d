@@ -54,12 +54,16 @@ class BaseGame : public GameState{
     void artificialIntelligence();
     int directionIA(Enemy *drawable);
 
+    void playMusic();
     void nextMap();
     void previousMap();
     void winGame();
 
     void collisionCheck();
 
+    /**
+    Colisiones
+    */
     void colPlayerWithEnemies();
     void colPlayerWithAmbient();
     void colEnemies();

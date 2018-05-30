@@ -4,6 +4,7 @@
 #include <GameStateManager.h>
 #include <BaseGame.h>
 #include <MenuOptionsState.h>
+#include <Music.h>
 
 using namespace std;
 
@@ -33,12 +34,10 @@ void MenuInitialState::init()
     show_mouse(screen);
 
 
-        if(this->getSound()){
-            if(!this->managerMusic.getMap1IsPlaying()){
-                managerMusic.soundMap1();
-            }
+        if(Music::checkMusicOrNot){
+            this->managerMusic.soundMenu();
         }else{
-            managerMusic.stopSoundBackground();
+            this->managerMusic.stopSoundMenu();
         }
 
 }

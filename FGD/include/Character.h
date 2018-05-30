@@ -4,12 +4,15 @@
 #include "Drawable.h"
 #include <allegro.h>
 #include <vector>
+#include <Music.h>
 
 using namespace std;
 
 class Character : public Drawable{
 
 protected:
+    Music managerMusic = Music();
+
     int speed;
     int damage;
     int health;
