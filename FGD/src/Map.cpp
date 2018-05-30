@@ -401,7 +401,7 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[2][2] = Drawable(bitmapTest, 0, GameStateManager::SIZE_WINDOW_X/2-150, 94,64, 0, 45, 0, 3);
                 matrix[2][3] = Drawable(bitmapTest, 71, GameStateManager::SIZE_WINDOW_X/2-150, 94,64, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\cajas_huerto.bmp",NULL);
-                matrix[2][4] = Drawable(bitmapTest, 0, 0, 128,128);
+                matrix[2][4] = House(bitmapTest, 0, 0, 128,128);
 
                 /**
                 2 = Columnas y el pozo
