@@ -179,6 +179,7 @@ void BaseGame::update()
                     if (isKilled){
                         player.setExperience(player.getExperience()+ 100) ;
                         cout << "+exp " << player.getExperience() << endl;
+                        player.getInventory()->addMoney((rand()%1000)+1);
 
                         player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
                         cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
