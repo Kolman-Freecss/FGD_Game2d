@@ -181,7 +181,15 @@ void BaseGame::update()
                         cout << "+exp " << player.getExperience() << endl;
                         player.getInventory()->addMoney((rand()%1000)+1);
 
-                        player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
+                        Weapon *weapon = this->activeMap->getVectorEnemies().at(i)->randomizeDrop();
+                        this->player.getInventory()->vectorAttackDistance.push_back(weapon->getAttackDistance());
+                        this->player.getInventory()->vectorDamage.push_back(weapon->getDamage());
+                        this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+                        this->player.getInventory()->vectorWidth.push_back(46);
+                        this->player.getInventory()->vectorHeight.push_back(40);
+
+                        player.getInventory()->getObjectListPtr()->push_back(weapon);
+
                         cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
                     }
                 }

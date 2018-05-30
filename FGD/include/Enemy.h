@@ -26,7 +26,7 @@ class Enemy : public Character {
 
     bool detectionRadiusEnemy(Drawable *drawable);
 
-    Object* randomizeDrop();
+    Weapon* randomizeDrop();
 
     int getDetectionRadius();
 

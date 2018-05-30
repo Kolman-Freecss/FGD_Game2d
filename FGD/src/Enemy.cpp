@@ -89,8 +89,8 @@ void Enemy::setDirectionEnemy(int direction)
     this->direction = direction;
 }
 
-Object *Enemy::randomizeDrop() {
-    Object *object = 0;
+Weapon *Enemy::randomizeDrop() {
+    Weapon *object = 0;
     //randomize object
     //rand()%4;
     //int objectType = rand()%4;//
