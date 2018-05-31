@@ -100,8 +100,7 @@ void BaseGame::init()
     matrixAnimationsPlayer[7][3] = load_bitmap("src\\Resources\\PLAYER1\\PAL4.bmp",NULL);
     //FIN QUITAR
 
-
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 4, 100, 50, 330, 65, 73);
     //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
@@ -707,8 +706,11 @@ void BaseGame::colEnemies(){
                     //TODO
                     this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
                     this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
-                    int direction = rand()%4;
-                    this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+
+                    if (this->activeMap->getVectorEnemies().at(i)->isIsAlive()){
+                        int direction = rand()%4;
+                        this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+                    }
                 }
                 if (this->activeMap->getVectorEnemies().at(i)->isBehind(this->activeMap->getVectorEnemies().at(j)) && this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
                     this->activeMap->getVectorEnemies().at(i)->checkCollisionWithOCharacther = true;
