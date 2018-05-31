@@ -3,6 +3,7 @@
 #include <Drawable.h>
 #include <Sword.h>
 #include <iostream>
+#include "Timer.h"
 
 Enemy::Enemy(){}
 
@@ -100,8 +101,8 @@ void Enemy::setDirectionEnemy(int direction)
     this->direction = direction;
 }
 
-Object *Enemy::randomizeDrop() {
-    Object *object = 0;
+Weapon *Enemy::randomizeDrop() {
+    Weapon *object = 0;
     //randomize object
     //rand()%4;
     //int objectType = rand()%4;//
@@ -112,8 +113,6 @@ Object *Enemy::randomizeDrop() {
             int attackDistance = (rand()%40)+20;
             BITMAP *imageOfObject = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
             Weapon *newSword = new Weapon(attackDistance, damage,imageOfObject, 46,40);
-            cout << newSword->getDamage() << endl;
-            cout << newSword->getAttackDistance() << endl;
             object = newSword;
             break;
     }
@@ -127,4 +126,14 @@ int Enemy::getDetectionRadius() {
 
 void Enemy::setDetectionRadius(int detectionRadius) {
     Enemy::detectionRadius = detectionRadius;
+}
+
+void Enemy::dieAnim(){
+    activeBitmap[0] = direction + 8;
+    if (Timer::getTime()-10 > timeLastAnim) {
+        timeLastAnim = Timer::getTime();
+        if (activeBitmap[1] < 3) {
+            activeBitmap[1]++;
+        }
+    }
 }

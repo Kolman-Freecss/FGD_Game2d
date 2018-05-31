@@ -183,6 +183,8 @@ protected:
 
     Weapon *getSelectedWeapon();
 
+    void setSelectedWeapon(int attackDistance, int damage, BITMAP *imageOfObject, int width, int height );
+
     void setSelectedWeapon(Weapon *selectedWeapon);
 
     bool isAttackChecked();

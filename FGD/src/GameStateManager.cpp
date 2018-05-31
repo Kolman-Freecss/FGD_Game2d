@@ -4,6 +4,7 @@
 #include <BaseGame.h>
 #include <iostream>
 #include <Timer.h>
+#include "MenuInventarioState.h"
 
 using namespace std;
 
@@ -30,11 +31,18 @@ void GameStateManager::pushState(GameState* state)
 }
 
 
-void GameStateManager::popState()
-{
+void GameStateManager::popState(){
+
+    if (dynamic_cast<MenuInventarioState*>(this->getCurrentState())){
+        Weapon* selectedWeapon = this->getCurrentState()->player.getSelectedWeapon();
+        states.pop_back();
+        this->getCurrentState()->player.setSelectedWeapon(selectedWeapon);
+    }else{
+        states.pop_back();
+
+    }
     //states.back(); //sure?
     //delete states.back();
-    states.pop_back();
 
 }
 

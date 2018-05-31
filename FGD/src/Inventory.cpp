@@ -50,3 +50,7 @@ void Inventory::setObjectList(vector<Object *>* &objectList) {
     Inventory::objectList = objectList;
 }
 
+void Inventory::addMoney(int money){
+    this->currentMoney += money;
+}
+

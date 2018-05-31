@@ -105,8 +105,7 @@ void BaseGame::init()
     matrixAnimationsPlayer[7][3] = load_bitmap("src\\Resources\\PLAYER1\\PAL4.bmp",NULL);
     //FIN QUITAR
 
-
-    this->player = Player(matrixAnimationsPlayer, 100, 20, 6, 20, 50, 330, 65, 73);
+    this->player = Player(matrixAnimationsPlayer, 100, 20, 4, 100, 50, 330, 65, 73);
     //TODO
     BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
     Weapon *weaponOfPlayer = new Weapon(100,1, swordOfPlayer, 46, 40);
@@ -185,11 +184,22 @@ void BaseGame::update()
                     //TODO CONTROL DAÑO A ENEMIGO
                     bool isKilled = this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
                     if (isKilled){
+                        //inicio animacion de muerte
+                        this->activeMap->getVectorEnemies().at(i)->activeBitmap[1] = 0;
 
                         player.setExperience(player.getExperience()+ 100) ;
                         cout << "+exp " << player.getExperience() << endl;
+                        player.getInventory()->addMoney((rand()%1000)+1);
 
-                        player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
+                        Weapon *weapon = this->activeMap->getVectorEnemies().at(i)->randomizeDrop();
+                        this->player.getInventory()->vectorAttackDistance.push_back(weapon->getAttackDistance());
+                        this->player.getInventory()->vectorDamage.push_back(weapon->getDamage());
+                        this->player.getInventory()->bitmapsObjects.push_back(load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL));
+                        this->player.getInventory()->vectorWidth.push_back(46);
+                        this->player.getInventory()->vectorHeight.push_back(40);
+
+                        player.getInventory()->getObjectListPtr()->push_back(weapon);
+
                         //delete this->activeMap->getVectorEnemies().at(i);
 
                         /*Enemy *auxSwift = this->activeMap->getVectorEnemies().at(i);
@@ -432,6 +442,9 @@ void BaseGame::artificialIntelligence()
             }else if (this->activeMap->numMap != 5){
                 this->activeMap->getVectorEnemies().at(i)->update();
             }
+        }else {
+            this->activeMap->getVectorEnemies().at(i)->dieAnim();
+
         }
     }
 }
@@ -457,11 +470,11 @@ int BaseGame::directionIA(Enemy *drawable)
                         startAngle = 180-percent/2;
                         break;
                     //DOWN
-                    case 2:
+                    case Drawable::DOWN:
                         startAngle = -90-percent/2;
                         break;
                     //LEFT
-                    case 3:
+                    case Drawable::LEFT:
                         startAngle = 0-percent/2;
                         break;
                     default:;
@@ -737,8 +750,11 @@ void BaseGame::colEnemies(){
                     //TODO
                     this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
                     this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
-                    int direction = rand()%4;
-                    this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+
+                    if (this->activeMap->getVectorEnemies().at(i)->isIsAlive()){
+                        int direction = rand()%4;
+                        this->activeMap->getVectorEnemies().at(i)->setDirectionEnemy(direction);
+                    }
                 }
                 if (this->activeMap->getVectorEnemies().at(i)->isBehind(this->activeMap->getVectorEnemies().at(j)) && this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
                     this->activeMap->getVectorEnemies().at(i)->checkCollisionWithOCharacther = true;
@@ -822,7 +838,7 @@ void BaseGame::colEnemiesWithAmbient(){
                         }
                         if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
                                 this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
-                            }
+                        }
                     }
                     break;
                 }
