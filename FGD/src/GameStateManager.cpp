@@ -68,6 +68,8 @@ void GameStateManager::gameLoop()
 
         this->getCurrentState()->draw();
 
+
+
         rest(10);
 
         // tecla de salida
@@ -85,6 +87,11 @@ void GameStateManager::createBuffer()
     */
     allegro_init();
     install_keyboard();
+    install_mouse();
+
+
+
+
 
 
     /**
@@ -102,6 +109,10 @@ void GameStateManager::createBuffer()
     if (install_sound(DIGI_AUTODETECT, MIDI_AUTODETECT, NULL) != 0) {
        allegro_message("Error: inicializando sistema de sonido\n%s\n", allegro_error);
     }
+
+    this->mouse = load_bitmap("src\\Resources\\Mouse.bmp",NULL);
+    set_mouse_sprite(this->mouse);
+
 
 }
 

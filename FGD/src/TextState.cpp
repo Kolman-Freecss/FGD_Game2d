@@ -36,10 +36,10 @@ void TextState::init()
 
     this->bocadilloMap1 = load_bitmap("src\\Resources\\TextState\\bocadillo_texto.bmp",NULL);
 
-    install_mouse();
+    //install_mouse();
 
     //set_mouse_sprite(mouse);
-    show_mouse(screen);
+    //show_mouse(screen);
 
 }
 
@@ -74,7 +74,7 @@ void TextState::draw()
         this->managerMusic.soundMap1();
         this->animationBocadilloMap1();
     }
-
+    show_mouse(NULL);
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }

@@ -27,10 +27,10 @@ void WinState::init()
     this->leave = load_bitmap("src\\Resources\\WinState\\leave_game.bmp",NULL);
     this->leave_pressed = load_bitmap("src\\Resources\\WinState\\leave_game_pressed.bmp",NULL);
 
-    install_mouse();
+    //install_mouse();
 
     //set_mouse_sprite(mouse);
-    show_mouse(screen);
+    //show_mouse(screen);
 
 }
 

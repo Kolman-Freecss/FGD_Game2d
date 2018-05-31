@@ -32,9 +32,8 @@ void MenuEscState::init()
     this->back_game_pressed = load_bitmap("src\\Resources\\Menu_esc\\return_game_pressed.bmp",NULL);
 
 
-    install_mouse();
 
-    show_mouse(screen);
+    //show_mouse(screen);
 
 }
 
@@ -64,7 +63,7 @@ void MenuEscState::draw()
     backPressed();
 
 
-
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }

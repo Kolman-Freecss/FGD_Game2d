@@ -28,10 +28,7 @@ void MenuInitialState::init()
     this->leave = load_bitmap("src\\Resources\\leave.bmp",NULL);
     this->leave_pressed = load_bitmap("src\\Resources\\leave_pressed.bmp",NULL);
 
-    install_mouse();
-
     //set_mouse_sprite(mouse);
-    show_mouse(screen);
 
 
         if(Music::checkMusicOrNot){
@@ -68,7 +65,7 @@ void MenuInitialState::draw()
     leavePressed();
 
 
-
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }
@@ -83,6 +80,7 @@ void MenuInitialState::newGamePressed()
         masked_blit(this->new_game_pressed, this->game->getBuffer(), 0, 0, MIDDLE_SCREEN_X - 134, MIDDLE_SCREEN_Y - 30, 268, 66);
         if(GameState::leftClick())
         {
+            show_mouse(NULL);
             this->game->pushState(new BaseGame(this->getDifficulty(), game));
         }
     }

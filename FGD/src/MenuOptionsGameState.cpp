@@ -26,9 +26,7 @@ void MenuOptionsGameState::init()
     this->returnn = load_bitmap("src\\Resources\\Menu_game_options\\return.bmp",NULL);
     this->return_pressed = load_bitmap("src\\Resources\\Menu_game_options\\return_pressed.bmp",NULL);
 
-    install_mouse();
 
-    show_mouse(screen);
 
 }
 
@@ -55,7 +53,7 @@ void MenuOptionsGameState::draw()
     returnPressedF();
 
 
-
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }

@@ -33,9 +33,6 @@ void MenuInventarioState::init()
     this->pagination_1 = load_bitmap("src\\Resources\\Inventory\\pagination_1.bmp",NULL);
     this->pagination_2 = load_bitmap("src\\Resources\\Inventory\\pagination_2.bmp",NULL);
 
-    install_mouse();
-
-    show_mouse(screen);
 
 }
 
@@ -90,6 +87,7 @@ void MenuInventarioState::draw()
     this->drawStatsPlayer();
     this->drawMoney();
 
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }

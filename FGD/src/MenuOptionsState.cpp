@@ -36,9 +36,6 @@ void MenuOptionsState::init()
     this->backk = load_bitmap("src\\Resources\\back.bmp",NULL);
     this->backk_pressed = load_bitmap("src\\Resources\\back_pressed.bmp",NULL);
 
-    install_mouse();
-
-    show_mouse(screen);
 
 }
 
@@ -66,7 +63,7 @@ void MenuOptionsState::draw()
     backPressed();
 
 
-
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }
