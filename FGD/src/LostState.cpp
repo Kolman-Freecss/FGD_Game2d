@@ -61,6 +61,7 @@ void LostState::draw()
     this->chargeGamePressed();
     this->leavePressed();
 
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }
