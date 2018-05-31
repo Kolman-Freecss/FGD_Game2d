@@ -14,6 +14,17 @@ Enemy::Enemy(BITMAP ***animations, int health, int damage, double speed, int shi
 
 }
 
+Enemy::~Enemy()
+{
+    for(int i = 0; i < 12; i++){
+        for (int j = 0; j < 4; j++){
+            delete this->animations[i][j];
+        }
+        delete this->animations[i];
+    }
+    delete[] this->animations;
+}
+
 void Enemy::update()
 {
 /*

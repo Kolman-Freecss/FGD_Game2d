@@ -14,7 +14,7 @@ class Enemy : public Character {
  public:
     Enemy();
     Enemy(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width);
-    //virtual ~Enemy();
+    virtual ~Enemy();
     /**
     Actualiza tanto la posicion de enemigo(Movimiento) como otros valores
     */

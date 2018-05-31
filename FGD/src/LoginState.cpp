@@ -43,26 +43,12 @@ void LoginState::init()
     this->cruz = load_bitmap("src\\Resources\\LoginState\\cruz.bmp",NULL);
 
 
-
-
-       /* if(this->getSound()){
-            if(!this->managerMusic.getMap1IsPlaying()){
-                managerMusic.soundMap1();
-            }
-        }else{
-            managerMusic.stopSoundBackground();
-        }*/
-
 }
 
 void LoginState::getEvents()
 {
 
     cruzPressed();
-
-
-
-
 
 
 
@@ -130,7 +116,7 @@ void LoginState::draw()
     this->clickOut();
 
 
-show_mouse(this->game->getBuffer());
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }
