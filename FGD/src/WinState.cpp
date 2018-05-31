@@ -77,6 +77,7 @@ void WinState::menuPressed()
         masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, 250, 250, 300, 50);
         if(GameState::leftClick())
         {
+            this->managerMusic.stopAllSounds();
             this->game->pushState(new MenuInitialState(this->game));
         }
 

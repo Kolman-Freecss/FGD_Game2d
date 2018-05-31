@@ -28,6 +28,10 @@ class Music {
         static bool isPlayingMap4;
         void soundMap5();
         static bool isPlayingMap5;
+        void soundWin();
+        static bool isPlayingWin;
+        void soundLost();
+        static bool isPlayingLost;
         //void soundWounded();
 
         void stopSoundMenu();
@@ -36,6 +40,8 @@ class Music {
         void stopSoundMap3();
         void stopSoundMap4();
         void stopSoundMap5();
+        void stopSoundWin();
+        void stopSoundLost();
 
 
         static bool checkMusicOrNot;
@@ -52,6 +58,8 @@ class Music {
     static SAMPLE *map4;
     static SAMPLE *map5;
     static SAMPLE *wounded;
+    static SAMPLE *win;
+    static SAMPLE *lost;
 
 
 

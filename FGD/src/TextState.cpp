@@ -21,6 +21,9 @@ TextState::TextState(GameStateManager *game, int callState)
 
 void TextState::init()
 {
+    if(this->callState == 0){
+        this->managerMusic.soundMap1();
+    }
 
     this->checkFirstText = false;
     this->nextText = 1;
@@ -71,7 +74,7 @@ void TextState::draw()
     */
     if(this->callState == 0){
         masked_blit(this->bocadilloMap1, this->game->getBuffer(), 0, 0, 80, 266, 150, 113);
-        this->managerMusic.soundMap1();
+
         this->animationBocadilloMap1();
     }
     show_mouse(NULL);

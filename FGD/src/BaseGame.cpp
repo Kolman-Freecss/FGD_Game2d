@@ -185,10 +185,18 @@ void BaseGame::update()
                     //TODO CONTROL DAÑO A ENEMIGO
                     bool isKilled = this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
                     if (isKilled){
+
                         player.setExperience(player.getExperience()+ 100) ;
                         cout << "+exp " << player.getExperience() << endl;
 
                         player.getInventory()->getObjectListPtr()->push_back(this->activeMap->getVectorEnemies().at(i)->randomizeDrop());
+                        //delete this->activeMap->getVectorEnemies().at(i);
+
+                        /*Enemy *auxSwift = this->activeMap->getVectorEnemies().at(i);
+                        for(int j = 0; j < this->activeMap->getVectorEnemies().size(); j++){
+
+                        }*/
+
                         cout << "vector size " << player.getInventory()->getObjectListPtr()->size();
                     }
                 }
@@ -359,8 +367,8 @@ void BaseGame::draw()
     Esta llamada seria para mostrar por primera y unica vez la presentación del juego
     */
     if(this->checkTextNpc){
-        if(Music::isPlayingMap1){
-            this->managerMusic.stopSoundMap1();
+        if(this->managerMusic.isPlayingMap1){
+            this->managerMusic.stopAllSounds();
         }
         this->game->pushState(new TextState(this->game, 0));
         this->checkTextNpc = false;
@@ -401,6 +409,7 @@ void BaseGame::artificialIntelligence()
                         if (player.wounded(vectorE.at(i))) {
                             this->drawHUD();
                             //GAME OVER LOST
+                            this->managerMusic.stopAllSounds();
                             this->game->pushState(new LostState(this->game));
                         }
                     }
@@ -476,6 +485,8 @@ void BaseGame::winGame()
     if(this->activeMap->numMap == 5 && this->player.getX() >= 334 && this->player.getX() <= 392
        && this->player.getY() <= 40 && !this->activeMap->getVectorEnemies().at(0)->isIsAlive())
     {
+        this->managerMusic.stopAllSounds();
+        this->managerMusic.soundWin();
         this->game->pushState(new WinState(this->game));
     }
 }
@@ -514,18 +525,23 @@ void BaseGame::colPlayerAndEnemyWithLimits()
 
 void BaseGame::playMusic()
 {
+    if(!this->managerMusic.isPlayingMap1 && !this->managerMusic.isPlayingMap2 && !this->managerMusic.isPlayingMap3
+        && !this->managerMusic.isPlayingMap4 && !this->managerMusic.isPlayingMap5){
 
-    if(this->activeMap->numMap == 1){
-        this->managerMusic.soundMap1();
-    }else if(this->activeMap->numMap == 2){
-        this->managerMusic.soundMap2();
-    }else if(this->activeMap->numMap == 3){
-        this->managerMusic.soundMap3();
-    }else if(this->activeMap->numMap == 4){
-        this->managerMusic.soundMap4();
-    }else if(this->activeMap->numMap == 5){
-        this->managerMusic.soundMap5();
+        if(this->activeMap->numMap == 1){
+            this->managerMusic.soundMap1();
+        }else if(this->activeMap->numMap == 2){
+            this->managerMusic.soundMap2();
+        }else if(this->activeMap->numMap == 3){
+            this->managerMusic.soundMap3();
+        }else if(this->activeMap->numMap == 4){
+            this->managerMusic.soundMap4();
+        }else if(this->activeMap->numMap == 5){
+            this->managerMusic.soundMap5();
+        }
+
     }
+
 
 }
 

@@ -20,7 +20,9 @@ LostState::LostState(GameStateManager *game)
 void LostState::init()
 {
 
-
+    if(this->managerMusic.checkMusicOrNot){
+        this->managerMusic.soundLost();
+    }
     this->background_image = load_bitmap("src\\Resources\\LostState\\background_lost.bmp",NULL);
     this->menu_initial = load_bitmap("src\\Resources\\LostState\\menu_initial_game.bmp",NULL);
     this->menu_initial_pressed = load_bitmap("src\\Resources\\LostState\\menu_initial_game_pressed.bmp",NULL);
@@ -77,6 +79,7 @@ void LostState::menuPressed()
         masked_blit(this->menu_initial_pressed, this->game->getBuffer(), 0, 0, 250, 250, 300, 50);
         if(GameState::leftClick())
         {
+            this->managerMusic.stopAllSounds();
             this->game->pushState(new MenuInitialState(this->game));
         }
 
