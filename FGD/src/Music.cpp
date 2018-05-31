@@ -8,7 +8,7 @@ SAMPLE* Music::attack =  load_sample("src\\Resources\\Music\\attack_sound.wav");
 SAMPLE* Music::map1 =  load_sample("src\\Resources\\Music\\map1Sound.wav");
 SAMPLE* Music::map2 =  load_sample("src\\Resources\\Music\\map2sound.wav");
 SAMPLE* Music::map3 =  load_sample("src\\Resources\\Music\\map3sound.wav");
-SAMPLE* Music::map4 =  load_sample("src\\Resources\\Music\\map4sound.wav");
+//SAMPLE* Music::map4 =  load_sample("src\\Resources\\Music\\map4sound.wav");
 SAMPLE* Music::map5 =  load_sample("src\\Resources\\Music\\map5sound.wav");
 SAMPLE* Music::win =  load_sample("src\\Resources\\Music\\menuSound.wav");
 
