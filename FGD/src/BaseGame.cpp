@@ -177,6 +177,9 @@ void BaseGame::update()
                     //TODO CONTROL DAÑO A ENEMIGO
                     bool isKilled = this->activeMap->getVectorEnemies().at(i)->wounded(&this->player);
                     if (isKilled){
+                        //inicio animacion de muerte
+                        this->activeMap->getVectorEnemies().at(i)->activeBitmap[1] = 0;
+
                         player.setExperience(player.getExperience()+ 100) ;
                         cout << "+exp " << player.getExperience() << endl;
                         player.getInventory()->addMoney((rand()%1000)+1);
@@ -428,6 +431,9 @@ void BaseGame::artificialIntelligence()
             }else if (this->activeMap->numMap != 5){
                 this->activeMap->getVectorEnemies().at(i)->update();
             }
+        }else {
+            this->activeMap->getVectorEnemies().at(i)->dieAnim();
+
         }
     }
 }
@@ -453,11 +459,11 @@ int BaseGame::directionIA(Enemy *drawable)
                         startAngle = 180-percent/2;
                         break;
                     //DOWN
-                    case 2:
+                    case Drawable::DOWN:
                         startAngle = -90-percent/2;
                         break;
                     //LEFT
-                    case 3:
+                    case Drawable::LEFT:
                         startAngle = 0-percent/2;
                         break;
                     default:;
@@ -786,7 +792,7 @@ void BaseGame::colEnemiesWithAmbient(){
                         }
                         if (this->activeMap->getVectorEnemies().at(p)->isBehind(&this->activeMap->getAmbientMatrix()[i][j])){
                                 this->activeMap->getVectorEnemies().at(p)->checkCollision = true;
-                            }
+                        }
                     }
                     break;
                 }

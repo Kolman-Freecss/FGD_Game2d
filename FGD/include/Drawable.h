@@ -21,7 +21,6 @@ class Drawable{
     int y;
     int height;
     int width;
-    int activeBitmap[2];
 
  public:
     /**
@@ -33,6 +32,7 @@ class Drawable{
     const static int DOWN = 2;
     const static int LEFT = 3;
 
+    int activeBitmap[2];
     int walkCollision[2];
 
     Drawable();

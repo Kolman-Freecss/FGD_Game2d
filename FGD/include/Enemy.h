@@ -23,14 +23,12 @@ class Enemy : public Character {
 
     void genWalkCollision() override;
     void setDirectionEnemy(int direction);
-
     bool detectionRadiusEnemy(Drawable *drawable);
-
     Weapon* randomizeDrop();
-
     int getDetectionRadius();
-
     void setDetectionRadius(int detectionRadius);
+    void dieAnim();
+
 
 private:
     bool changeDirectionIfCol = false;
@@ -41,12 +39,7 @@ private:
      */
      int detectionRadius;
 
-    //int const DAMAGE = 10;
-    /**
-     * @element-type Object
-     */
     std::vector< Object* > loot;
-
 
 
 };
