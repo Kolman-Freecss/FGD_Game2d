@@ -4,6 +4,7 @@
 #include <BaseGame.h>
 #include <iostream>
 #include <Timer.h>
+#include "MenuInventarioState.h"
 
 using namespace std;
 
@@ -30,11 +31,18 @@ void GameStateManager::pushState(GameState* state)
 }
 
 
-void GameStateManager::popState()
-{
+void GameStateManager::popState(){
+
+    if (dynamic_cast<MenuInventarioState*>(this->getCurrentState())){
+        Weapon* selectedWeapon = this->getCurrentState()->player.getSelectedWeapon();
+        states.pop_back();
+        this->getCurrentState()->player.setSelectedWeapon(selectedWeapon);
+    }else{
+        states.pop_back();
+
+    }
     //states.back(); //sure?
     //delete states.back();
-    states.pop_back();
 
 }
 
@@ -52,7 +60,6 @@ void GameStateManager::gameLoop()
 
     while(this->isRunning()){
         Timer::timerTIC();
-
         /**
         Si no hay ningun estado en el vector de estados directamente se salta las acciones que siguen
         y vuelve a ejecutar el bucle
@@ -68,6 +75,8 @@ void GameStateManager::gameLoop()
         //clear_bitmap(this->buffer);
 
         this->getCurrentState()->draw();
+
+
 
         rest(10);
 
@@ -86,6 +95,11 @@ void GameStateManager::createBuffer()
     */
     allegro_init();
     install_keyboard();
+    install_mouse();
+
+
+
+
 
 
     /**
@@ -103,6 +117,10 @@ void GameStateManager::createBuffer()
     if (install_sound(DIGI_AUTODETECT, MIDI_AUTODETECT, NULL) != 0) {
        allegro_message("Error: inicializando sistema de sonido\n%s\n", allegro_error);
     }
+
+    this->mouse = load_bitmap("src\\Resources\\Mouse.bmp",NULL);
+    set_mouse_sprite(this->mouse);
+
 
 }
 

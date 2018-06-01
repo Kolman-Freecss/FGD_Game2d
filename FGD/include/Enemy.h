@@ -14,7 +14,7 @@ class Enemy : public Character {
  public:
     Enemy();
     Enemy(BITMAP ***animations, int health, int damage, double speed, int shield, int x, int y, int height, int width);
-    //virtual ~Enemy();
+    virtual ~Enemy();
     /**
     Actualiza tanto la posicion de enemigo(Movimiento) como otros valores
     */
@@ -23,22 +23,22 @@ class Enemy : public Character {
 
     void genWalkCollision() override;
     void setDirectionEnemy(int direction);
-
     bool detectionRadiusEnemy(Drawable *drawable);
+    Weapon* randomizeDrop();
+    int getDetectionRadius();
+    void setDetectionRadius(int detectionRadius);
+    void dieAnim();
+
 
 private:
     bool changeDirectionIfCol = false;
      int direction;
      int timeNextRandomize;
      /**
-     Simulación inteligencia artificial
+     Simulacion inteligencia artificial
      */
      int detectionRadius;
 
-    //int const DAMAGE = 10;
-    /**
-     * @element-type Object
-     */
     std::vector< Object* > loot;
 
 

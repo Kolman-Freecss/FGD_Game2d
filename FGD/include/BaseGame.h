@@ -7,6 +7,7 @@
 #include <Player.h>
 #include <GameState.h>
 #include <DAOMap.h>
+#include <Drawable.h>
 
 using namespace std;
 
@@ -47,18 +48,33 @@ class BaseGame : public GameState{
     */
     int gameDificulty;
 
+    bool bossDetected;
+
+
     void artificialIntelligence();
     int directionIA(Enemy *drawable);
 
+    void playMusic();
     void nextMap();
     void previousMap();
+    void winGame();
 
     void collisionCheck();
 
+    /**
+    Colisiones
+    */
     void colPlayerWithEnemies();
     void colPlayerWithAmbient();
     void colEnemies();
     void colEnemiesWithAmbient();
+    void colPlayerAndEnemyWithLimits();
+
+
+    //text
+    bool checkTextNpc;
+
+
 
 
 };

@@ -37,9 +37,13 @@ DAOMap::DAOMap(int difficult)
         case 1: this->quantEnemies = 5;
                 this->quantElementsAmbient = 7;
                 for(int i = 0; i < 5; i++){
-                    this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    if (this->numMap == 5){
+                        this->mapList.push_back(new Map(1, this->quantElementsAmbient, this->numMap));
+                    }else{
+                        this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                        this->quantEnemies+=2;
+                    }
                     this->numMap++;
-                    this->quantEnemies+=2;
                 }
                 break;
 
@@ -47,9 +51,14 @@ DAOMap::DAOMap(int difficult)
         Case 2 = Dificultad Medio
         */
         case 2: this->quantEnemies = 10;
-                this->quantElementsAmbient = 3;
+                this->quantElementsAmbient = 7;
                 for(int i = 0; i < 5; i++){
-                    this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                   if (this->numMap == 5){
+                        this->mapList.push_back(new Map(1, this->quantElementsAmbient, this->numMap));
+                    }else{
+                        this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                        this->quantEnemies+=2;
+                    }
                     this->numMap++;
                 }
                 break;
@@ -58,9 +67,14 @@ DAOMap::DAOMap(int difficult)
         Case 3 = Dificultad Dificil
         */
         case 3: this->quantEnemies = 15;
-                this->quantElementsAmbient = 3;
+                this->quantElementsAmbient = 7;
                 for(int i = 0; i < 5; i++){
-                    this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                    if (this->numMap == 5){
+                        this->mapList.push_back(new Map(1, this->quantElementsAmbient, this->numMap));
+                    }else{
+                        this->mapList.push_back(new Map(this->quantEnemies, this->quantElementsAmbient, this->numMap));
+                        this->quantEnemies+=2;
+                    }
                     this->numMap++;
                 }
                 break;

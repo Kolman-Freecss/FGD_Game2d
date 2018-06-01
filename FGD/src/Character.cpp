@@ -2,6 +2,9 @@
 #include <iostream>
 #include "Character.h"
 #include "Drawable.h"
+#include <Music.h>
+
+using namespace std;
 
 /**
  * Constructor vacio
@@ -33,16 +36,19 @@ Character::Character(BITMAP ***animations, int health, int damage, double speed,
     this->alive = true;
     this->ax = x;
     this->ay = y;
+    this->checkCollision = false;
+    this->checkCollisionWithOCharacther = false;
 
     //this->genWalkCollision();
     this->collisionType = 1;
 
-    this->activeBitmap[0] = 0;
+    this->activeBitmap[0] = 1;
     this->activeBitmap[1] = 0;
 
     this->timeLastAnim = 0;
     this->attackChecked = true;
     this->attacking = false;
+    this->direction = 1;
 }
 
 int Character::getDirection(){
@@ -149,8 +155,13 @@ void Character::walkLEFTanim(){
 
 
 void Character::attack() {
+        if(!this->attackChecked)
+        {
+            this->managerMusic.soundAttack();
+        }
 
         if (Timer::getTime()-10 > timeLastAnim) {
+
             timeLastAnim = Timer::getTime();
             activeBitmap[0] = direction + 4;//colocar en posicion atacke
             switch (direction) {
@@ -216,24 +227,33 @@ void Character::setAttacking(bool op) {
     this->attacking = op;
 }
 
-void Character::wounded(Character *attackingCharacter) {
+bool Character::wounded(Character *attackingCharacter) {
+    bool v_alive = this->alive;
     int totalDamage = attackingCharacter->damage + attackingCharacter->selectedWeapon->getDamage();
     if (this->shield - totalDamage < 0){
         totalDamage -= this->shield;
         this->shield = 0;
         this->health -= totalDamage;
 
-    }else{
+    }else {
         this->shield -= totalDamage;
     }
 
     //TODO evento a check vida
-    if (this->health <=0){
+    checkAlive();
+    if (v_alive == true && alive == false){
+        return true;
+    }else {
+        return false;
+    }
+}
+
+void Character::checkAlive() {
+    if (health <= 0){
         //funcion que mata al character
         alive = false;
     }
 }
-
 
 
 int Character::getDamage(){
@@ -272,6 +292,10 @@ void Character::setShield(int shield) {
 Weapon *Character::getSelectedWeapon(){
     return selectedWeapon;
 }
+void Character::setSelectedWeapon(int attackDistance, int damage, BITMAP *imageOfObject, int width, int height ) {
+    Character::selectedWeapon = new Weapon(attackDistance, damage, imageOfObject, width, height);
+}
+
 
 void Character::setSelectedWeapon(Weapon *selectedWeapon) {
     Character::selectedWeapon = selectedWeapon;

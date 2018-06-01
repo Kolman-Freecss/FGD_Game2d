@@ -26,8 +26,8 @@ class LoginState : public GameState{
     BITMAP *register_user_pressed;
     BITMAP *cruz;
 
-    //BITMAP *mouse = load_bitmap("src\\Resources\\Mouse.bmp",NULL);
 
+    //BITMAP *mouse = load_bitmap("src\\Resources\\Mouse.bmp",NULL);
     void userPressed();
     void passwordPressed();
     void enterPressed();

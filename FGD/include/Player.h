@@ -18,10 +18,21 @@ class Player : public Character {
 
     Inventory* getInventory();
 
+    int getExperience();
+
+    void setExperience(int experience);
+
+    int getLevel();
+
+    void setLevel(int level);
+
+    int getShield();
+
+    void setShield(int shield);
+
 private:
-    int experiencia;
+    int experience;
     int level;
-    int shield;
     Inventory *inventory;
 
 };

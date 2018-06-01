@@ -33,9 +33,6 @@ void MenuInventarioState::init()
     this->pagination_1 = load_bitmap("src\\Resources\\Inventory\\pagination_1.bmp",NULL);
     this->pagination_2 = load_bitmap("src\\Resources\\Inventory\\pagination_2.bmp",NULL);
 
-    install_mouse();
-
-    show_mouse(screen);
 
 }
 
@@ -90,6 +87,7 @@ void MenuInventarioState::draw()
     this->drawStatsPlayer();
     this->drawMoney();
 
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }
@@ -216,9 +214,14 @@ void MenuInventarioState::drawCharacteristicsSelectedWeapon()
 
                         if(mouse_x >= posXAux && mouse_x <= posXAux + widthCuadrado &&
                             mouse_y >= posYAux && mouse_y <= posYAux + heightCuadrado){
-                                if(GameState::leftClick())
-                                    {
+                                if(GameState::leftClick()){
                                         this->selectedObject = i;
+
+                                        int attackDistance = this->playerInventory->getInventory()->vectorAttackDistance.at(selectedObject);
+                                        int damage = this->playerInventory->getInventory()->vectorDamage.at(selectedObject);
+                                        BITMAP *bitmap = this->playerInventory->getInventory()->bitmapsObjects.at(selectedObject);
+
+                                        this->player.setSelectedWeapon(attackDistance,damage, bitmap, 46, 40);
                                     }
                             }
                         i++;

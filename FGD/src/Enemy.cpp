@@ -1,5 +1,9 @@
 #include "Enemy.h"
+#include <allegro.h>
 #include <Drawable.h>
+#include <Sword.h>
+#include <iostream>
+#include "Timer.h"
 
 Enemy::Enemy(){}
 
@@ -9,6 +13,17 @@ Enemy::Enemy(BITMAP ***animations, int health, int damage, double speed, int shi
     this->collisionRadius = 15;
     this->detectionRadius = 150;
 
+}
+
+Enemy::~Enemy()
+{
+    for(int i = 0; i < 12; i++){
+        for (int j = 0; j < 4; j++){
+            delete this->animations[i][j];
+        }
+        delete this->animations[i];
+    }
+    delete[] this->animations;
 }
 
 void Enemy::update()
@@ -84,4 +99,41 @@ bool Enemy::detectionRadiusEnemy(Drawable *drawable)
 void Enemy::setDirectionEnemy(int direction)
 {
     this->direction = direction;
+}
+
+Weapon *Enemy::randomizeDrop() {
+    Weapon *object = 0;
+    //randomize object
+    //rand()%4;
+    //int objectType = rand()%4;//
+    int objectType = 0;
+    switch (objectType){
+        case 0://sword
+            int damage = (rand()%50)+50;
+            int attackDistance = (rand()%40)+20;
+            BITMAP *imageOfObject = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+            Weapon *newSword = new Weapon(attackDistance, damage,imageOfObject, 46,40);
+            object = newSword;
+            break;
+    }
+
+    return object;
+}
+
+int Enemy::getDetectionRadius() {
+    return detectionRadius;
+}
+
+void Enemy::setDetectionRadius(int detectionRadius) {
+    Enemy::detectionRadius = detectionRadius;
+}
+
+void Enemy::dieAnim(){
+    activeBitmap[0] = direction + 8;
+    if (Timer::getTime()-10 > timeLastAnim) {
+        timeLastAnim = Timer::getTime();
+        if (activeBitmap[1] < 3) {
+            activeBitmap[1]++;
+        }
+    }
 }

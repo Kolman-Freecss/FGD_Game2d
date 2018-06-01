@@ -2,6 +2,7 @@
 #include <allegro.h>
 #include <iostream>
 #include <Inventory.h>
+#include <Music.h>
 
 Player::Player()
 {
@@ -11,7 +12,8 @@ Player::Player(BITMAP ***animations, int health, int damage, double speed, int s
             Character(animations, health, damage, speed, shield, x, y, height, width)
 {
 genWalkCollision();
-this->collisionRadius = 15;
+this->collisionRadius = 11;
+this->experience = 0;
 /**
 Le almacenamos la espada en el inventario
 */
@@ -21,12 +23,12 @@ this->inventory = new Inventory();
 
 void Player::genWalkCollision() {
     //TODO cambiar posicion correcta
-    this->walkCollision[0] = 39;
-    this->walkCollision[1] = 49;
+    this->walkCollision[0] = 38;
+    this->walkCollision[1] = 60;
 }
 
 /**
-Manejo del teclado del personaje + colisión de limites
+Manejo del teclado del personaje + colision de limites
 */
 void Player::keyboard(){
     /**
@@ -74,4 +76,30 @@ void Player::keyboard(){
 Inventory* Player::getInventory()
 {
     return this->inventory;
+}
+
+
+
+int Player::getExperience() {
+    return experience;
+}
+
+void Player::setExperience(int experience) {
+    Player::experience = experience;
+}
+
+int Player::getLevel() {
+    return level;
+}
+
+void Player::setLevel(int level) {
+    Player::level = level;
+}
+
+int Player::getShield() {
+    return shield;
+}
+
+void Player::setShield(int shield) {
+    Player::shield = shield;
 }

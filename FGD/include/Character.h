@@ -4,18 +4,22 @@
 #include "Drawable.h"
 #include <allegro.h>
 #include <vector>
+#include <Music.h>
 
 using namespace std;
 
 class Character : public Drawable{
 
 protected:
+    Music managerMusic = Music();
+
     int speed;
     int damage;
     int health;
     int shield;
     int ax;
     int ay;
+
 
     Weapon *selectedWeapon;
     bool alive;
@@ -38,6 +42,14 @@ protected:
      *
      */
     Character();
+    /**
+    Si la colision ha sido la efectiva o no
+    */
+    bool checkCollision;
+    /**
+    Por si un enemigo tiene una colision con otro enemigo o un player tiene una colision con otro NPC aliado en su caso
+    */
+    bool checkCollisionWithOCharacther;
 
     /**
      *
@@ -141,7 +153,7 @@ protected:
     bool isAttacking();
     void setAttacking(bool op);
 
-    void wounded(Character *attackingCharacter);
+    bool wounded(Character *attackingCharacter);
 
 
     void attackUPanim();
@@ -171,6 +183,8 @@ protected:
 
     Weapon *getSelectedWeapon();
 
+    void setSelectedWeapon(int attackDistance, int damage, BITMAP *imageOfObject, int width, int height );
+
     void setSelectedWeapon(Weapon *selectedWeapon);
 
     bool isAttackChecked();
@@ -178,6 +192,7 @@ protected:
     void setAttackChecked(bool endAttack);
 
 
+    void checkAlive();
 };
 
 #endif // Character_h

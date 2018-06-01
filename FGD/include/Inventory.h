@@ -39,6 +39,9 @@ public:
 
     int getCurrentMoney();
 
+    void addMoney(int money);
+
+
     /**
     Un vector que anirá sincronitzat amb el vector de objectes del inventari del player
     */

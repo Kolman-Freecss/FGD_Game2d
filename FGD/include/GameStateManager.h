@@ -52,7 +52,7 @@ class GameStateManager {
      bool runLoop = true;
      BITMAP *buffer;
 
-
+    BITMAP *mouse;
 
 
 

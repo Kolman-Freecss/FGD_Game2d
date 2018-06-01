@@ -31,7 +31,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                 //Houses y caja huerto
                 this->col2Quantity = 5;
                 this->col3Quantity = 17;
-                this->col4Quantity = 0;
+                this->col4Quantity = 1;
                 this->col5Quantity = 0;
                 this->col6Quantity = 0;
 
@@ -126,10 +126,15 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
     /**
     Cargamos las matrices de datos
     */
-    this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
+    if (this->numMap == 5 ){
+        this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 5);
+
+    }else{
+        this->chargeMatrixAnimationsOfEnemy(matrixAnimationsEnemy, 1);
+    }
     this->chargeMatrixAmbient(this->ambientMatrix, numMap);
 
-
+    //if(numMap != 4 && numMap != 5){ç
     if(numMap != 4 && numMap != 5){
         /**
         Generacion dinamica de enemigos comprovando la colision con otros enemigos, player o ambiente
@@ -138,7 +143,7 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
         for(int i = 0; i < this->quantEnemies; i++){
             int positionX = rand()%(800-75);
             int positionY = rand()%(600-64);
-            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 20, 1, 20, positionX, positionY, 64, 75);
+            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 5, 1, 20, positionX, positionY, 64, 75);
 
             bool generado = false;
             while(!generado){
@@ -157,6 +162,9 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                     }
                 }
             //col with ambient
+            /**
+            El indice es el numero de la columna de la matriz
+            */
                 for (int i = 0; i < this->getQuantElementsOfAmbient(); i++) {
                         switch(i){
                             case 1 : {for (int j = 0; j < this->getCol1Quantity(); j++) {
@@ -188,6 +196,62 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                                         }
                                     break;
                             }
+                            case 3:{for (int j = 0; j < this->getCol3Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 4:{for (int j = 0; j < this->getCol4Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 5:{for (int j = 0; j < this->getCol5Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
+                            case 6:{for (int j = 0; j < this->getCol6Quantity(); j++) {
+                                            while (enemy->collision(&this->getAmbientMatrix()[i][j])) {
+                                                    positionX = rand()%(800-75);
+                                                    positionY = rand()%(600-64);
+                                                    enemy->setXandAX(positionX);
+                                                    enemy->setYandAY(positionY);
+                                                    if(!enemy->collision(&this->getAmbientMatrix()[i][j])){
+                                                        j = 0;
+                                                        generado = false;
+                                                    }
+                                                }
+                                        }
+                                    break;
+                            }
 
                         }
 
@@ -204,11 +268,23 @@ Map::Map(int quantEnemies, int quantElementsOfAmbient, int numMap)
                     generado = false;
                 }
             }
+            BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
 
+            enemy->setSelectedWeapon(new Weapon(50,1, swordOfPlayer, 46, 40));
             this->enemies.push_back(enemy);
 
         }
-    }
+    }else if (numMap == 5){
+            Enemy *enemy = new Enemy(matrixAnimationsEnemy, 100, 5, 1, 20, 300, 100, 116, 104);
+
+            BITMAP *swordOfPlayer = load_bitmap("src\\Resources\\Inventory\\sword.bmp",NULL);
+            enemy->setSelectedWeapon(new Weapon(50,1, swordOfPlayer, 46, 40));
+            enemy->walkCollision[0] = 58;
+            enemy->walkCollision[1] = 92;
+
+
+            this->enemies.push_back(enemy);
+        }
     //Generacion enemigos terminada
 
 
@@ -287,7 +363,71 @@ void Map::chargeMatrixAnimationsOfEnemy(BITMAP ***matrix, int numMap)
             matrix[11][1] = load_bitmap("src\\Resources\\SKELETON1\\SDL2.bmp",NULL);
             matrix[11][2] = load_bitmap("src\\Resources\\SKELETON1\\SDL3.bmp",NULL);
             matrix[11][3] = load_bitmap("src\\Resources\\SKELETON1\\SDL4.bmp",NULL);
+            break;
+        case 5:
+            //WALK
+            matrix[0][0] = load_bitmap("src\\Resources\\BOSS\\BWU1.bmp",NULL);
+            matrix[0][1] = load_bitmap("src\\Resources\\BOSS\\BWU2.bmp",NULL);
+            matrix[0][2] = load_bitmap("src\\Resources\\BOSS\\BWU1.bmp",NULL);
+            matrix[0][3] = load_bitmap("src\\Resources\\BOSS\\BWU4.bmp",NULL);
 
+            matrix[1][0] = load_bitmap("src\\Resources\\BOSS\\BWR1.bmp",NULL);
+            matrix[1][1] = load_bitmap("src\\Resources\\BOSS\\BWR2.bmp",NULL);
+            matrix[1][2] = load_bitmap("src\\Resources\\BOSS\\BWR1.bmp",NULL);
+            matrix[1][3] = load_bitmap("src\\Resources\\BOSS\\BWR4.bmp",NULL);
+
+            matrix[2][0] = load_bitmap("src\\Resources\\BOSS\\BWD1.bmp",NULL);
+            matrix[2][1] = load_bitmap("src\\Resources\\BOSS\\BWD2.bmp",NULL);
+            matrix[2][2] = load_bitmap("src\\Resources\\BOSS\\BWD1.bmp",NULL);
+            matrix[2][3] = load_bitmap("src\\Resources\\BOSS\\BWD4.bmp",NULL);
+
+            matrix[3][0] = load_bitmap("src\\Resources\\BOSS\\BWL1.bmp",NULL);
+            matrix[3][1] = load_bitmap("src\\Resources\\BOSS\\BWL2.bmp",NULL);
+            matrix[3][2] = load_bitmap("src\\Resources\\BOSS\\BWL1.bmp",NULL);
+            matrix[3][3] = load_bitmap("src\\Resources\\BOSS\\BWL4.bmp",NULL);
+
+            //ATTACK
+            matrix[4][0] = load_bitmap("src\\Resources\\BOSS\\BAU1.bmp",NULL);
+            matrix[4][1] = load_bitmap("src\\Resources\\BOSS\\BAU2.bmp",NULL);
+            matrix[4][2] = load_bitmap("src\\Resources\\BOSS\\BAU3.bmp",NULL);
+            matrix[4][3] = load_bitmap("src\\Resources\\BOSS\\BAU4.bmp",NULL);
+
+            matrix[5][0] = load_bitmap("src\\Resources\\BOSS\\BAR1.bmp",NULL);
+            matrix[5][1] = load_bitmap("src\\Resources\\BOSS\\BAR2.bmp",NULL);
+            matrix[5][2] = load_bitmap("src\\Resources\\BOSS\\BAR3.bmp",NULL);
+            matrix[5][3] = load_bitmap("src\\Resources\\BOSS\\BAR4.bmp",NULL);
+
+            matrix[6][0] = load_bitmap("src\\Resources\\BOSS\\BAD1.bmp",NULL);
+            matrix[6][1] = load_bitmap("src\\Resources\\BOSS\\BAD2.bmp",NULL);
+            matrix[6][2] = load_bitmap("src\\Resources\\BOSS\\BAD3.bmp",NULL);
+            matrix[6][3] = load_bitmap("src\\Resources\\BOSS\\BAD4.bmp",NULL);
+
+            matrix[7][0] = load_bitmap("src\\Resources\\BOSS\\BAL1.bmp",NULL);
+            matrix[7][1] = load_bitmap("src\\Resources\\BOSS\\BAL2.bmp",NULL);
+            matrix[7][2] = load_bitmap("src\\Resources\\BOSS\\BAL3.bmp",NULL);
+            matrix[7][3] = load_bitmap("src\\Resources\\BOSS\\BAL4.bmp",NULL);
+
+            //DIE
+            matrix[8][0] = load_bitmap("src\\Resources\\SKELETON1\\SDU1.bmp",NULL);
+            matrix[8][1] = load_bitmap("src\\Resources\\SKELETON1\\SDU2.bmp",NULL);
+            matrix[8][2] = load_bitmap("src\\Resources\\SKELETON1\\SDU3.bmp",NULL);
+            matrix[8][3] = load_bitmap("src\\Resources\\SKELETON1\\SDU4.bmp",NULL);
+
+            matrix[9][0] = load_bitmap("src\\Resources\\SKELETON1\\SDR1.bmp",NULL);
+            matrix[9][1] = load_bitmap("src\\Resources\\SKELETON1\\SDR2.bmp",NULL);
+            matrix[9][2] = load_bitmap("src\\Resources\\SKELETON1\\SDR3.bmp",NULL);
+            matrix[9][3] = load_bitmap("src\\Resources\\SKELETON1\\SDR4.bmp",NULL);
+
+            matrix[10][0] = load_bitmap("src\\Resources\\SKELETON1\\SDD1.bmp",NULL);
+            matrix[10][1] = load_bitmap("src\\Resources\\SKELETON1\\SDD2.bmp",NULL);
+            matrix[10][2] = load_bitmap("src\\Resources\\SKELETON1\\SDD3.bmp",NULL);
+            matrix[10][3] = load_bitmap("src\\Resources\\SKELETON1\\SDD4.bmp",NULL);
+
+            matrix[11][0] = load_bitmap("src\\Resources\\SKELETON1\\SDL1.bmp",NULL);
+            matrix[11][1] = load_bitmap("src\\Resources\\SKELETON1\\SDL2.bmp",NULL);
+            matrix[11][2] = load_bitmap("src\\Resources\\SKELETON1\\SDL3.bmp",NULL);
+            matrix[11][3] = load_bitmap("src\\Resources\\SKELETON1\\SDL4.bmp",NULL);
+            break;
             break;
        }
 }
@@ -334,11 +474,11 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 2 = Casas y la cajas del huerto
                 */
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\casa.bmp",NULL);
-                matrix[2][0] = House(bitmapTest, 730, 0, 96,70);
-                matrix[2][1] = House(bitmapTest, 650, 0, 96,70);
+                matrix[2][0] = Drawable(bitmapTest, 730, 0, 96,70, 0, 45, 0, 3);
+                matrix[2][1] = Drawable(bitmapTest, 650, 0, 96,70, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\casa_granja.bmp",NULL);
-                matrix[2][2] = House(bitmapTest, 0, GameStateManager::SIZE_WINDOW_X/2-150, 94,64);
-                matrix[2][3] = House(bitmapTest, 71, GameStateManager::SIZE_WINDOW_X/2-150, 94,64);
+                matrix[2][2] = Drawable(bitmapTest, 0, GameStateManager::SIZE_WINDOW_X/2-150, 94,64, 0, 45, 0, 3);
+                matrix[2][3] = Drawable(bitmapTest, 71, GameStateManager::SIZE_WINDOW_X/2-150, 94,64, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\cajas_huerto.bmp",NULL);
                 matrix[2][4] = House(bitmapTest, 0, 0, 128,128);
 
@@ -346,26 +486,33 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 2 = Columnas y el pozo
                 */
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\columna.bmp",NULL);
-                matrix[3][0] = Drawable(bitmapTest, 300, 50, 70,24);
-                matrix[3][1] = Drawable(bitmapTest, 300, 180, 70,24);
-                matrix[3][2] = Drawable(bitmapTest, 300, 300, 70,24);
-                matrix[3][3] = Drawable(bitmapTest, 300, 450, 70,24);
-                matrix[3][4] = Drawable(bitmapTest, 580, 50, 70,24);
-                matrix[3][5] = Drawable(bitmapTest, 580, 180, 70,24);
-                matrix[3][6] = Drawable(bitmapTest, 580, 300, 70,24);
-                matrix[3][7] = Drawable(bitmapTest, 580, 450, 70,24);
+                //TODO constructor cambiar columna
+
+                //Drawable(itmapAmbient, x, int y, int width, int height, int colPosX, int colPosY, int colRadius, int coltype) {
+
+                matrix[3][0] = Drawable(bitmapTest, 300, 50, 70,24, 0, 45, 0, 3);
+                matrix[3][1] = Drawable(bitmapTest, 300, 180, 70,24, 0, 45, 0, 3);
+                matrix[3][2] = Drawable(bitmapTest, 300, 300, 70,24, 0, 45, 0, 3);
+                matrix[3][3] = Drawable(bitmapTest, 300, 450, 70,24, 0, 45, 0, 3);
+                matrix[3][4] = Drawable(bitmapTest, 580, 50, 70,24, 0, 45, 0, 3);
+                matrix[3][5] = Drawable(bitmapTest, 580, 180, 70,24, 0, 45, 0, 3);
+                matrix[3][6] = Drawable(bitmapTest, 580, 300, 70,24, 0, 45, 0, 3);
+                matrix[3][7] = Drawable(bitmapTest, 580, 450, 70,24, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\pozo.bmp",NULL);
-                matrix[3][8] = Drawable(bitmapTest, 650, 150, 87,72);
+                matrix[3][8] = Drawable(bitmapTest, 650, 150, 87,72, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\bordillo_piedra.bmp",NULL);
-                matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64);
-                matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64);
-                matrix[3][11] = Drawable(bitmapTest, 608, 350, 30,64);
-                matrix[3][12] = Drawable(bitmapTest, 736, 474, 30,64);
-                matrix[3][13] = Drawable(bitmapTest, 672, 474, 30,64);
-                matrix[3][14] = Drawable(bitmapTest, 608, 474, 30,64);
+                matrix[3][9] = Drawable(bitmapTest, 736, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][10] = Drawable(bitmapTest, 672, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][11] = Drawable(bitmapTest, 608, 350, 30,64, 0, 0, 0, 2);
+                matrix[3][12] = Drawable(bitmapTest, 736, 474, 30,64, 0, 0, 0, 2);
+                matrix[3][13] = Drawable(bitmapTest, 672, 474, 30,64, 0, 0, 0, 2);
+                matrix[3][14] = Drawable(bitmapTest, 608, 474, 30,64, 0, 0, 0, 2);
                 bitmapTest = load_bitmap("src\\Resources\\Map_1\\paja_huerto.bmp",NULL);
-                matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64);
-                matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64);
+                matrix[3][15] = Drawable(bitmapTest, 180, 473 , 58, 64, 0, 0, 0, 2);
+                matrix[3][16] = Drawable(bitmapTest, 180, 540 , 58, 64, 0, 0, 0, 2);
+
+                bitmapTest = load_bitmap("src\\Resources\\Map_1\\NPC.bmp",NULL);
+                matrix[4][0] = Drawable(bitmapTest, 170, 370, 48, 44);
 
                 break;
         }
@@ -375,40 +522,40 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[0][0] = Drawable(map2_bitmapTest, 0, 0 , 0, 0);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\cruz_tumba.bmp",NULL);
-                matrix[1][0] = Drawable(map2_bitmapTest, 20, 30 , 64, 47);
-                matrix[1][1] = Drawable(map2_bitmapTest, 80, 30 , 64, 47);
-                matrix[1][2] = Drawable(map2_bitmapTest, 140, 30 , 64, 47);
-                matrix[1][3] = Drawable(map2_bitmapTest, 200, 30 , 64, 47);
-                matrix[1][4] = Drawable(map2_bitmapTest, 20, 110 , 64, 47);
-                matrix[1][5] = Drawable(map2_bitmapTest, 80, 110 , 64, 47);
-                matrix[1][6] = Drawable(map2_bitmapTest, 140, 110 , 64, 47);
-                matrix[1][7] = Drawable(map2_bitmapTest, 200, 110 , 64, 47);
-                matrix[1][8] = Drawable(map2_bitmapTest, 20, 190 , 64, 47);
-                matrix[1][9] = Drawable(map2_bitmapTest, 80, 190 , 64, 47);
-                matrix[1][10] = Drawable(map2_bitmapTest, 140, 190 , 64, 47);
-                matrix[1][11] = Drawable(map2_bitmapTest, 200, 190 , 64, 47);
+                matrix[1][0] = Drawable(map2_bitmapTest, 20, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][1] = Drawable(map2_bitmapTest, 80, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][2] = Drawable(map2_bitmapTest, 140, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][3] = Drawable(map2_bitmapTest, 200, 30 , 64, 47, 0, 0, 0, 2);
+                matrix[1][4] = Drawable(map2_bitmapTest, 20, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][5] = Drawable(map2_bitmapTest, 80, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][6] = Drawable(map2_bitmapTest, 140, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][7] = Drawable(map2_bitmapTest, 200, 110 , 64, 47, 0, 0, 0, 2);
+                matrix[1][8] = Drawable(map2_bitmapTest, 20, 190 , 64, 47, 0, 0, 0, 2);
+                matrix[1][9] = Drawable(map2_bitmapTest, 80, 190 , 64, 47, 0, 0, 0, 2);
+                matrix[1][10] = Drawable(map2_bitmapTest, 140, 190 , 64, 47, 0, 0, 0, 2);
+                matrix[1][11] = Drawable(map2_bitmapTest, 200, 190 , 64, 47, 0, 0, 0, 2);
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\valla_tumbas.bmp",NULL);
-                matrix[1][12] = Drawable(map2_bitmapTest, 0, 254 , 32, 73);
-                matrix[1][13] = Drawable(map2_bitmapTest, 73, 254 , 32, 73);
-                matrix[1][14] = Drawable(map2_bitmapTest, 146, 254 , 32, 73);
+                matrix[1][12] = Drawable(map2_bitmapTest, 0, 254 , 32, 73, 0, 0, 0, 2);
+                matrix[1][13] = Drawable(map2_bitmapTest, 73, 254 , 32, 73, 0, 0, 0, 2);
+                matrix[1][14] = Drawable(map2_bitmapTest, 146, 254 , 32, 73, 0, 0, 0, 2);
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\valla_tumbas_rotada.bmp",NULL);
-                matrix[1][15] = Drawable(map2_bitmapTest, 247, 0, 74, 33);
-                matrix[1][16] = Drawable(map2_bitmapTest, 247, 74, 74, 33);
-                matrix[1][17] = Drawable(map2_bitmapTest, 247, 148, 74, 33);
+                matrix[1][15] = Drawable(map2_bitmapTest, 247, 0, 74, 33, 0, 0, 0, 2);
+                matrix[1][16] = Drawable(map2_bitmapTest, 247, 74, 74, 33, 0, 0, 0, 2);
+                matrix[1][17] = Drawable(map2_bitmapTest, 247, 148, 74, 33, 0, 0, 0, 2);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\agujero_ojos.bmp",NULL);
-                matrix[2][0] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 40, GameStateManager::SIZE_WINDOW_Y /2 - 40,  79, 81);
-                matrix[2][1] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 150, 470,  79, 81);
-                matrix[2][2] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 + 250, 470,  79, 81);
+                matrix[2][0] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 40, GameStateManager::SIZE_WINDOW_Y /2 - 40,  79, 81, 0, 0, 0, 2);
+                matrix[2][1] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 - 150, 470,  79, 81, 40, 40, 40, 1);
+                matrix[2][2] = Drawable(map2_bitmapTest,GameStateManager::SIZE_WINDOW_X/2 + 250, 470,  79, 81, 40, 40, 40, 1);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\arbol_map2.bmp",NULL);
-                matrix[3][0] = Drawable(map2_bitmapTest,470, 100,  99, 100);
-                matrix[3][1] = Drawable(map2_bitmapTest,670, 180,  99, 100);
-                matrix[3][2] = Drawable(map2_bitmapTest,350, 501,  99, 100);
-                matrix[3][3] = Drawable(map2_bitmapTest,540, 501,  99, 100);
+                matrix[3][0] = Drawable(map2_bitmapTest,470, 100,  99, 1000, 52, 92, 22, 1);
+                matrix[3][1] = Drawable(map2_bitmapTest,670, 180,  99, 100, 52, 92, 22, 1);
+                matrix[3][2] = Drawable(map2_bitmapTest,350, 501,  99, 100, 52, 92, 22, 1);
+                matrix[3][3] = Drawable(map2_bitmapTest,540, 501,  99, 100, 52, 92, 22, 1);
 
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\casa_tumba.bmp",NULL);
-                matrix[4][0] = House(map2_bitmapTest, 600, 80,  120, 74);
+                matrix[4][0] = Drawable(map2_bitmapTest, 600, 80,  120, 74, 0, 65, 0, 3);
                 map2_bitmapTest = load_bitmap("src\\Resources\\Map_2\\fuente.bmp",NULL);
                 matrix[4][1] = House(map2_bitmapTest, 660, 300,  99, 140);
 
@@ -422,15 +569,15 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[0][0] = Drawable(bitmapTest, 0, 0 , 0, 0);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\establo.bmp",NULL);
-                matrix[1][0] = Drawable(bitmapTest, 0, 0 , 70, 62);
-                matrix[1][1] = Drawable(bitmapTest, 62, 0 , 70, 62);
-                matrix[1][2] = Drawable(bitmapTest, 124, 0 , 70, 62);
-                matrix[1][3] = Drawable(bitmapTest, 186, 0 , 70, 62);
+                matrix[1][0] = Drawable(bitmapTest, 0, 0 , 70, 62, 0, 0, 0, 2);
+                matrix[1][1] = Drawable(bitmapTest, 62, 0 , 70, 62, 0, 0, 0, 2);
+                matrix[1][2] = Drawable(bitmapTest, 124, 0 , 70, 62, 0, 0, 0, 2);
+                matrix[1][3] = Drawable(bitmapTest, 186, 0 , 70, 62, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\tienda_campaña.bmp",NULL);
-                matrix[2][0] = House(bitmapTest, 479, 0 , 88, 107);
-                matrix[2][1] = House(bitmapTest, 586, 0 , 88, 107);
-                matrix[2][2] = House(bitmapTest, 693, 0 , 88, 107);
+                matrix[2][0] = Drawable(bitmapTest, 479, 0 , 88, 107, 0, 45, 0, 3);
+                matrix[2][1] = Drawable(bitmapTest, 586, 0 , 88, 107, 0, 45, 0, 3);
+                matrix[2][2] = Drawable(bitmapTest, 693, 0 , 88, 107, 0, 45, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\lagito.bmp",NULL);
                 matrix[2][3] = House(bitmapTest, 120, 190 , 125, 109);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\cajas.bmp",NULL);
@@ -438,43 +585,43 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[2][5] = House(bitmapTest, 260, 56 , 56, 50);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\caballo.bmp",NULL);
-                matrix[3][0] = Drawable(bitmapTest, 20, 480 , 67, 27);
-                matrix[3][1] = Drawable(bitmapTest, 100, 460, 67, 27);
+                matrix[3][0] = Drawable(bitmapTest, 20, 480 , 67, 27, 0, 0, 0, 2);
+                matrix[3][1] = Drawable(bitmapTest, 100, 460, 67, 27, 0, 0, 0, 2);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\caballo_derecha.bmp",NULL);
-                matrix[3][2] = Drawable(bitmapTest, 140, 500 , 48, 68);
-                matrix[3][3] = Drawable(bitmapTest, 50, 380 , 48, 68);
-                matrix[3][4] = Drawable(bitmapTest, 150, 390 , 48, 68);
+                matrix[3][2] = Drawable(bitmapTest, 140, 500 , 48, 68, 0, 0, 0, 2);
+                matrix[3][3] = Drawable(bitmapTest, 50, 380 , 48, 68, 0, 0, 0, 2);
+                matrix[3][4] = Drawable(bitmapTest, 150, 390 , 48, 68, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\valla_tumbas.bmp",NULL);
-                matrix[4][0] = Drawable(bitmapTest, 0, 346 , 32, 73);
-                matrix[4][1] = Drawable(bitmapTest, 73, 346 , 32, 73);
-                matrix[4][2] = Drawable(bitmapTest, 146, 346 , 32, 73);
+                matrix[4][0] = Drawable(bitmapTest, 0, 346 , 32, 73, 0, 0, 0, 2);
+                matrix[4][1] = Drawable(bitmapTest, 73, 346 , 32, 73, 0, 0, 0, 2);
+                matrix[4][2] = Drawable(bitmapTest, 146, 346 , 32, 73, 0, 0, 0, 2);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\valla_tumbas_rotada.bmp",NULL);
-                matrix[4][3] = Drawable(bitmapTest, 219, 378, 74, 33);
-                matrix[4][4] = Drawable(bitmapTest, 219, 452, 74, 33);
-                matrix[4][5] = Drawable(bitmapTest, 219, 526, 74, 33);
+                matrix[4][3] = Drawable(bitmapTest, 219, 378, 74, 33, 0, 0, 0, 2);
+                matrix[4][4] = Drawable(bitmapTest, 219, 452, 74, 33, 0, 0, 0, 2);
+                matrix[4][5] = Drawable(bitmapTest, 219, 526, 74, 33, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\farola.bmp",NULL);
-                matrix[5][0] = Drawable(bitmapTest, 320, 20, 44, 8);
-                matrix[5][1] = Drawable(bitmapTest, 450, 20, 44, 8);
-                matrix[5][2] = Drawable(bitmapTest, 320, 100, 44, 8);
-                matrix[5][3] = Drawable(bitmapTest, 450, 100, 44, 8);
-                matrix[5][4] = Drawable(bitmapTest, 340, 180, 44, 8);
-                matrix[5][5] = Drawable(bitmapTest, 480, 180, 44, 8);
-                matrix[5][6] = Drawable(bitmapTest, 370, 260, 44, 8);
-                matrix[5][7] = Drawable(bitmapTest, 510, 260, 44, 8);
-                matrix[5][8] = Drawable(bitmapTest, 410, 340, 44, 8);
-                matrix[5][9] = Drawable(bitmapTest, 570, 340, 44, 8);
-                matrix[5][10] = Drawable(bitmapTest, 440, 420, 44, 8);
-                matrix[5][11] = Drawable(bitmapTest, 680, 340, 44, 8);
-                matrix[5][12] = Drawable(bitmapTest, 680, 340, 44, 8);
-                matrix[5][13] = Drawable(bitmapTest, 560, 470, 44, 8);
-                matrix[5][14] = Drawable(bitmapTest, 680, 470, 44, 8);
+                matrix[5][0] = Drawable(bitmapTest, 320, 20, 44, 8, 4, 40, 4, 1);
+                matrix[5][1] = Drawable(bitmapTest, 450, 20, 44, 8, 4, 40, 4, 1);
+                matrix[5][2] = Drawable(bitmapTest, 320, 100, 44, 8, 4, 40, 4, 1);
+                matrix[5][3] = Drawable(bitmapTest, 450, 100, 44, 8, 4, 40, 4, 1);
+                matrix[5][4] = Drawable(bitmapTest, 340, 180, 44, 8, 4, 40, 4, 1);
+                matrix[5][5] = Drawable(bitmapTest, 480, 180, 44, 8, 4, 40, 4, 1);
+                matrix[5][6] = Drawable(bitmapTest, 370, 260, 44, 8, 4, 40, 4, 1);
+                matrix[5][7] = Drawable(bitmapTest, 510, 260, 44, 8, 4, 40, 4, 1);
+                matrix[5][8] = Drawable(bitmapTest, 410, 340, 44, 8, 4, 40, 4, 1);
+                matrix[5][9] = Drawable(bitmapTest, 570, 340, 44, 8, 4, 40, 4, 1);
+                matrix[5][10] = Drawable(bitmapTest, 440, 420, 44, 8, 4, 40, 4, 1);
+                matrix[5][11] = Drawable(bitmapTest, 680, 340, 44, 8, 4, 40, 4, 1);
+                matrix[5][12] = Drawable(bitmapTest, 680, 340, 44, 8, 4, 40, 4, 1);
+                matrix[5][13] = Drawable(bitmapTest, 560, 470, 44, 8, 4, 40, 4, 1);
+                matrix[5][14] = Drawable(bitmapTest, 680, 470, 44, 8, 4, 40, 4, 1);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\cajas_lampara.bmp",NULL);
-                matrix[5][15] = Drawable(bitmapTest, 650, 150, 60, 47);
-                matrix[5][16] = Drawable(bitmapTest, 720, 150, 60, 47);
+                matrix[5][15] = Drawable(bitmapTest, 650, 150, 60, 47, 0, 21, 0, 3);
+                matrix[5][16] = Drawable(bitmapTest, 720, 150, 60, 47, 0, 21, 0, 3);
                 bitmapTest = load_bitmap("src\\Resources\\Map_3\\deposito_agua.bmp",NULL);
-                matrix[5][17] = Drawable(bitmapTest, 300, 450, 128, 82);
+                matrix[5][17] = Drawable(bitmapTest, 300, 450, 128, 82, 41, 112, 28, 1);
 
                 break;
        }
@@ -487,26 +634,26 @@ void Map::chargeMatrixAmbient(Drawable **matrix, int numMap)
                 matrix[0][1] = Drawable(bitmapTest, 378, 350 , 91, 233);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\castle.bmp",NULL);
-                matrix[1][0] = Drawable(bitmapTest, 300, 0 , 236, 280);
+                matrix[1][0] = Drawable(bitmapTest, 300, 0 , 236, 280, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\tumba_castillo.bmp",NULL);
-                matrix[2][0] = Drawable(bitmapTest, 700, 20 , 31, 30);
-                matrix[2][1] = Drawable(bitmapTest, 730, 20 , 31, 30);
-                matrix[2][2] = Drawable(bitmapTest, 760, 20 , 31, 30);
-                matrix[2][3] = Drawable(bitmapTest, 700, 70 , 31, 30);
-                matrix[2][4] = Drawable(bitmapTest, 730, 70 , 31, 30);
-                matrix[2][5] = Drawable(bitmapTest, 760, 70 , 31, 30);
-                matrix[2][6] = Drawable(bitmapTest, 50, 20 , 31, 30);
-                matrix[2][7] = Drawable(bitmapTest, 80, 20 , 31, 30);
-                matrix[2][8] = Drawable(bitmapTest, 110, 20 , 31, 30);
-                matrix[2][9] = Drawable(bitmapTest, 50, 70 , 31, 30);
-                matrix[2][10] = Drawable(bitmapTest, 80, 70 , 31, 30);
-                matrix[2][11] = Drawable(bitmapTest, 110, 70 , 31, 30);
+                matrix[2][0] = Drawable(bitmapTest, 700, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][1] = Drawable(bitmapTest, 730, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][2] = Drawable(bitmapTest, 760, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][3] = Drawable(bitmapTest, 700, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][4] = Drawable(bitmapTest, 730, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][5] = Drawable(bitmapTest, 760, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][6] = Drawable(bitmapTest, 50, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][7] = Drawable(bitmapTest, 80, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][8] = Drawable(bitmapTest, 110, 20 , 31, 30, 0, 0, 0, 2);
+                matrix[2][9] = Drawable(bitmapTest, 50, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][10] = Drawable(bitmapTest, 80, 70 , 31, 30, 0, 0, 0, 2);
+                matrix[2][11] = Drawable(bitmapTest, 110, 70 , 31, 30, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\agua.bmp",NULL);
-                matrix[3][0] = Drawable(bitmapTest, 0, 350 , 91, 189);
-                matrix[3][1] = House(bitmapTest, 189, 350 , 91, 189);
-                matrix[3][2] = House(bitmapTest, 611, 350 , 91, 189);
+                matrix[3][0] = Drawable(bitmapTest, 0, 350 , 91, 189, 0, 0, 0, 2);
+                matrix[3][1] = Drawable(bitmapTest, 189, 350 , 91, 189, 0, 0, 0, 2);
+                matrix[3][2] = Drawable(bitmapTest, 611, 350 , 91, 189, 0, 0, 0, 2);
 
                 bitmapTest = load_bitmap("src\\Resources\\Map_4\\aleta_tiburon.bmp",NULL);
                 matrix[4][0] = Drawable(bitmapTest, 50, 370 , 27, 42);

@@ -41,6 +41,7 @@ protected:
      bool getSound();
      bool leftClick();
      bool keyI();
+     bool spacePress();
 
      void generalKeyboard(int userOrPass);
 

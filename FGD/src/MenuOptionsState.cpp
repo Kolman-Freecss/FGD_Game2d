@@ -36,9 +36,6 @@ void MenuOptionsState::init()
     this->backk = load_bitmap("src\\Resources\\back.bmp",NULL);
     this->backk_pressed = load_bitmap("src\\Resources\\back_pressed.bmp",NULL);
 
-    install_mouse();
-
-    show_mouse(screen);
 
 }
 
@@ -66,7 +63,7 @@ void MenuOptionsState::draw()
     backPressed();
 
 
-
+    show_mouse(this->game->getBuffer());
     blit(this->game->getBuffer(), screen, 0, 0, 0, 0, 800, 600);
 
 }
@@ -85,12 +82,22 @@ void MenuOptionsState::musicPressed()
         }
         if(this->leftClick())
         {
-            if(!this->getSound()){
+            /*if(!this->getSound()){
                 this->setSound(true);
                 managerMusic.soundMap1();
             }else{
                 this->setSound(false);
                 managerMusic.stopSoundBackground();
+            }*/
+
+            if(!this->getSound()){
+                this->setSound(true);
+                managerMusic.soundMenu();
+                Music::checkMusicOrNot = true;
+            }else{
+                this->setSound(false);
+                managerMusic.stopSoundMenu();
+                Music::checkMusicOrNot = false;
             }
         }
     }
