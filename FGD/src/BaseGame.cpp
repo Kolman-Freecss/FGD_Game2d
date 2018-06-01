@@ -240,11 +240,27 @@ void BaseGame::draw()
     Printa todo el vector de Enemigos en pantalla
     */
     vector<Enemy*> vectorE = this->activeMap->getVectorEnemies();
+    /**
+    Ordenamos el vector de enemigos por Y de menor a mayor para arreglar las colisiones
+    */
+    for(int a = 0; a < vectorE.size(); a++){
+        for(int b = 0; b < vectorE.size()-1; b++){
+                if(vectorE.at(b)->getY() > vectorE.at(b+1)->getY()){
+                    Enemy *aux = vectorE.at(b);
+                    vectorE.at(b) = vectorE.at(b+1);
+                    vectorE.at(b+1) = aux;
+                }
+        }
+    }
+
+
     for (int i = 0; i < vectorE.size(); i++){
 
         vectorE.at(i)->draw(this->game->getBuffer());
         drawEnemyHUD(vectorE.at(i));
     }
+
+
 
 
 
@@ -349,14 +365,14 @@ void BaseGame::draw()
         Si no tiene colision con ambiente lo printa
         */
         if(!vectorE.at(i)->checkCollision){
-            vectorE.at(i)->draw(this->game->getBuffer());
-            drawEnemyHUD(vectorE.at(i));
-        }else if(!vectorE.at(i)->checkCollisionWithOCharacther && !vectorE.at(i)->checkCollision){
-            vectorE.at(i)->draw(this->game->getBuffer());
-            drawEnemyHUD(vectorE.at(i));
-        }
+                if(!vectorE.at(i)->checkCollisionWithOCharacther){
+                    vectorE.at(i)->draw(this->game->getBuffer());
+                    drawEnemyHUD(vectorE.at(i));
+                }
 
-        vectorE.at(i)->checkCollision = false;
+
+    }
+    vectorE.at(i)->checkCollision = false;
         vectorE.at(i)->checkCollisionWithOCharacther = false;
     }
 
@@ -634,8 +650,9 @@ void BaseGame::previousMap()
 void BaseGame::collisionCheck() {
     colPlayerWithEnemies();
     colPlayerWithAmbient();
-    colEnemies();
     colEnemiesWithAmbient();
+    colEnemies();
+
     if(this->activeMap->numMap == 5){
         colPlayerAndEnemyWithLimits();
     }
@@ -757,7 +774,13 @@ void BaseGame::colEnemies(){
                     }
                 }
                 if (this->activeMap->getVectorEnemies().at(i)->isBehind(this->activeMap->getVectorEnemies().at(j)) && this->activeMap->getVectorEnemies().at(j)->isIsAlive()){
-                    this->activeMap->getVectorEnemies().at(i)->checkCollisionWithOCharacther = true;
+                        //if(!this->activeMap->getVectorEnemies().at(i)->checkCollision){
+                            //if(this->activeMap->getVectorEnemies().at(i)->getY() < this->activeMap->getVectorEnemies().at(j)->getY()){
+                                this->activeMap->getVectorEnemies().at(i)->checkCollisionWithOCharacther = true;
+                                this->activeMap->getVectorEnemies().at(j)->checkCollisionWithOCharacther = false;
+                            //}
+                        //}
+
                 }
             }
         }
