@@ -352,6 +352,13 @@ void BaseGame::draw()
         vectorE.at(i)->draw(this->game->getBuffer());
         drawEnemyHUD(vectorE.at(i));
     }*/
+if(!player.checkCollision){
+        this->player.draw(this->game->getBuffer());
+        //if(!player.checkCollision && player.checkCollisionWithOCharacther)
+    }
+
+    player.checkCollision = false;
+
 
     /**
     Printa Enemigos en pantalla si no hay colision
@@ -365,11 +372,12 @@ void BaseGame::draw()
         Si no tiene colision con ambiente lo printa
         */
         if(!vectorE.at(i)->checkCollision){
-                if(!vectorE.at(i)->checkCollisionWithOCharacther){
+                //if(!vectorE.at(i)->checkCollisionWithOCharacther){
                     vectorE.at(i)->draw(this->game->getBuffer());
                     drawEnemyHUD(vectorE.at(i));
-                }
 
+
+    //}
 
     }
     vectorE.at(i)->checkCollision = false;
@@ -378,11 +386,7 @@ void BaseGame::draw()
 
 
 
-    if(!player.checkCollision){
-        this->player.draw(this->game->getBuffer());
 
-    }
-    player.checkCollision = false;
 
 
 
@@ -670,7 +674,7 @@ void BaseGame::colPlayerWithEnemies() {
             this->player.setY(this->player.getAY()) ;
         }
         if (player.isBehind(this->activeMap->getVectorEnemies().at(i))){
-            player.checkCollision = true;
+            player.checkCollisionWithOCharacther = true;
             cout << "is behind ";
         }
     }
@@ -777,7 +781,7 @@ void BaseGame::colEnemies(){
                         //if(!this->activeMap->getVectorEnemies().at(i)->checkCollision){
                             //if(this->activeMap->getVectorEnemies().at(i)->getY() < this->activeMap->getVectorEnemies().at(j)->getY()){
                                 this->activeMap->getVectorEnemies().at(i)->checkCollisionWithOCharacther = true;
-                                this->activeMap->getVectorEnemies().at(j)->checkCollisionWithOCharacther = false;
+                                //this->activeMap->getVectorEnemies().at(j)->checkCollisionWithOCharacther = false;
                             //}
                         //}
 
@@ -787,6 +791,7 @@ void BaseGame::colEnemies(){
         //col enemy with player
         if (this->activeMap->getVectorEnemies().at(i)->collision(&this->player)){
             //TODO
+
             this->activeMap->getVectorEnemies().at(i)->setX(this->activeMap->getVectorEnemies().at(i)->getAX());
             this->activeMap->getVectorEnemies().at(i)->setY(this->activeMap->getVectorEnemies().at(i)->getAY());
         }
