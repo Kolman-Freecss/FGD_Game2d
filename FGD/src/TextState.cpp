@@ -30,11 +30,17 @@ void TextState::init()
     this->secondText = 0;
     this->checkSecondText = false;
     this->checkNextText = false;
-    this->vectorBocadillo1Mapa.push_back("Pressiona el espai");
-    this->vectorBocadillo1Mapa.push_back("Primer texto");
-    this->vectorBocadillo1Mapa.push_back("Segundo texto");
-    this->vectorBocadillo1Mapa.push_back("Tercer texto");
-    this->vectorBocadillo1Mapa.push_back("Cuarto texto");
+    this->vectorBocadillo1Mapa.push_back("Presiona espacio!");
+    this->vectorBocadillo1Mapa.push_back("Bienvenido a FGD.");
+    this->vectorBocadillo1Mapa.push_back("Derrota a todos");
+    this->vectorBocadillo1Mapa.push_back("Instrucciones:");
+    this->vectorBocadillo1Mapa.push_back("W = adelante");
+    this->vectorBocadillo1Mapa.push_back("A = izquierda");
+    this->vectorBocadillo1Mapa.push_back("S = abajo");
+    this->vectorBocadillo1Mapa.push_back("D = derecha");
+    this->vectorBocadillo1Mapa.push_back("Espacio = atacar");
+    this->vectorBocadillo1Mapa.push_back("Pasalo bien.");
+    this->vectorBocadillo1Mapa.push_back("Lucha y gana!");
 
 
     this->bocadilloMap1 = load_bitmap("src\\Resources\\TextState\\bocadillo_texto.bmp",NULL);
@@ -89,16 +95,16 @@ void TextState::animationBocadilloMap1()
 
     if(!this->checkFirstText){
         textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(0),
-                          90, 280, makecol(0, 0, 0), -1);
+                          90, 285, makecol(0, 0, 0), -1);
 
     }
     if(this->checkNextText){
         textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(nextText),
-            90, 280, makecol(0, 0, 0), -1);
+            90, 285, makecol(0, 0, 0), -1);
     }
     if(this->checkSecondText){
         textout_ex(this->game->getBuffer(), font, this->vectorBocadillo1Mapa.at(secondText),
-                  90, 290, makecol(0, 0, 0), -1);
+                  90, 298, makecol(0, 0, 0), -1);
     }
 
     if(GameState::spacePress()){
