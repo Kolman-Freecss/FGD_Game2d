@@ -125,9 +125,6 @@ void GameState::generalKeyboard(int userOrPass)
         }
 
 
-
-
-
         this->timePress = Timer::getTime();
     }
 
