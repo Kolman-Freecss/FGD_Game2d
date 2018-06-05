@@ -33,11 +33,10 @@ void TextState::init()
     this->vectorBocadillo1Mapa.push_back("Presiona espacio!");
     this->vectorBocadillo1Mapa.push_back("Bienvenido a FGD.");
     this->vectorBocadillo1Mapa.push_back("Derrota a todos");
-    this->vectorBocadillo1Mapa.push_back("Instrucciones:");
-    this->vectorBocadillo1Mapa.push_back("W = adelante");
-    this->vectorBocadillo1Mapa.push_back("A = izquierda");
-    this->vectorBocadillo1Mapa.push_back("S = abajo");
-    this->vectorBocadillo1Mapa.push_back("D = derecha");
+    this->vectorBocadillo1Mapa.push_back("Instrucciones");
+    this->vectorBocadillo1Mapa.push_back("Para jugar:");
+    this->vectorBocadillo1Mapa.push_back("Movimiento:");
+    this->vectorBocadillo1Mapa.push_back("Con flechas");
     this->vectorBocadillo1Mapa.push_back("Espacio = atacar");
     this->vectorBocadillo1Mapa.push_back("Pasalo bien.");
     this->vectorBocadillo1Mapa.push_back("Lucha y gana!");
