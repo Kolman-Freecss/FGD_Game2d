@@ -1,12 +1,7 @@
-Bitmap 24 bits
--En la practica de asteroides tenemos un claro ejemplo de como verifica la colision con un vector de objetos (que son asteroides 
-  en este caso), osea que verifica la colisión con todos los objetos de la pantalla, con esto tendriamos una verificación de 
-  colisiones facil 
-
+﻿Bitmap 24 bits
 
 -cursores
 antes de cambiar la asignacion borrar el actual (garbage colector) para que no ocupe memoria.
-
 
 -vectores
 http://www.cplusplus.com/reference/vector/vector/
