@@ -78,7 +78,7 @@ void GameState::generalKeyboard(int userOrPass)
         if(key[KEY_C]) {characterInput = "c"; checkPress = true;}
         if(key[KEY_D]) {characterInput = "d"; checkPress = true;}
         if(key[KEY_E]) {characterInput = "e"; checkPress = true;}
-        if(key[KEY_F]){characterInput = "f"; checkPress = true;}
+        if(key[KEY_F]) {characterInput = "f"; checkPress = true;}
         if(key[KEY_G]) {characterInput = "g"; checkPress = true;}
         if(key[KEY_H]) {characterInput = "h"; checkPress = true;}
         if(key[KEY_I]) {characterInput = "i"; checkPress = true;}
@@ -123,9 +123,6 @@ void GameState::generalKeyboard(int userOrPass)
         }else if(userOrPass == 2 && checkPress && this->charPasswordInput->size() < this->maxLength){
             this->charPasswordInput->push_back(characterInput);
         }
-
-
-
 
 
         this->timePress = Timer::getTime();
