@@ -1,4 +1,4 @@
 # Project
-Projecto final curso
+Projecto final de curso
 
-Juego desarrollado por Sergio Martinez y David Moya
+Juego desarrollado por Sergio Martinez
