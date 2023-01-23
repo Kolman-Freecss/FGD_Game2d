@@ -1,4 +1,4 @@
-# Project
-Projecto final de curso
+# FGD
+CFGS - Final course project
 
-Juego desarrollado por Sergio Martinez
+RPG 2D Adventure Genre Video game built with C++ and Allegro library
